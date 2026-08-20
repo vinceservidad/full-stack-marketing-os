@@ -19,6 +19,8 @@ Collect goal, account and market scope, date range and comparison, budget, biddi
 4. Compare like-for-like periods and separate volume, efficiency, mix, and measurement effects.
 5. Rank actions by expected business impact, confidence, reversibility, and learning value.
 
+For substantial mode-specific work, read only the relevant reference: [Search](references/search.md), [Shopping](references/shopping.md), or [Performance Max](references/pmax.md).
+
 ## Rules
 
 - Never add a negative solely because a query did not convert in a small sample; consider intent, spend against allowable CPA, assisted value, and protected brand/product coverage.

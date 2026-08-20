@@ -8,6 +8,8 @@
 4. Preserve valuable coverage and learning unless evidence supports a change. Prefer reversible tests with stopping rules.
 5. Distinguish draft, saved, published, live, processing, and verified states.
 6. Never fabricate benchmarks, results, customer language, credentials, margins, or causality.
+7. Preserve research provenance and privacy. Do not expose unnecessary personal data or report quotations without a traceable supplied source.
+8. Treat platform attribution differences separately from collection defects and business-performance changes.
 
 ## Skill design
 

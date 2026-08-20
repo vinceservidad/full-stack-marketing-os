@@ -2,7 +2,7 @@
 
 An evidence-led operating system for planning, auditing, diagnosing, and improving full-funnel marketing. GitHub is the versioned source of truth; Codex and ChatGPT skills are the operating interface.
 
-## v0.1
+## Current release: v0.2
 
 - A router that selects only the skills needed for a request.
 - Operating methods for Google Ads, Meta Ads, creative strategy, CRO, and performance diagnostics.
@@ -10,6 +10,9 @@ An evidence-led operating system for planning, auditing, diagnosing, and improvi
 - Ecommerce and lead-generation playbooks.
 - Reusable audit, experiment, and performance-report templates.
 - Behavioral evaluations for routing, commercial truth, causality, and authorization.
+- Measurement architecture, event-integrity, and attribution-reconciliation methods.
+- Evidence-led customer research and ICP/JTBD decision methods.
+- Progressive references for Google Search, Shopping, PMax, and Meta prospecting/retargeting.
 
 ## Use
 
@@ -19,6 +22,9 @@ Ask naturally or invoke a skill explicitly:
 - `Use $google-ads to audit this search terms export.`
 - `Use $creative-strategy to turn these customer reviews into a creative test matrix.`
 - `Use $cro to audit this product page for paid traffic.`
+- `Use $tracking-measurement to reconcile Ads, analytics, and storefront purchases.`
+- `Use $customer-research to synthesize these interview transcripts without inventing prevalence.`
+- `Use $icp-jtbd to select the most commercially viable buying situation.`
 
 The router may compose skills, but one skill owns the final answer. Audits begin read-only. Publishing, budget changes, tracking changes, and other external mutations require explicit approval.
 
@@ -33,4 +39,4 @@ tests/evaluations/    Behavioral cases
 ROADMAP.md             Planned releases
 ```
 
-v0.1 is an operational foundation, not a claim of universal expertise. Update methods from verified platform behavior and real, anonymized postmortems.
+The system is an operational foundation, not a claim of universal expertise. Update methods from verified platform behavior and real, anonymized postmortems.

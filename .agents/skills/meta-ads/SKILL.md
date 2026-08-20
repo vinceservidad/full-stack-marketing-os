@@ -17,6 +17,8 @@ Collect objective, optimization event, attribution setting, pixel/CAPI status, m
 4. Diagnose at the right layer: auction, objective, audience, creative, destination, offer, or measurement.
 5. Treat rising frequency plus worsening response as suggestive of fatigue, not conclusive without audience and delivery context.
 
+For substantial funnel-mode work, read [prospecting](references/prospecting.md) or [retargeting](references/retargeting.md) as relevant.
+
 ## Rules
 
 - Do not fragment budgets into many ad sets without a distinct hypothesis or constraint.
