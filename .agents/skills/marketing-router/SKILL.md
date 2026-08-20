@@ -22,12 +22,17 @@ Turn the request into a bounded plan, select the minimum skills needed, and appo
 - Angles, hooks, concepts, formats, briefs, or creative tests: `$creative-strategy`.
 - Landing page, product page, form, checkout, or persuasion friction: `$cro`.
 - Metric change, spend/sales anomaly, or causal triage: `$performance-diagnostics`.
+- Event integrity, attribution differences, conversion architecture, or source reconciliation: `$tracking-measurement`.
+- Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
+- Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
 
 Common compositions:
 
 - Spend rose and sales fell: performance diagnostics owns; channel skill supports; CRO joins only if landing evidence suggests a site issue.
 - Produce Meta concepts: creative strategy owns; Meta Ads supplies placement and delivery constraints.
 - Clicks without conversions: performance diagnostics owns; channel skill and CRO support; flag measurement integrity as an unresolved dependency when needed.
+- Define a new audience and message: ICP/JTBD owns the segment decision; customer research supplies evidence; creative strategy translates it into tests.
+- Platforms disagree on revenue: tracking and measurement owns; performance diagnostics joins only if the business outcome itself changed.
 
 ## Rules
 

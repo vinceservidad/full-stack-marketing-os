@@ -1,10 +1,10 @@
 # Roadmap
 
-## v0.2 — Measurement and research
+## v0.2 — Measurement and research — Complete
 
-- Add tracking-measurement, customer-research, and ICP/JTBD skills.
-- Add attribution reconciliation and conversion-integrity evaluations.
-- Add Search, Shopping, PMax, prospecting, and retargeting references.
+- Added tracking-measurement, customer-research, and ICP/JTBD skills.
+- Added attribution reconciliation and conversion-integrity evaluations.
+- Added Search, Shopping, PMax, prospecting, and retargeting references.
 
 ## v0.3 — Strategy and production
 
