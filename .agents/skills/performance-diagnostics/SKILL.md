@@ -5,6 +5,8 @@ description: Diagnose why marketing revenue, profit, conversions, spend, or lead
 
 # Performance Diagnostics
 
+Classify each decomposition, pattern, hypothesis, model, tactic, or test plan with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). A pattern or correlation remains a hypothesis until evidence supports the mechanism.
+
 ## Method
 
 1. Restate the anomaly with metric definition, absolute values, baseline, date range, scope, and business significance.

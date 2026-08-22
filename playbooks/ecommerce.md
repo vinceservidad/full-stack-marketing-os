@@ -1,5 +1,13 @@
 # Ecommerce Playbook
 
+## Knowledge metadata
+
+- Primary type: playbook
+- Secondary type: process / model
+- Decision: how to diagnose and improve ecommerce contribution
+- Evidence status: repeatable operating method; economics must be defined
+- Freshness: stable; platform controls require current-source checks
+
 1. Establish product, market, inventory, price, promotion, shipping, and return context.
 2. Reconcile sessions, orders, revenue, discounts, refunds, taxes, COGS, fulfillment, fees, and media spend.
 3. Diagnose by product and contribution, not blended ROAS alone.

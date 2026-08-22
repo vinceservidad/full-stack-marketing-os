@@ -5,6 +5,8 @@ description: Plan or synthesize evidence-led customer research for marketing dec
 
 # Customer Research
 
+Classify outputs with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md): observed pattern, hypothesis, methodology, process, or recommendation. Patterns must retain provenance and cannot be reported as causal conclusions.
+
 Produce decision-ready insights while preserving source provenance, segment differences, uncertainty, and the difference between what people say and do.
 
 ## Frame the decision

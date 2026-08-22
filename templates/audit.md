@@ -1,5 +1,13 @@
 # Marketing Audit Template
 
+## Knowledge metadata
+
+- Primary type: template
+- Secondary type: checklist / process output
+- Decision: what evidence supports the audit conclusion and next action
+- Evidence status: reusable structure; supplied evidence is required
+- Authorization: read-only unless a separate approved change plan exists
+
 ## Decision and scope
 
 - Business question:

@@ -5,6 +5,8 @@ description: Audit, diagnose, or plan Google Ads Search, Shopping, and Performan
 
 # Google Ads
 
+Classify each audit, model, methodology, process, tactic, technique, best practice, or heuristic with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Name the primary type and keep platform evidence separate from recommendations.
+
 ## Context
 
 Collect business goal, account and market scope, date range and comparison, budget, bidding strategy, campaign type, conversion goals, conversion actions, action-optimization status, revenue or qualified-lead definition, and available exports. For ecommerce profitability, request price, COGS, variable fulfillment, payment fees, discounts, refunds, revenue basis, and feed status.

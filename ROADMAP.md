@@ -18,6 +18,12 @@
 - Added freshness gates for AI, automation, controls, reporting, and interface terminology.
 - Added account-rollout checks and regression cases for unsupported algorithm claims.
 
+## v0.2.3 — Knowledge taxonomy — Complete
+
+- Added a canonical taxonomy for principles, definitions, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
+- Added reusable artifact metadata and QA fields for evidence, confidence, freshness, dependencies, authorization, and rollback/stop conditions.
+- Added taxonomy regression cases and validation.
+
 ## v0.3 — Strategy and production
 
 - Add positioning, offer, funnel, copywriting, landing-page-audit, and experimentation skills.

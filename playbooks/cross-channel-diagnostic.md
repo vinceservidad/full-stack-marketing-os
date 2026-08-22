@@ -1,5 +1,13 @@
 # Cross-Channel Diagnostic Playbook
 
+## Knowledge metadata
+
+- Primary type: playbook
+- Secondary type: process / methodology
+- Decision: why a cross-channel business outcome changed
+- Evidence status: repeatable diagnostic method; account evidence required
+- Freshness: stable; platform details require current-source checks
+
 Use when a business outcome changes across more than one platform.
 
 1. Anchor on the business source of truth and one consistent timezone.

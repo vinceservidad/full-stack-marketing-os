@@ -1,5 +1,13 @@
 # Measurement and Evidence Framework
 
+## Knowledge metadata
+
+- Primary type: framework
+- Secondary type: model / standard
+- Decision: whether evidence supports a marketing decision
+- Evidence status: stable operating method
+- Freshness: stable; metric definitions remain client-specific
+
 ## Claim levels
 
 - **Observed:** directly present in a named source and scope.

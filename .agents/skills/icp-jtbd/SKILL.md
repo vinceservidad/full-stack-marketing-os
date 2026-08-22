@@ -5,6 +5,8 @@ description: Define or refine ideal-customer segments and Jobs-to-be-Done from v
 
 # ICP and Jobs-to-be-Done
 
+Classify segment outputs with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md): model, methodology, process, pattern, hypothesis, or strategy. Do not turn a research pattern into a universal segment truth.
+
 Build actionable segment choices around valuable, reachable customers in a specific buying situation.
 
 ## Inputs

@@ -5,6 +5,8 @@ description: Audit, diagnose, or plan Meta Ads delivery, structure, audiences, p
 
 # Meta Ads
 
+Classify each audit, strategy, process, tactic, technique, best practice, or heuristic with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Name the primary type and keep documented platform capability separate from expected business impact.
+
 ## Context
 
 Collect campaign objective, conversion location, performance goal, dataset or Meta Pixel, selected optimization event, Conversions API status, attribution setting, market, dates and comparison, spend, campaign/ad-set/ad results, creative IDs, destinations, business revenue or lead-quality data, and constraints. Do not collapse those configuration fields into one “optimization” setting.

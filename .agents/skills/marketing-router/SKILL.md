@@ -7,6 +7,8 @@ description: Route ambiguous or multi-discipline marketing requests to the small
 
 Turn the request into a bounded plan, select the minimum skills needed, and appoint one owner for the final response.
 
+Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request asks for a strategy, framework, model, methodology, process, playbook, pattern, tactic, technique, template, best practice, or heuristic. Name the primary knowledge type in the response.
+
 ## Route
 
 1. Identify the business outcome, business model, funnel stage, timeframe, market, channel, and requested action.
@@ -16,6 +18,7 @@ Turn the request into a bounded plan, select the minimum skills needed, and appo
 4. Select one primary skill and only supporting skills that answer a distinct dependency.
 5. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
 6. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
+7. Classify the requested deliverable by its primary knowledge type; use secondary types only when they change how the artifact should be used or validated.
 
 ## Skill map
 
@@ -46,10 +49,11 @@ Common compositions:
 - For live changes, first state the exact change, expected effect, downside, rollback condition, and approval boundary.
 - Never describe a draft recommendation as implemented.
 - Never convert an undocumented platform “algorithm change” into a fact. Label official documentation, account observation, experimental evidence, inference, and unknowns separately.
+- Do not present a pattern as causality, a heuristic as a guarantee, a tactic as a strategy, or a framework/model as proof of an outcome.
 
 ## Output
 
-Return: objective; routed skills and owner; evidence; missing inputs; approach; findings or deliverable; recommended next action; exact status.
+Return: objective; primary knowledge type; routed skills and owner; evidence; missing inputs; approach; findings or deliverable; recommended next action; exact status.
 
 ## QA
 

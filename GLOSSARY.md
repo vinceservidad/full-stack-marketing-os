@@ -95,3 +95,24 @@ Define qualification, stage-entry rules, date basis, and value basis before comp
 - **Guardrail metric:** Metric that protects against unacceptable downstream harm.
 - **Stop condition:** Predefined condition for ending or containing a test.
 - **Decision rule:** Predefined interpretation leading to ship, iterate, reject, or inconclusive.
+
+## Marketing operating knowledge
+
+Use [`KNOWLEDGE-TAXONOMY.md`](KNOWLEDGE-TAXONOMY.md) for the full contract and artifact metadata. The short definitions below prevent common category errors:
+
+- **Principle:** Durable rule or constraint governing decisions.
+- **Strategy:** Directional choice about where to compete, for whom, why, and how resources are allocated.
+- **Framework:** Structured lens or decision map; it organizes reasoning but does not prove an outcome.
+- **Model:** Simplified representation, relationship, or formula; expose variables and assumptions.
+- **Methodology:** Named way of solving a class of problems with an evidence standard and decision rule.
+- **Process:** Ordered repeatable workflow with inputs, outputs, owners, and handoffs.
+- **Playbook / SOP:** A process adapted to a recurring business or scenario context.
+- **Pattern:** Recurring shape in observed evidence; it is not automatically causal.
+- **Hypothesis:** Falsifiable explanation or proposed mechanism.
+- **Tactic:** Specific action selected to advance a strategy.
+- **Technique:** Method for executing a tactic or process step.
+- **Template:** Reusable structure for producing an artifact.
+- **Checklist / QA:** Completeness and validation control.
+- **Best practice:** Evidence-backed default within a defined scope; not a guarantee.
+- **Heuristic:** Practical shortcut under uncertainty; label its confidence, scope, and override condition.
+- **Guardrail / policy:** Limit that protects against unacceptable downside.

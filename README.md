@@ -16,6 +16,7 @@ An evidence-led operating system for planning, auditing, diagnosing, and improvi
 - A canonical cross-discipline terminology contract in `GLOSSARY.md`.
 - A platform-currency contract with dated Google and Meta registries, freshness gates, official-source rules, rollout checks, and regression evaluations.
 - A weekly GitHub currency check that fails when either high-change platform registry is more than 30 days old.
+- A knowledge taxonomy that distinguishes principles, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
 
 ## Use
 
@@ -40,8 +41,11 @@ For “latest,” AI, algorithm, rollout, or current-interface questions, the ch
 frameworks/           Shared decision models
 playbooks/            Business-model workflows
 templates/            Reusable deliverable structures
+KNOWLEDGE-TAXONOMY.md Knowledge-layer definitions and artifact metadata
 tests/evaluations/    Behavioral cases
 ROADMAP.md             Planned releases
 ```
 
 The system is an operational foundation, not a claim of universal expertise or access to undisclosed algorithms. Update methods from current first-party documentation, account-visible behavior, and real, anonymized postmortems.
+
+When creating or revising a deliverable, identify its primary knowledge type, evidence status, confidence, freshness, dependencies, authorization, and rollback/stop condition. Use [templates/knowledge-artifact.md](templates/knowledge-artifact.md) for standalone artifacts.

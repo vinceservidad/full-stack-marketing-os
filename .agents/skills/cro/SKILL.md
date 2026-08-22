@@ -5,6 +5,8 @@ description: Audit and improve landing pages, product pages, forms, and checkout
 
 # Conversion Rate Optimization
 
+Classify each deliverable with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Heuristic observations are hypothesis inputs, not causal findings or universal best practices.
+
 Prefer analytics by segment, recordings, surveys, usability tests, support/sales objections, experiment results, page speed, and funnel errors. Heuristic observations generate hypotheses; they do not prove causes.
 
 ## Method

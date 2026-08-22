@@ -1,5 +1,13 @@
 # Decision Prioritization
 
+## Knowledge metadata
+
+- Primary type: framework
+- Secondary type: heuristic / decision rule
+- Decision: which marketing action should be prioritized
+- Evidence status: methodology-level guidance; apply account evidence before acting
+- Freshness: stable; revisit when economics or authorization policy changes
+
 Score recommendations directionally rather than hiding uncertainty in false precision.
 
 Consider:

@@ -1,5 +1,13 @@
 # Experiment Brief
 
+## Knowledge metadata
+
+- Primary type: template
+- Secondary type: methodology / process / checklist
+- Decision: whether a proposed test can produce a valid decision
+- Evidence status: reusable structure; experiment inputs and instrumentation require verification
+- Authorization: approval-required before activation
+
 - Decision:
 - Evidence-backed problem:
 - Hypothesis:
