@@ -9,7 +9,7 @@ Establish whether the available data can support the requested decision before o
 
 ## Scope
 
-Define the business outcome, platforms and properties, conversion journey, reporting timezone and currency, consent environment, attribution question, source of truth, and requested level of assurance.
+Define the primary business outcome, platforms and properties, conversion journey, reporting timezone and currency, consent environment, attribution question, source of truth, and requested level of assurance. Reserve “Primary conversion action” for Google Ads' action-optimization status.
 
 ## Method
 
@@ -28,6 +28,7 @@ Read [references/event-integrity.md](references/event-integrity.md) for event-le
 - Do not make several production tagging changes at once when one controlled change can isolate the failure.
 - Never expose secrets, raw personal data, or persistent identifiers in reports.
 - Do not change primary conversion goals or bidding signals without explicit approval and a dependency analysis.
+- For Google Ads, distinguish conversion goals from their conversion actions and each action's Primary/Secondary status. For Meta, distinguish objective, conversion location, performance goal, dataset/pixel, selected event, and attribution setting.
 - Treat consented and non-consented coverage explicitly; do not recommend bypassing consent or privacy controls.
 
 ## Output

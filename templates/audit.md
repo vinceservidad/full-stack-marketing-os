@@ -6,6 +6,7 @@
 - Scope and exclusions:
 - Date range and comparison:
 - Source-of-truth outcome:
+- Canonical metric definition and included costs/stages:
 
 ## Evidence and integrity
 

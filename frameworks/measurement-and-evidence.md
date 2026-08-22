@@ -10,9 +10,11 @@
 
 Platform attribution is a model, not a ledger. Reconcile it with storefront, CRM, payment, fulfillment, refund, and cost data according to the decision.
 
+Use the definitions in [`GLOSSARY.md`](../GLOSSARY.md). Attribution assigns credit; reconciliation explains differences; incrementality estimates additional outcomes caused; none of these terms is interchangeable.
+
 ## Commercial outcomes
 
-Use the furthest trustworthy outcome: contribution profit, realized revenue, qualified pipeline, closed revenue, retention, or another verified business result. If only proxy metrics exist, state the limitation.
+Use the furthest trustworthy outcome: contribution profit at a named level, realized revenue, qualified pipeline, closed-won revenue, retention, or another verified business result. If only proxy metrics exist, state the limitation.
 
 ## Confidence
 

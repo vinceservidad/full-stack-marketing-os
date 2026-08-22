@@ -8,6 +8,12 @@
 
 Core equation:
 
-`Contribution = net sales - COGS - fulfillment - payment fees - refunds - media spend`
+If the source begins with gross sales:
 
-If an input is missing, provide a break-even table or sensitivity range rather than a false profitability verdict.
+`Contribution profit after media = gross sales - discounts - refunds - COGS - variable fulfillment - payment fees - media spend`
+
+If the source begins with net revenue that already reflects discounts and refunds:
+
+`Contribution profit after media = net revenue - COGS - variable fulfillment - payment fees - media spend`
+
+Never subtract discounts or refunds twice. If an input is missing, provide a break-even table or sensitivity range rather than a false profitability verdict. Do not call the result operating profit when fixed operating expenses are unavailable.

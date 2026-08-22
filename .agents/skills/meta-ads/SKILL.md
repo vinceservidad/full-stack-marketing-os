@@ -7,7 +7,7 @@ description: Audit, diagnose, or plan Meta Ads delivery, structure, audiences, p
 
 ## Context
 
-Collect objective, optimization event, attribution setting, pixel/CAPI status, market, dates and comparison, spend, campaign/ad-set/ad results, creative IDs, destinations, business revenue or lead-quality data, and constraints.
+Collect campaign objective, conversion location, performance goal, dataset or Meta Pixel, selected optimization event, Conversions API status, attribution setting, market, dates and comparison, spend, campaign/ad-set/ad results, creative IDs, destinations, business revenue or lead-quality data, and constraints. Do not collapse those configuration fields into one “optimization” setting.
 
 ## Method
 
@@ -17,7 +17,7 @@ Collect objective, optimization event, attribution setting, pixel/CAPI status, m
 4. Diagnose at the right layer: auction, objective, audience, creative, destination, offer, or measurement.
 5. Treat rising frequency plus worsening response as suggestive of fatigue, not conclusive without audience and delivery context.
 
-For substantial funnel-mode work, read [prospecting](references/prospecting.md) or [retargeting](references/retargeting.md) as relevant.
+For substantial funnel-mode work, read [new-customer acquisition / prospecting](references/prospecting.md) or [retargeting / remarketing](references/retargeting.md) as relevant. These are strategic categories; also state the current Meta implementation such as Advantage+ audience, audience suggestions, Custom Audiences, exclusions, or other controls.
 
 ## Rules
 

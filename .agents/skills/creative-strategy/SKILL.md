@@ -24,6 +24,7 @@ Use product truth, target segment and situation, customer language, pains and de
 - Match the opening and proof to audience awareness.
 - Judge winners across business outcome, conversion quality, and spend—not CTR alone.
 - Placement crops are adaptations, not distinct strategic tests.
+- Keep entities distinct: angle = strategic reason to care; hook = opening expression; creative concept = central idea; creative asset = produced component; ad = configured platform entity; format = delivery form; adaptation = placement-specific version.
 
 ## Output
 

@@ -2,6 +2,22 @@
 
 Notable changes follow semantic versioning.
 
+## [0.2.1] - 2026-08-22
+
+### Added
+
+- Canonical marketing glossary covering commercial outcomes, measurement, causality, audience and journey concepts, paid media, creative, lead lifecycle, evidence, and experimentation.
+- Terminology regression evaluations for finance, Google Ads, Meta Ads, CRO, research, lead generation, attribution, and creative entities.
+
+### Changed
+
+- Standardized “primary business outcome” versus Google Ads “Primary conversion action.”
+- Defined gross sales, net revenue, gross profit, contribution profit before/after media, contribution margin, operating profit, ROAS, CAC, and realized revenue.
+- Mapped Meta strategic categories to current performance-goal, conversion-location, dataset/event, Advantage+ audience, and Custom Audience language.
+- Standardized new-customer acquisition/prospecting and retargeting/remarketing terminology.
+- Defined full-funnel, message scent, funnel stage, awareness level, audience temperature, lifecycle stage, and Voice of Customer.
+- Corrected contribution formulas to prevent discount/refund double-counting.
+
 ## [0.2.0] - 2026-08-20
 
 ### Added

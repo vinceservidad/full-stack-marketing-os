@@ -10,6 +10,9 @@
 6. Never fabricate benchmarks, results, customer language, credentials, margins, or causality.
 7. Preserve research provenance and privacy. Do not expose unnecessary personal data or report quotations without a traceable supplied source.
 8. Treat platform attribution differences separately from collection defects and business-performance changes.
+9. Use `GLOSSARY.md` as the canonical terminology contract. Define client-specific metric and lifecycle variants before comparing them.
+10. Reserve “Primary conversion action” for the Google Ads action-optimization setting; use “primary business outcome” for the main commercial result.
+11. Do not use “profit” without naming the profit level and included costs. Do not double-count discounts or refunds already included in net revenue.
 
 ## Skill design
 

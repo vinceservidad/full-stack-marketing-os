@@ -8,6 +8,8 @@ What changed, why it matters, and the single most important action.
 
 Show current, comparison, absolute delta, relative delta, target, and definition for each business outcome and driver.
 
+Name the profit level, revenue basis, attribution basis, and lead/customer stage wherever applicable.
+
 ## Drivers
 
 Separate confirmed drivers from hypotheses. Quantify contribution where possible and expose mix changes.

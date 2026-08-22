@@ -9,7 +9,7 @@ Prefer analytics by segment, recordings, surveys, usability tests, support/sales
 
 ## Method
 
-1. Define the primary conversion and qualified outcome.
+1. Define the primary business outcome and any qualified or supporting conversion. Reserve “Primary conversion action” for the Google Ads setting.
 2. Map message scent from ad or query through page and next step.
 3. Inspect motivation, relevance, clarity, trust, and friction/anxiety.
 4. Segment by source, device, intent, landing page, and new/returning user when data permits.
@@ -23,6 +23,7 @@ Prefer analytics by segment, recordings, surveys, usability tests, support/sales
 - Optimize for purchases, qualified leads, or contribution—not button clicks alone.
 - Protect refund rate, lead quality, AOV, accessibility, and support burden.
 - Do not default to redesign when a focused change can test the mechanism.
+- Message scent means continuity between the upstream promise and the destination's immediate message. Keep funnel/journey stage, awareness level, audience temperature, and lifecycle stage distinct.
 
 ## Output
 

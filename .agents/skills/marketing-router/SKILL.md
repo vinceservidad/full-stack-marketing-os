@@ -10,6 +10,7 @@ Turn the request into a bounded plan, select the minimum skills needed, and appo
 ## Route
 
 1. Identify the business outcome, business model, funnel stage, timeframe, market, channel, and requested action.
+   Keep funnel/journey stage, awareness level, audience temperature, and lifecycle stage distinct.
 2. Classify intent: `audit`, `diagnose`, `plan`, `create`, `optimize`, `report`, or `activate`.
 3. Classify risk: read-only analysis; reversible draft; external mutation; spend, tracking, or revenue-critical mutation.
 4. Select one primary skill and only supporting skills that answer a distinct dependency.
@@ -38,6 +39,8 @@ Common compositions:
 
 - Do not activate every plausible skill.
 - Do not let a channel metric define the business outcome.
+- Use “primary business outcome” for the main commercial result. Reserve “Primary conversion action” for Google Ads' action-optimization setting.
+- When terms differ by platform or client, preserve the strategic concept and state the current interface or source-system label separately.
 - If measurement integrity is unknown, treat platform conversion changes as provisional.
 - For live changes, first state the exact change, expected effect, downside, rollback condition, and approval boundary.
 - Never describe a draft recommendation as implemented.

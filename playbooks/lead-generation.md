@@ -11,3 +11,7 @@ Core equation:
 `Expected lead value = qualification rate × close rate × realized customer value`
 
 Report cost per qualified lead and customer acquisition cost when data permits, not CPL alone.
+
+Map the client's actual CRM stages before comparing results. A common reference sequence is:
+
+`inquiry -> lead -> contacted lead -> qualified lead -> sales-qualified opportunity -> appointment or proposal -> closed-won customer -> realized revenue`
