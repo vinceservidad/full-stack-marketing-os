@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+set -eu
+
+repo_dir=${1:-.}
+skill_dir="$repo_dir/work/skill-src"
+if [[ ! -d "$skill_dir" ]]; then
+  skill_dir="$repo_dir/.agents/skills"
+fi
+google_registry="$skill_dir/google-ads/references/platform-current.md"
+meta_registry="$skill_dir/meta-ads/references/platform-current.md"
+
+for required in "$repo_dir/PLATFORM-CURRENCY.md" "$google_registry" "$meta_registry"; do
+  test -f "$required" || {
+    print -u2 "Missing platform-currency file: $required"
+    exit 1
+  }
+done
+
+rg -Fq -- '**Last verified:** ' "$google_registry"
+rg -Fq -- '**Last verified:** ' "$meta_registry"
+rg -Fq -- 'references/platform-current.md' "$skill_dir/google-ads/SKILL.md"
+rg -Fq -- 'references/platform-current.md' "$skill_dir/meta-ads/SKILL.md"
+rg -Fq -- 'PLATFORM-CURRENCY.md' "$skill_dir/marketing-router/SKILL.md"
+rg -Fq -- 'Officially documented' "$repo_dir/PLATFORM-CURRENCY.md"
+rg -Fq -- 'Account-visible' "$repo_dir/PLATFORM-CURRENCY.md"
+rg -Fq -- 'Experimentally observed' "$repo_dir/PLATFORM-CURRENCY.md"
+rg -Fq -- 'v0.2.2 Platform Currency Evaluations' "$repo_dir/tests/evaluations/v0.2.2-platform-currency-cases.md"
+
+registry_urls=$(rg -o 'https://[^)]+' "$google_registry" "$meta_registry" || true)
+if print -r -- "$registry_urls" | rg -v 'https://(support\.google\.com/google-ads|www\.facebook\.com/business)' >/dev/null; then
+  print -u2 "Platform registry contains a non-first-party source"
+  exit 1
+fi
+
+print "Platform currency contract is linked and source-controlled."

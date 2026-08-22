@@ -15,6 +15,7 @@ Turn the request into a bounded plan, select the minimum skills needed, and appo
 3. Classify risk: read-only analysis; reversible draft; external mutation; spend, tracking, or revenue-critical mutation.
 4. Select one primary skill and only supporting skills that answer a distinct dependency.
 5. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
+6. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
 
 ## Skill map
 
@@ -44,6 +45,7 @@ Common compositions:
 - If measurement integrity is unknown, treat platform conversion changes as provisional.
 - For live changes, first state the exact change, expected effect, downside, rollback condition, and approval boundary.
 - Never describe a draft recommendation as implemented.
+- Never convert an undocumented platform “algorithm change” into a fact. Label official documentation, account observation, experimental evidence, inference, and unknowns separately.
 
 ## Output
 
@@ -51,4 +53,4 @@ Return: objective; routed skills and owner; evidence; missing inputs; approach; 
 
 ## QA
 
-Confirm routing is minimal, an owner is named, unknowns are visible, commercial outcome is explicit, and no external action is implied without authorization.
+Confirm routing is minimal, an owner is named, unknowns are visible, commercial outcome is explicit, current-platform claims meet the freshness gate, and no external action is implied without authorization.

@@ -2,7 +2,7 @@
 
 An evidence-led operating system for planning, auditing, diagnosing, and improving full-funnel marketing. GitHub is the versioned source of truth; Codex and ChatGPT skills are the operating interface.
 
-## Current release: v0.2.1
+## Current release: v0.2.2
 
 - A router that selects only the skills needed for a request.
 - Operating methods for Google Ads, Meta Ads, creative strategy, CRO, and performance diagnostics.
@@ -14,6 +14,7 @@ An evidence-led operating system for planning, auditing, diagnosing, and improvi
 - Evidence-led customer research and ICP/JTBD decision methods.
 - Progressive references for Google Search, Shopping, PMax, and Meta prospecting/retargeting.
 - A canonical cross-discipline terminology contract in `GLOSSARY.md`.
+- A platform-currency contract with dated Google and Meta registries, freshness gates, official-source rules, rollout checks, and regression evaluations.
 
 ## Use
 
@@ -29,6 +30,8 @@ Ask naturally or invoke a skill explicitly:
 
 The router may compose skills, but one skill owns the final answer. Audits begin read-only. Publishing, budget changes, tracking changes, and other external mutations require explicit approval.
 
+For “latest,” AI, algorithm, rollout, or current-interface questions, the channel skill checks `PLATFORM-CURRENCY.md` and its dated platform registry. A documented feature is not assumed to exist in every account, and a platform claim is not treated as proof of business impact.
+
 ## Map
 
 ```text
@@ -40,4 +43,4 @@ tests/evaluations/    Behavioral cases
 ROADMAP.md             Planned releases
 ```
 
-The system is an operational foundation, not a claim of universal expertise. Update methods from verified platform behavior and real, anonymized postmortems.
+The system is an operational foundation, not a claim of universal expertise or access to undisclosed algorithms. Update methods from current first-party documentation, account-visible behavior, and real, anonymized postmortems.

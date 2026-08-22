@@ -2,6 +2,19 @@
 
 Notable changes follow semantic versioning.
 
+## [0.2.2] - 2026-08-22
+
+### Added
+
+- Platform-currency contract defining evidence states, freshness gates, source requirements, rollout verification, and a current-platform response format.
+- Dated Google Ads and Meta Ads registries with first-party sources, stable-concept/current-label mappings, and high-change watchlists.
+- Regression evaluations and deterministic validation for stale registries, undocumented algorithm claims, account-specific availability, and vendor-claim separation.
+
+### Changed
+
+- Google Ads, Meta Ads, and the marketing router now require currency checks for current AI, automation, control, reporting, and interface claims.
+- Platform behavior is labeled as officially documented, account-visible, experimentally observed, inferred, or unknown.
+
 ## [0.2.1] - 2026-08-22
 
 ### Added

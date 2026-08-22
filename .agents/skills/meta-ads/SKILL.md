@@ -17,7 +17,7 @@ Collect campaign objective, conversion location, performance goal, dataset or Me
 4. Diagnose at the right layer: auction, objective, audience, creative, destination, offer, or measurement.
 5. Treat rising frequency plus worsening response as suggestive of fatigue, not conclusive without audience and delivery context.
 
-For substantial funnel-mode work, read [new-customer acquisition / prospecting](references/prospecting.md) or [retargeting / remarketing](references/retargeting.md) as relevant. These are strategic categories; also state the current Meta implementation such as Advantage+ audience, audience suggestions, Custom Audiences, exclusions, or other controls.
+For substantial funnel-mode work, read [new-customer acquisition / prospecting](references/prospecting.md) or [retargeting / remarketing](references/retargeting.md) as relevant. These are strategic categories; also state the current Meta implementation such as Advantage+ audience, audience suggestions, Custom Audiences, exclusions, or other controls. For current AI, automation, audience, placement, objective, or interface claims, read [Platform Registry](references/platform-current.md) and apply the root `PLATFORM-CURRENCY.md` freshness gate.
 
 ## Rules
 
@@ -26,6 +26,7 @@ For substantial funnel-mode work, read [new-customer acquisition / prospecting](
 - Do not pause an ad for low CTR when it produces profitable or high-quality outcomes.
 - Do not scale from short windows or platform ROAS alone; require stability, capacity, unit economics, and a rollback threshold.
 - Publishing, budget, bid, audience, and status changes require explicit approval.
+- Do not call performance volatility an undocumented “Meta algorithm change.” Separate officially documented capability, account-visible behavior, experimentally observed impact, inference, and unknowns. Confirm account availability before recommending a current control.
 
 ## Output
 
@@ -35,4 +36,4 @@ Build plan: objective; architecture; optimization event; audience logic; creativ
 
 ## QA
 
-Verify attribution and event definitions, distinguish link clicks from landing-page views, connect creative IDs to results, account for frequency and spend distribution, and label platform-only conclusions.
+Verify attribution and event definitions, distinguish link clicks from landing-page views, connect creative IDs to results, account for frequency and spend distribution, label platform-only conclusions, check platform-registry freshness, and confirm account-visible availability for current controls.

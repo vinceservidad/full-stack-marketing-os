@@ -13,6 +13,7 @@
 9. Use `GLOSSARY.md` as the canonical terminology contract. Define client-specific metric and lifecycle variants before comparing them.
 10. Reserve “Primary conversion action” for the Google Ads action-optimization setting; use “primary business outcome” for the main commercial result.
 11. Do not use “profit” without naming the profit level and included costs. Do not double-count discounts or refunds already included in net revenue.
+12. Apply `PLATFORM-CURRENCY.md` before current Google or Meta AI, automation, control, reporting, rollout, or interface claims. Do not claim undocumented algorithm changes; distinguish official documentation, account visibility, experiments, inference, and unknowns.
 
 ## Skill design
 
