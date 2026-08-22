@@ -17,18 +17,18 @@ for required in "$repo_dir/PLATFORM-CURRENCY.md" "$google_registry" "$meta_regis
   }
 done
 
-rg -Fq -- '**Last verified:** ' "$google_registry"
-rg -Fq -- '**Last verified:** ' "$meta_registry"
-rg -Fq -- 'references/platform-current.md' "$skill_dir/google-ads/SKILL.md"
-rg -Fq -- 'references/platform-current.md' "$skill_dir/meta-ads/SKILL.md"
-rg -Fq -- 'PLATFORM-CURRENCY.md' "$skill_dir/marketing-router/SKILL.md"
-rg -Fq -- 'Officially documented' "$repo_dir/PLATFORM-CURRENCY.md"
-rg -Fq -- 'Account-visible' "$repo_dir/PLATFORM-CURRENCY.md"
-rg -Fq -- 'Experimentally observed' "$repo_dir/PLATFORM-CURRENCY.md"
-rg -Fq -- 'v0.2.2 Platform Currency Evaluations' "$repo_dir/tests/evaluations/v0.2.2-platform-currency-cases.md"
+grep -Fq -- '**Last verified:** ' "$google_registry"
+grep -Fq -- '**Last verified:** ' "$meta_registry"
+grep -Fq -- 'references/platform-current.md' "$skill_dir/google-ads/SKILL.md"
+grep -Fq -- 'references/platform-current.md' "$skill_dir/meta-ads/SKILL.md"
+grep -Fq -- 'PLATFORM-CURRENCY.md' "$skill_dir/marketing-router/SKILL.md"
+grep -Fq -- 'Officially documented' "$repo_dir/PLATFORM-CURRENCY.md"
+grep -Fq -- 'Account-visible' "$repo_dir/PLATFORM-CURRENCY.md"
+grep -Fq -- 'Experimentally observed' "$repo_dir/PLATFORM-CURRENCY.md"
+grep -Fq -- 'v0.2.2 Platform Currency Evaluations' "$repo_dir/tests/evaluations/v0.2.2-platform-currency-cases.md"
 
-registry_urls=$(rg -o 'https://[^)]+' "$google_registry" "$meta_registry" || true)
-if printf '%s\n' "$registry_urls" | rg -v 'https://(support\.google\.com/google-ads|www\.facebook\.com/business)' >/dev/null; then
+registry_urls=$(grep -Eho 'https://[^)]+' "$google_registry" "$meta_registry" || true)
+if printf '%s\n' "$registry_urls" | grep -Ev 'https://(support\.google\.com/google-ads|www\.facebook\.com/business)' >/dev/null; then
   printf '%s\n' "Platform registry contains a non-first-party source" >&2
   exit 1
 fi
