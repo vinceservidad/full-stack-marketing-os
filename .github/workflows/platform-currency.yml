@@ -1,0 +1,26 @@
+name: Platform currency
+
+on:
+  schedule:
+    - cron: "17 1 * * 1"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "PLATFORM-CURRENCY.md"
+      - ".agents/skills/google-ads/**"
+      - ".agents/skills/meta-ads/**"
+      - "scripts/check-platform-freshness.py"
+      - "scripts/validate-platform-currency.sh"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate currency contract
+        run: scripts/validate-platform-currency.sh .
+      - name: Enforce 30-day registry freshness
+        run: python3 scripts/check-platform-freshness.py .

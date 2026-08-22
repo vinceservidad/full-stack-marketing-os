@@ -15,6 +15,7 @@ An evidence-led operating system for planning, auditing, diagnosing, and improvi
 - Progressive references for Google Search, Shopping, PMax, and Meta prospecting/retargeting.
 - A canonical cross-discipline terminology contract in `GLOSSARY.md`.
 - A platform-currency contract with dated Google and Meta registries, freshness gates, official-source rules, rollout checks, and regression evaluations.
+- A weekly GitHub currency check that fails when either high-change platform registry is more than 30 days old.
 
 ## Use
 

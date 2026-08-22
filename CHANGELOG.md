@@ -9,6 +9,7 @@ Notable changes follow semantic versioning.
 - Platform-currency contract defining evidence states, freshness gates, source requirements, rollout verification, and a current-platform response format.
 - Dated Google Ads and Meta Ads registries with first-party sources, stable-concept/current-label mappings, and high-change watchlists.
 - Regression evaluations and deterministic validation for stale registries, undocumented algorithm claims, account-specific availability, and vendor-claim separation.
+- Weekly GitHub Actions freshness enforcement for the Google and Meta high-change registries.
 
 ### Changed
 
