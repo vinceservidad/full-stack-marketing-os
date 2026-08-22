@@ -1,6 +1,6 @@
-# Meta Retargeting
+# Meta Retargeting / Remarketing
 
-Use for warm-audience, remarketing, or re-engagement analysis.
+Use for analysis of eligible people with a qualifying prior engagement, visit, customer, or behavioral signal. Name the exact Custom Audience or other source, membership window, and exclusions; “retargeting” is a strategic label, not a complete audience definition.
 
 ## Inspect
 

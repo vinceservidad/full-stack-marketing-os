@@ -25,6 +25,7 @@ Read [references/source-grading.md](references/source-grading.md) before combini
 ## Rules
 
 - Never invent quotes, reviews, prevalence, or customer motivations.
+- Use “Voice of Customer” only for traceable supplied customer language. Label model-created wording as synthesis, paraphrase, inference, or messaging hypothesis.
 - Frequency is not importance; weight behavioral proximity, consequence, specificity, and segment fit.
 - Do not treat leading survey answers as spontaneous customer language.
 - Preserve negative and contradictory evidence instead of smoothing it into a persona.

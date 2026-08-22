@@ -5,7 +5,7 @@ Use for PMax diagnosis or architecture.
 ## Inspect
 
 - Conversion-goal and value integrity before automated bidding conclusions
-- Feed-only versus asset-supported scope, asset groups, listing groups, search themes, audience signals, URL expansion, and brand controls
+- Shopping-only (commonly “feed-only”) versus asset-supported scope, asset groups, listing groups, search themes, audience signals, Final URL expansion within asset optimization, text customization, and brand controls
 - Product/item results, asset evidence, placement or category evidence when available, and overlap with Search/Shopping
 - Budget sufficiency, learning maturity, seasonality, promotions, inventory, and value rules
 

@@ -1,11 +1,11 @@
-# Meta Prospecting
+# Meta New-Customer Acquisition / Prospecting
 
-Use for new-customer acquisition planning or diagnosis.
+Use for new-customer acquisition planning or diagnosis. “Prospecting” is the practitioner strategy label, not necessarily the Meta interface label.
 
 ## Inspect
 
 - Optimization event quality, attribution, exclusions, and new-customer definition
-- Audience breadth, geographic and age constraints, overlap, spend concentration, and delivery stability
+- Audience breadth, Advantage+ audience or other current audience mode, strict geographic/age/language constraints, audience suggestions, Custom Audience exclusions, overlap, spend concentration, and delivery stability
 - Creative angle and format coverage by audience situation and awareness
 - Landing-page continuity, offer, unit economics, and downstream customer quality
 

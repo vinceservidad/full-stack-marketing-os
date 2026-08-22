@@ -7,11 +7,11 @@ description: Audit, diagnose, or plan Google Ads Search, Shopping, and Performan
 
 ## Context
 
-Collect goal, account and market scope, date range and comparison, budget, bidding strategy, campaign type, conversion actions, revenue or qualified-lead definition, and available exports. For ecommerce profitability, request price, COGS, shipping, fees, discounts, refunds, and feed status.
+Collect business goal, account and market scope, date range and comparison, budget, bidding strategy, campaign type, conversion goals, conversion actions, action-optimization status, revenue or qualified-lead definition, and available exports. For ecommerce profitability, request price, COGS, variable fulfillment, payment fees, discounts, refunds, revenue basis, and feed status.
 
 ## Method
 
-1. Verify primary conversion actions, counting, values, attribution windows, consent gaps, and agreement with the business source of truth.
+1. Verify conversion goals, their included conversion actions, each action's Primary/Secondary status, campaign goal selection, counting, values, attribution windows, consent gaps, and agreement with the business source of truth. A Primary action influences bidding only when the campaign uses its containing goal.
 2. Decompose demand and eligibility → auctions and spend → clicks → site behavior → conversions → revenue, margin, or lead quality.
 3. Inspect the correct unit:
    - Search: queries, match type, intent, ad relevance, landing alignment, geography, device, and schedule.
@@ -28,6 +28,7 @@ For substantial mode-specific work, read only the relevant reference: [Search](r
 - Avoid structural rebuilds when the issue is isolated to measurement, feed eligibility, landing experience, or a small set of queries/items.
 - Do not infer unseen PMax channel allocation.
 - Use profit or qualified-lead economics when available. Label ROAS/CPA conclusions provisional otherwise.
+- Use “conversion goal” for the Google Ads grouping and “conversion action” for the measured action. Do not call the main commercial result a Primary conversion action; call it the primary business outcome.
 
 ## Output
 

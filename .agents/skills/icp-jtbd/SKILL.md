@@ -27,6 +27,7 @@ Use customer and pipeline outcomes, revenue and margin, retention/refunds, sales
 - Revenue alone does not define an ICP; include margin, retention, cost-to-serve, close probability, and capacity where available.
 - Distinguish user, buyer, approver, and blocker in multi-stakeholder purchases.
 - Treat exclusions as strategic focus, not claims about people.
+- Prefer “priority customer segment” where consumer context makes account-oriented ICP language unnatural. Keep ICP, persona, buying committee, buying situation, and JTBD distinct.
 
 ## Output
 

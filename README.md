@@ -2,7 +2,7 @@
 
 An evidence-led operating system for planning, auditing, diagnosing, and improving full-funnel marketing. GitHub is the versioned source of truth; Codex and ChatGPT skills are the operating interface.
 
-## Current release: v0.2
+## Current release: v0.2.1
 
 - A router that selects only the skills needed for a request.
 - Operating methods for Google Ads, Meta Ads, creative strategy, CRO, and performance diagnostics.
@@ -13,6 +13,7 @@ An evidence-led operating system for planning, auditing, diagnosing, and improvi
 - Measurement architecture, event-integrity, and attribution-reconciliation methods.
 - Evidence-led customer research and ICP/JTBD decision methods.
 - Progressive references for Google Search, Shopping, PMax, and Meta prospecting/retargeting.
+- A canonical cross-discipline terminology contract in `GLOSSARY.md`.
 
 ## Use
 
