@@ -1,5 +1,13 @@
 # Performance Report
 
+## Knowledge metadata
+
+- Primary type: template
+- Secondary type: model / decision artifact
+- Decision: what changed, why it matters, and what action is justified
+- Evidence status: reusable structure; source-of-truth metrics are required
+- Authorization: report draft until verified
+
 ## Executive decision
 
 What changed, why it matters, and the single most important action.

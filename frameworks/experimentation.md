@@ -1,5 +1,13 @@
 # Experimentation Framework
 
+## Knowledge metadata
+
+- Primary type: framework
+- Secondary type: methodology / process
+- Decision: whether a test can produce a valid decision
+- Evidence status: stable operating method
+- Freshness: stable; confirm platform-specific implementation separately
+
 A valid experiment connects one decision to one falsifiable hypothesis.
 
 ## Minimum specification

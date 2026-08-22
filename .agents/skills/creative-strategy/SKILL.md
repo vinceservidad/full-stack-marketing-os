@@ -5,6 +5,8 @@ description: Turn verified customer, product, offer, and performance evidence in
 
 # Creative Strategy
 
+Classify each deliverable with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md): strategy, framework/model, methodology/process, pattern/hypothesis, tactic/technique, template, best practice, or heuristic. Name the primary type and do not present a pattern as causality.
+
 ## Inputs
 
 Use product truth, target segment and situation, customer language, pains and desired outcomes, awareness stage, objections, differentiators, offer, proof, brand constraints, placements, and prior results. Mark missing research instead of fabricating voice-of-customer evidence.

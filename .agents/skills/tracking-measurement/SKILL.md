@@ -5,6 +5,8 @@ description: Audit, design, or diagnose marketing conversion measurement, attrib
 
 # Tracking and Measurement
 
+Classify architecture maps, models, methodologies, processes, checklists, and recommendations with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Keep a collection defect, attribution difference, and business-performance change as distinct evidence categories.
+
 Establish whether the available data can support the requested decision before optimizing against it.
 
 ## Scope

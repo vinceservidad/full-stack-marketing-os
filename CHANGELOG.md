@@ -2,6 +2,28 @@
 
 Notable changes follow semantic versioning.
 
+## [0.2.3] - 2026-08-23
+
+### Added
+
+- Canonical `KNOWLEDGE-TAXONOMY.md` distinguishing principles, definitions, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
+- Reusable knowledge-artifact metadata template covering decision, scope, owner, evidence, confidence, freshness, dependencies, authorization, and rollback/stop conditions.
+- Glossary definitions, operating rules, and regression coverage for knowledge-layer boundaries.
+
+## [0.2.2] - 2026-08-22
+
+### Added
+
+- Platform-currency contract defining evidence states, freshness gates, source requirements, rollout verification, and a current-platform response format.
+- Dated Google Ads and Meta Ads registries with first-party sources, stable-concept/current-label mappings, and high-change watchlists.
+- Regression evaluations and deterministic validation for stale registries, undocumented algorithm claims, account-specific availability, and vendor-claim separation.
+- Weekly GitHub Actions freshness enforcement for the Google and Meta high-change registries.
+
+### Changed
+
+- Google Ads, Meta Ads, and the marketing router now require currency checks for current AI, automation, control, reporting, and interface claims.
+- Platform behavior is labeled as officially documented, account-visible, experimentally observed, inferred, or unknown.
+
 ## [0.2.1] - 2026-08-22
 
 ### Added

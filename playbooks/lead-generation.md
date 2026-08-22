@@ -1,5 +1,13 @@
 # Lead Generation Playbook
 
+## Knowledge metadata
+
+- Primary type: playbook
+- Secondary type: process / model
+- Decision: how to optimize for qualified pipeline and realized value
+- Evidence status: repeatable operating method; CRM definitions are client-specific
+- Freshness: stable; lifecycle and platform labels require explicit mapping
+
 1. Define a qualified lead, disqualifiers, sales capacity, response-time expectation, close stages, and realized value.
 2. Join ad and form data to CRM outcomes where possible.
 3. Diagnose volume, contact rate, qualification, appointment, show, close, and revenue separately.

@@ -5,6 +5,8 @@ description: Audit, diagnose, or plan Google Ads Search, Shopping, and Performan
 
 # Google Ads
 
+Classify each audit, model, methodology, process, tactic, technique, best practice, or heuristic with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Name the primary type and keep platform evidence separate from recommendations.
+
 ## Context
 
 Collect business goal, account and market scope, date range and comparison, budget, bidding strategy, campaign type, conversion goals, conversion actions, action-optimization status, revenue or qualified-lead definition, and available exports. For ecommerce profitability, request price, COGS, variable fulfillment, payment fees, discounts, refunds, revenue basis, and feed status.
@@ -19,7 +21,7 @@ Collect business goal, account and market scope, date range and comparison, budg
 4. Compare like-for-like periods and separate volume, efficiency, mix, and measurement effects.
 5. Rank actions by expected business impact, confidence, reversibility, and learning value.
 
-For substantial mode-specific work, read only the relevant reference: [Search](references/search.md), [Shopping](references/shopping.md), or [Performance Max](references/pmax.md).
+For substantial mode-specific work, read only the relevant reference: [Search](references/search.md), [Shopping](references/shopping.md), or [Performance Max](references/pmax.md). For current AI, automation, control, reporting, or interface claims, read [Platform Registry](references/platform-current.md) and apply the root `PLATFORM-CURRENCY.md` freshness gate.
 
 ## Rules
 
@@ -29,6 +31,7 @@ For substantial mode-specific work, read only the relevant reference: [Search](r
 - Do not infer unseen PMax channel allocation.
 - Use profit or qualified-lead economics when available. Label ROAS/CPA conclusions provisional otherwise.
 - Use “conversion goal” for the Google Ads grouping and “conversion action” for the measured action. Do not call the main commercial result a Primary conversion action; call it the primary business outcome.
+- Do not claim an undocumented “Google algorithm change.” Separate officially documented capability, account-visible behavior, experimentally observed impact, inference, and unknowns. Confirm account availability before recommending a current control.
 
 ## Output
 
@@ -38,4 +41,4 @@ Change plan: exact entity; current and proposed state; rationale; risk; rollback
 
 ## QA
 
-Check date and attribution consistency, conversion scope, sample size, query/item evidence, margin or lead-quality caveats, and preservation of valuable coverage.
+Check date and attribution consistency, conversion scope, sample size, query/item evidence, margin or lead-quality caveats, preservation of valuable coverage, platform-registry freshness, and account-visible availability for current controls.
