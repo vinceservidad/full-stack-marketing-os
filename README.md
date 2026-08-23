@@ -65,6 +65,20 @@ Built by Vince Servidad, a Paid Acquisition Specialist focused on Google Ads, Me
 
 The goal of this project is to organize practical marketing knowledge into reusable systems that help marketers and AI agents make better decisions.
 
+## Why Work With Me
+
+I focus on more than launching campaigns.
+
+I combine paid acquisition, conversion optimization, creative strategy, and AI marketing systems to build workflows that are easier to test, improve, and scale.
+
+My approach:
+
+- Data-driven paid acquisition with Google Ads and Meta Ads
+- Conversion-focused thinking beyond clicks and traffic
+- Creative testing based on customer psychology and performance data
+- Shopify and ecommerce growth optimization
+- Building repeatable marketing systems with AI
+
 ## Example usage
 
 ```text
