@@ -1,5 +1,9 @@
 # Full-Stack Marketing OS
 
+![GitHub](https://img.shields.io/badge/status-public-brightgreen)
+![Version](https://img.shields.io/badge/version-v1.0.0-blue)
+![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
+
 An evidence-led AI marketing operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
 
 Built to help AI agents work with structured marketing knowledge instead of isolated prompts.
