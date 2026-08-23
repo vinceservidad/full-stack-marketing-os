@@ -2,6 +2,8 @@
 
 An evidence-led AI marketing operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
 
+Built to help AI agents work with structured marketing knowledge instead of isolated prompts.
+
 GitHub is the versioned source of truth. AI agents use the system through structured skills, frameworks, playbooks, templates, and evaluations.
 
 ## Why this exists
@@ -11,7 +13,7 @@ Most AI marketing workflows start with prompts. This project takes a different a
 ```text
 Marketing Request
         ↓
-Router
+Marketing Router
         ↓
 Specialist Agent
         ↓
@@ -28,21 +30,18 @@ Evaluation
 Final Deliverable
 ```
 
-The goal is to make AI marketing work more consistent, practical, and evidence-led.
+The goal is to make AI-assisted marketing work more consistent, practical, and evidence-led.
 
-## Current release: v0.2.3
+## What it covers
 
-Included systems:
-
-- Marketing routing and specialist agents
-- Google Ads and Meta Ads workflows
-- Creative strategy systems
-- CRO and ecommerce optimization methods
-- SEO and content frameworks
+- Google Ads strategy and optimization workflows
+- Meta Ads campaign and creative systems
+- Creative strategy and testing frameworks
+- Shopify CRO and ecommerce optimization
+- SEO and content systems
 - Reporting and measurement workflows
-- Customer research and ICP/JTBD methods
-- Audit, experiment, and reporting templates
-- Evaluation rules for quality, evidence, and decision-making
+- Customer research and positioning methods
+- Audits, experiments, and reusable templates
 
 ## Structure
 
