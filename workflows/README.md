@@ -22,6 +22,24 @@ Reusable decision workflows for common marketing tasks.
 6. Measure impact
 7. Document learning
 
-## Principle
+## Available Workflows
 
-Do not optimize isolated metrics. Optimize the complete system: business goal, customer journey, traffic quality, conversion experience, and profitability.
+### Campaign Systems
+- Campaign launch
+- Creative testing
+
+### Paid Acquisition
+- Google Ads optimization
+- Meta Ads optimization
+
+### Conversion
+- CRO improvement
+
+### Measurement
+- Reporting analysis
+
+## Decision Principle
+
+Do not optimize isolated metrics. Optimize the complete system:
+
+Business goal → Customer journey → Traffic quality → Conversion experience → Profitability
