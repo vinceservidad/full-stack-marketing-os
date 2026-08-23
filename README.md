@@ -59,6 +59,12 @@ examples/             Public demonstrations
 tests/evaluations/    Quality checks
 ```
 
+## Creator
+
+Built by Vince Servidad, a Paid Acquisition Specialist focused on Google Ads, Meta Ads, Shopify growth, CRO, and AI marketing systems.
+
+The goal of this project is to organize practical marketing knowledge into reusable systems that help marketers and AI agents make better decisions.
+
 ## Example usage
 
 ```text
