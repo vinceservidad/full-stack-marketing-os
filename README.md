@@ -8,20 +8,16 @@ An evidence-led AI marketing operating system for planning, auditing, diagnosing
 
 Built to help AI agents work with structured marketing knowledge instead of isolated prompts.
 
-GitHub is the versioned source of truth. AI agents use the system through structured skills, frameworks, playbooks, templates, and evaluations.
+GitHub is the versioned source of truth. AI agents use the system through structured skills, frameworks, playbooks, templates, workflows, and evaluations.
 
-## Why this exists
-
-Most AI marketing workflows start with prompts. This project takes a different approach:
+## System Map
 
 ```text
 Marketing Request
         ↓
 Marketing Router
         ↓
-Specialist Agent
-        ↓
-Skill
+Specialist Skill
         ↓
 Framework
         ↓
@@ -29,12 +25,12 @@ Playbook
         ↓
 Template
         ↓
+Workflow
+        ↓
 Evaluation
         ↓
 Final Deliverable
 ```
-
-The goal is to make AI-assisted marketing work more consistent, practical, and evidence-led.
 
 ## What it covers
 
@@ -47,23 +43,23 @@ The goal is to make AI-assisted marketing work more consistent, practical, and e
 - Customer research and positioning methods
 - Audits, experiments, and reusable templates
 
-## Structure
+## Repository Structure
 
 ```text
-.agents/skills/       AI agent instructions
-frameworks/           Decision models and marketing methods
-playbooks/            Business-model workflows
-templates/            Reusable deliverable formats
-gpt-knowledge/        Custom GPT knowledge layer
-examples/             Public demonstrations
-tests/evaluations/    Quality checks
+skills/                Marketing capabilities
+frameworks/            Decision models and methods
+playbooks/             Business workflows
+templates/             Reusable deliverable formats
+workflows/             Execution processes
+evaluations/           Quality checks
+examples/              Practical demonstrations
 ```
 
 ## Creator
 
 Built by Vince Servidad, a Paid Acquisition Specialist focused on Google Ads, Meta Ads, Shopify growth, CRO, and AI marketing systems.
 
-The goal of this project is to organize practical marketing knowledge into reusable systems that help marketers and AI agents make better decisions.
+The goal is to organize practical marketing knowledge into reusable systems that help marketers and AI agents make better decisions.
 
 ## Why Work With Me
 
@@ -79,19 +75,19 @@ My approach:
 - Shopify and ecommerce growth optimization
 - Building repeatable marketing systems with AI
 
-## Example usage
+## Example Usage
 
 ```text
-Use $google-ads to audit this search terms export.
+Use Google Ads skill to audit campaign performance.
 
-Use $creative-strategy to build a creative testing matrix.
+Use Creative Strategy workflow to build testing ideas.
 
-Use $cro to audit this Shopify product page.
+Use CRO workflow to review a Shopify product page.
 
-Use $marketing-router to choose the right workflow.
+Use reporting workflow to analyze results and next actions.
 ```
 
-## Design principles
+## Design Principles
 
 - Evidence before assumptions
 - Strategy before tactics
@@ -99,12 +95,9 @@ Use $marketing-router to choose the right workflow.
 - Frameworks before random execution
 - Human judgment before automation
 
-The system is an operational foundation, not a claim of universal expertise or access to undisclosed platform algorithms.
-
 ## Roadmap
 
-- v1.0.0 public release
-- More specialist agents
+- More specialist skills
 - More industry playbooks
 - More evaluation scenarios
 - Additional AI agent integrations
