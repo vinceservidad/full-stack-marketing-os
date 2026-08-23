@@ -1,24 +1,52 @@
 # Creative Brief
 
-## Knowledge metadata
+Reusable framework for turning customer research into testable creative ideas.
 
-- Primary type: template
-- Secondary type: strategy / hypothesis artifact
-- Decision: which creative idea should be produced and tested
-- Evidence status: reusable structure; customer/product/offer evidence required
-- Authorization: draft until approved
+## Purpose
+
+Define what creative should communicate, why it should work, and how success will be measured.
+
+## Business Context
 
 - Business objective:
-- Audience situation and awareness:
+- Offer/product:
+- Primary conversion goal:
+
+## Audience
+
+- Target audience:
+- Awareness stage:
+- Current problem:
+- Desired outcome:
+- Main objections:
+
+## Strategy
+
 - Verified insight:
-- Angle and hypothesis:
-- Promise:
+- Creative angle:
+- Hypothesis:
+- Core promise:
 - Reason to believe:
-- Objection addressed:
-- Format and placement:
-- Opening, narrative beats, proof, CTA:
-- Mandatory brand/product elements:
-- Claim restrictions:
-- Variants and controlled variable:
-- Success signal and business guardrails:
-- Draft/approval status:
+- Proof elements:
+
+## Execution
+
+- Format:
+- Platform/placement:
+- Hook/opening:
+- Narrative structure:
+- CTA:
+- Required brand/product elements:
+
+## Testing Plan
+
+- Variants:
+- Controlled variable:
+- Success metrics:
+- Business guardrails:
+
+## Review
+
+- Draft status:
+- Approval status:
+- Learnings after launch:
