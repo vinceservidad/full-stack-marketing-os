@@ -234,17 +234,21 @@ else:
 
 installed = pathlib.Path.home() / ".codex" / "skills"
 if installed.is_dir():
+    # scripts/install-skills.sh rewrites root-contract link depth one level
+    # shallower, so installed copies differ from canonical by design. Normalize
+    # relative-link depth before comparing content.
+    def normalized(text):
+        return re.sub(r"\((?:\.\./)+", "(REL/", text)
+
     for name, skill_md in sorted(names.items()):
         target = installed / name / "SKILL.md"
         if not target.is_file():
             warnings.append(f"Skill '{name}' is not installed in the local runtime.")
-        elif target.read_text(encoding="utf-8") != skill_md.read_text(encoding="utf-8"):
+        elif normalized(target.read_text(encoding="utf-8")) != normalized(skill_md.read_text(encoding="utf-8")):
             warnings.append(f"Installed runtime copy of '{name}' has drifted from canonical.")
 
-    # Root contracts are linked as ../../../FILE.md. That depth resolves to the
-    # repository root from .agents/skills/<name>/, but to the parent of the
-    # install root from ~/.codex/skills/<name>/. Report both the files that are
-    # absent and the links that do not resolve where they are installed.
+    # Root contracts must exist at the install root and resolve from the
+    # installed files' own rewritten links.
     contracts = set()
     for skill_md in names.values():
         for target in LINK.findall(skill_md.read_text(encoding="utf-8")):
@@ -255,17 +259,20 @@ if installed.is_dir():
     if absent:
         warnings.append(
             "Root contracts not present at the install root: " + ", ".join(absent)
+            + " (run scripts/install-skills.sh)"
         )
 
-    unresolved = sorted(
-        c for c in contracts
-        if not (installed / "any-skill" / c.join(["../../../", ""])).exists()
-        and (installed.parent / c).is_file()
-    )
+    unresolved = []
+    for md in sorted(installed.rglob("*.md")):
+        for target in LINK.findall(md.read_text(encoding="utf-8")):
+            if target.startswith("../") and not (md.parent / target).exists():
+                unresolved.append(f"{md.relative_to(installed)} -> {target}")
     if unresolved:
         warnings.append(
-            "Root contracts present at the install root but unreachable by their "
-            "own link depth from an installed skill: " + ", ".join(unresolved)
+            "Unresolved links in the installed runtime: "
+            + "; ".join(unresolved[:5])
+            + (" ..." if len(unresolved) > 5 else "")
+            + " (run scripts/install-skills.sh)"
         )
 
 # --- Report --------------------------------------------------------------------

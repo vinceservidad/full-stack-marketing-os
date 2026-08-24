@@ -2,6 +2,29 @@
 
 Notable changes follow semantic versioning.
 
+## [1.4.0] - 2026-08-24
+
+Adds measurement validity and incrementality method selection under `$tracking-measurement`, and closes the v1.3.0 runtime path-depth issue.
+
+### Added
+
+- Seven references under `$tracking-measurement`: causal evidence ladder, incrementality method selector, holdout experiments, geo and quasi-experimental designs, platform lift studies, Marketing Mix Modeling, and triangulation.
+- A six-level causal ladder — C0 platform attribution through C5 replicated randomized evidence — where a result's level is set by its weakest structural element and platform attribution never exceeds C0.
+- Method selection driven by randomization unit, independence, power, contamination, lag, and platform availability, with explicit disqualifiers that stop a test rather than degrade it.
+- `scripts/install-skills.sh`, which installs canonical skills to the local runtime and rewrites root-contract link depth so the contracts resolve where they are installed. It verifies every rewritten link and fails on an unresolved one.
+- Twenty-eight evaluations and the required review record.
+
+### Changed
+
+- `$tracking-measurement` now separates three questions — is the data collected correctly, do sources agree, did the activity cause the result — and adds a causal output contract covering required level, achievable level, method, power, contamination, holdback cost, and estimate scope.
+- The `optimization-scaling` proof standard links S4 to the causal ladder: a controlled comparison must reach C3 or above, and platform-attributed performance cannot raise a claim above S3.
+- Router routes incrementality testing and causal evidence grading to `$tracking-measurement`, which owns method selection while `$optimization-scaling` consumes the result.
+- Architecture validator normalizes link depth before comparing installed copies to canonical, and verifies installed links resolve.
+
+### Fixed
+
+- Root contracts were linked at a depth that resolved inside the repository but not from `~/.codex/skills/<name>/`. The install script rewrites the depth; all installed links now resolve.
+
 ## [1.3.0] - 2026-08-24
 
 Adds the intake and evidence layer. Built as a skill-owned reference set under the ownership model from 1.2.0 rather than as floating templates.
