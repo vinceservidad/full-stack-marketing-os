@@ -34,6 +34,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | YouTube video advertising: format selection, targeting, view-through measurement fit | `$youtube-ads` |
 | TikTok advertising: native creative fit, Spark Ads vs in-feed, targeting breadth, creative-fatigue cadence | `$tiktok-ads` |
 | LinkedIn advertising: account/firmographic targeting, format selection, Lead Gen Forms, B2B cost-structure economics | `$linkedin-ads` |
+| Influencer and creator marketing: audience authenticity/fit vetting, compensation structure, usage rights, disclosure compliance | `$influencer-marketing` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -73,7 +74,6 @@ A bounded single-channel or single-decision report stays owned by the skill that
 No governed specialist. Do not substitute an adjacent channel skill.
 
 - Affiliate and partnership marketing
-- Influencer and creator marketing
 - Organic social
 - Programmatic advertising
 - Public relations

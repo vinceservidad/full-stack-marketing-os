@@ -2,6 +2,21 @@
 
 Notable changes follow semantic versioning.
 
+## [1.14.0] - 2026-08-25
+
+Adds `$influencer-marketing`, twentieth governed skill — fifth channel-expansion release, next in the stated priority order after LinkedIn.
+
+### Added
+
+- `$influencer-marketing` covers creator vetting, compensation structure, usage rights, and disclosure compliance. Unlike every paid-media skill in this system, this is a relationship and contract-based channel with no auction and no platform attribution to lean on — the central risks are audience authenticity, legal compliance, and unclear usage rights rather than delivery mechanics. Explicitly not a substitute for legal review of an actual contract.
+- Two references: audience authenticity and fit (follower count is named as the weakest selection signal; authenticity assessed from several signals together — engagement-to-follower ratio against category norms, growth pattern, comment quality — none individually conclusive) and compensation structure (flat fee, commission/affiliate, gifting, and hybrid each trade cost predictability against creator incentive differently; gifting is not free and usage rights are not assumed included in a base fee).
+- Sixteen evaluations and the required review record.
+
+### Changed
+
+- Router routes creator vetting, compensation, usage rights, and disclosure to `$influencer-marketing`; composition rule states the split with `$icp-jtbd` (buyer-fit evidence) and `$tracking-measurement` (performance-claim grading).
+- Capability registry: influencer and creator marketing moves from unsupported to governed.
+
 ## [1.13.0] - 2026-08-25
 
 Adds `$linkedin-ads`, nineteenth governed skill — fourth channel-expansion release, next in the stated priority order after TikTok.

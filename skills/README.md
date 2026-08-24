@@ -37,6 +37,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`youtube-ads`](../.agents/skills/youtube-ads/) | YouTube video ad format, targeting, view-through measurement fit |
 | [`tiktok-ads`](../.agents/skills/tiktok-ads/) | TikTok native creative fit, Spark Ads vs in-feed, creative-fatigue cadence |
 | [`linkedin-ads`](../.agents/skills/linkedin-ads/) | LinkedIn account/firmographic targeting, format selection, Lead Gen Forms, B2B economics |
+| [`influencer-marketing`](../.agents/skills/influencer-marketing/) | Influencer/creator vetting, compensation structure, usage rights, disclosure compliance |
 
 ## Skill structure
 
