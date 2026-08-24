@@ -96,3 +96,7 @@ Three audit templates (`audit.md`, `audit-template.md`, `marketing-audit.md`) an
 ## Migration rule
 
 When migration debt is cleared, the artifact must either become a `references/` file under its owning skill, or remain a root artifact explicitly linked from that skill's `SKILL.md` and recorded here as `owned`. An artifact that cannot be assigned an owner is archived.
+
+## v1.5.0 addition
+
+`$retention-economics` (new skill, four references) and `optimization-scaling/references/budget-and-outcome-pacing.md` (new reference under the existing owner) are both owned at creation and require no entry here — the ownership rule applies to root `frameworks/`, `playbooks/`, `templates/`, and `workflows/`, not to skill-internal references, which are owned by construction.

@@ -2,6 +2,22 @@
 
 Notable changes follow semantic versioning.
 
+## [1.5.0] - 2026-08-25
+
+Adds customer economics and pacing (Priority 4) — the last major content gap identified in the v1.1.0 audit. Splits across a new skill and an existing owner, per the ownership model.
+
+### Added
+
+- `$retention-economics`, twelfth governed skill, with four references: customer lifetime value (historical versus predictive, profit-level variants), payback period (revenue versus contribution), cohort and retention analysis (curve construction, logo versus revenue churn), and lead-to-revenue cohorts (open-share discipline for long sales cycles).
+- `budget-and-outcome-pacing.md` under `$optimization-scaling` — spend and outcome variance against an already-approved plan, with cause attributed before any correction, and a stated boundary distinguishing a pacing correction from a scaling decision.
+- Twenty evaluations and the required review record.
+
+### Changed
+
+- `optimization-scaling` rules now state that a pacing correction inside an approved plan is not a scaling decision, and that predictive lifetime value informs but does not by itself satisfy the marginal-evidence gate.
+- Router routes lifetime value, payback, cohort, churn, and lead-maturation requests to `$retention-economics`; pacing within an approved plan to `$optimization-scaling`.
+- Capability registry: retention economics moves from planned to governed; twelve governed skills.
+
 ## [1.4.0] - 2026-08-24
 
 Adds measurement validity and incrementality method selection under `$tracking-measurement`, and closes the v1.3.0 runtime path-depth issue.

@@ -23,7 +23,7 @@ Collect the business model and outcome; account/channel scope; dates and compari
 6. Use [controlled steps](references/controlled-steps.md) to test, wait for maturity, evaluate marginal business outcome, and decide `increase`, `hold`, `continue evidence`, `apply`, `rollback`, `switch mode`, `de-scale`, or `inconclusive`.
 7. Verify the result against the business source of truth and record scope, proof level, exceptions, and replication status.
 
-Read only the relevant conditional reference: [portfolio allocation](references/portfolio-allocation.md), [creative capacity](references/creative-capacity.md), [Google Ads](references/google-scaling.md), [Meta Ads](references/meta-scaling.md), [business-model overlays](references/business-overlays.md), or [guardrails and recovery](references/guardrails-and-recovery.md). For current platform controls, apply `PLATFORM-CURRENCY.md` and confirm account visibility.
+Read only the relevant conditional reference: [portfolio allocation](references/portfolio-allocation.md), [creative capacity](references/creative-capacity.md), [Google Ads](references/google-scaling.md), [Meta Ads](references/meta-scaling.md), [business-model overlays](references/business-overlays.md), [guardrails and recovery](references/guardrails-and-recovery.md), or [budget and outcome pacing](references/budget-and-outcome-pacing.md) when spend or outcome is off an already-approved plan within the current period. For current platform controls, apply `PLATFORM-CURRENCY.md` and confirm account visibility.
 
 ## Decision rules
 
@@ -36,6 +36,8 @@ Read only the relevant conditional reference: [portfolio allocation](references/
 - Forecasts and platform recommendations are inputs, not guarantees or authorization.
 - A tactic is “proven” only for its stated account, scope, period, and evidence level.
 - All live budget, bid, target, audience, campaign, conversion, coverage, or status changes require explicit approval.
+- A pacing correction inside an already-approved plan is not a scaling decision; a correction that would exceed the approved plan is, and requires the full gate set.
+- Predictive lifetime value or payback from `$retention-economics` may inform economics but does not by itself satisfy the marginal-evidence gate; it still requires the proof standard.
 
 ## Output
 

@@ -34,7 +34,7 @@ Final Deliverable
 
 ## What it covers
 
-Eleven governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Twelve governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
 
 - Request routing and owner appointment
 - Engagement intake: scope, evidence grading, metric definitions, access, authorization
@@ -46,6 +46,7 @@ Eleven governed skills live in [`.agents/skills/`](.agents/skills/) — the cano
 - Tracking and measurement: event integrity, attribution reconciliation
 - Customer research: interviews, reviews, surveys, evidence synthesis
 - Ideal Customer Profile and Jobs-to-be-Done
+- Retention economics: lifetime value, payback period, cohort retention, churn
 - Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
 
 Analytics, reporting, and copywriting are **partially covered** — specific tasks are owned, others are not. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
