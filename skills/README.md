@@ -19,6 +19,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | Skill | Scope |
 |---|---|
 | [`marketing-router`](../.agents/skills/marketing-router/) | Routes ambiguous or multi-discipline requests; appoints one owner |
+| [`marketing-intake`](../.agents/skills/marketing-intake/) | Engagement scope, evidence grading, metric definitions, access, authorization |
 | [`google-ads`](../.agents/skills/google-ads/) | Search, Shopping, Performance Max audit, diagnosis, change planning |
 | [`meta-ads`](../.agents/skills/meta-ads/) | Structure, audiences, delivery, placements, prospecting, retargeting |
 | [`creative-strategy`](../.agents/skills/creative-strategy/) | Angles, hooks, concepts, formats, briefs, creative tests |

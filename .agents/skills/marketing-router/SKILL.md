@@ -16,9 +16,10 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 2. Classify intent: `audit`, `diagnose`, `plan`, `create`, `optimize`, `report`, or `activate`.
 3. Classify risk: read-only analysis; reversible draft; external mutation; spend, tracking, or revenue-critical mutation.
 4. Select one primary skill and only supporting skills that answer a distinct dependency.
-5. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
-6. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
-7. Classify the requested deliverable by its primary knowledge type; use secondary types only when they change how the artifact should be used or validated.
+5. Before a substantial audit, diagnosis, scaling decision, or any live implementation, confirm scope, evidence state, metric definitions, and authorization are recorded. Route to `$marketing-intake` when they are not; it owns the response until the evidence state is known.
+6. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
+7. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
+8. Classify the requested deliverable by its primary knowledge type; use secondary types only when they change how the artifact should be used or validated.
 
 ## Skill map
 
@@ -31,6 +32,7 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
 - Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, or recovery: `$optimization-scaling`.
+- Undefined scope, unclear data provenance, missing economics, ambiguous conversion definitions, uncertain access, or an unclear authorization boundary: `$marketing-intake`.
 
 Common compositions:
 
@@ -39,6 +41,7 @@ Common compositions:
 - Clicks without conversions: performance diagnostics owns; channel skill and CRO support; flag measurement integrity as an unresolved dependency when needed.
 - Define a new audience and message: ICP/JTBD owns the segment decision; customer research supplies evidence; creative strategy translates it into tests.
 - Platforms disagree on revenue: tracking and measurement owns; performance diagnostics joins only if the business outcome itself changed.
+- Audit request with no economics, scope, or source of truth supplied: intake owns until the evidence state is recorded; the channel skill then owns the audit itself.
 - Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 
 ## Capability boundary
