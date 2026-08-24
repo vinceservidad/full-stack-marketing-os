@@ -34,7 +34,7 @@ Final Deliverable
 
 ## What it covers
 
-Twenty-two governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Twenty-three governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
 
 - Request routing and owner appointment
 - Engagement intake: scope, evidence grading, metric definitions, access, authorization
@@ -57,6 +57,7 @@ Twenty-two governed skills live in [`.agents/skills/`](.agents/skills/) — the 
 - Influencer Marketing: creator vetting, compensation structure, usage rights, disclosure compliance
 - Affiliate Marketing: commission structure, attribution integrity, fraud/brand-bidding screening
 - Organic Social: content strategy, cadence, algorithm-distribution fit, community management
+- Programmatic: supply-path optimization, inventory verification, fraud screening
 - Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
 
 Analytics is **partially covered** — specific tasks are owned, others are not. Reporting, Search Engine Optimization, and copywriting are governed: reporting by `$marketing-reporting` for cross-channel/recurring work and by each channel's owning skill for bounded reports, SEO by `$seo`, and copywriting by `$copywriting` outside the paid-ad and conversion-page copy `$creative-strategy` and `$cro` already own. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
