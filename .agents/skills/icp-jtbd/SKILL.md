@@ -35,6 +35,14 @@ Use customer and pipeline outcomes, revenue and margin, retention/refunds, sales
 
 Return: decision; evidence base; priority segment card; JTBD statement; trigger and switching-forces map; buying committee; value/economic fit; reachability; disqualifiers; messaging implications; evidence gaps and validation plan.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [lead-generation.md](../../../playbooks/lead-generation.md) — lead-generation segment and message workflow.
+- [marketing-audit.md](../../../templates/marketing-audit.md) — business and market-level audit format, distinct in scope from a channel audit.
+
 ## QA
 
 Check the segment is distinguishable and reachable, the job describes progress rather than a product feature, economics are visible, roles are not conflated, exclusions are evidence-safe, and certainty matches the source quality.

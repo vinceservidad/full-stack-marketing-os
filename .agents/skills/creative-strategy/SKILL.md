@@ -34,6 +34,15 @@ Creative matrix: audience/situation; awareness; angle; hypothesis; hook; narrati
 
 Creative brief: objective; single audience insight; promise; reason to believe; mandatory elements; scene/script beats; variants; claims guardrail; measurement plan.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [creative-strategy.md](../../../frameworks/creative-strategy.md) — angle and hook development method.
+- [creative-brief.md](../../../templates/creative-brief.md) — creative brief format.
+- [creative-testing.md](../../../workflows/creative-testing.md) — test cadence and evaluation workflow.
+
 ## QA
 
 Check claims against evidence, concepts are strategically distinct, the test can teach something, platform constraints are met, CTA matches the destination, and copy remains draft until approved.

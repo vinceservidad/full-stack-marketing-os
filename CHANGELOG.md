@@ -2,6 +2,24 @@
 
 Notable changes follow semantic versioning.
 
+## [1.6.0] - 2026-08-25
+
+Reduces migration debt from 31 root artifacts to 5, following the migration rule set out in `ARTIFACT-OWNERSHIP.md` in v1.2.0: fold into a skill reference, or archive.
+
+### Changed
+
+- 22 root artifacts moved from migration-debt to owned by adding an explicit "Library references" link from their candidate skill's `SKILL.md` — `$google-ads`, `$meta-ads`, `$creative-strategy`, `$cro`, `$tracking-measurement`, `$marketing-router`, `$performance-diagnostics`, and `$icp-jtbd` each gained two to five linked references.
+- `marketing-audit.md` was reassessed, not merged: it is a business/market-level review, distinct in scope from a channel audit. Reassigned to `$icp-jtbd` rather than archived.
+- `scripts/install-skills.sh` now installs `frameworks/`, `playbooks/`, `templates/`, and `workflows/` alongside skills, at the same rewritten link depth as the root contracts, so the new library references resolve at runtime.
+
+### Removed
+
+- `templates/audit-template.md` and `templates/experiment-plan.md`, weaker duplicates of `templates/audit.md` and `templates/experiment.md` — no evidence states, raw platform metrics with no profitability caveat. Archived to `docs/archive/legacy-skill-stubs/`.
+
+### Remaining migration debt (5)
+
+`copywriting-frameworks.md`, `seo-framework.md`, `performance-report.md`, `reporting-template.md`, `reporting-analysis.md` — left as debt because no governed specialist exists for Search Engine Optimization, general copywriting, or cross-channel reporting. Assigning them an owner would misrepresent the capability registry; they wait on those specialists.
+
 ## [1.5.0] - 2026-08-25
 
 Adds customer economics and pacing (Priority 4) — the last major content gap identified in the v1.1.0 audit. Splits across a new skill and an existing owner, per the ownership model.

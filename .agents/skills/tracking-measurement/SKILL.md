@@ -57,6 +57,15 @@ Return: decision supported; architecture map; integrity status by event; reconci
 
 Causal question: decision and required evidence level; achievable level and why; selected method with the constraints that chose it; primary metric and its definition; minimum detectable effect, duration, and stopping rule; contamination and confounding risks with direction; holdback cost; scope of the resulting estimate; what the result may and may not be used for.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [measurement-and-evidence.md](../../../frameworks/measurement-and-evidence.md) — measurement and evidence framework.
+- [experimentation.md](../../../frameworks/experimentation.md) — general experimentation framework.
+- [experiment.md](../../../templates/experiment.md) — experiment brief format.
+
 ## QA
 
 Confirm event definitions and timezones match, test and production traffic are separated, duplicate paths are checked, values/currency are verified, attribution windows are visible, privacy boundaries are preserved, and “received” is not confused with “correct.” For a causal question, confirm the evidence level is stated, the method matches the constraints, the test was powered before launch, contamination and coincident events were assessed, the business outcome rather than a platform proxy was measured, and the estimate's scope is named.

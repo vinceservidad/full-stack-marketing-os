@@ -36,6 +36,16 @@ Audit: measurement status; funnel decomposition; entity-level and creative findi
 
 Build plan: objective; architecture; optimization event; audience logic; creative matrix; budget logic; measurement; launch checklist; approval status.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [meta-ads-full-stack.md](../../../frameworks/meta-ads-full-stack.md) — full-account decision model beyond a single audit or diagnosis.
+- [meta-ads-audit.md](../../../playbooks/meta-ads-audit.md) — step-by-step audit workflow.
+- [meta-ads-optimization.md](../../../workflows/meta-ads-optimization.md) — recurring optimization cadence.
+- [campaign-brief.md](../../../templates/campaign-brief.md) — campaign brief format, shared with $google-ads.
+
 ## QA
 
 Verify attribution and event definitions, distinguish link clicks from landing-page views, connect creative IDs to results, account for frequency and spend distribution, label platform-only conclusions, check platform-registry freshness, and confirm account-visible availability for current controls.

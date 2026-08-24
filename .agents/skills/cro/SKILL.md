@@ -33,6 +33,17 @@ Audit finding: location; observation; evidence; affected segment; hypothesized m
 
 Experiment: problem; hypothesis; control; variant; primary metric; guardrails; audience; duration/sample approach; stop conditions; instrumentation; decision rule.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [shopify-cro.md](../../../frameworks/shopify-cro.md) — Shopify-specific conversion framework.
+- [ecommerce.md](../../../playbooks/ecommerce.md) — ecommerce conversion playbook.
+- [ecommerce-growth.md](../../../playbooks/ecommerce-growth.md) — ecommerce growth playbook.
+- [landing-page-review.md](../../../templates/landing-page-review.md) — landing page review format.
+- [cro-improvement.md](../../../workflows/cro-improvement.md) — improvement workflow sequence.
+
 ## QA
 
 Verify the actual page/state and device, avoid causal language without a test, include downstream guardrails, flag accessibility/compliance risks, and distinguish recommendations from implementation.
