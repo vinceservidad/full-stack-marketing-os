@@ -1,12 +1,46 @@
-# Marketing Skills
+# Skills — index only (not an execution layer)
 
-This directory contains reusable marketing capabilities.
+This directory is a **compatibility index**. It contains no executable skills and no operating instructions.
 
-Each skill should define:
+## Canonical source
 
-- Objective
-- Inputs
-- Process
-- Frameworks used
-- Outputs
-- Evaluation criteria
+Executable, governed operating skills live in:
+
+```text
+.agents/skills/
+```
+
+That is the only canonical skill layer. A local runtime copy is installed at `~/.codex/skills/` and is generated from the canonical source — never edited directly.
+
+Capability status — governed, partially covered, planned, or unsupported — is declared in [`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).
+
+## Governed skills
+
+| Skill | Scope |
+|---|---|
+| [`marketing-router`](../.agents/skills/marketing-router/) | Routes ambiguous or multi-discipline requests; appoints one owner |
+| [`google-ads`](../.agents/skills/google-ads/) | Search, Shopping, Performance Max audit, diagnosis, change planning |
+| [`meta-ads`](../.agents/skills/meta-ads/) | Structure, audiences, delivery, placements, prospecting, retargeting |
+| [`creative-strategy`](../.agents/skills/creative-strategy/) | Angles, hooks, concepts, formats, briefs, creative tests |
+| [`cro`](../.agents/skills/cro/) | Landing page, product page, form, checkout, persuasion friction |
+| [`performance-diagnostics`](../.agents/skills/performance-diagnostics/) | Metric change, spend/sales anomaly, causal triage |
+| [`tracking-measurement`](../.agents/skills/tracking-measurement/) | Event integrity, attribution reconciliation, conversion architecture |
+| [`customer-research`](../.agents/skills/customer-research/) | Interviews, reviews, surveys, customer language, evidence synthesis |
+| [`icp-jtbd`](../.agents/skills/icp-jtbd/) | Priority segments, buying situations, buyer roles, Jobs-to-be-Done |
+| [`optimization-scaling`](../.agents/skills/optimization-scaling/) | Scale readiness, marginal economics, portfolio allocation, de-scaling |
+
+## Skill structure
+
+Every canonical skill is a directory containing `SKILL.md` with YAML frontmatter (`name`, `description`), and optional `references/` for conditional detail loaded only when relevant.
+
+Each `SKILL.md` must supply a discriminating trigger description, required context, method, decision rules, output contract, and quality assurance — per `AGENTS.md`.
+
+## Validation
+
+`scripts/validate-skill-architecture.sh` enforces packaging, unique names, folder/frontmatter agreement, reference reachability, and the prohibition on any file outside `.agents/skills/` impersonating a canonical skill.
+
+## Proposing a skill
+
+Open a skill proposal issue. New capabilities must arrive as governed skills in `.agents/skills/`, not as Markdown added here.
+
+Historical v1.0 placeholders are retained in [`docs/archive/legacy-skill-stubs/`](../docs/archive/legacy-skill-stubs/) for release history only.
