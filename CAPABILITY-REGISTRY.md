@@ -16,6 +16,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Capability | Owner |
 |---|---|
 | Request routing and owner appointment | `$marketing-router` |
+| Engagement intake: scope, evidence grading, metric definitions, access, authorization | `$marketing-intake` |
 | Google Ads: Search, Shopping, Performance Max | `$google-ads` |
 | Meta Ads: structure, audiences, delivery, placements | `$meta-ads` |
 | Creative strategy: angles, hooks, concepts, briefs, tests | `$creative-strategy` |
@@ -65,7 +66,6 @@ Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search
 |---|---|
 | Marketing reporting specialist | `ROADMAP.md` |
 | Retention and customer economics | `ROADMAP.md` |
-| Intake and evidence collection | `ROADMAP.md` |
 | Measurement validity and incrementality method selection | `ROADMAP.md` |
 
 ## Unsupported

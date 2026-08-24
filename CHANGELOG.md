@@ -2,6 +2,28 @@
 
 Notable changes follow semantic versioning.
 
+## [1.3.0] - 2026-08-24
+
+Adds the intake and evidence layer. Built as a skill-owned reference set under the ownership model from 1.2.0 rather than as floating templates.
+
+### Added
+
+- `$marketing-intake` governing engagement scope, evidence grading, metric and conversion definitions, access requests, and the authorization boundary, with five conditional references.
+- A seven-level evidence state ladder — `asserted`, `documented`, `observed`, `reconciled`, `verified`, `unknown`, `contradicted` — where the weakest dependency governs a decision's confidence and a state is never upgraded without a named artifact.
+- Metric definition register covering Google Ads conversion goals and actions, Meta configuration, revenue basis and profit level, and lifecycle stage definitions, with an explicit comparability rule.
+- Authorization register distinguishing `draft`, `proposed`, `approved`, `saved`, `published`, `live`, `processing`, and `verified`, with approval scope and expiry.
+- Twenty-eight evaluations and the required review record.
+- Installed-runtime integrity reporting in `scripts/validate-skill-architecture.sh`: skill drift, missing installs, and root contracts that are absent or unreachable by their link depth from an installed skill. Reported as notes because the install location is machine-local and absent in continuous integration.
+
+### Changed
+
+- Router routes to `$marketing-intake` before a substantial audit, diagnosis, scaling decision, or live implementation when scope, evidence state, definitions, or authorization are unrecorded.
+- Capability registry moves intake from planned to governed; eleven governed skills.
+
+### Known issue
+
+- Root contracts are linked as `../../../FILE.md`, which resolves to the repository root in the canonical layer but to the parent of the install root from `~/.codex/skills/<name>/`. `KNOWLEDGE-TAXONOMY.md` is present at the install root and unreachable by that depth; `CAPABILITY-REGISTRY.md` is not yet installed. Reported by the validator; a fix requires deciding between installing contracts at the resolved depth, inlining the rules, or rewriting paths at install time.
+
 ## [1.2.0] - 2026-08-24
 
 Architecture consolidation. No new marketing content; this release removes a conflicting second skill layer and makes capability claims truthful.

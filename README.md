@@ -34,9 +34,10 @@ Final Deliverable
 
 ## What it covers
 
-Ten governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Eleven governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
 
 - Request routing and owner appointment
+- Engagement intake: scope, evidence grading, metric definitions, access, authorization
 - Google Ads: Search, Shopping, Performance Max
 - Meta Ads: structure, audiences, delivery, placements
 - Creative strategy: angles, hooks, concepts, briefs, tests

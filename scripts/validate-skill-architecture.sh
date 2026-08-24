@@ -228,6 +228,46 @@ else:
     if debt:
         warnings.append(f"{debt} root artifacts are tracked migration debt awaiting an owner.")
 
+# --- Installed runtime integrity (local only) -----------------------------------
+# Reported as notes. The install location is machine-local and absent in CI, so a
+# drift here must not fail the repository's own validation.
+
+installed = pathlib.Path.home() / ".codex" / "skills"
+if installed.is_dir():
+    for name, skill_md in sorted(names.items()):
+        target = installed / name / "SKILL.md"
+        if not target.is_file():
+            warnings.append(f"Skill '{name}' is not installed in the local runtime.")
+        elif target.read_text(encoding="utf-8") != skill_md.read_text(encoding="utf-8"):
+            warnings.append(f"Installed runtime copy of '{name}' has drifted from canonical.")
+
+    # Root contracts are linked as ../../../FILE.md. That depth resolves to the
+    # repository root from .agents/skills/<name>/, but to the parent of the
+    # install root from ~/.codex/skills/<name>/. Report both the files that are
+    # absent and the links that do not resolve where they are installed.
+    contracts = set()
+    for skill_md in names.values():
+        for target in LINK.findall(skill_md.read_text(encoding="utf-8")):
+            if target.startswith("../../../") and "/" not in target[9:]:
+                contracts.add(target[9:])
+
+    absent = sorted(c for c in contracts if not (installed.parent / c).is_file())
+    if absent:
+        warnings.append(
+            "Root contracts not present at the install root: " + ", ".join(absent)
+        )
+
+    unresolved = sorted(
+        c for c in contracts
+        if not (installed / "any-skill" / c.join(["../../../", ""])).exists()
+        and (installed.parent / c).is_file()
+    )
+    if unresolved:
+        warnings.append(
+            "Root contracts present at the install root but unreachable by their "
+            "own link depth from an installed skill: " + ", ".join(unresolved)
+        )
+
 # --- Report --------------------------------------------------------------------
 
 for warning in warnings:
