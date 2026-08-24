@@ -30,7 +30,7 @@ Status definitions:
 | `experimentation.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
 | `decision-prioritization.md` | owned | `$marketing-router` (linked from SKILL.md) |
 | `copywriting-frameworks.md` | migration-debt | No governed owner — capability partially covered |
-| `seo-framework.md` | migration-debt | No governed owner — capability unsupported |
+| `seo-framework.md` | archived | Ten-line phase list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/seo-framework.flat.md`, superseded by `$seo` |
 
 ## Playbooks
 

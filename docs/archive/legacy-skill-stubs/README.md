@@ -36,3 +36,9 @@ Retained for release history only. Excluded from active retrieval and from archi
 | Archived file | Reason | Current status |
 |---|---|---|
 | `reporting-template.flat.md` | Weaker duplicate — raw ROAS/CPA/CPL with no evidence states, conflicting with `templates/performance-report.md` | Superseded by `templates/performance-report.md`, owned by `$marketing-reporting` |
+
+## v1.8.0 addition
+
+| Archived file | Reason | Current status |
+|---|---|---|
+| `seo-framework.flat.md` | Ten-line phase list with no evidence discipline, decision rules, or output contract — same v1.0 shallow pattern as the archived skill stubs | Superseded by `$seo`, a governed skill |
