@@ -1,7 +1,7 @@
 # Full-Stack Marketing OS
 
 ![GitHub](https://img.shields.io/badge/status-public-brightgreen)
-![Version](https://img.shields.io/badge/version-v1.0.0-blue)
+![Version](https://img.shields.io/badge/version-v1.1.0-blue)
 ![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
 
 An evidence-led AI marketing operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
@@ -42,6 +42,7 @@ Final Deliverable
 - Reporting and measurement workflows
 - Customer research and positioning methods
 - Audits, experiments, and reusable templates
+- Evidence-led optimization and scaling across Google Ads, Meta Ads, portfolios, creative, ecommerce, and lead generation
 
 ## Repository Structure
 
@@ -85,7 +86,11 @@ Use Creative Strategy workflow to build testing ideas.
 Use CRO workflow to review a Shopify product page.
 
 Use reporting workflow to analyze results and next actions.
+
+Use the Optimization and Scaling skill to decide whether, where, how, and by how much to scale while protecting commercial outcomes.
 ```
+
+Scaling is not defined as spending more. The system requires a scoped proof level, source-of-truth business economics, marginal efficiency, a diagnosed binding constraint, an appropriate scaling mode, capacity, guardrails, and explicit approval before any live change. It rejects universal budget-increase percentages and does not treat platform attribution or recommendations as proof.
 
 ## Design Principles
 

@@ -30,11 +30,17 @@
 - Add creative brief and copy QA templates.
 - Add SaaS, local-service, and nonprofit playbooks.
 
-## v0.4 — Optimization and reporting
+## v0.4 — Optimization and scaling — Complete
 
-- Add scaling, retention, and marketing-reporting skills.
+- Added optimization-scaling skill, seven governed frameworks, seven channel/business playbooks, and nine operational templates.
+- Added scoped proof, readiness, marginal-economics, constraint, mode, portfolio, creative-capacity, guardrail, de-scaling, and recovery methods.
+- Added 30 regression cases, an evaluation review, deterministic validation, and continuous-integration checks.
+
+## v0.5 — Retention and reporting
+
+- Add retention and marketing-reporting skills.
 - Add contribution-margin and lead-quality scorecards.
-- Add regression evaluations for routing and unsafe activation.
+- Extend routing and unsafe-activation evaluations.
 
 ## v1.0 — Proven system
 

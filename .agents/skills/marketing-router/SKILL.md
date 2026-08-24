@@ -30,6 +30,7 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Event integrity, attribution differences, conversion architecture, or source reconciliation: `$tracking-measurement`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
+- Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, or recovery: `$optimization-scaling`.
 
 Common compositions:
 
@@ -38,6 +39,7 @@ Common compositions:
 - Clicks without conversions: performance diagnostics owns; channel skill and CRO support; flag measurement integrity as an unresolved dependency when needed.
 - Define a new audience and message: ICP/JTBD owns the segment decision; customer research supplies evidence; creative strategy translates it into tests.
 - Platforms disagree on revenue: tracking and measurement owns; performance diagnostics joins only if the business outcome itself changed.
+- Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 
 ## Rules
 
@@ -50,6 +52,7 @@ Common compositions:
 - Never describe a draft recommendation as implemented.
 - Never convert an undocumented platform “algorithm change” into a fact. Label official documentation, account observation, experimental evidence, inference, and unknowns separately.
 - Do not present a pattern as causality, a heuristic as a guarantee, a tactic as a strategy, or a framework/model as proof of an outcome.
+- Do not treat more spend, conversions, attributed revenue, or blended ROAS as proof of scaling; require scoped readiness, marginal business evidence, capacity, and rollback rules.
 
 ## Output
 
