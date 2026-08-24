@@ -29,6 +29,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Optimization and scaling: readiness, marginal economics, portfolio, de-scaling, budget/outcome pacing | `$optimization-scaling` |
 | Retention economics: lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts | `$retention-economics` |
 | Search Engine Optimization: visibility audit, technical health, content and topic strategy, ranking-change diagnosis | `$seo` |
+| Copywriting: email, lifecycle, website, sales-page, long-form, brand — with paid-ad hooks staying under `$creative-strategy` and conversion-page copy under `$cro` | `$copywriting` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -56,14 +57,7 @@ Not covered: business-intelligence engineering, data-warehouse or pipeline desig
 
 A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. Not covered: report-production systems and data-warehouse/dashboard implementation.
 
-### Copywriting
 
-| In scope | Owner |
-|---|---|
-| Paid-ad hooks, concepts, message angles, creative briefs | `$creative-strategy` |
-| Conversion-page copy evaluation | `$cro`, supported by `$customer-research` and `$creative-strategy` where evidence is needed |
-
-Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search Engine Optimization copywriting. Do not route general copywriting to `$creative-strategy` as though it were governed.
 
 ## Planned
 
@@ -74,7 +68,7 @@ Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search
 
 No governed specialist. Do not substitute an adjacent channel skill.
 
-- Email marketing and lifecycle marketing
+- Email marketing and lifecycle marketing as a discipline — strategy, automation, segmentation, send cadence, deliverability. `$copywriting` writes the words for a sequence when asked; it does not design the sequence, platform, or triggers.
 - TikTok Ads
 - LinkedIn Ads
 - YouTube advertising as a dedicated discipline
@@ -84,7 +78,7 @@ No governed specialist. Do not substitute an adjacent channel skill.
 - Programmatic advertising
 - Public relations
 
-Root `frameworks/seo-framework.md`, `frameworks/copywriting-frameworks.md`, and related artifacts remain in the repository as governed knowledge, but no skill loads them and they do not constitute a specialist. See `ARTIFACT-OWNERSHIP.md`.
+See `ARTIFACT-OWNERSHIP.md` for artifacts awaiting a specialist in the disciplines above.
 
 ## Handling an uncovered request
 

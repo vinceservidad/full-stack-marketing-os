@@ -2,6 +2,31 @@
 
 Notable changes follow semantic versioning.
 
+## [1.9.0] - 2026-08-25
+
+Adds `$copywriting`, fifteenth governed skill. Migration debt: 31 → 0.
+
+### Added
+
+- `$copywriting` writes and evaluates email, lifecycle, website, sales-page, long-form, and brand copy. Paid-ad hooks stay owned by `$creative-strategy`; landing/product-page conversion copy stays owned by `$cro` — this skill owns what neither of those covers.
+- One reference: structure selection (AIDA, PAS, FAB, BAB, Rule of One) matched to audience awareness level rather than applied by default, with sequence-level awareness tracking across multi-piece campaigns.
+- Fifteen evaluations and the required review record.
+- The skill's sharpest rule: a structure organizes an argument, it does not supply evidence for it. No fabricated benchmark, testimonial, or customer quotation; customer language must trace to a `$customer-research` source; regulated claims are flagged for review rather than silently softened.
+
+### Changed
+
+- Router routes email, lifecycle, website, sales-page, long-form, and brand copywriting to `$copywriting`; paid-ad hooks and conversion-page copy remain with their existing owners.
+- Capability registry: copywriting moves from partially covered to governed. Email/lifecycle *marketing* — strategy, automation, cadence, deliverability — remains explicitly unsupported and distinct from writing the words for a sequence.
+- `README.md`'s partial-coverage disclaimer, standing since v1.2.0, is now resolved for copywriting; analytics remains the one partially covered capability.
+
+### Removed
+
+- `frameworks/copywriting-frameworks.md`, a twenty-line structure list with no evidence discipline or ownership boundary. Archived to `docs/archive/legacy-skill-stubs/`.
+
+### Migration debt: zero
+
+All 31 root artifacts identified as unowned in v1.2.0 are now owned, archived, or governed by a skill. This closes the migration-debt tracking effort started in v1.2.0.
+
 ## [1.8.0] - 2026-08-25
 
 Adds `$seo`, fourteenth governed skill, closing the second of the two capabilities the README explicitly disclaimed since v1.2.0. Migration debt: 31 → 1.

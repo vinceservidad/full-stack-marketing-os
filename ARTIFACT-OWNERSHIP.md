@@ -29,7 +29,7 @@ Status definitions:
 | `measurement-and-evidence.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
 | `experimentation.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
 | `decision-prioritization.md` | owned | `$marketing-router` (linked from SKILL.md) |
-| `copywriting-frameworks.md` | migration-debt | No governed owner — capability partially covered |
+| `copywriting-frameworks.md` | archived | Twenty-line structure list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/copywriting-frameworks.flat.md`, superseded by `$copywriting` |
 | `seo-framework.md` | archived | Ten-line phase list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/seo-framework.flat.md`, superseded by `$seo` |
 
 ## Playbooks
