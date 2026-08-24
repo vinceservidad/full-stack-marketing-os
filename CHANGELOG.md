@@ -2,6 +2,27 @@
 
 Notable changes follow semantic versioning.
 
+## [1.18.0] - 2026-08-25
+
+Adds `$public-relations`, twenty-fourth governed skill. Third and final of the unordered channel-expansion batch (organic social, programmatic, public relations), closing every channel identified as unsupported since v1.9.0.
+
+### Added
+
+- `$public-relations` covers media relations, pitch strategy, and crisis-communications response — earned coverage with no purchased placement, no algorithm, and no message-control guarantee. The least controllable channel in the system: a journalist or outlet retains full editorial control over the resulting story.
+- Two references: crisis communications (facts confirmed kept separate from what is suspected or unknown; legal-exposure review runs in parallel with communications drafting, not after; a factually accurate partial response beats both silence and a rushed inaccurate one; after-action review is held to what was actually knowable at the time, not hindsight) and measurement and evidence limits (media mentions, share of voice, and sentiment are real signals with no reliable causal path to a business outcome absent a specific attribution design — correlated timing is capped at C1 on `$tracking-measurement`'s causal ladder, the same discipline already applied to view-through and programmatic).
+- Seventeen evaluations and the required review record.
+- Explicitly not a substitute for legal review of a statement with real liability exposure — identifies legal-review triggers and flags them, consistent with `$influencer-marketing`'s discipline on contract review.
+
+### Changed
+
+- Router routes media relations and crisis response to `$public-relations`; the "unsupported channels" line is removed entirely since every previously identified channel is now governed, replaced by a standing instruction for how a genuinely new discipline should be handled if one arrives later.
+- `$organic-social`'s escalation reference is firmed up: an escalating pattern of public engagement now names `$public-relations` directly rather than conditionally.
+- Capability registry: public relations moves from unsupported to governed. The Unsupported section is retained as an empty contract rather than deleted, so a future genuinely new discipline has a defined home before it's built.
+
+### Channel-expansion arc complete
+
+Eleven capabilities moved from unsupported or unowned to governed across ten releases (v1.9.0–v1.18.0): SEO, copywriting, email/lifecycle, YouTube, TikTok, LinkedIn, influencer, affiliate, organic social, programmatic, and public relations. Twenty-four governed skills, zero migration debt, maintained continuously since v1.9.0.
+
 ## [1.17.0] - 2026-08-25
 
 Adds `$programmatic`, twenty-third governed skill. Second of the three unordered channel-expansion releases.

@@ -41,6 +41,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`affiliate-marketing`](../.agents/skills/affiliate-marketing/) | Affiliate commission structure, attribution integrity, fraud/brand-bidding screening |
 | [`organic-social`](../.agents/skills/organic-social/) | Organic content strategy, cadence, algorithm-distribution fit, community management |
 | [`programmatic`](../.agents/skills/programmatic/) | Supply-path optimization, inventory verification, fraud screening |
+| [`public-relations`](../.agents/skills/public-relations/) | Media relations, pitch strategy, crisis communications |
 
 ## Skill structure
 
