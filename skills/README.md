@@ -30,6 +30,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`icp-jtbd`](../.agents/skills/icp-jtbd/) | Priority segments, buying situations, buyer roles, Jobs-to-be-Done |
 | [`optimization-scaling`](../.agents/skills/optimization-scaling/) | Scale readiness, marginal economics, portfolio allocation, de-scaling, budget/outcome pacing |
 | [`retention-economics`](../.agents/skills/retention-economics/) | Lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts |
+| [`marketing-reporting`](../.agents/skills/marketing-reporting/) | Cross-channel executive report, recurring cadence, stakeholder scorecard |
 
 ## Skill structure
 

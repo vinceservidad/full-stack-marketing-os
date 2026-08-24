@@ -50,8 +50,9 @@ Not covered: business-intelligence engineering, data-warehouse or pipeline desig
 | Diagnostic performance report | `$performance-diagnostics` |
 | Measurement integrity report | `$tracking-measurement` |
 | Scaling review and decision log | `$optimization-scaling` |
+| Cross-channel executive report, scorecard, recurring cadence, stakeholder translation | `$marketing-reporting` |
 
-A bounded report is owned by the skill that owns the underlying decision. Not covered: cross-channel executive reporting, budget and outcome pacing, forecasting and reforecasting, recurring reporting governance, and report-production systems. A dedicated reporting specialist is planned.
+A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. Not covered: report-production systems and data-warehouse/dashboard implementation.
 
 ### Copywriting
 
@@ -66,7 +67,6 @@ Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search
 
 | Capability | Reference |
 |---|---|
-| Marketing reporting specialist | `ROADMAP.md` |
 
 ## Unsupported
 

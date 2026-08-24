@@ -31,6 +31,7 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, or causal evidence grading: `$tracking-measurement`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
+- Cross-channel executive report, recurring reporting cadence, or stakeholder scorecard combining findings already produced elsewhere: `$marketing-reporting`.
 - Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, recovery, or budget/outcome pacing within an approved plan: `$optimization-scaling`.
 - Undefined scope, unclear data provenance, missing economics, ambiguous conversion definitions, uncertain access, or an unclear authorization boundary: `$marketing-intake`.
 - Customer lifetime value, payback period, cohort retention, churn, or lead-to-revenue maturation: `$retention-economics`.
@@ -45,6 +46,7 @@ Common compositions:
 - Is this channel actually incremental: tracking and measurement owns method selection and evidence grading; the channel skill supplies account controls; optimization and scaling consumes the result and never substitutes attribution for it.
 - Is this customer base or channel worth scaling on a lifetime basis: retention economics owns the lifetime value and payback model; optimization and scaling owns the scaling decision and applies its own proof standard to the model's output.
 - Audit request with no economics, scope, or source of truth supplied: intake owns until the evidence state is recorded; the channel skill then owns the audit itself.
+- Cross-channel executive report requested: reporting owns combining findings already produced by other skills; it does not perform the underlying audit, diagnosis, or economics analysis itself.
 - Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 
 ## Capability boundary
@@ -52,7 +54,7 @@ Common compositions:
 Route only to a skill that exists. Check [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md) before answering a request outside the skill map. Boundaries are task-level, not discipline-level: a discipline can be partly governed and partly unsupported.
 
 - Analytics: tracking architecture, event integrity, and attribution differences belong to `$tracking-measurement`; performance analysis, segmentation, and anomaly diagnosis to `$performance-diagnostics`; allocation and marginal evidence to `$optimization-scaling`. Business-intelligence engineering, pipeline or warehouse design, and dashboard implementation have no governed specialist.
-- Reporting: a bounded report is owned by the skill that owns the underlying decision — the Google Ads audit report by `$google-ads`, the measurement integrity report by `$tracking-measurement`, the scaling review by `$optimization-scaling`. Cross-channel executive reporting, budget and outcome pacing, forecasting, and recurring reporting governance have no governed specialist.
+- Reporting: a bounded single-channel or single-decision report is owned by the skill that owns the underlying decision — the Google Ads audit report by `$google-ads`, the measurement integrity report by `$tracking-measurement`, the scaling review by `$optimization-scaling`. Cross-channel executive reporting, recurring reporting cadence, and stakeholder scorecards are owned by `$marketing-reporting`, which combines those outputs rather than re-deriving them. Budget and outcome pacing remain owned by `$optimization-scaling`; forecasting outside a pacing reforecast has no governed specialist.
 - Copywriting: paid-ad hooks, angles, concepts, and creative briefs belong to `$creative-strategy`; conversion-page copy evaluation to `$cro`. Email, lifecycle, website, sales-page, long-form, brand, and Search Engine Optimization copywriting have no governed specialist and must not be routed to `$creative-strategy` as though governed.
 - Search Engine Optimization and content strategy: no governed specialist. Do not substitute `$google-ads`. Customer research, CRO, or measurement may support a distinct part of the request; the Search Engine Optimization work itself remains ungoverned.
 - Other unsupported channels — email and lifecycle, TikTok, LinkedIn, YouTube as a discipline, affiliate, influencer, organic social, programmatic, public relations: the router owns the response and declares the gap.

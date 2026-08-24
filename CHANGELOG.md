@@ -2,6 +2,30 @@
 
 Notable changes follow semantic versioning.
 
+## [1.7.0] - 2026-08-25
+
+Adds `$marketing-reporting`, thirteenth governed skill, closing the reporting gap identified in the original v1.1.0 audit and resolving 3 of the 5 remaining migration-debt artifacts.
+
+### Added
+
+- `$marketing-reporting` combines findings already produced by other skills into a cross-channel executive report, recurring cadence, or stakeholder scorecard. It does not perform the underlying audit, diagnosis, reconciliation, or economics analysis — those stay with their owning skill.
+- Three references: scorecard construction (one profit level and revenue basis per table, invalid comparisons marked not smoothed, no cross-platform summing), cadence and governance (definitions held fixed across a recurring series, changes disclosed not silently applied, revision discipline), and stakeholder communication (confidence level preserved in plain language, no implied approval).
+- Sixteen evaluations and the required review record.
+
+### Changed
+
+- `templates/performance-report.md` and `workflows/reporting-analysis.md` moved from migration-debt to owned by `$marketing-reporting`.
+- Capability registry: reporting moves from partially covered to governed for cross-channel and recurring work; bounded single-channel reports remain owned by their existing skill.
+- Router routes cross-channel executive reports and recurring cadence work to `$marketing-reporting`.
+
+### Removed
+
+- `templates/reporting-template.md`, a weaker duplicate of `performance-report.md` — raw ROAS/CPA/CPL with no evidence states. Archived to `docs/archive/legacy-skill-stubs/`.
+
+### Remaining migration debt (2)
+
+`copywriting-frameworks.md`, `seo-framework.md` — no governed specialist exists for general copywriting or Search Engine Optimization. They wait on those specialists.
+
 ## [1.6.0] - 2026-08-25
 
 Reduces migration debt from 31 root artifacts to 5, following the migration rule set out in `ARTIFACT-OWNERSHIP.md` in v1.2.0: fold into a skill reference, or archive.

@@ -30,3 +30,9 @@ Retained for release history only. Excluded from active retrieval and from archi
 |---|---|---|
 | `audit-template.flat.md` | Weaker duplicate — used raw ROAS/CPA with no evidence states, conflicting with `templates/audit.md` | Superseded by `templates/audit.md`, owned by `$performance-diagnostics` |
 | `experiment-plan.flat.md` | Weaker duplicate — no evidence states, no guardrails, conflicting with `templates/experiment.md` | Superseded by `templates/experiment.md`, owned by `$tracking-measurement` |
+
+## v1.7.0 addition
+
+| Archived file | Reason | Current status |
+|---|---|---|
+| `reporting-template.flat.md` | Weaker duplicate — raw ROAS/CPA/CPL with no evidence states, conflicting with `templates/performance-report.md` | Superseded by `templates/performance-report.md`, owned by `$marketing-reporting` |
