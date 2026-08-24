@@ -34,7 +34,7 @@ Final Deliverable
 
 ## What it covers
 
-Thirteen governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Fourteen governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
 
 - Request routing and owner appointment
 - Engagement intake: scope, evidence grading, metric definitions, access, authorization
@@ -48,9 +48,10 @@ Thirteen governed skills live in [`.agents/skills/`](.agents/skills/) — the ca
 - Ideal Customer Profile and Jobs-to-be-Done
 - Retention economics: lifetime value, payback period, cohort retention, churn
 - Marketing reporting: cross-channel executive report, recurring cadence, stakeholder scorecard
+- Search Engine Optimization: visibility audit, technical health, content strategy, ranking-change diagnosis
 - Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
 
-Analytics and copywriting are **partially covered** — specific tasks are owned, others are not. Reporting is now governed: cross-channel and recurring reporting by `$marketing-reporting`, single-channel reports by their owning skill. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
+Analytics and copywriting are **partially covered** — specific tasks are owned, others are not. Reporting is governed: cross-channel and recurring reporting by `$marketing-reporting`, single-channel reports by their owning skill. Search Engine Optimization is governed by `$seo`. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
 
 [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative on exactly which tasks are governed, partially covered, planned, or unsupported. The Marketing Router declares the gap rather than substituting an adjacent channel skill.
 

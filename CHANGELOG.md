@@ -2,6 +2,30 @@
 
 Notable changes follow semantic versioning.
 
+## [1.8.0] - 2026-08-25
+
+Adds `$seo`, fourteenth governed skill, closing the second of the two capabilities the README explicitly disclaimed since v1.2.0. Migration debt: 31 → 1.
+
+### Added
+
+- `$seo` audits organic visibility, technical health, and content/topic strategy, and diagnoses ranking changes, using search-console and crawl evidence rather than a third-party rank tracker or paid-media attribution language.
+- Three references: technical health (crawlability, indexation, canonicalization, page experience — field data governs over lab data), content and topic strategy (intent and coverage evidence before volume, capacity-bounded plans, consolidation considered over default creation), and ranking-change diagnosis (a required order of competing explanations — algorithm update, seasonality, competitive entry, technical regression, measurement change — before attributing a change to a specific action; capped at C1 on the causal ladder for a single-site observation).
+- Sixteen evaluations and the required review record.
+
+### Changed
+
+- Router's capability-boundary section no longer lists Search Engine Optimization as unsupported; routes to `$seo`.
+- Capability registry: SEO moves from unsupported to governed.
+- `README.md` no longer disclaims SEO coverage — the disclaimer added in v1.2.0 is now resolved rather than merely documented.
+
+### Removed
+
+- `frameworks/seo-framework.md`, a ten-line phase list with no evidence discipline, decision rules, or output contract — same v1.0 shallow pattern as the skill stubs archived in v1.2.0. Archived to `docs/archive/legacy-skill-stubs/`.
+
+### Remaining migration debt (1)
+
+`copywriting-frameworks.md` — no governed specialist exists for general copywriting outside paid-ad hooks (`$creative-strategy`) and page copy (`$cro`).
+
 ## [1.7.0] - 2026-08-25
 
 Adds `$marketing-reporting`, thirteenth governed skill, closing the reporting gap identified in the original v1.1.0 audit and resolving 3 of the 5 remaining migration-debt artifacts.

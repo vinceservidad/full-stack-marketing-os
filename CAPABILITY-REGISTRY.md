@@ -28,6 +28,8 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Ideal Customer Profile and Jobs-to-be-Done | `$icp-jtbd` |
 | Optimization and scaling: readiness, marginal economics, portfolio, de-scaling, budget/outcome pacing | `$optimization-scaling` |
 | Retention economics: lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts | `$retention-economics` |
+| Search Engine Optimization: visibility audit, technical health, content and topic strategy, ranking-change diagnosis | `$seo` |
+| Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
 
@@ -72,7 +74,6 @@ Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search
 
 No governed specialist. Do not substitute an adjacent channel skill.
 
-- Search Engine Optimization and content strategy
 - Email marketing and lifecycle marketing
 - TikTok Ads
 - LinkedIn Ads
