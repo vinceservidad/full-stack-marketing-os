@@ -38,6 +38,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Affiliate and partner marketing: commission structure, attribution integrity, fraud/brand-bidding screening | `$affiliate-marketing` |
 | Organic social: content strategy, cadence, algorithm-distribution fit, community management | `$organic-social` |
 | Programmatic: supply-path optimization, inventory verification, fraud screening | `$programmatic` |
+| Public relations: media relations, pitch strategy, crisis communications | `$public-relations` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -74,11 +75,9 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 ## Unsupported
 
-No governed specialist. Do not substitute an adjacent channel skill.
+No channel identified as of v1.9.0 remains unsupported; the last three (organic social, programmatic, public relations) closed in v1.16.0–v1.18.0. This section is retained as the contract for a genuinely new discipline that arrives later: it is listed here, not silently substituted with an adjacent skill, until it is either built or moved to Planned.
 
-- Public relations
-
-See `ARTIFACT-OWNERSHIP.md` for artifacts awaiting a specialist in the disciplines above.
+Currently empty.
 
 ## Handling an uncovered request
 

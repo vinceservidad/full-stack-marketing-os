@@ -14,7 +14,7 @@ Public comments, messages, and mentions on organic content are visible to the ac
 
 Set an explicit response-time expectation and staffing plan for community management proportional to the account's actual audience size and posting cadence; a plan that scales posting volume without scaling response capacity will produce a visibly unattended account.
 
-Distinguish routine engagement response from an emerging issue requiring escalation (a complaint pattern, a misinformation spread, a brewing public relations concern) — route an escalating pattern to `$public-relations` if that skill exists and is relevant, or flag it for human judgment rather than treating every comment as routine.
+Distinguish routine engagement response from an emerging issue requiring escalation (a complaint pattern, a misinformation spread, a brewing reputational concern) — route an escalating pattern to `$public-relations` for crisis-communications discipline rather than treating every comment as routine.
 
 ## Rules
 
