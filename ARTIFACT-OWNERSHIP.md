@@ -73,8 +73,8 @@ Status definitions:
 | `audit.md` | owned | `$performance-diagnostics` (linked from SKILL.md) — canonical audit format |
 | `audit-template.md` | archived | Weaker duplicate of `audit.md`; moved to `docs/archive/legacy-skill-stubs/audit-template.flat.md` |
 | `marketing-audit.md` | owned | `$icp-jtbd` (linked from SKILL.md) — distinct scope: business/market-level, not a channel audit |
-| `performance-report.md` | migration-debt | No governed owner — reporting partially covered |
-| `reporting-template.md` | migration-debt | No governed owner — reporting partially covered |
+| `performance-report.md` | owned | `$marketing-reporting` (linked from SKILL.md) — canonical report format |
+| `reporting-template.md` | archived | Weaker duplicate of `performance-report.md`; moved to `docs/archive/legacy-skill-stubs/reporting-template.flat.md` |
 | `strategy-template.md` | owned | `$marketing-router` (linked from SKILL.md) |
 | `README.md` | consumed | Directory index |
 
@@ -86,7 +86,7 @@ Status definitions:
 | `meta-ads-optimization.md` | owned | `$meta-ads` (linked from SKILL.md) |
 | `creative-testing.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `cro-improvement.md` | owned | `$cro` (linked from SKILL.md) |
-| `reporting-analysis.md` | migration-debt | No governed owner — reporting partially covered |
+| `reporting-analysis.md` | owned | `$marketing-reporting` (linked from SKILL.md) — data-to-decision workflow sequence |
 | `README.md` | consumed | Directory index |
 
 ## Duplication resolved in v1.6.0
