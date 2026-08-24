@@ -28,7 +28,7 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Angles, hooks, concepts, formats, briefs, or creative tests: `$creative-strategy`.
 - Landing page, product page, form, checkout, or persuasion friction: `$cro`.
 - Metric change, spend/sales anomaly, or causal triage: `$performance-diagnostics`.
-- Event integrity, attribution differences, conversion architecture, or source reconciliation: `$tracking-measurement`.
+- Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, or causal evidence grading: `$tracking-measurement`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
 - Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, or recovery: `$optimization-scaling`.
@@ -41,6 +41,7 @@ Common compositions:
 - Clicks without conversions: performance diagnostics owns; channel skill and CRO support; flag measurement integrity as an unresolved dependency when needed.
 - Define a new audience and message: ICP/JTBD owns the segment decision; customer research supplies evidence; creative strategy translates it into tests.
 - Platforms disagree on revenue: tracking and measurement owns; performance diagnostics joins only if the business outcome itself changed.
+- Is this channel actually incremental: tracking and measurement owns method selection and evidence grading; the channel skill supplies account controls; optimization and scaling consumes the result and never substitutes attribution for it.
 - Audit request with no economics, scope, or source of truth supplied: intake owns until the evidence state is recorded; the channel skill then owns the audit itself.
 - Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 

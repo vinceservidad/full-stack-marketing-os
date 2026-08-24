@@ -23,6 +23,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Conversion Rate Optimization: pages, forms, checkout, friction | `$cro` |
 | Performance diagnosis: metric change, anomaly, causal triage | `$performance-diagnostics` |
 | Tracking and measurement: event integrity, attribution reconciliation | `$tracking-measurement` |
+| Measurement validity: causal evidence grading, incrementality method selection, holdouts, geo experiments, lift studies, Marketing Mix Modeling, triangulation | `$tracking-measurement` |
 | Customer research: interviews, reviews, surveys, evidence synthesis | `$customer-research` |
 | Ideal Customer Profile and Jobs-to-be-Done | `$icp-jtbd` |
 | Optimization and scaling: readiness, marginal economics, portfolio, de-scaling | `$optimization-scaling` |
@@ -66,7 +67,6 @@ Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search
 |---|---|
 | Marketing reporting specialist | `ROADMAP.md` |
 | Retention and customer economics | `ROADMAP.md` |
-| Measurement validity and incrementality method selection | `ROADMAP.md` |
 
 ## Unsupported
 

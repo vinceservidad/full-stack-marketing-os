@@ -16,3 +16,5 @@ Assign the highest supported level; do not skip levels by assertion.
 “Proven” means proven for the named account, scope, period, outcome definition, and evidence standard. Platform documentation, forecasts, recommendations, attributed results, or statistical significance alone do not establish business-verified scalability.
 
 For high-risk changes, require stronger replication, smaller exposure, or credible incrementality evidence. Record contradictory results and regression conditions.
+
+Credible incrementality evidence means a graded causal result, not platform attribution. S4 requires a controlled comparison at C3 or above on the [causal evidence ladder](../../tracking-measurement/references/causal-evidence-ladder.md); `$tracking-measurement` owns method selection and grading. Platform-attributed performance is C0 and cannot raise a claim above S3 regardless of volume or consistency.
