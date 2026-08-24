@@ -30,6 +30,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Retention economics: lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts | `$retention-economics` |
 | Search Engine Optimization: visibility audit, technical health, content and topic strategy, ranking-change diagnosis | `$seo` |
 | Copywriting: email, lifecycle, website, sales-page, long-form, brand — with paid-ad hooks staying under `$creative-strategy` and conversion-page copy under `$cro` | `$copywriting` |
+| Email and lifecycle program strategy: segmentation, trigger logic, cadence, deliverability | `$lifecycle-marketing` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -68,7 +69,6 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 No governed specialist. Do not substitute an adjacent channel skill.
 
-- Email marketing and lifecycle marketing as a discipline — strategy, automation, segmentation, send cadence, deliverability. `$copywriting` writes the words for a sequence when asked; it does not design the sequence, platform, or triggers.
 - TikTok Ads
 - LinkedIn Ads
 - YouTube advertising as a dedicated discipline

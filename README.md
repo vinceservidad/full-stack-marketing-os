@@ -34,7 +34,7 @@ Final Deliverable
 
 ## What it covers
 
-Fifteen governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Sixteen governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
 
 - Request routing and owner appointment
 - Engagement intake: scope, evidence grading, metric definitions, access, authorization
@@ -50,6 +50,7 @@ Fifteen governed skills live in [`.agents/skills/`](.agents/skills/) — the can
 - Marketing reporting: cross-channel executive report, recurring cadence, stakeholder scorecard
 - Search Engine Optimization: visibility audit, technical health, content strategy, ranking-change diagnosis
 - Copywriting: email, lifecycle, website, sales-page, long-form, brand
+- Lifecycle marketing: email/lifecycle segmentation, trigger logic, cadence, deliverability
 - Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
 
 Analytics is **partially covered** — specific tasks are owned, others are not. Reporting, Search Engine Optimization, and copywriting are governed: reporting by `$marketing-reporting` for cross-channel/recurring work and by each channel's owning skill for bounded reports, SEO by `$seo`, and copywriting by `$copywriting` outside the paid-ad and conversion-page copy `$creative-strategy` and `$cro` already own. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.

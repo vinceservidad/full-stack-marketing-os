@@ -34,6 +34,7 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Cross-channel executive report, recurring reporting cadence, or stakeholder scorecard combining findings already produced elsewhere: `$marketing-reporting`.
 - Organic search visibility, ranking, content strategy, or technical SEO health: `$seo`.
 - Email, lifecycle, website, sales-page, long-form, or brand copywriting: `$copywriting`.
+- Email or lifecycle program strategy — segmentation, trigger logic, cadence, deliverability: `$lifecycle-marketing`.
 - Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, recovery, or budget/outcome pacing within an approved plan: `$optimization-scaling`.
 - Undefined scope, unclear data provenance, missing economics, ambiguous conversion definitions, uncertain access, or an unclear authorization boundary: `$marketing-intake`.
 - Customer lifetime value, payback period, cohort retention, churn, or lead-to-revenue maturation: `$retention-economics`.
@@ -49,6 +50,7 @@ Common compositions:
 - Is this customer base or channel worth scaling on a lifetime basis: retention economics owns the lifetime value and payback model; optimization and scaling owns the scaling decision and applies its own proof standard to the model's output.
 - Audit request with no economics, scope, or source of truth supplied: intake owns until the evidence state is recorded; the channel skill then owns the audit itself.
 - Cross-channel executive report requested: reporting owns combining findings already produced by other skills; it does not perform the underlying audit, diagnosis, or economics analysis itself.
+- Email or lifecycle sequence needed end to end: lifecycle marketing owns segmentation, triggers, and cadence; copywriting owns the words for each piece; tracking and measurement owns any incrementality claim.
 - Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 
 ## Capability boundary
@@ -58,7 +60,7 @@ Route only to a skill that exists. Check [`CAPABILITY-REGISTRY.md`](../../../CAP
 - Analytics: tracking architecture, event integrity, and attribution differences belong to `$tracking-measurement`; performance analysis, segmentation, and anomaly diagnosis to `$performance-diagnostics`; allocation and marginal evidence to `$optimization-scaling`. Business-intelligence engineering, pipeline or warehouse design, and dashboard implementation have no governed specialist.
 - Reporting: a bounded single-channel or single-decision report is owned by the skill that owns the underlying decision — the Google Ads audit report by `$google-ads`, the measurement integrity report by `$tracking-measurement`, the scaling review by `$optimization-scaling`. Cross-channel executive reporting, recurring reporting cadence, and stakeholder scorecards are owned by `$marketing-reporting`, which combines those outputs rather than re-deriving them. Budget and outcome pacing remain owned by `$optimization-scaling`; forecasting outside a pacing reforecast has no governed specialist.
 - Copywriting: paid-ad hooks, angles, concepts, and creative briefs belong to `$creative-strategy`; conversion-page copy evaluation to `$cro`; email, lifecycle, website, sales-page, long-form, and brand copywriting to `$copywriting`. Do not route general copywriting to `$creative-strategy` or `$cro` outside their stated scope now that `$copywriting` owns the rest.
-- Other unsupported channels — email and lifecycle, TikTok, LinkedIn, YouTube as a discipline, affiliate, influencer, organic social, programmatic, public relations: the router owns the response and declares the gap. Search Engine Optimization is now governed by `$seo`; do not still describe it as unsupported.
+- Other unsupported channels — TikTok, LinkedIn, YouTube as a discipline, affiliate, influencer, organic social, programmatic, public relations: the router owns the response and declares the gap. Search Engine Optimization is governed by `$seo`; email and lifecycle program strategy is governed by `$lifecycle-marketing`. Do not still describe either as unsupported.
 
 When no governed specialist covers the primary discipline: do not silently substitute an adjacent channel skill; name the missing capability; apply platform-agnostic frameworks only where they address a distinct part of the request; label platform-specific guidance as ungoverned and unverified by this system; never name a skill that does not exist; and state the gap in the exact-status line.
 

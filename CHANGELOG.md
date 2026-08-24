@@ -2,6 +2,22 @@
 
 Notable changes follow semantic versioning.
 
+## [1.10.0] - 2026-08-25
+
+Adds `$lifecycle-marketing`, sixteenth governed skill — the first channel-expansion release since the original v1.1.0 audit's four priorities and the v1.2.0–v1.9.0 architecture and content-gap work.
+
+### Added
+
+- `$lifecycle-marketing` designs email/lifecycle program strategy: segmentation, trigger logic and fallback behavior, send cadence, and deliverability. It does not write copy (`$copywriting` does) and does not run paid acquisition — lifecycle marketing develops demand already captured, it does not generate new demand.
+- Two references: segmentation and triggers (a segment must predict a meaningfully different next action or it isn't a segment; every trigger requires a documented suppression condition and a fallback for late or missing data), and deliverability (slow to damage, slow to repair — volume ramps, authentication checked before content is blamed, a spam-complaint spike is a stop condition, purchased lists refused outright).
+- Seventeen evaluations and the required review record.
+
+### Changed
+
+- Router routes email/lifecycle program strategy to `$lifecycle-marketing`, distinct from the copy itself.
+- `$copywriting` cross-links to `$lifecycle-marketing` for sequence design, reinforcing it writes words, not triggers.
+- Capability registry: email and lifecycle marketing as a discipline moves from unsupported to governed. Nine channels remain unsupported: TikTok, LinkedIn, YouTube as a discipline, affiliate, influencer, organic social, programmatic, public relations.
+
 ## [1.9.0] - 2026-08-25
 
 Adds `$copywriting`, fifteenth governed skill. Migration debt: 31 → 0.
