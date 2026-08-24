@@ -33,6 +33,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`marketing-reporting`](../.agents/skills/marketing-reporting/) | Cross-channel executive report, recurring cadence, stakeholder scorecard |
 | [`seo`](../.agents/skills/seo/) | Organic visibility audit, technical health, content strategy, ranking-change diagnosis |
 | [`copywriting`](../.agents/skills/copywriting/) | Email, lifecycle, website, sales-page, long-form, brand copywriting |
+| [`lifecycle-marketing`](../.agents/skills/lifecycle-marketing/) | Email/lifecycle segmentation, trigger logic, cadence, deliverability |
 
 ## Skill structure
 

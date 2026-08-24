@@ -20,7 +20,7 @@ Primary business outcome and funnel stage the copy serves; audience — priority
 3. Use customer language only when it is traceable to a supplied source — an interview, review, survey response — via `$customer-research`. Do not invent or paraphrase a quotation from memory and present it as customer language.
 4. Select a structure matched to the communication goal, not by default. See [Structure selection](references/structure-selection.md).
 5. Draft, then apply the humanizing pass: remove unnecessary words, mechanical transitions, and any phrasing that reads as templated rather than written for this specific audience and claim.
-6. For a sequence (email, lifecycle), sequence the individual pieces against the funnel stage and lifecycle definitions `$marketing-intake` recorded; a single piece is evaluated on its own persuasive logic, a sequence on its cumulative arc.
+6. For a sequence (email, lifecycle), sequence the individual pieces against the funnel stage and lifecycle definitions `$marketing-intake` recorded, and against the segmentation, trigger, and cadence design `$lifecycle-marketing` owns; a single piece is evaluated on its own persuasive logic, a sequence on its cumulative arc. This skill writes the words for a sequence; it does not design the sequence, platform, or triggers — route that to `$lifecycle-marketing`.
 7. State what would need to be true for the copy to work, and flag any claim in it that is unverified or aspirational rather than evidenced.
 
 ## Rules
