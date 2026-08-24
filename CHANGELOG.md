@@ -2,6 +2,25 @@
 
 Notable changes follow semantic versioning.
 
+## [1.16.0] - 2026-08-25
+
+Adds `$organic-social`, twenty-second governed skill. First of three unordered channel-expansion releases (organic social, programmatic, public relations) built together at the user's direction after the ordered priority list closed at v1.15.0.
+
+### Added
+
+- `$organic-social` covers unpaid, algorithmically-distributed social content: platform-native format and cadence, community management, and distribution fit. Has no bid, no budget lever, and no platform-native attribution to a business outcome — the most platform-currency-sensitive discipline in the system, since the entire distribution mechanism is an undocumented algorithm the business does not control.
+- Two references: algorithm distribution fit (four evidence categories — officially documented, account-observed, industry-inferred, unknown — required for any distribution claim; "the algorithm changed" is rejected as a default explanation before competing account-specific causes are checked) and cadence and community management (cadence set from actual sustainable production capacity, not a platform-suggested benchmark; community management scales with posting volume since public engagement carries reputational weight a private support ticket does not).
+- Fourteen evaluations and the required review record.
+
+### Changed
+
+- Router routes organic content strategy to `$organic-social`; any paid-amplification decision (boosting a post, running organic content as a paid ad) routes to the owning platform skill (`$meta-ads`, `$tiktok-ads`, `$linkedin-ads`, `$youtube-ads`).
+- Capability registry: organic social moves from unsupported to governed.
+
+### Process note
+
+- Both references were written before being linked from `SKILL.md`, producing two orphaned-reference violations. Caught by `scripts/validate-skill-architecture.sh` before commit and fixed; consistent with the v1.13.0 process note.
+
 ## [1.15.0] - 2026-08-25
 
 Adds `$affiliate-marketing`, twenty-first governed skill — sixth channel-expansion release, closing the ordered priority list started in v1.10.0 (email/lifecycle → YouTube → TikTok → LinkedIn → influencer → affiliate).

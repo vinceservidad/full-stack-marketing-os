@@ -39,6 +39,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`linkedin-ads`](../.agents/skills/linkedin-ads/) | LinkedIn account/firmographic targeting, format selection, Lead Gen Forms, B2B economics |
 | [`influencer-marketing`](../.agents/skills/influencer-marketing/) | Influencer/creator vetting, compensation structure, usage rights, disclosure compliance |
 | [`affiliate-marketing`](../.agents/skills/affiliate-marketing/) | Affiliate commission structure, attribution integrity, fraud/brand-bidding screening |
+| [`organic-social`](../.agents/skills/organic-social/) | Organic content strategy, cadence, algorithm-distribution fit, community management |
 
 ## Skill structure
 
