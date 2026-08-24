@@ -5,6 +5,8 @@ description: Turn verified customer, product, offer, and performance evidence in
 
 # Creative Strategy
 
+Platform-specific creative *fit* — TikTok's native-feel standard, YouTube's format constraints — is owned by `$tiktok-ads` and `$youtube-ads` respectively. This skill develops the underlying concept, angle, and hook; route platform-fit assessment to the channel skill.
+
 Classify each deliverable with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md): strategy, framework/model, methodology/process, pattern/hypothesis, tactic/technique, template, best practice, or heuristic. Name the primary type and do not present a pattern as causality.
 
 ## Inputs

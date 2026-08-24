@@ -2,6 +2,22 @@
 
 Notable changes follow semantic versioning.
 
+## [1.12.0] - 2026-08-25
+
+Adds `$tiktok-ads`, eighteenth governed skill — third channel-expansion release, next in the stated priority order after YouTube.
+
+### Added
+
+- `$tiktok-ads` covers native-feeling creative fit, the Spark Ads (boosting an existing organic post) versus standard in-feed decision, targeting breadth held to current platform documentation, and creative-fatigue cadence. Concept, angle, and hook development stay owned by `$creative-strategy`; this skill assesses platform fit, not underlying creative concept.
+- Two references: native creative fit (repurposed horizontal video and a logo-card opening are named as common native-fit mismatches; a single strong asset is a hypothesis pending replication, not a standing rule) and creative fatigue and refresh cadence (refresh cadence is driven by the account's own observed fatigue signal — frequency, click-through, cost per result at the creative level, not campaign level — never a calendar borrowed from a slower-fatiguing platform).
+- Seventeen evaluations and the required review record.
+
+### Changed
+
+- Router routes TikTok creative fit, format, targeting, and cadence to `$tiktok-ads`; concept/hook work to `$creative-strategy`; a capacity shortfall bearing on scaling to `$optimization-scaling`'s existing creative-capacity gate.
+- `$creative-strategy` now states platform-specific creative fit is owned by the channel skill (`$tiktok-ads`, `$youtube-ads`), cross-linked.
+- Capability registry: TikTok advertising moves from unsupported to governed.
+
 ## [1.11.0] - 2026-08-25
 
 Adds `$youtube-ads`, seventeenth governed skill — second channel-expansion release, next in the stated priority order after lifecycle marketing.

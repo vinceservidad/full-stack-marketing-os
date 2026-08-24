@@ -32,6 +32,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Copywriting: email, lifecycle, website, sales-page, long-form, brand — with paid-ad hooks staying under `$creative-strategy` and conversion-page copy under `$cro` | `$copywriting` |
 | Email and lifecycle program strategy: segmentation, trigger logic, cadence, deliverability | `$lifecycle-marketing` |
 | YouTube video advertising: format selection, targeting, view-through measurement fit | `$youtube-ads` |
+| TikTok advertising: native creative fit, Spark Ads vs in-feed, targeting breadth, creative-fatigue cadence | `$tiktok-ads` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -70,7 +71,6 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 No governed specialist. Do not substitute an adjacent channel skill.
 
-- TikTok Ads
 - LinkedIn Ads
 - Affiliate and partnership marketing
 - Influencer and creator marketing
