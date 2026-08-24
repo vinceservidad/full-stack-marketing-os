@@ -33,6 +33,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Email and lifecycle program strategy: segmentation, trigger logic, cadence, deliverability | `$lifecycle-marketing` |
 | YouTube video advertising: format selection, targeting, view-through measurement fit | `$youtube-ads` |
 | TikTok advertising: native creative fit, Spark Ads vs in-feed, targeting breadth, creative-fatigue cadence | `$tiktok-ads` |
+| LinkedIn advertising: account/firmographic targeting, format selection, Lead Gen Forms, B2B cost-structure economics | `$linkedin-ads` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -71,7 +72,6 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 No governed specialist. Do not substitute an adjacent channel skill.
 
-- LinkedIn Ads
 - Affiliate and partnership marketing
 - Influencer and creator marketing
 - Organic social

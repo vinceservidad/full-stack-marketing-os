@@ -2,6 +2,25 @@
 
 Notable changes follow semantic versioning.
 
+## [1.13.0] - 2026-08-25
+
+Adds `$linkedin-ads`, nineteenth governed skill — fourth channel-expansion release, next in the stated priority order after TikTok.
+
+### Added
+
+- `$linkedin-ads` covers account-based and firmographic targeting, format selection matched to buying-committee role, Lead Gen Forms versus off-platform landing pages, and B2B cost-structure economics. Built from `$icp-jtbd` buyer-role and buying-situation evidence rather than assumed personas; lead-quality claims route through `$retention-economics`'s lead-to-revenue cohort maturity method rather than reading an immature cohort as final.
+- Two references: account and firmographic targeting (account-based match rate must be confirmed, not assumed; buying-committee coverage stated explicitly rather than implied by reaching one role) and lead quality and sales cycle (Lead Gen Form and landing-page leads evaluated separately, never blended; B2B fiscal-cycle seasonality checked before attributing a change to campaign performance).
+- Fifteen evaluations and the required review record.
+
+### Changed
+
+- Router routes LinkedIn targeting, format, and B2B economics to `$linkedin-ads`; composition rule states the four-way split with `$icp-jtbd` (buyer-role evidence), `$retention-economics` (lead-to-revenue maturity), and creative/copy support.
+- Capability registry: LinkedIn advertising moves from unsupported to governed.
+
+### Process note
+
+- `scripts/validate-skill-architecture.sh` failed this release on an orphaned reference — `lead-quality-and-sales-cycle.md` was written but not yet linked from `SKILL.md`'s method section. Caught and fixed before commit; the validator did exactly what it exists to do.
+
 ## [1.12.0] - 2026-08-25
 
 Adds `$tiktok-ads`, eighteenth governed skill — third channel-expansion release, next in the stated priority order after YouTube.

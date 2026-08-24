@@ -36,6 +36,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`lifecycle-marketing`](../.agents/skills/lifecycle-marketing/) | Email/lifecycle segmentation, trigger logic, cadence, deliverability |
 | [`youtube-ads`](../.agents/skills/youtube-ads/) | YouTube video ad format, targeting, view-through measurement fit |
 | [`tiktok-ads`](../.agents/skills/tiktok-ads/) | TikTok native creative fit, Spark Ads vs in-feed, creative-fatigue cadence |
+| [`linkedin-ads`](../.agents/skills/linkedin-ads/) | LinkedIn account/firmographic targeting, format selection, Lead Gen Forms, B2B economics |
 
 ## Skill structure
 
