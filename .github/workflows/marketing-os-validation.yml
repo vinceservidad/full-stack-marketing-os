@@ -1,0 +1,40 @@
+name: Marketing OS validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "CHANGELOG.md"
+      - "GLOSSARY.md"
+      - "KNOWLEDGE-TAXONOMY.md"
+      - "PLATFORM-CURRENCY.md"
+      - "README.md"
+      - "ROADMAP.md"
+      - ".agents/skills/**"
+      - "frameworks/**"
+      - "playbooks/**"
+      - "templates/**"
+      - "tests/evaluations/**"
+      - "scripts/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate terminology
+        run: scripts/validate-terminology.sh .
+      - name: Validate platform currency
+        run: scripts/validate-platform-currency.sh .
+      - name: Validate knowledge taxonomy
+        run: scripts/validate-knowledge-taxonomy.sh .
+      - name: Validate optimization and scaling
+        run: scripts/validate-scaling-system.sh .
+      - name: Check platform freshness
+        run: python3 scripts/check-platform-freshness.py .

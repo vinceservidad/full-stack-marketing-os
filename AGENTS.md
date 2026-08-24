@@ -15,6 +15,7 @@
 11. Do not use “profit” without naming the profit level and included costs. Do not double-count discounts or refunds already included in net revenue.
 12. Apply `PLATFORM-CURRENCY.md` before current Google or Meta AI, automation, control, reporting, rollout, or interface claims. Do not claim undocumented algorithm changes; distinguish official documentation, account visibility, experiments, inference, and unknowns.
 13. Classify substantial operating knowledge with `KNOWLEDGE-TAXONOMY.md`. Do not present a pattern as causality, a heuristic as a best practice, a tactic as a strategy, or a framework/model as proof of an outcome.
+14. Scaling requires the `optimization-scaling` readiness, economics, constraint, marginal-evidence, capacity, guardrail, and authorization gates. Never use a universal budget-increase rule or call a tactic proven outside its verified scope.
 
 ## Skill design
 

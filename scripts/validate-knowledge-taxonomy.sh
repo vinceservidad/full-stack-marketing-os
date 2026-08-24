@@ -12,7 +12,7 @@ test -f "$repo_dir/KNOWLEDGE-TAXONOMY.md"
 test -f "$repo_dir/templates/knowledge-artifact.md"
 test -f "$repo_dir/tests/evaluations/v0.2.3-knowledge-taxonomy-cases.md"
 
-for term in Principle Strategy Framework Model Methodology Process Playbook Pattern Hypothesis Tactic Technique Template Checklist "Best practice" Heuristic Guardrail; do
+for term in Principle "Definition / standard" Strategy Framework Model Methodology Process "Playbook / SOP" Pattern Hypothesis Tactic Technique Template "Checklist / QA" "Best practice" Heuristic "Guardrail / policy"; do
   grep -Fq -- "**$term**" "$repo_dir/KNOWLEDGE-TAXONOMY.md"
 done
 

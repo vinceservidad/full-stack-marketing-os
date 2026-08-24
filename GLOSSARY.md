@@ -82,6 +82,25 @@ Use the client's actual CRM stages, then map them where applicable:
 
 Define qualification, stage-entry rules, date basis, and value basis before comparing CPL, cost per qualified lead, pipeline, close rate, or CAC.
 
+## Optimization and scaling
+
+- **Scaling:** Increasing a verified primary business outcome while keeping named economics, quality, capacity, measurement, and risk guardrails acceptable.
+- **Spend growth:** An increase in advertising spend; not automatically scaling.
+- **Profitable scaling:** Increasing contribution profit after media under explicitly defined revenue and cost inputs.
+- **Qualified scaling:** Increasing qualified pipeline or realized customer value while preserving defined quality and capacity thresholds.
+- **Vertical scaling:** Increasing budget or bidding pressure within existing eligible coverage.
+- **Horizontal scaling:** Expanding products, queries, audiences, placements, markets, creatives, or other eligible coverage.
+- **Creative scaling:** Increasing evidence-backed creative diversity, learning, and production capacity.
+- **Funnel scaling:** Increasing qualified post-click conversion capacity or reliability.
+- **Operational scaling:** Increasing inventory, fulfillment, sales, service, support, onboarding, or cash capacity.
+- **Blended efficiency:** Average performance across the scoped total spend and outcome.
+- **Marginal efficiency:** Performance associated with the change in spend/outcome between comparable states.
+- **Saturation:** Declining marginal opportunity as high-value eligible demand or capacity is increasingly exhausted.
+- **Scale ceiling:** Highest currently supportable activity before a named economic, quality, capacity, measurement, or risk guardrail becomes unacceptable.
+- **Scaling step:** One bounded, interpretable increase in spend, bidding pressure, exposure, or coverage with a decision and rollback contract.
+- **De-scaling:** Controlled reduction in inefficient or unsustainable activity while protecting valuable coverage and evidence.
+- **Recovery verification:** Source-of-truth confirmation that a breached condition has restored through the relevant lag/window.
+
 ## Evidence and experimentation
 
 - **Observed:** Directly present in a named source and scope.
