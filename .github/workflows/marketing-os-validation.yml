@@ -7,6 +7,9 @@ on:
   pull_request:
     paths:
       - "AGENTS.md"
+      - "ARCHITECTURE.md"
+      - "ARTIFACT-OWNERSHIP.md"
+      - "CAPABILITY-REGISTRY.md"
       - "CHANGELOG.md"
       - "GLOSSARY.md"
       - "KNOWLEDGE-TAXONOMY.md"
@@ -14,6 +17,8 @@ on:
       - "README.md"
       - "ROADMAP.md"
       - ".agents/skills/**"
+      - "skills/**"
+      - "workflows/**"
       - "frameworks/**"
       - "playbooks/**"
       - "templates/**"
@@ -28,6 +33,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate skill architecture
+        run: scripts/validate-skill-architecture.sh .
       - name: Validate terminology
         run: scripts/validate-terminology.sh .
       - name: Validate platform currency

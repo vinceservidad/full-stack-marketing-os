@@ -2,6 +2,34 @@
 
 Notable changes follow semantic versioning.
 
+## [1.2.0] - 2026-08-24
+
+Architecture consolidation. No new marketing content; this release removes a conflicting second skill layer and makes capability claims truthful.
+
+### Added
+
+- `CAPABILITY-REGISTRY.md` declaring every capability as governed, partially covered, planned, or unsupported, with task-level boundaries for analytics, reporting, and copywriting.
+- `ARTIFACT-OWNERSHIP.md` recording the owner, loading path, and status of every root framework, playbook, template, and workflow; 31 artifacts are tracked as migration debt.
+- `scripts/validate-skill-architecture.sh` enforcing skill packaging, frontmatter validity, unique names, folder/frontmatter agreement, reference reachability, broken links, orphaned references, cross-layer skill impersonation, documentation of the canonical path, router-to-registry agreement, and ownership of new root artifacts.
+- Router capability-boundary section and eighteen v1.2 evaluations covering routing correctness, capability disclosure, layer distinction, and the ownership rule.
+- Architecture validation in continuous integration.
+
+### Changed
+
+- `.agents/skills/` is now declared the canonical executable skill layer in `README.md`, `ARCHITECTURE.md`, and `skills/README.md`. It was previously undocumented in all human-facing material.
+- `ARCHITECTURE.md` documents every distribution layer, its consumer, and whether it is executable. `gpt-knowledge/` is labeled a derived export layer whose contents do not imply a governed specialist.
+- `skills/` is now an index that points to the canonical layer and contains no instructions.
+- Router output now reports capability status and may not name a skill absent from the registry.
+- `README.md` no longer claims Search Engine Optimization coverage, and states analytics, reporting, and copywriting as partially covered.
+
+### Removed
+
+- Thirteen shallow skill definitions moved to `docs/archive/legacy-skill-stubs/`. Four (`google-ads`, `meta-ads`, `creative-strategy`, `cro`) conflicted with stronger canonical skills; four (`seo`, `analytics`, `reporting`, `copywriting`) described capabilities with no governed specialist.
+
+### Known variance
+
+- `cro`, `marketing-router`, and `performance-diagnostics` declare required inputs in prose rather than a dedicated section. Reported as a validator note; heading normalization is deferred to the skill-content release.
+
 ## [1.1.0] - 2026-08-24
 
 ### Added

@@ -24,17 +24,35 @@ Evaluation
 Improved Decision
 ```
 
+## Distribution layers
+
+The repository contains several layers with different consumers. Only one is executable. Confusing them is the failure this table exists to prevent.
+
+| Layer | Role | Executable | Canonical status |
+|---|---|---|---|
+| `.agents/skills/` | Agent-discoverable operating skills | Yes | **Canonical skill source** |
+| `~/.codex/skills/` | Installed local runtime copy | Yes | Generated from canonical — never edited directly |
+| `skills/` | Compatibility index | No | Must contain no competing instructions |
+| `frameworks/` | Shared decision artifacts | No | Governed knowledge library |
+| `playbooks/` | Scenario-specific workflows | No | Governed knowledge library |
+| `templates/` | Reusable deliverable structures | No | Governed artifact library |
+| `workflows/` | Execution sequences | No | Governed workflow library |
+| `agents/` | Agent-role documentation | No | Documentation; not a skill layer |
+| `gpt-knowledge/` | Custom GPT export package | No | Derived export layer |
+| `evaluations/`, `tests/evaluations/` | Quality and decision-behavior checks | No | Governed |
+| `docs/archive/` | Historical material | No | Excluded from active retrieval |
+
+A Custom GPT export file does not imply a governed executable skill exists. `gpt-knowledge/` currently contains material — including Search Engine Optimization, copywriting, and reporting — for which no governed specialist exists. Export coverage and runtime skill coverage are separate claims.
+
 ## Core Layers
 
 ### Skills
 
-Instructions that define how an AI agent should perform a marketing task.
+Governed instructions defining how an AI agent performs a marketing task. Canonical source: `.agents/skills/`.
 
-Examples:
-- Google Ads audit
-- Meta Ads analysis
-- CRO review
-- Creative strategy
+Each skill is a directory holding `SKILL.md` with YAML frontmatter (`name`, `description`) and optional `references/` loaded conditionally. Per `AGENTS.md`, every `SKILL.md` supplies a discriminating trigger description, required context, method, decision rules, output contract, and quality assurance.
+
+Capability status — governed, partially covered, planned, unsupported — is declared in `CAPABILITY-REGISTRY.md`. The Marketing Router will not route to a capability absent from it.
 
 ### Frameworks
 
@@ -51,6 +69,12 @@ Reusable formats for reports, audits, briefs, and strategies.
 ### Evaluations
 
 Quality checks to reduce unsupported assumptions and improve consistency.
+
+## Ownership rule
+
+Every substantial active marketing artifact must have an identifiable owner, a discoverable loading path, a declared evidence state, and a validation rule. Existence in the repository alone does not make a file part of the operating system.
+
+`ARTIFACT-OWNERSHIP.md` records ownership for root artifacts. `scripts/validate-skill-architecture.sh` enforces canonical packaging, unique skill names, folder/frontmatter agreement, reference reachability, the prohibition on cross-layer skill impersonation, and the ownership contract for new root artifacts.
 
 ## Design Principles
 

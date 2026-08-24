@@ -41,9 +41,22 @@ Common compositions:
 - Platforms disagree on revenue: tracking and measurement owns; performance diagnostics joins only if the business outcome itself changed.
 - Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 
+## Capability boundary
+
+Route only to a skill that exists. Check [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md) before answering a request outside the skill map. Boundaries are task-level, not discipline-level: a discipline can be partly governed and partly unsupported.
+
+- Analytics: tracking architecture, event integrity, and attribution differences belong to `$tracking-measurement`; performance analysis, segmentation, and anomaly diagnosis to `$performance-diagnostics`; allocation and marginal evidence to `$optimization-scaling`. Business-intelligence engineering, pipeline or warehouse design, and dashboard implementation have no governed specialist.
+- Reporting: a bounded report is owned by the skill that owns the underlying decision — the Google Ads audit report by `$google-ads`, the measurement integrity report by `$tracking-measurement`, the scaling review by `$optimization-scaling`. Cross-channel executive reporting, budget and outcome pacing, forecasting, and recurring reporting governance have no governed specialist.
+- Copywriting: paid-ad hooks, angles, concepts, and creative briefs belong to `$creative-strategy`; conversion-page copy evaluation to `$cro`. Email, lifecycle, website, sales-page, long-form, brand, and Search Engine Optimization copywriting have no governed specialist and must not be routed to `$creative-strategy` as though governed.
+- Search Engine Optimization and content strategy: no governed specialist. Do not substitute `$google-ads`. Customer research, CRO, or measurement may support a distinct part of the request; the Search Engine Optimization work itself remains ungoverned.
+- Other unsupported channels — email and lifecycle, TikTok, LinkedIn, YouTube as a discipline, affiliate, influencer, organic social, programmatic, public relations: the router owns the response and declares the gap.
+
+When no governed specialist covers the primary discipline: do not silently substitute an adjacent channel skill; name the missing capability; apply platform-agnostic frameworks only where they address a distinct part of the request; label platform-specific guidance as ungoverned and unverified by this system; never name a skill that does not exist; and state the gap in the exact-status line.
+
 ## Rules
 
 - Do not activate every plausible skill.
+- Do not route a request to a skill absent from the capability registry, and do not present a partially covered discipline as fully governed.
 - Do not let a channel metric define the business outcome.
 - Use “primary business outcome” for the main commercial result. Reserve “Primary conversion action” for Google Ads' action-optimization setting.
 - When terms differ by platform or client, preserve the strategic concept and state the current interface or source-system label separately.
@@ -56,8 +69,8 @@ Common compositions:
 
 ## Output
 
-Return: objective; primary knowledge type; routed skills and owner; evidence; missing inputs; approach; findings or deliverable; recommended next action; exact status.
+Return: objective; primary knowledge type; routed skills and owner; capability status (governed, partially covered, or unsupported); evidence; missing inputs; approach; findings or deliverable; recommended next action; exact status.
 
 ## QA
 
-Confirm routing is minimal, an owner is named, unknowns are visible, commercial outcome is explicit, current-platform claims meet the freshness gate, and no external action is implied without authorization.
+Confirm routing is minimal, an owner is named, every named skill exists in the capability registry, any capability gap is disclosed, unknowns are visible, commercial outcome is explicit, current-platform claims meet the freshness gate, and no external action is implied without authorization.

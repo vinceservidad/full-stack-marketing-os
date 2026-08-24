@@ -34,27 +34,45 @@ Final Deliverable
 
 ## What it covers
 
-- Google Ads strategy and optimization workflows
-- Meta Ads campaign and creative systems
-- Creative strategy and testing frameworks
-- Shopify CRO and ecommerce optimization
-- SEO and content systems
-- Reporting and measurement workflows
-- Customer research and positioning methods
-- Audits, experiments, and reusable templates
-- Evidence-led optimization and scaling across Google Ads, Meta Ads, portfolios, creative, ecommerce, and lead generation
+Ten governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+
+- Request routing and owner appointment
+- Google Ads: Search, Shopping, Performance Max
+- Meta Ads: structure, audiences, delivery, placements
+- Creative strategy: angles, hooks, concepts, briefs, tests
+- Conversion Rate Optimization: pages, forms, checkout, friction
+- Performance diagnosis: metric change, anomaly, causal triage
+- Tracking and measurement: event integrity, attribution reconciliation
+- Customer research: interviews, reviews, surveys, evidence synthesis
+- Ideal Customer Profile and Jobs-to-be-Done
+- Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
+
+Analytics, reporting, and copywriting are **partially covered** — specific tasks are owned, others are not. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
+
+[`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative on exactly which tasks are governed, partially covered, planned, or unsupported. The Marketing Router declares the gap rather than substituting an adjacent channel skill.
 
 ## Repository Structure
 
+`.agents/skills/` is the **canonical executable layer**. Everything else is knowledge, documentation, or export material — no other directory contains runnable skills.
+
 ```text
-skills/                Marketing capabilities
-frameworks/            Decision models and methods
-playbooks/             Business workflows
-templates/             Reusable deliverable formats
-workflows/             Execution processes
+.agents/skills/        CANONICAL — governed, agent-loadable operating skills
+skills/                Index only — points to .agents/skills/, no instructions
+frameworks/            Decision models and methods (knowledge library)
+playbooks/             Scenario workflows (knowledge library)
+templates/             Reusable deliverable formats (artifact library)
+workflows/             Execution sequences (workflow library)
+agents/                Agent-role documentation (non-executable)
+gpt-knowledge/         Custom GPT export layer (derived, not a skill layer)
 evaluations/           Quality checks
+tests/evaluations/     Versioned decision-behavior cases
 examples/              Practical demonstrations
+docs/archive/          Historical material, excluded from active retrieval
 ```
+
+See [`ARCHITECTURE.md`](ARCHITECTURE.md) for each layer's consumer and canonical status, and [`ARTIFACT-OWNERSHIP.md`](ARTIFACT-OWNERSHIP.md) for which artifacts have owners.
+
+A file's presence in this repository does not make it part of the operating system. An artifact is operational when a skill owns it, its evidence state is declared, and validation covers it.
 
 ## Creator
 
@@ -79,13 +97,13 @@ My approach:
 ## Example Usage
 
 ```text
-Use Google Ads skill to audit campaign performance.
+Use the Google Ads skill to audit campaign performance.
 
-Use Creative Strategy workflow to build testing ideas.
+Use the Creative Strategy skill to build testing ideas.
 
-Use CRO workflow to review a Shopify product page.
+Use the CRO skill to review a Shopify product page.
 
-Use reporting workflow to analyze results and next actions.
+Use the Performance Diagnostics skill to analyze a metric change and next actions.
 
 Use the Optimization and Scaling skill to decide whether, where, how, and by how much to scale while protecting commercial outcomes.
 ```
@@ -102,7 +120,8 @@ Scaling is not defined as spending more. The system requires a scoped proof leve
 
 ## Roadmap
 
-- More specialist skills
-- More industry playbooks
-- More evaluation scenarios
-- Additional AI agent integrations
+- Reporting, retention economics, and intake specialists
+- Measurement validity and incrementality method selection
+- Clearing artifact migration debt into skill-owned references
+- More industry playbooks and evaluation scenarios
+- Deliberate channel expansion, starting with email and lifecycle
