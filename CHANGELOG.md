@@ -6,6 +6,16 @@ Notable changes follow semantic versioning.
 
 ### Added
 
+- `$creative-strategy` reference: [angle catalog and hook types](.agents/skills/creative-strategy/references/angle-catalog-and-hook-types.md) — a coverage checklist of common angle categories (problem/pain, desired outcome, product benefit, before-after, social proof, objection handling, comparison, founder story, education, UGC/lived-experience, trend relevance) and five hook types (problem, curiosity, outcome, contrarian, proof), distinct from the archetypes reference added previously: this one checks coverage against known categories, the archetypes reference generates novel directions. A proof hook's claim is held to the skill's existing substantiation standard — no rounded-up or invented numbers.
+- `$creative-strategy` reference: [iterating from a winner](.agents/skills/creative-strategy/references/iterating-from-a-winner.md) — the skill's method covered building and launching an initial matrix but not what happens after a cell wins. Requires holding the winning angle fixed and varying exactly one further dimension per round, replication before treating a single win as durable, and routes cross-platform scaling to the owning channel skill rather than assuming an execution transfers unedited.
+- `$copywriting` structure-selection reference gains a UGC narrative structure (Hook → Problem → Lived experience → Proof → CTA) alongside AIDA/PAS/FAB/BAB/Rule of One, with an explicit prohibition on fabricating a testimonial for a piece drafted in this voice.
+- Both additions built after the user shared a second external framework list (attributed to ChatGPT); items already covered by the system (the initial testing sequence, PAS, AIDA, FAB, BAB, Rule of One, Schwartz awareness, the creative matrix concept) were not duplicated. The source's FBA (Feature → Benefit → Advantage) ordering was checked against this system's existing documented FAB (Feature → Advantage → Benefit) — no authoritative source settles which ordering is correct, so this is recorded as a noted variant rather than silently overwritten.
+- Twelve evaluations and the required review record.
+
+
+
+### Added
+
 - `$creative-strategy` reference: [persuasion and behavioral principles](.agents/skills/creative-strategy/references/persuasion-and-behavioral-principles.md) — documented behavioral-science research (social proof, authority, scarcity, loss aversion, anchoring, reciprocity, commitment/consistency, unity, dual-process framing, decoy/framing effects, endowment effect) to inform angle-hypothesis generation at method step 2. Added on direct request after clarifying it as a distinct knowledge type from account-specific test evidence: a principle explains a general mechanism, it does not predict this audience's response, and every resulting angle still requires the existing test matrix before it is evidence.
 - Explicit guardrail against principle-driven manipulation: fabricated scarcity, invented anchors, unearned authority, constructed identity, and manufactured loss are all rejected as substantiation failures, and a technically true but manipulative framing is flagged for human judgment rather than auto-approved by factual accuracy alone.
 - Ten evaluations and the required review record.
