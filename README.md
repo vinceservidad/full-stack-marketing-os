@@ -1,7 +1,7 @@
 # Full-Stack Marketing OS
 
 ![GitHub](https://img.shields.io/badge/status-public-brightgreen)
-![Version](https://img.shields.io/badge/version-v1.1.0-blue)
+![Version](https://img.shields.io/badge/version-v1.18.0-blue)
 ![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
 
 An evidence-led AI marketing operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
@@ -61,7 +61,7 @@ Twenty-four governed skills live in [`.agents/skills/`](.agents/skills/) — the
 - Public Relations: media relations, pitch strategy, crisis communications
 - Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
 
-Analytics is **partially covered** — specific tasks are owned, others are not. Reporting, Search Engine Optimization, and copywriting are governed: reporting by `$marketing-reporting` for cross-channel/recurring work and by each channel's owning skill for bounded reports, SEO by `$seo`, and copywriting by `$copywriting` outside the paid-ad and conversion-page copy `$creative-strategy` and `$cro` already own. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
+Analytics is **partially covered** — specific tasks are owned, others are not. Every other capability originally listed as unsupported is now governed, including reporting (by `$marketing-reporting` for cross-channel/recurring work and by each channel's owning skill for bounded reports), Search Engine Optimization, copywriting, email and lifecycle marketing, YouTube, TikTok, LinkedIn, influencer and affiliate partnerships, organic social, programmatic buying, and public relations.
 
 [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative on exactly which tasks are governed, partially covered, planned, or unsupported. The Marketing Router declares the gap rather than substituting an adjacent channel skill.
 
@@ -94,20 +94,6 @@ Built by Vince Servidad, a Paid Acquisition Specialist focused on Google Ads, Me
 
 The goal is to organize practical marketing knowledge into reusable systems that help marketers and AI agents make better decisions.
 
-## Why Work With Me
-
-I focus on more than launching campaigns.
-
-I combine paid acquisition, conversion optimization, creative strategy, and AI marketing systems to build workflows that are easier to test, improve, and scale.
-
-My approach:
-
-- Data-driven paid acquisition with Google Ads and Meta Ads
-- Conversion-focused thinking beyond clicks and traffic
-- Creative testing based on customer psychology and performance data
-- Shopify and ecommerce growth optimization
-- Building repeatable marketing systems with AI
-
 ## Example Usage
 
 ```text
@@ -134,8 +120,6 @@ Scaling is not defined as spending more. The system requires a scoped proof leve
 
 ## Roadmap
 
-- Reporting, retention economics, and intake specialists
-- Measurement validity and incrementality method selection
-- Clearing artifact migration debt into skill-owned references
-- More industry playbooks and evaluation scenarios
-- Deliberate channel expansion, starting with email and lifecycle
+- Normalize `cro`, `marketing-router`, and `performance-diagnostics` to a dedicated required-inputs heading (currently satisfied in prose; tracked as skill-content debt, not a structural gap)
+- Expand evaluation coverage as real usage surfaces new decision-quality cases
+- More industry playbooks and worked examples
