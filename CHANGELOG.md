@@ -2,6 +2,25 @@
 
 Notable changes follow semantic versioning.
 
+## [1.15.0] - 2026-08-25
+
+Adds `$affiliate-marketing`, twenty-first governed skill — sixth channel-expansion release, closing the ordered priority list started in v1.10.0 (email/lifecycle → YouTube → TikTok → LinkedIn → influencer → affiliate).
+
+### Added
+
+- `$affiliate-marketing` covers commission structure, attribution integrity, and fraud/brand-bidding screening for a performance-based publisher/partner channel. Distinct from `$influencer-marketing`: commission is directly tied to a tracked action, which structurally raises the incentive to game the tracking mechanism itself.
+- Two references: attribution integrity (last-click cookie tracking structurally favors checkout-adjacent partners — coupon, cashback, loyalty — over the upper-funnel content and comparison partners that may have actually built purchase intent; documents cookie duration, cross-device gaps, and coupon-code leakage as named mechanisms) and fraud and brand-bidding detection (cookie stuffing, unrestricted branded-term bidding, and incentivized/fake traffic named with detection method; an unexplained conversion spike is a screening trigger, not a success signal).
+- Fifteen evaluations and the required review record.
+
+### Changed
+
+- Router routes commission structure, attribution integrity, and fraud screening to `$affiliate-marketing`; composition rule routes incrementality claims to `$tracking-measurement` and layers `$influencer-marketing`'s disclosure discipline where a partner is also a content creator.
+- Capability registry: affiliate and partner marketing moves from unsupported to governed.
+
+### Remaining unsupported (3)
+
+Organic social, programmatic, public relations — these were never part of the ordered priority list and need scoping before they're well-defined skills rather than a vague label.
+
 ## [1.14.0] - 2026-08-25
 
 Adds `$influencer-marketing`, twentieth governed skill — fifth channel-expansion release, next in the stated priority order after LinkedIn.
