@@ -34,6 +34,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`seo`](../.agents/skills/seo/) | Organic visibility audit, technical health, content strategy, ranking-change diagnosis |
 | [`copywriting`](../.agents/skills/copywriting/) | Email, lifecycle, website, sales-page, long-form, brand copywriting |
 | [`lifecycle-marketing`](../.agents/skills/lifecycle-marketing/) | Email/lifecycle segmentation, trigger logic, cadence, deliverability |
+| [`youtube-ads`](../.agents/skills/youtube-ads/) | YouTube video ad format, targeting, view-through measurement fit |
 
 ## Skill structure
 
