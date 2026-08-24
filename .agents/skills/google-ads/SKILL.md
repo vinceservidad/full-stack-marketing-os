@@ -5,6 +5,8 @@ description: Audit, diagnose, or plan Google Ads Search, Shopping, and Performan
 
 # Google Ads
 
+Covers Search, Shopping, and Performance Max structure, bidding, and account mechanics. YouTube video advertising is a distinct discipline with different attention economics, format constraints, and measurement norms — route to `$youtube-ads` for format selection, video-specific targeting, and view-through measurement fit; this skill covers the shared Google Ads account and bidding layer YouTube campaigns also run through.
+
 Classify each audit, model, methodology, process, tactic, technique, best practice, or heuristic with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Name the primary type and keep platform evidence separate from recommendations.
 
 ## Context

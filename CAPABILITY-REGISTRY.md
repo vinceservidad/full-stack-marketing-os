@@ -31,6 +31,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Search Engine Optimization: visibility audit, technical health, content and topic strategy, ranking-change diagnosis | `$seo` |
 | Copywriting: email, lifecycle, website, sales-page, long-form, brand — with paid-ad hooks staying under `$creative-strategy` and conversion-page copy under `$cro` | `$copywriting` |
 | Email and lifecycle program strategy: segmentation, trigger logic, cadence, deliverability | `$lifecycle-marketing` |
+| YouTube video advertising: format selection, targeting, view-through measurement fit | `$youtube-ads` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
@@ -71,7 +72,6 @@ No governed specialist. Do not substitute an adjacent channel skill.
 
 - TikTok Ads
 - LinkedIn Ads
-- YouTube advertising as a dedicated discipline
 - Affiliate and partnership marketing
 - Influencer and creator marketing
 - Organic social

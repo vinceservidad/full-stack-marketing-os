@@ -2,6 +2,22 @@
 
 Notable changes follow semantic versioning.
 
+## [1.11.0] - 2026-08-25
+
+Adds `$youtube-ads`, seventeenth governed skill — second channel-expansion release, next in the stated priority order after lifecycle marketing.
+
+### Added
+
+- `$youtube-ads` covers paid video placement: format selection, audience targeting, and measurement fit. Runs through the Google Ads platform but is a distinct discipline from Search/Shopping/PMax, which stay owned by `$google-ads`. Does not cover organic YouTube content or channel strategy.
+- Two references: format selection (skippable, non-skippable, bumper, in-feed/discovery, outstream — matched to funnel objective first, creative length second; the first five seconds carry a skippable format's entire message), and measurement fit (brand lift for awareness, view-through/assisted-conversion for consideration capped at C1–C2 absent a designed incrementality test, direct conversion tracking for response — never summed together).
+- Seventeen evaluations and the required review record.
+
+### Changed
+
+- Router routes YouTube video advertising to `$youtube-ads`; Google Ads account and bidding mechanics for YouTube campaigns stay with `$google-ads`.
+- `$google-ads` now states explicitly it does not cover YouTube's format and measurement decisions, cross-linked to `$youtube-ads`.
+- Capability registry: YouTube advertising as a discipline moves from unsupported to governed.
+
 ## [1.10.0] - 2026-08-25
 
 Adds `$lifecycle-marketing`, sixteenth governed skill — the first channel-expansion release since the original v1.1.0 audit's four priorities and the v1.2.0–v1.9.0 architecture and content-gap work.
