@@ -2,6 +2,25 @@
 
 Notable changes follow semantic versioning.
 
+## [1.17.0] - 2026-08-25
+
+Adds `$programmatic`, twenty-third governed skill. Second of the three unordered channel-expansion releases.
+
+### Added
+
+- `$programmatic` covers demand-side-platform buying across the open exchange — supply-path optimization, inventory verification, and fraud screening. Distinct from every walled-garden platform skill already built: inventory is aggregated from thousands of largely unknown sites and apps through a multi-party resale chain, where the platform itself has no direct accountability for its own supply the way Meta, TikTok, LinkedIn, or YouTube do.
+- Two references: supply-path optimization (the same impression can be bought through multiple resale paths, each taking a fee; made-for-advertising sites are named as inventory that can pass basic brand-safety category filters while lacking genuine audience engagement) and verification and fraud screening (independent third-party verification required for viewability, invalid traffic, and brand safety — never the DSP's or seller's self-report alone, since the reporting party has a financial interest in favorable numbers).
+- Fourteen evaluations and the required review record.
+
+### Changed
+
+- Router routes buying method, supply-path screening, and verification to `$programmatic`; composition rule routes view-through and causal claims to `$tracking-measurement`, consistent with `$youtube-ads`'s existing discipline.
+- Capability registry: programmatic advertising moves from unsupported to governed.
+
+### Remaining unsupported (1)
+
+Public relations — the last item in this batch of three.
+
 ## [1.16.0] - 2026-08-25
 
 Adds `$organic-social`, twenty-second governed skill. First of three unordered channel-expansion releases (organic social, programmatic, public relations) built together at the user's direction after the ordered priority list closed at v1.15.0.
