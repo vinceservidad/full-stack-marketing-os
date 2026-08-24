@@ -34,7 +34,7 @@ Final Deliverable
 
 ## What it covers
 
-Fourteen governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Fifteen governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
 
 - Request routing and owner appointment
 - Engagement intake: scope, evidence grading, metric definitions, access, authorization
@@ -49,9 +49,10 @@ Fourteen governed skills live in [`.agents/skills/`](.agents/skills/) — the ca
 - Retention economics: lifetime value, payback period, cohort retention, churn
 - Marketing reporting: cross-channel executive report, recurring cadence, stakeholder scorecard
 - Search Engine Optimization: visibility audit, technical health, content strategy, ranking-change diagnosis
+- Copywriting: email, lifecycle, website, sales-page, long-form, brand
 - Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
 
-Analytics and copywriting are **partially covered** — specific tasks are owned, others are not. Reporting is governed: cross-channel and recurring reporting by `$marketing-reporting`, single-channel reports by their owning skill. Search Engine Optimization is governed by `$seo`. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
+Analytics is **partially covered** — specific tasks are owned, others are not. Reporting, Search Engine Optimization, and copywriting are governed: reporting by `$marketing-reporting` for cross-channel/recurring work and by each channel's owning skill for bounded reports, SEO by `$seo`, and copywriting by `$copywriting` outside the paid-ad and conversion-page copy `$creative-strategy` and `$cro` already own. Search Engine Optimization, email and lifecycle, TikTok, LinkedIn, affiliate, and influencer marketing are **not covered** by a governed specialist.
 
 [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative on exactly which tasks are governed, partially covered, planned, or unsupported. The Marketing Router declares the gap rather than substituting an adjacent channel skill.
 

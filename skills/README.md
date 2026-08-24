@@ -32,6 +32,7 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`retention-economics`](../.agents/skills/retention-economics/) | Lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts |
 | [`marketing-reporting`](../.agents/skills/marketing-reporting/) | Cross-channel executive report, recurring cadence, stakeholder scorecard |
 | [`seo`](../.agents/skills/seo/) | Organic visibility audit, technical health, content strategy, ranking-change diagnosis |
+| [`copywriting`](../.agents/skills/copywriting/) | Email, lifecycle, website, sales-page, long-form, brand copywriting |
 
 ## Skill structure
 

@@ -42,3 +42,9 @@ Retained for release history only. Excluded from active retrieval and from archi
 | Archived file | Reason | Current status |
 |---|---|---|
 | `seo-framework.flat.md` | Ten-line phase list with no evidence discipline, decision rules, or output contract — same v1.0 shallow pattern as the archived skill stubs | Superseded by `$seo`, a governed skill |
+
+## v1.9.0 addition
+
+| Archived file | Reason | Current status |
+|---|---|---|
+| `copywriting-frameworks.flat.md` | Twenty-line structure list with no evidence discipline, provenance requirement, or ownership boundary against `$creative-strategy`/`$cro` | Superseded by `$copywriting`, a governed skill |
