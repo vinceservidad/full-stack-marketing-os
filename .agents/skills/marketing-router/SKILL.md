@@ -31,8 +31,9 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, or causal evidence grading: `$tracking-measurement`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
-- Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, or recovery: `$optimization-scaling`.
+- Scale readiness, marginal economics, budget/coverage expansion, portfolio allocation, de-scaling, recovery, or budget/outcome pacing within an approved plan: `$optimization-scaling`.
 - Undefined scope, unclear data provenance, missing economics, ambiguous conversion definitions, uncertain access, or an unclear authorization boundary: `$marketing-intake`.
+- Customer lifetime value, payback period, cohort retention, churn, or lead-to-revenue maturation: `$retention-economics`.
 
 Common compositions:
 
@@ -42,6 +43,7 @@ Common compositions:
 - Define a new audience and message: ICP/JTBD owns the segment decision; customer research supplies evidence; creative strategy translates it into tests.
 - Platforms disagree on revenue: tracking and measurement owns; performance diagnostics joins only if the business outcome itself changed.
 - Is this channel actually incremental: tracking and measurement owns method selection and evidence grading; the channel skill supplies account controls; optimization and scaling consumes the result and never substitutes attribution for it.
+- Is this customer base or channel worth scaling on a lifetime basis: retention economics owns the lifetime value and payback model; optimization and scaling owns the scaling decision and applies its own proof standard to the model's output.
 - Audit request with no economics, scope, or source of truth supplied: intake owns until the evidence state is recorded; the channel skill then owns the audit itself.
 - Scale campaigns or allocate more budget: optimization and scaling owns; channel skill supplies account controls; performance diagnostics localizes the constraint; tracking joins when measurement is not decision-ready.
 

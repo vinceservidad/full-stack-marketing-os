@@ -28,7 +28,8 @@ Capability status — governed, partially covered, planned, or unsupported — i
 | [`tracking-measurement`](../.agents/skills/tracking-measurement/) | Event integrity, attribution reconciliation, conversion architecture |
 | [`customer-research`](../.agents/skills/customer-research/) | Interviews, reviews, surveys, customer language, evidence synthesis |
 | [`icp-jtbd`](../.agents/skills/icp-jtbd/) | Priority segments, buying situations, buyer roles, Jobs-to-be-Done |
-| [`optimization-scaling`](../.agents/skills/optimization-scaling/) | Scale readiness, marginal economics, portfolio allocation, de-scaling |
+| [`optimization-scaling`](../.agents/skills/optimization-scaling/) | Scale readiness, marginal economics, portfolio allocation, de-scaling, budget/outcome pacing |
+| [`retention-economics`](../.agents/skills/retention-economics/) | Lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts |
 
 ## Skill structure
 

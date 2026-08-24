@@ -26,7 +26,8 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Measurement validity: causal evidence grading, incrementality method selection, holdouts, geo experiments, lift studies, Marketing Mix Modeling, triangulation | `$tracking-measurement` |
 | Customer research: interviews, reviews, surveys, evidence synthesis | `$customer-research` |
 | Ideal Customer Profile and Jobs-to-be-Done | `$icp-jtbd` |
-| Optimization and scaling: readiness, marginal economics, portfolio, de-scaling | `$optimization-scaling` |
+| Optimization and scaling: readiness, marginal economics, portfolio, de-scaling, budget/outcome pacing | `$optimization-scaling` |
+| Retention economics: lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts | `$retention-economics` |
 
 ## Partially covered
 
@@ -66,7 +67,6 @@ Not covered: email, lifecycle, website, sales-page, long-form, brand, and Search
 | Capability | Reference |
 |---|---|
 | Marketing reporting specialist | `ROADMAP.md` |
-| Retention and customer economics | `ROADMAP.md` |
 
 ## Unsupported
 
