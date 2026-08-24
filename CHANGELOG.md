@@ -2,6 +2,14 @@
 
 Notable changes follow semantic versioning.
 
+## [Unreleased]
+
+### Added
+
+- `$creative-strategy` reference: [persuasion and behavioral principles](.agents/skills/creative-strategy/references/persuasion-and-behavioral-principles.md) — documented behavioral-science research (social proof, authority, scarcity, loss aversion, anchoring, reciprocity, commitment/consistency, unity, dual-process framing, decoy/framing effects, endowment effect) to inform angle-hypothesis generation at method step 2. Added on direct request after clarifying it as a distinct knowledge type from account-specific test evidence: a principle explains a general mechanism, it does not predict this audience's response, and every resulting angle still requires the existing test matrix before it is evidence.
+- Explicit guardrail against principle-driven manipulation: fabricated scarcity, invented anchors, unearned authority, constructed identity, and manufactured loss are all rejected as substantiation failures, and a technically true but manipulative framing is flagged for human judgment rather than auto-approved by factual accuracy alone.
+- Ten evaluations and the required review record.
+
 ## [1.18.0] - 2026-08-25
 
 Adds `$public-relations`, twenty-fourth governed skill. Third and final of the unordered channel-expansion batch (organic social, programmatic, public relations), closing every channel identified as unsupported since v1.9.0.

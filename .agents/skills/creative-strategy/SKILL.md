@@ -16,7 +16,7 @@ Use product truth, target segment and situation, customer language, pains and de
 ## Method
 
 1. Extract the audience situation, tension, desired progress, mechanism, proof, objections, and constraints.
-2. Form distinct angle hypotheses. An angle is a reason to care, not merely a new hook.
+2. Form distinct angle hypotheses. An angle is a reason to care, not merely a new hook. Read [Persuasion and behavioral principles](references/persuasion-and-behavioral-principles.md) for documented research to inform hypothesis generation — a principle explains a general mechanism, it does not predict this audience's response, and the resulting angle still requires the test matrix before it is evidence.
 3. Express each angle through concepts and appropriate formats.
 4. Build a controlled matrix. Where practical, vary one major dimension per learning cell: angle, opening, proof, format, offer framing, or CTA.
 5. Define the success signal, guardrail, and decision window before production.
