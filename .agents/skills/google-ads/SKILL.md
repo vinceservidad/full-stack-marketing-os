@@ -39,6 +39,16 @@ Audit: scope; measurement status; findings with evidence, impact, and confidence
 
 Change plan: exact entity; current and proposed state; rationale; risk; rollback/stop rule; approval required.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [google-ads-full-stack.md](../../../frameworks/google-ads-full-stack.md) — full-account decision model beyond a single audit or diagnosis.
+- [google-ads-audit.md](../../../playbooks/google-ads-audit.md) — step-by-step audit workflow.
+- [google-ads-optimization.md](../../../workflows/google-ads-optimization.md) — recurring optimization cadence.
+- [campaign-brief.md](../../../templates/campaign-brief.md) — campaign brief format, shared with $meta-ads.
+
 ## QA
 
 Check date and attribution consistency, conversion scope, sample size, query/item evidence, margin or lead-quality caveats, preservation of valuable coverage, platform-registry freshness, and account-visible availability for current controls.

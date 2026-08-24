@@ -19,6 +19,11 @@ target_dir="$install_root/skills"
 
 contracts=(GLOSSARY.md KNOWLEDGE-TAXONOMY.md PLATFORM-CURRENCY.md CAPABILITY-REGISTRY.md ARTIFACT-OWNERSHIP.md AGENTS.md)
 
+# Root libraries linked from a skill's "Library references" section as
+# ../../../<dir>/FILE.md. Installed alongside the contracts, at the same
+# rewritten depth, so those links resolve too.
+libraries=(frameworks playbooks templates workflows)
+
 test -d "$source_dir" || { printf 'No canonical skill directory: %s\n' "$source_dir" >&2; exit 1; }
 
 mkdir -p "$target_dir"
@@ -28,6 +33,13 @@ for contract in "${contracts[@]}"; do
     cp "$repo_dir/$contract" "$install_root/$contract"
   else
     printf 'warning: contract not found in repository: %s\n' "$contract" >&2
+  fi
+done
+
+for library in "${libraries[@]}"; do
+  if [[ -d "$repo_dir/$library" ]]; then
+    rm -rf "${install_root:?}/$library"
+    cp -R "$repo_dir/$library" "$install_root/$library"
   fi
 done
 

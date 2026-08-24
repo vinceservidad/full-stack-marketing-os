@@ -23,3 +23,10 @@ Each file below either duplicated a canonical skill with weaker and conflicting 
 Archiving a stub did not remove a capability. It removed a claim that the capability was governed. Where portions of the work are genuinely owned by a canonical skill, the capability registry and the Marketing Router record which owner and which boundary.
 
 Retained for release history only. Excluded from active retrieval and from architecture validation.
+
+## v1.6.0 additions
+
+| Archived file | Reason | Current status |
+|---|---|---|
+| `audit-template.flat.md` | Weaker duplicate — used raw ROAS/CPA with no evidence states, conflicting with `templates/audit.md` | Superseded by `templates/audit.md`, owned by `$performance-diagnostics` |
+| `experiment-plan.flat.md` | Weaker duplicate — no evidence states, no guardrails, conflicting with `templates/experiment.md` | Superseded by `templates/experiment.md`, owned by `$tracking-measurement` |

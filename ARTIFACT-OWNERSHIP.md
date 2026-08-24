@@ -22,13 +22,13 @@ Status definitions:
 | `controlled-scaling.md` | owned | `$optimization-scaling` |
 | `scaling-mode-selector.md` | owned | `$optimization-scaling` |
 | `portfolio-allocation.md` | owned | `$optimization-scaling` |
-| `google-ads-full-stack.md` | migration-debt | Candidate: `$google-ads` |
-| `meta-ads-full-stack.md` | migration-debt | Candidate: `$meta-ads` |
-| `creative-strategy.md` | migration-debt | Candidate: `$creative-strategy` |
-| `shopify-cro.md` | migration-debt | Candidate: `$cro` |
-| `measurement-and-evidence.md` | migration-debt | Candidate: `$tracking-measurement` |
-| `experimentation.md` | migration-debt | Candidate: `$tracking-measurement` |
-| `decision-prioritization.md` | migration-debt | Candidate: `$marketing-router` |
+| `google-ads-full-stack.md` | owned | `$google-ads` (linked from SKILL.md) |
+| `meta-ads-full-stack.md` | owned | `$meta-ads` (linked from SKILL.md) |
+| `creative-strategy.md` | owned | `$creative-strategy` (linked from SKILL.md) |
+| `shopify-cro.md` | owned | `$cro` (linked from SKILL.md) |
+| `measurement-and-evidence.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
+| `experimentation.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
+| `decision-prioritization.md` | owned | `$marketing-router` (linked from SKILL.md) |
 | `copywriting-frameworks.md` | migration-debt | No governed owner — capability partially covered |
 | `seo-framework.md` | migration-debt | No governed owner — capability unsupported |
 
@@ -43,12 +43,12 @@ Status definitions:
 | `lead-generation-scaling.md` | owned | `$optimization-scaling` |
 | `creative-scaling.md` | owned | `$optimization-scaling` |
 | `de-scaling-recovery.md` | owned | `$optimization-scaling` |
-| `google-ads-audit.md` | migration-debt | Candidate: `$google-ads` |
-| `meta-ads-audit.md` | migration-debt | Candidate: `$meta-ads` |
-| `cross-channel-diagnostic.md` | migration-debt | Candidate: `$performance-diagnostics` |
-| `ecommerce.md` | migration-debt | Candidate: `$cro` |
-| `ecommerce-growth.md` | migration-debt | Candidate: `$cro` |
-| `lead-generation.md` | migration-debt | Candidate: `$icp-jtbd` |
+| `google-ads-audit.md` | owned | `$google-ads` (linked from SKILL.md) |
+| `meta-ads-audit.md` | owned | `$meta-ads` (linked from SKILL.md) |
+| `cross-channel-diagnostic.md` | owned | `$performance-diagnostics` (linked from SKILL.md) |
+| `ecommerce.md` | owned | `$cro` (linked from SKILL.md) |
+| `ecommerce-growth.md` | owned | `$cro` (linked from SKILL.md) |
+| `lead-generation.md` | owned | `$icp-jtbd` (linked from SKILL.md) |
 | `README.md` | consumed | Directory index |
 
 ## Templates
@@ -65,33 +65,33 @@ Status definitions:
 | `de-scaling-plan.md` | owned | `$optimization-scaling` |
 | `recovery-verification.md` | owned | `$optimization-scaling` |
 | `knowledge-artifact.md` | consumed | `KNOWLEDGE-TAXONOMY.md` |
-| `campaign-brief.md` | migration-debt | Candidate: `$google-ads` / `$meta-ads` |
-| `creative-brief.md` | migration-debt | Candidate: `$creative-strategy` |
-| `landing-page-review.md` | migration-debt | Candidate: `$cro` |
-| `experiment-plan.md` | migration-debt | Candidate: `$tracking-measurement` |
-| `experiment.md` | migration-debt | Duplicate of `experiment-plan.md` — consolidate |
-| `audit.md` | migration-debt | Duplicate — consolidate with `audit-template.md` |
-| `audit-template.md` | migration-debt | Duplicate — consolidate with `marketing-audit.md` |
-| `marketing-audit.md` | migration-debt | Duplicate — consolidate |
+| `campaign-brief.md` | owned | `$google-ads / $meta-ads` (linked from SKILL.md) |
+| `creative-brief.md` | owned | `$creative-strategy` (linked from SKILL.md) |
+| `landing-page-review.md` | owned | `$cro` (linked from SKILL.md) |
+| `experiment-plan.md` | archived | Weaker duplicate of `experiment.md`; moved to `docs/archive/legacy-skill-stubs/experiment-plan.flat.md` |
+| `experiment.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
+| `audit.md` | owned | `$performance-diagnostics` (linked from SKILL.md) — canonical audit format |
+| `audit-template.md` | archived | Weaker duplicate of `audit.md`; moved to `docs/archive/legacy-skill-stubs/audit-template.flat.md` |
+| `marketing-audit.md` | owned | `$icp-jtbd` (linked from SKILL.md) — distinct scope: business/market-level, not a channel audit |
 | `performance-report.md` | migration-debt | No governed owner — reporting partially covered |
 | `reporting-template.md` | migration-debt | No governed owner — reporting partially covered |
-| `strategy-template.md` | migration-debt | Candidate: `$marketing-router` |
+| `strategy-template.md` | owned | `$marketing-router` (linked from SKILL.md) |
 | `README.md` | consumed | Directory index |
 
 ## Workflows
 
 | Artifact | Status | Owner or consumer |
 |---|---|---|
-| `google-ads-optimization.md` | migration-debt | Candidate: `$google-ads` |
-| `meta-ads-optimization.md` | migration-debt | Candidate: `$meta-ads` |
-| `creative-testing.md` | migration-debt | Candidate: `$creative-strategy` |
-| `cro-improvement.md` | migration-debt | Candidate: `$cro` |
+| `google-ads-optimization.md` | owned | `$google-ads` (linked from SKILL.md) |
+| `meta-ads-optimization.md` | owned | `$meta-ads` (linked from SKILL.md) |
+| `creative-testing.md` | owned | `$creative-strategy` (linked from SKILL.md) |
+| `cro-improvement.md` | owned | `$cro` (linked from SKILL.md) |
 | `reporting-analysis.md` | migration-debt | No governed owner — reporting partially covered |
 | `README.md` | consumed | Directory index |
 
-## Known duplication to resolve
+## Duplication resolved in v1.6.0
 
-Three audit templates (`audit.md`, `audit-template.md`, `marketing-audit.md`) and two experiment templates (`experiment.md`, `experiment-plan.md`) overlap. Consolidation is deferred to the migration release so this consolidation stays architectural rather than editorial.
+`audit-template.md` and `experiment-plan.md` were weaker duplicates — no evidence states, raw platform metrics with no profitability caveat — and were archived. `audit.md` and `experiment.md` are canonical and now owned. `marketing-audit.md` was not a duplicate: business/market-level scope distinct from a channel audit. It is now owned by `$icp-jtbd`.
 
 ## Migration rule
 

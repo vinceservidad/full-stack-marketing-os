@@ -34,6 +34,14 @@ Classify each decomposition, pattern, hypothesis, model, tactic, or test plan wi
 
 Return: anomaly; data-integrity status; decomposition; confirmed findings; ranked hypotheses with supporting and contradicting evidence; estimated impact where possible; next checks; safe containment; exact status and confidence.
 
+
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [cross-channel-diagnostic.md](../../../playbooks/cross-channel-diagnostic.md) — cross-channel diagnostic workflow.
+- [audit.md](../../../templates/audit.md) — evidence-graded audit format.
+
 ## QA
 
 Reconcile totals, keep definitions and windows consistent, account for lag and mix, show arithmetic, avoid double-counting, and do not call the issue resolved until the source of truth recovers or the root cause is verified.
