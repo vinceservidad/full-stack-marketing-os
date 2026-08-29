@@ -4,11 +4,11 @@
 ![Version](https://img.shields.io/badge/version-v1.18.0-blue)
 ![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
 
-An evidence-led AI marketing operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
+An evidence-led full-stack marketing skills and operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
 
-Built to help AI agents work with structured marketing knowledge instead of isolated prompts.
+Built to help AI agents and modern marketing teams work with structured marketing knowledge instead of isolated prompts.
 
-GitHub is the versioned source of truth. AI agents use the system through structured skills, frameworks, playbooks, templates, workflows, and evaluations.
+GitHub is the versioned source of truth. The system brings together governed skills, frameworks, playbooks, templates, workflows, and evaluations for Google Ads, Meta Ads, creative strategy, CRO, SEO, lifecycle marketing, and measurement.
 
 ## System Map
 
