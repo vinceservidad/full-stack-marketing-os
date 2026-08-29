@@ -7,7 +7,7 @@ description: Write or evaluate email, lifecycle, website, sales-page, long-form,
 
 Classify each framework, structure, or heuristic with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). A copywriting structure (AIDA, PAS, FAB, BAB) is a pattern that organizes an argument — it is not evidence that the argument is true, and applying it correctly does not make an unsupported claim supportable.
 
-Per [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md), paid-ad hooks, angles, and concepts stay owned by `$creative-strategy`; landing-page and product-page conversion copy stays owned by `$cro`. This skill owns what those do not: email and lifecycle sequences, website and sales-page copy, long-form content, and brand voice — the copywriting work with no other current owner.
+Per [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md), paid-ad hooks, angles, concepts, and static paid-creative text hierarchy stay owned by `$creative-strategy`; landing-page and product-page conversion copy stays owned by `$cro`. This skill owns what those do not: email and lifecycle sequences, website and sales-page copy, long-form content, and brand voice — the copywriting work with no other current owner.
 
 ## Context
 
@@ -27,7 +27,7 @@ Primary business outcome and funnel stage the copy serves; audience — priority
 
 - Never fabricate a benchmark, result, testimonial, or customer quotation. A number or claim with no traceable source is not written into the copy; it is flagged as missing.
 - Do not present a copywriting structure as a guarantee of performance; a structure organizes an argument, and whether the argument converts is an empirical question for `$cro` or `$creative-strategy` to test, not something this skill can assert.
-- Do not write paid-ad hooks or angles; route those to `$creative-strategy`. Do not write landing-page or product-page conversion copy; route those to `$cro`.
+- Do not write paid-ad hooks, angles, or static-ad type-overlay hierarchy; route those to `$creative-strategy`, including its static DTC creative-direction method. Do not write landing-page or product-page conversion copy; route those to `$cro`.
 - Do not claim brand voice consistency without the brand guidelines actually supplied; write a best-effort draft and label the voice as unverified against guidelines if none exist.
 - A claim of scarcity, urgency, authority, or social proof must be true and evidenced; do not manufacture false urgency or an unsupported authority claim.
 - For regulated or compliance-sensitive claims (health, financial, legal outcome claims), do not write a claim beyond what the supplied evidence supports, and flag the claim for review rather than softening it silently.
