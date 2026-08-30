@@ -13,7 +13,8 @@ Notable changes follow semantic versioning.
 - **Three worked examples with reproducible fixtures** in `examples/`, replacing heading-only outlines: a Google Ads audit whose 5.07x blended ROAS is invalidated by three measurement defects; a Shopify product-page review that localizes the loss before explaining it; and a refused budget increase where the marginal return on the most recent increment is negative under a healthy blended average. Every figure is derived from the committed fixture. All fixtures are synthetic.
 - **`scripts/check-confidentiality.sh`** enforces in CI the rule `CONTRIBUTING.md` and `examples/README.md` already state, scanning tracked files for email addresses, Google Ads customer IDs, Meta account IDs, GA4 and GTM IDs, API keys, and private keys.
 - **CI coverage for the installer and for links.** The validation workflow gains an `install` job matrixed on Linux and macOS, a repo-wide relative-link job, the evaluation corpus check, and the confidentiality check. A separate manual-only `Live evaluation` workflow runs the scored tier without spending API budget on every push.
-- `.gitignore`, `docs/README.md`, `agents/README.md`, and `docs/archive/launch/README.md`.
+- **`scripts/build-gpt-knowledge.py`** generates `gpt-knowledge/pack/` — 18 Custom GPT knowledge files compiled from all 24 governed skills, their references, and the root contracts, plus generated GPT instructions and a manifest. `--check` runs in CI and fails on two things: a hand-edit of generated output, and **a governed skill with no export bundle**, so a new skill cannot ship without reaching the GPT layer.
+- `.gitignore`, `docs/README.md`, `agents/README.md`, `docs/archive/launch/README.md`, and `docs/archive/gpt-knowledge-v1/README.md`.
 
 ### Fixed
 
@@ -24,6 +25,7 @@ Notable changes follow semantic versioning.
 
 ### Changed
 
+- **The Custom GPT export layer is now generated rather than hand-written.** It had drifted to roughly 1,100 words against 40,000 in `.agents/skills/`, with nine governed skills — `$affiliate-marketing`, `$influencer-marketing`, `$lifecycle-marketing`, `$linkedin-ads`, `$organic-social`, `$programmatic`, `$public-relations`, `$tiktok-ads`, `$youtube-ads` — having no export representation at all. A GPT loaded with it was not running this operating system: it had none of the evidence-state discipline, the authorization boundary, or the scaling gates. The generated pack is 46,769 words and covers every governed skill by construction. The nine superseded files are archived at `docs/archive/gpt-knowledge-v1/`; `vince-style.md` and `humanizer-rules.md` remain hand-maintained, being voice material derived from no skill.
 - `README.md` gains a Quickstart. The repository previously documented no way to install itself.
 - 35 one-time launch and release documents, plus `docs/launch-assets/`, moved to `docs/archive/launch/`, which `ARCHITECTURE.md` already excludes from active retrieval. Four were stale duplicates of live root documents — `architecture.md`, `v1-roadmap.md`, `maintenance-plan.md`, `portfolio-case.md` — and the archive README names the current source of truth for each. `docs/` now holds ten guides and an index. No file in `docs/` was linked from anywhere in the repository, so nothing broke.
 

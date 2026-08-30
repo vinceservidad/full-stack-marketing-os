@@ -53,6 +53,8 @@ jobs:
         run: python3 scripts/check-platform-freshness.py .
       - name: Validate evaluation corpus
         run: python3 scripts/eval.py --static
+      - name: GPT knowledge pack matches canonical skills
+        run: python3 scripts/build-gpt-knowledge.py --check
       - name: Check for confidential content
         run: scripts/check-confidentiality.sh .
 
