@@ -1,0 +1,28 @@
+{
+  "name": "full-stack-marketing-os",
+  "displayName": "Full-Stack Marketing OS",
+  "version": "1.18.0",
+  "description": "Twenty-four governed, evidence-led marketing skills for planning, auditing, diagnosing, and scaling full-funnel marketing across Google Ads, Meta Ads, creative strategy, CRO, SEO, lifecycle, and measurement.",
+  "author": {
+    "name": "Vince Servidad",
+    "url": "https://github.com/vinceservidad"
+  },
+  "homepage": "https://github.com/vinceservidad/full-stack-marketing-os",
+  "repository": "https://github.com/vinceservidad/full-stack-marketing-os",
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "google-ads",
+    "meta-ads",
+    "cro",
+    "seo",
+    "paid-media",
+    "creative-strategy",
+    "measurement",
+    "attribution"
+  ],
+  "skills": "./.agents/skills/",
+  "commands": [],
+  "agents": [],
+  "workflows": []
+}

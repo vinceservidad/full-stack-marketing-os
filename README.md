@@ -10,6 +10,46 @@ Built to help AI agents and modern marketing teams work with structured marketin
 
 GitHub is the versioned source of truth. The system brings together governed skills, frameworks, playbooks, templates, workflows, and evaluations for Google Ads, Meta Ads, creative strategy, CRO, SEO, lifecycle marketing, and measurement.
 
+## Quickstart
+
+**Claude Code** — install all 24 skills as a plugin:
+
+```
+/plugin marketplace add vinceservidad/full-stack-marketing-os
+/plugin install full-stack-marketing-os@full-stack-marketing-os
+```
+
+**Codex, Claude Code, or any agent that reads a local skills directory** — clone and install:
+
+```bash
+git clone https://github.com/vinceservidad/full-stack-marketing-os.git
+cd full-stack-marketing-os
+scripts/install-skills.sh                 # installs to every runtime found (~/.claude, ~/.codex)
+scripts/install-skills.sh --target codex  # or name one
+scripts/install-skills.sh --dry-run       # or see what it would do first
+```
+
+The script copies the canonical skills, installs the root contracts and libraries
+they link to, rewrites link depth for the install location, and fails if any link
+does not resolve. It is verified on Linux and macOS in CI.
+
+**Then ask for something:**
+
+```text
+Audit this Google Ads account. Business is DTC skincare, £40k/month spend,
+I have the search terms export and Shopify revenue but no COGS yet.
+```
+
+The system will route to `$marketing-intake` before it audits anything, because
+profitability cannot be concluded without a cost structure. That refusal is the
+product working, not failing — see [`examples/`](examples/) for three worked runs.
+
+**Verify it yourself:**
+
+```bash
+python3 scripts/eval.py --static   # 415 decision cases parse, register, and resolve
+```
+
 ## System Map
 
 ```text
@@ -78,10 +118,12 @@ templates/             Reusable deliverable formats (artifact library)
 workflows/             Execution sequences (workflow library)
 agents/                Agent-role documentation (non-executable)
 gpt-knowledge/         Custom GPT export layer (derived, not a skill layer)
-evaluations/           Quality checks
-tests/evaluations/     Versioned decision-behavior cases
-examples/              Practical demonstrations
-docs/archive/          Historical material, excluded from active retrieval
+evaluations/           Routing cases and reviewer checklists
+tests/evaluations/     Versioned decision-behavior cases (415, all executable)
+examples/              Worked runs with reproducible input fixtures
+scripts/               Installer and validation harnesses
+.claude-plugin/        Claude Code plugin and marketplace manifests
+docs/                  Guides; docs/archive/ is excluded from active retrieval
 ```
 
 See [`ARCHITECTURE.md`](ARCHITECTURE.md) for each layer's consumer and canonical status, and [`ARTIFACT-OWNERSHIP.md`](ARTIFACT-OWNERSHIP.md) for which artifacts have owners.
@@ -120,6 +162,9 @@ Scaling is not defined as spending more. The system requires a scoped proof leve
 
 ## Roadmap
 
+- Publish a scored `tests/RESULTS.md` from a full live evaluation run. The harness is built and the corpus is registered; **no behavioral pass rate is claimed anywhere in this repository until that run is committed.**
 - Normalize `cro`, `marketing-router`, and `performance-diagnostics` to a dedicated required-inputs heading (currently satisfied in prose; tracked as skill-content debt, not a structural gap)
-- Expand evaluation coverage as real usage surfaces new decision-quality cases
+- Validate against anonymized real-world cases, as distinct from the synthetic fixtures in `examples/`
 - More industry playbooks and worked examples
+
+See [`ROADMAP.md`](ROADMAP.md) for the full history.

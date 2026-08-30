@@ -232,20 +232,26 @@ else:
 # Reported as notes. The install location is machine-local and absent in CI, so a
 # drift here must not fail the repository's own validation.
 
-installed = pathlib.Path.home() / ".codex" / "skills"
-if installed.is_dir():
-    # scripts/install-skills.sh rewrites root-contract link depth one level
-    # shallower, so installed copies differ from canonical by design. Normalize
-    # relative-link depth before comparing content.
-    def normalized(text):
-        return re.sub(r"\((?:\.\./)+", "(REL/", text)
+# scripts/install-skills.sh rewrites root-contract link depth one level
+# shallower, so installed copies differ from canonical by design. Normalize
+# relative-link depth before comparing content.
+def normalized(text):
+    return re.sub(r"\((?:\.\./)+", "(REL/", text)
+
+
+# Every runtime the installer can target. A missing runtime is not a finding;
+# a present one that has drifted is.
+for runtime in (".claude", ".codex"):
+    installed = pathlib.Path.home() / runtime / "skills"
+    if not installed.is_dir():
+        continue
 
     for name, skill_md in sorted(names.items()):
         target = installed / name / "SKILL.md"
         if not target.is_file():
-            warnings.append(f"Skill '{name}' is not installed in the local runtime.")
+            warnings.append(f"Skill '{name}' is not installed in the {runtime} runtime.")
         elif normalized(target.read_text(encoding="utf-8")) != normalized(skill_md.read_text(encoding="utf-8")):
-            warnings.append(f"Installed runtime copy of '{name}' has drifted from canonical.")
+            warnings.append(f"The {runtime} runtime copy of '{name}' has drifted from canonical.")
 
     # Root contracts must exist at the install root and resolve from the
     # installed files' own rewritten links.
@@ -258,7 +264,7 @@ if installed.is_dir():
     absent = sorted(c for c in contracts if not (installed.parent / c).is_file())
     if absent:
         warnings.append(
-            "Root contracts not present at the install root: " + ", ".join(absent)
+            f"Root contracts not present at the {runtime} install root: " + ", ".join(absent)
             + " (run scripts/install-skills.sh)"
         )
 
@@ -269,7 +275,7 @@ if installed.is_dir():
                 unresolved.append(f"{md.relative_to(installed)} -> {target}")
     if unresolved:
         warnings.append(
-            "Unresolved links in the installed runtime: "
+            f"Unresolved links in the {runtime} runtime: "
             + "; ".join(unresolved[:5])
             + (" ..." if len(unresolved) > 5 else "")
             + " (run scripts/install-skills.sh)"

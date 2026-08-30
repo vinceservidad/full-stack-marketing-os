@@ -1,0 +1,28 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "full-stack-marketing-os",
+  "owner": {
+    "name": "Vince Servidad",
+    "url": "https://github.com/vinceservidad"
+  },
+  "description": "Evidence-led marketing skills for AI agents: governed operating skills for paid media, creative, CRO, SEO, lifecycle, and measurement.",
+  "plugins": [
+    {
+      "name": "full-stack-marketing-os",
+      "source": "./",
+      "description": "Twenty-four governed, evidence-led marketing skills for planning, auditing, diagnosing, and scaling full-funnel marketing.",
+      "version": "1.18.0",
+      "license": "MIT",
+      "homepage": "https://github.com/vinceservidad/full-stack-marketing-os",
+      "category": "productivity",
+      "keywords": [
+        "marketing",
+        "google-ads",
+        "meta-ads",
+        "cro",
+        "seo",
+        "paid-media"
+      ]
+    }
+  ]
+}

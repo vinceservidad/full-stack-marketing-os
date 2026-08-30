@@ -31,7 +31,8 @@ The repository contains several layers with different consumers. Only one is exe
 | Layer | Role | Executable | Canonical status |
 |---|---|---|---|
 | `.agents/skills/` | Agent-discoverable operating skills | Yes | **Canonical skill source** |
-| `~/.codex/skills/` | Installed local runtime copy | Yes | Generated from canonical — never edited directly |
+| `~/.claude/skills/`, `~/.codex/skills/` | Installed local runtime copies | Yes | Generated from canonical by `scripts/install-skills.sh` — never edited directly |
+| `.claude-plugin/` | Claude Code plugin and marketplace manifests | No | Points at `.agents/skills/`; declares no skills of its own |
 | `skills/` | Compatibility index | No | Must contain no competing instructions |
 | `frameworks/` | Shared decision artifacts | No | Governed knowledge library |
 | `playbooks/` | Scenario-specific workflows | No | Governed knowledge library |
@@ -42,7 +43,7 @@ The repository contains several layers with different consumers. Only one is exe
 | `evaluations/`, `tests/evaluations/` | Quality and decision-behavior checks | No | Governed |
 | `docs/archive/` | Historical material | No | Excluded from active retrieval |
 
-A Custom GPT export file does not imply a governed executable skill exists. `gpt-knowledge/` currently contains material — including Search Engine Optimization, copywriting, and reporting — for which no governed specialist exists. Export coverage and runtime skill coverage are separate claims.
+A Custom GPT export file does not imply a governed executable skill exists. `gpt-knowledge/` is a derived, hand-maintained export: it is not generated from `.agents/skills/`, is not validated against them, and can describe a capability at a different depth — or a different vintage — than the skill that governs it. Export coverage and runtime skill coverage are separate claims, and `CAPABILITY-REGISTRY.md` settles the second one.
 
 ## Core Layers
 
@@ -75,6 +76,8 @@ Quality checks to reduce unsupported assumptions and improve consistency.
 Every substantial active marketing artifact must have an identifiable owner, a discoverable loading path, a declared evidence state, and a validation rule. Existence in the repository alone does not make a file part of the operating system.
 
 `ARTIFACT-OWNERSHIP.md` records ownership for root artifacts. `scripts/validate-skill-architecture.sh` enforces canonical packaging, unique skill names, folder/frontmatter agreement, reference reachability, the prohibition on cross-layer skill impersonation, and the ownership contract for new root artifacts.
+
+`scripts/eval.py --static` covers what that validator cannot see: every evaluation case parses and carries a pass criterion, every case file is registered in `tests/evaluations/suites.json` and names a skill that exists, no knowledge layer makes a claim the system's own rules forbid, and the skill names written in `agents/` and `evaluations/` resolve to governed skills.
 
 ## Design Principles
 

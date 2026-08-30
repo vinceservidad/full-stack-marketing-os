@@ -1,0 +1,47 @@
+name: Live evaluation
+
+# Scores the decision-behavior corpus against a real model and commits nothing.
+# Manual only: each run costs API budget, so it is never wired to push or
+# pull_request. Requires an ANTHROPIC_API_KEY repository secret; without one the
+# harness reports the skip and exits cleanly.
+
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: "Suite id to run (blank runs every suite — expensive)"
+        required: false
+        default: "routing"
+      model:
+        description: "Responder model"
+        required: false
+        default: "claude-sonnet-5"
+      limit:
+        description: "Cap cases per suite (0 = no cap)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Score cases against their written pass criteria
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          args=(--live --model "${{ inputs.model }}" --limit "${{ inputs.limit }}")
+          if [ -n "${{ inputs.suite }}" ]; then
+            args+=(--suite "${{ inputs.suite }}")
+          fi
+          python3 scripts/eval.py "${args[@]}"
+      - name: Upload the scorecard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-results
+          path: tests/RESULTS.md
+          if-no-files-found: ignore

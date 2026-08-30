@@ -17,13 +17,19 @@ on:
       - "README.md"
       - "ROADMAP.md"
       - ".agents/skills/**"
+      - ".claude-plugin/**"
+      - "agents/**"
+      - "evaluations/**"
+      - "examples/**"
+      - "gpt-knowledge/**"
       - "skills/**"
       - "workflows/**"
       - "frameworks/**"
       - "playbooks/**"
       - "templates/**"
-      - "tests/evaluations/**"
+      - "tests/**"
       - "scripts/**"
+      - ".github/workflows/**"
 
 permissions:
   contents: read
@@ -45,3 +51,58 @@ jobs:
         run: scripts/validate-scaling-system.sh .
       - name: Check platform freshness
         run: python3 scripts/check-platform-freshness.py .
+      - name: Validate evaluation corpus
+        run: python3 scripts/eval.py --static
+      - name: Check for confidential content
+        run: scripts/check-confidentiality.sh .
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every relative Markdown link resolves
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+          repo = pathlib.Path(".").resolve()
+          link = re.compile(r"\]\(([^)#]+?)(?:#[^)]*)?\)")
+          broken, checked = [], 0
+          for md in repo.rglob("*.md"):
+              if ".git/" in str(md):
+                  continue
+              for target in link.findall(md.read_text(encoding="utf-8")):
+                  if target.startswith(("http://", "https://", "mailto:")):
+                      continue
+                  checked += 1
+                  if not (md.parent / target).exists():
+                      broken.append(f"{md.relative_to(repo)} -> {target}")
+          print(f"Checked {checked} relative links.")
+          for item in broken:
+              print(f"Broken link: {item}", file=sys.stderr)
+          sys.exit(1 if broken else 0)
+          PY
+
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install skills into a clean runtime root
+        run: scripts/install-skills.sh --target "$RUNNER_TEMP/runtime"
+      - name: Every canonical skill landed
+        run: |
+          canonical=$(find .agents/skills -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
+          installed=$(find "$RUNNER_TEMP/runtime/skills" -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
+          echo "canonical=$canonical installed=$installed"
+          test "$canonical" -eq "$installed"
+      - name: Legacy positional form still works
+        run: |
+          scripts/install-skills.sh . "$RUNNER_TEMP/legacy"
+          test -f "$RUNNER_TEMP/legacy/skills/google-ads/SKILL.md"
+      - name: Plugin manifests are valid
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          python3 -c "import json; json.load(open('.claude-plugin/plugin.json')); json.load(open('.claude-plugin/marketplace.json')); print('manifests parse')"

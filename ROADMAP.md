@@ -42,8 +42,18 @@
 - Add contribution-margin and lead-quality scorecards.
 - Extend routing and unsafe-activation evaluations.
 
-## v1.0 — Proven system
+## v1.0 — Proven system — In progress
 
-- Validate skills against anonymized real-world cases.
+Done:
+
+- Made the evaluation corpus executable. `scripts/eval.py --static` runs in CI over all 415 cases in 28 registered suites; `--live` scores them against a model and writes a dated scorecard to `tests/RESULTS.md`.
+- Added routing evaluations covering the contestable ownership boundaries, so the system's entry point is tested rather than assumed.
+- Published three worked examples with committed input fixtures, each reproducible.
+- Made the installer work on Linux as well as macOS, and put it under CI on both.
+
+Open:
+
+- Publish a `tests/RESULTS.md` from a full live run. The harness exists; no scored run has been committed yet, so no behavioral pass rate is claimed anywhere in this repository.
+- Validate skills against anonymized real-world cases, as distinct from the synthetic fixtures now in `examples/`.
 - Document supported data contracts and integrations.
 - Automate scheduled currency-review issues and establish maintainers and migration policy.

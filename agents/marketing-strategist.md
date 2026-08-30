@@ -20,3 +20,11 @@ Acts as the strategic layer of the Marketing OS.
 
 ## Rules
 Do not recommend tactics without understanding the business model, economics, audience, and objective.
+
+## Governed skills that own this role's work
+
+[`$marketing-router`](../.agents/skills/marketing-router/SKILL.md),[`$marketing-intake`](../.agents/skills/marketing-intake/SKILL.md) [`$icp-jtbd`](../.agents/skills/icp-jtbd/SKILL.md),[`$customer-research`](../.agents/skills/customer-research/SKILL.md)
+
+This file is role documentation. It carries no operating instructions and executes
+nothing; the linked skills do. Coverage is declared in
+[`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).

@@ -1,0 +1,25 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Logs and local scratch
+*.log
+work/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+
+# Evaluation harness output cache (tests/RESULTS.md is committed on purpose)
+tests/.eval-cache/
