@@ -4,7 +4,7 @@ Reusable framework for turning customer research into testable creative ideas.
 
 ## Purpose
 
-Define what creative should communicate, why it should work, and how success will be measured.
+Define what creative should communicate, how the idea should make the message land, why it is supportable, and how success will be measured.
 
 ## Business Context
 
@@ -33,14 +33,19 @@ Define what creative should communicate, why it should work, and how success wil
 - Reason to believe:
 - Proof elements:
 
-## Execution
+## Execution Architecture
 
-- Format:
-- Platform/placement:
+- Primary creative mechanic:
+- Secondary mechanic (optional):
+- Concept / narrative:
+- Hook objective:
 - Hook/opening:
-- Narrative structure:
+- Visual format:
+- Platform/placement:
+- Visual or spoken proof dependency:
 - CTA:
 - Required brand/product elements:
+- Exclusions / claims guardrail:
 
 ## Testing Plan
 
@@ -55,4 +60,5 @@ Define what creative should communicate, why it should work, and how success wil
 
 - Draft status:
 - Approval status:
+- Platform-fit validation status:
 - Learnings after launch:
