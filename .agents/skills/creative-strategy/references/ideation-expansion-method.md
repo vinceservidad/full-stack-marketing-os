@@ -64,7 +64,7 @@ Prioritize cells using evidence fit, business relevance, differentiation, proof 
 
 ## Handoff to testing
 
-The expansion output becomes an input to [`workflows/creative-ideation-engine.md`](../../../..//workflows/creative-ideation-engine.md) and then [`workflows/creative-testing.md`](../../../..//workflows/creative-testing.md). Before launch, each selected cell needs a success signal, business guardrail, decision window, and controlled variable.
+The expansion output becomes an input to [`workflows/creative-ideation-engine.md`](../../../../workflows/creative-ideation-engine.md) and then [`workflows/creative-testing.md`](../../../../workflows/creative-testing.md). Before launch, each selected cell needs a success signal, business guardrail, decision window, and controlled variable.
 
 ## Anti-patterns
 
