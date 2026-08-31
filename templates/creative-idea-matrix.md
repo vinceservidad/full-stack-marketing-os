@@ -27,21 +27,33 @@ Owner: `$creative-strategy`.
 
 ## Idea Matrix
 
-| Cell | Source insight | Angle | Hypothesis | Hook | Concept | Format | Proof | Offer / CTA | Controlled variable | Success signal | Guardrail | Decision window | Expected learning | Status |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| A1 |  |  |  |  |  |  |  |  |  |  |  |  |  | Draft |
-| A2 |  |  |  |  |  |  |  |  |  |  |  |  |  | Draft |
-| B1 |  |  |  |  |  |  |  |  |  |  |  |  |  | Draft |
+| Cell | Source insight | Angle | Hypothesis | Mechanic | Concept | Hook | Visual format | Proof | Offer / CTA | Controlled variable | Success signal | Guardrail | Decision window | Expected learning | Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Draft |
+| A2 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Draft |
+| B1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Draft |
 
 ## Distinction Check
 
 For each pair of cells that look similar, answer:
 
 - What different strategic reason to care is being tested?
-- What different belief, objection, motivation, mechanism, or proof job is being tested?
+- Is the audience reaching the point through a different mechanic, or only seeing a different surface treatment?
+- What different belief, objection, motivation, proof job, opening, or format assumption is being tested?
 - If one wins and the other loses, what would we learn?
 
 If there is no meaningful difference, consolidate the cells.
+
+## Execution Check
+
+For each selected cell:
+
+- Does the mechanic have one clear communication job?
+- Does the concept express that mechanic rather than merely naming a format?
+- Does the hook preserve the angle and proof boundary?
+- Does the visual format serve the mechanic and product truth?
+- Are any customer words traceable rather than synthesized and mislabeled as VOC?
+- Are current platform-fit or policy questions routed to the correct channel owner?
 
 ## Prioritization
 
@@ -53,6 +65,7 @@ Rate or rank selected cells using evidence fit, business relevance, differentiat
 - Cells held for missing evidence:
 - Cells rejected as duplicates or weak hypotheses:
 - Production brief owner:
+- Platform-fit owner:
 - Test owner:
 - Approval status:
 
