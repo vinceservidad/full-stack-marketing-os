@@ -15,18 +15,20 @@ Use product truth, target segment and situation, customer language, pains and de
 
 ## Method
 
-1. Extract the audience situation, tension, desired progress, mechanism, proof, objections, and constraints.
+1. Extract the audience situation, tension, desired progress, mechanism, proof, objections, and constraints. When belief state materially affects message fit, use [Awareness, belief, and desire map](references/awareness-belief-desire-map.md) to separate current belief, blocking belief, required belief shift, available proof, and evidence gaps.
 2. Form distinct angle hypotheses. An angle is a reason to care, not merely a new hook. Read [Persuasion and behavioral principles](references/persuasion-and-behavioral-principles.md) for documented research to inform hypothesis generation, [Strategic framing and angle archetypes](references/strategic-framing-and-angle-archetypes.md) for methods to reach and structure the angle itself, and [Angle catalog and hook types](references/angle-catalog-and-hook-types.md) to check coverage against common categories — a principle, framework, or category informs the hypothesis, it does not predict this audience's response, and the resulting angle still requires the test matrix before it is evidence.
-3. Express each angle through concepts and appropriate formats.
-4. For static DTC assets, apply [Static DTC creative direction and reference analysis](references/static-dtc-creative-direction.md): turn the selected concept into a message architecture, emotional job, visual thesis, reference-analysis record, reading hierarchy, specific typography direction, and render brief before generating imagery. A reference supplies observed patterns, not a proven formula or a layout to copy.
-5. Build a controlled matrix. Where practical, vary one major dimension per learning cell: angle, opening, proof, format, offer framing, or CTA.
-6. Define the success signal, guardrail, and decision window before production. For static assets, preflight the intended placement-size render for hook legibility, product recognition, proof readability, crop safety, brand fit, claim compliance, and reference distinction. Read [Iterating from a winner](references/iterating-from-a-winner.md) once a cell wins, before scaling or producing the next round.
+3. Expand only evidence-compatible directions. Use [Ideation expansion method](references/ideation-expansion-method.md) to generate strategically distinct hooks, concepts, formats, proof treatments, and CTAs without turning quotas or cosmetic variation into false strategic breadth.
+4. Express selected angles through concepts and appropriate formats. For broader ideation work, use the owned [Creative ideation engine workflow](../../../workflows/creative-ideation-engine.md) and [Creative idea matrix](../../../templates/creative-idea-matrix.md).
+5. For static DTC assets, apply [Static DTC creative direction and reference analysis](references/static-dtc-creative-direction.md): turn the selected concept into a message architecture, emotional job, visual thesis, reference-analysis record, reading hierarchy, specific typography direction, and render brief before generating imagery. A reference supplies observed patterns, not a proven formula or a layout to copy.
+6. Build a controlled matrix. Where practical, vary one major dimension per learning cell: angle, opening, proof, format, offer framing, or CTA.
+7. Define the success signal, guardrail, and decision window before production. For static assets, preflight the intended placement-size render for hook legibility, product recognition, proof readability, crop safety, brand fit, claim compliance, and reference distinction. Read [Iterating from a winner](references/iterating-from-a-winner.md) once a cell wins, before scaling or producing the next round.
 
 ## Rules
 
 - Prioritize message-market learning over cosmetic variation.
 - Match proof strength to claim strength. Do not imply guaranteed, clinical, financial, or comparative outcomes without substantiation.
 - Match the opening and proof to audience awareness.
+- Treat awareness, current belief, and required belief shift as evidence-backed inputs or clearly labeled hypotheses, never invented customer psychology.
 - Judge winners across business outcome, conversion quality, and spend—not CTR alone.
 - Placement crops are adaptations, not distinct strategic tests.
 - Keep entities distinct: angle = strategic reason to care; hook = opening expression; creative concept = central idea; creative direction = message, visual, typography, and production specification; creative asset = produced component; ad = configured platform entity; format = delivery form; adaptation = placement-specific version.
@@ -36,7 +38,7 @@ Use product truth, target segment and situation, customer language, pains and de
 
 ## Output
 
-Creative matrix: audience/situation; awareness; angle; hypothesis; hook; narrative; proof; format; CTA; variable; success signal; guardrail.
+Creative matrix: audience/situation; pain/desire/JTBD; awareness; current belief; required belief shift; angle; hypothesis; hook; narrative; proof; format; CTA; variable; success signal; guardrail.
 
 Creative brief: objective; single audience insight; promise; reason to believe; mandatory elements; scene/script beats; variants; claims guardrail; measurement plan.
 
@@ -47,11 +49,13 @@ Static DTC render brief: message architecture; emotional job; reference-analysis
 
 Owned root artifacts, read when their scope applies:
 
-- [creative-strategy.md](../../../frameworks/creative-strategy.md) — angle and hook development method.
+- [creative-strategy.md](../../../frameworks/creative-strategy.md) — research-to-angle-to-test decision map.
+- [creative-ideation-engine.md](../../../workflows/creative-ideation-engine.md) — evidence-to-idea expansion and prioritization workflow.
+- [creative-idea-matrix.md](../../../templates/creative-idea-matrix.md) — controlled ideation matrix template.
 - [creative-brief.md](../../../templates/creative-brief.md) — creative brief format.
 - [creative-testing.md](../../../workflows/creative-testing.md) — test cadence and evaluation workflow.
 - [static-dtc-creative-direction.md](references/static-dtc-creative-direction.md) — static paid-creative production direction, reference analysis, typography, and render validation.
 
 ## QA
 
-Check claims against evidence, concepts are strategically distinct, the test can teach something, platform constraints are met, CTA matches the destination, and copy remains draft until approved. For static assets, verify the emotional job is tied to the audience situation; references were analysed without copying; reading order, product role, and typography are explicit; proof is substantiated; and the placement-size render passes preflight.
+Check claims against evidence, concepts are strategically distinct, the test can teach something, platform constraints are met, CTA matches the destination, and copy remains draft until approved. For ideation, verify the source insight is grounded, belief shifts are supportable, duplicate cells were consolidated, and each selected cell changes a meaningful strategic dimension. For static assets, verify the emotional job is tied to the audience situation; references were analysed without copying; reading order, product role, and typography are explicit; proof is substantiated; and the placement-size render passes preflight.
