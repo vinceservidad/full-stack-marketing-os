@@ -12,17 +12,26 @@ Use this list to check coverage, not to produce one execution of each category r
 
 ## Hook types
 
-A hook is the opening expression of an angle (per the skill's existing angle/hook distinction), not the angle itself. The types below are common opening shapes, not proven openers:
+A hook is the opening expression of an angle, not the angle itself. These are common opening shapes, not proven openers:
 
-- **Problem hook** — names the audience's situation directly ("Still dealing with...").
-- **Curiosity hook** — withholds the payoff to earn attention ("Nobody tells you this about...").
-- **Outcome hook** — leads with the result ("Get [result] without...").
-- **Contrarian hook** — challenges a common assumption ("Stop doing X if you want Y"); requires the challenged assumption to be genuinely common and the counter-claim to be substantiated, not merely attention-seeking.
-- **Proof hook** — leads with a credible quantified claim ("10,000+ customers..."); the number must be real and sourced per this skill's existing proof-strength rule — a fabricated or rounded-up figure here is a substantiation failure, not a stylistic choice.
+- **Problem / situation hook** — names a relevant situation directly.
+- **Curiosity hook** — creates an open question or incomplete information without withholding essential truth.
+- **Outcome / desire hook** — leads with desired progress or a supportable result.
+- **Contrast hook** — highlights a real mismatch, alternative, trade-off, or state difference.
+- **Contrarian / reframe hook** — challenges a genuinely held assumption with a supportable alternative explanation.
+- **Identity / situation callout** — qualifies a specific audience or buying context when that specificity is relevant.
+- **Proof hook** — leads with credible evidence; any number, result, credential, testimonial, or comparison must be sourced.
+- **Story / discovery hook** — opens inside a genuine or clearly fictionalized narrative, realization, or discovery moment.
+- **Explainer / how-to hook** — promises useful understanding or instruction.
+- **Objection / risk-reversal hook** — addresses hesitation or a genuine guarantee/safety net.
+- **Offer / urgency hook** — leads with the offer or real time/supply constraint for sufficiently aware audiences.
+
+For full hook construction, tactic/frame selection, psychological mechanism, native voice, modality, and proof rules, read [Hook execution](hook-execution.md).
 
 ## Rules
 
-- A hook type is an opening shape; the angle behind it is what determines whether the message actually holds up past the first few seconds. Do not treat a strong hook as a substitute for a grounded angle.
-- Match hook type to awareness stage: a curiosity or contrarian hook can work on a cold, unaware audience where the goal is to earn attention before the offer is introduced; a proof or outcome hook fits better with a warmer, solution-aware audience already evaluating options. This is the same awareness-matching discipline the skill already requires, applied to hook selection specifically.
-- This catalog is a coverage check, not a production quota; scanning every category to confirm nothing obvious was missed is useful, generating one execution per category regardless of evidence fit is not.
+- A hook type is an opening shape; the angle behind it is what determines whether the message holds up beyond the first moment. Do not treat a strong hook as a substitute for a grounded angle.
+- Awareness-stage fit is a planning hypothesis. Earlier-awareness audiences often need more context, recognition, curiosity, education, or desire; later-awareness audiences can often support more direct proof, objection handling, offer, or risk reversal. Account evidence and the actual buying situation override this default.
+- This catalog is a coverage check, not a production quota. Generating one hook of every type regardless of fit creates noise rather than learning.
 - A proof hook's claim is held to the same substantiation standard as any other claim in this system; do not round up, estimate, or approximate a number presented as a specific fact.
+- A voice pattern or tactic name is not VOC and is not evidence that the hook will perform.
