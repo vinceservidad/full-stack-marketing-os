@@ -15,14 +15,18 @@ Define what creative should communicate, why it should work, and how success wil
 ## Audience
 
 - Target audience:
+- Audience situation:
+- Pain / desire / JTBD:
 - Awareness stage:
-- Current problem:
+- Current belief:
+- Blocking belief:
 - Desired outcome:
 - Main objections:
 
 ## Strategy
 
 - Verified insight:
+- Required belief shift:
 - Creative angle:
 - Hypothesis:
 - Core promise:
@@ -44,6 +48,8 @@ Define what creative should communicate, why it should work, and how success wil
 - Controlled variable:
 - Success metrics:
 - Business guardrails:
+- Decision window:
+- Expected learning:
 
 ## Review
 

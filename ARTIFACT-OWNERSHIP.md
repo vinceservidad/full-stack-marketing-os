@@ -67,6 +67,7 @@ Status definitions:
 | `knowledge-artifact.md` | consumed | `KNOWLEDGE-TAXONOMY.md` |
 | `campaign-brief.md` | owned | `$google-ads / $meta-ads` (linked from SKILL.md) |
 | `creative-brief.md` | owned | `$creative-strategy` (linked from SKILL.md) |
+| `creative-idea-matrix.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `landing-page-review.md` | owned | `$cro` (linked from SKILL.md) |
 | `experiment-plan.md` | archived | Weaker duplicate of `experiment.md`; moved to `docs/archive/legacy-skill-stubs/experiment-plan.flat.md` |
 | `experiment.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
@@ -84,6 +85,7 @@ Status definitions:
 |---|---|---|
 | `google-ads-optimization.md` | owned | `$google-ads` (linked from SKILL.md) |
 | `meta-ads-optimization.md` | owned | `$meta-ads` (linked from SKILL.md) |
+| `creative-ideation-engine.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `creative-testing.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `cro-improvement.md` | owned | `$cro` (linked from SKILL.md) |
 | `reporting-analysis.md` | owned | `$marketing-reporting` (linked from SKILL.md) — data-to-decision workflow sequence |
