@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# Installs canonical skills into the local agent runtime.
+# Installs canonical Marketing OS skills into a local agent runtime.
+#
+# Default target is Codex at ~/.codex. Pass another install root to reuse the
+# same canonical skills with a compatible Agent Skills runtime such as Claude
+# Code at ~/.claude.
 #
 # Root contracts are linked as ../../../FILE.md from a SKILL.md and
 # ../../../../FILE.md from a reference. That depth reaches the repository root
@@ -9,11 +13,14 @@
 # links so the contracts resolve where they are installed.
 #
 # Usage: scripts/install-skills.sh [repo_dir] [install_root]
+# Examples:
+#   scripts/install-skills.sh . "$HOME/.codex"
+#   scripts/install-skills.sh . "$HOME/.claude"
 
 set -euo pipefail
 
 repo_dir=$(cd "${1:-.}" && pwd)
-install_root=${2:-$HOME/.codex}
+install_root=${2:-${MARKETING_OS_INSTALL_ROOT:-$HOME/.codex}}
 source_dir="$repo_dir/.agents/skills"
 target_dir="$install_root/skills"
 
@@ -51,14 +58,14 @@ for skill_path in "$source_dir"/*/; do
   rm -rf "${target_dir:?}/$name"
   cp -R "$skill_path" "$target_dir/$name"
 
-  # Rewrite root-contract link depth, one level shallower. Both patterns are
-  # rewritten in a single pass via a placeholder: applied sequentially, the
-  # four-level result would match the three-level pattern and shift twice.
+  # Rewrite root-contract link depth one level shallower. -i.bak works on both
+  # BSD/macOS sed and GNU sed; backup files are removed immediately afterward.
   find "$target_dir/$name" -name '*.md' -type f -exec \
-    sed -i '' \
+    sed -i.bak \
       -e 's|(\.\./\.\./\.\./\.\./|(@@D@@|g' \
       -e 's|(\.\./\.\./\.\./|(../../|g' \
       -e 's|(@@D@@|(../../../|g' {} +
+  find "$target_dir/$name" -name '*.bak' -type f -delete
 
   installed=$((installed + 1))
 done
