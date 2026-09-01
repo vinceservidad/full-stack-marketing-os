@@ -74,7 +74,7 @@ Record patterns here; keep traceable quotations in the underlying research sourc
 
 ## Current Offer
 
-This section records the current offer state. `$offer-strategy` owns diagnosis or redesign of the offer.
+This section records the current offer state. `$offer-strategy` owns diagnosis or redesign of the proposition itself.
 
 | Field | Current context | Source | Evidence state |
 |---|---|---|---|
@@ -83,7 +83,21 @@ This section records the current offer state. `$offer-strategy` owns diagnosis o
 | Offer components / bundle |  |  |  |
 | Risk reversal |  |  |  |
 | Real urgency / scarcity |  |  |  |
-| Price / payment terms as supplied |  |  |  |
+
+## Current Pricing and Monetization
+
+This section records the current commercial exchange state. `$pricing-monetization` owns pricing architecture and price-change decisions. Preserve exact state: proposed, approved, configured, live, observed, or verified.
+
+| Field | Current context | Source | Evidence state |
+|---|---|---|---|
+| Base / list price |  |  |  |
+| Realized price / discount mix |  |  |  |
+| Value metric |  |  |  |
+| Packages / tiers |  |  |  |
+| Payment model / terms |  |  |  |
+| Fees / credits |  |  |  |
+| Existing-customer / renewal treatment |  |  |  |
+| Commercial state |  |  |  |
 
 ## Proof Inventory
 
@@ -136,7 +150,8 @@ Newest first. Preserve prior entries rather than rewriting history.
 - Downstream skills read only the sections relevant to their decision; this is not a requirement to load the whole file for every trivial task.
 - A context entry inherits the evidence state of its underlying source; summarizing it here never upgrades confidence.
 - Customer language is not verbatim VOC unless it remains traceable to the supplied source.
-- A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence.
+- A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence or willingness-to-pay.
+- A proposed/configured price remains proposed/configured here until the source pricing artifact verifies a later state.
 - Do not silently overwrite a contradiction. Record the competing evidence and the segment, date, or source difference.
 - Do not place unnecessary personal data in this artifact.
 - When a decision materially changes the context, increment the context version and prepend a change-log entry.

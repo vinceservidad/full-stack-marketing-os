@@ -1,6 +1,6 @@
 ---
 name: offer-strategy
-description: Diagnose and design the commercial offer itself — promised outcome, core deliverable, value architecture, bundle, risk reversal, urgency/scarcity, and offer-level friction — using verified product, customer, proof, and economics evidence; not for writing the page, setting base pricing strategy, or claiming conversion lift from heuristics.
+description: Diagnose and design the commercial offer itself — promised outcome, core deliverable, value architecture, bundle, risk reversal, urgency/scarcity, and offer-level friction — using verified product, customer, proof, and economics evidence; not for writing the page, setting pricing architecture, or claiming conversion lift from heuristics.
 ---
 
 # Offer Strategy
@@ -16,7 +16,7 @@ When `.agents/marketing-context.md` exists in the active project, read the relev
 - product truth and claim boundaries
 - priority segment, buying situation, JTBD, and desired outcome
 - customer objections, anxieties, alternatives, and selection criteria
-- current offer and supplied price/payment terms
+- current offer and current price/payment terms
 - available proof and its allowed use
 - margin, refund, fulfillment, inventory, service, or delivery constraints
 - legal, compliance, brand, and authorization boundaries
@@ -32,7 +32,8 @@ If these are materially unclear, route the missing evidence to `$marketing-intak
 5. **Design the smallest meaningful change.** Improve the core deliverable, bundle, service layer, risk reversal, eligibility, timing, convenience, or other offer component while preserving product truth and margin constraints.
 6. **Audit risk reversal and urgency.** Use [Risk reversal and urgency](references/risk-reversal-and-urgency.md). A guarantee must transfer a real risk the business can bear. Urgency or scarcity must be true, specific, and operationally enforceable.
 7. **Specify proof requirements.** Match each promise to evidence strong enough to support it. Customer-reported experience is not automatically causal business proof.
-8. **Define the test.** State the offer hypothesis, controlled change, primary business outcome, guardrails, decision window, and what a win, loss, or inconclusive result would teach. Route causal experiment design to `$tracking-measurement` when needed.
+8. **Route pricing when material.** If the binding constraint may be base price, value metric, package/tier architecture, payment model, or discount architecture, route that decision to `$pricing-monetization`; Offer Strategy may supply the offer context but does not set the exchange structure.
+9. **Define the test.** State the offer hypothesis, controlled change, primary business outcome, guardrails, decision window, and what a win, loss, or inconclusive result would teach. Route causal experiment design to `$tracking-measurement` when needed.
 
 ## Rules
 
@@ -45,18 +46,19 @@ If these are materially unclear, route the missing evidence to `$marketing-intak
 - Do not turn a customer aspiration into a product claim unless product truth and proof support the bridge.
 - Do not treat a bundle as stronger merely because it contains more items. Every component needs a job in the buying decision or delivery outcome.
 - Do not hide meaningful conditions in fine print to make the headline offer look stronger.
-- Do not set a base price, value metric, pricing tier architecture, willingness-to-pay result, or monetization strategy. Those pricing decisions remain a separate capability until governed explicitly. Treat supplied price/payment terms as inputs and label any unowned pricing recommendation as such.
+- Do not set base price, value metric, pricing tier/package architecture, willingness-to-pay estimates, discount architecture, or monetization model. Route those decisions to `$pricing-monetization` and consume its approved/current terms as pricing inputs.
 - A proposed offer is not approved, live, or proven. Preserve draft, approved, published/live, and verified states.
 
 ## Output
 
-Offer decision: business objective; audience and buying situation; current offer; diagnosed constraint; evidence; proposed offer architecture; promise and proof boundary; core deliverable; bundle/service components; risk reversal; real urgency/scarcity; supplied price/payment terms; economics/capacity check; objections addressed; hypothesis; measurement and guardrails; approval needs; exact status.
+Offer decision: business objective; audience and buying situation; current offer; diagnosed constraint; evidence; proposed offer architecture; promise and proof boundary; core deliverable; bundle/service components; risk reversal; real urgency/scarcity; current or approved price/payment terms from `$pricing-monetization`; economics/capacity check; objections addressed; hypothesis; measurement and guardrails; approval needs; exact status.
 
 ## Related owners
 
 - `$marketing-intake`: shared context, evidence state, economics definitions, authorization
 - `$customer-research`: objections, VOC, reported outcomes, review evidence
 - `$icp-jtbd`: segment, buying situation, JTBD, switching forces
+- `$pricing-monetization`: base price, value metric, packages/tiers, payment model, discount architecture, price-change testing
 - `$copywriting`: wording that presents the offer
 - `$cro`: landing/product-page and funnel friction
 - `$creative-strategy`: paid creative angle, concept, proof treatment, and CTA
@@ -66,4 +68,4 @@ Offer decision: business objective; audience and buying situation; current offer
 
 ## QA
 
-Confirm the offer is distinct from its copy and page, the desired outcome is evidence-grounded, every promise fits product truth, proof strength matches claim strength, urgency/scarcity is real, risk reversal is operationally supportable, margin/capacity consequences are visible, no pricing capability is silently claimed, the proposed change is testable, and no draft is described as approved or proven.
+Confirm the offer is distinct from its copy, page, and pricing architecture; the desired outcome is evidence-grounded; every promise fits product truth; proof strength matches claim strength; urgency/scarcity is real; risk reversal is operationally supportable; margin/capacity consequences are visible; pricing decisions route to `$pricing-monetization`; the proposed change is testable; and no draft is described as approved or proven.

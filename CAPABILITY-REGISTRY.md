@@ -19,6 +19,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Marketing operations: recurring cross-skill loops, trigger/cadence governance, run state, idempotency, approval gates, execution handoffs, verification, escalation, and retirement | `$marketing-operations` |
 | Engagement intake: scope, evidence grading, metric definitions, access, authorization, reusable Marketing Context | `$marketing-intake` |
 | Offer strategy: commercial proposition, promised outcome, core deliverable, value architecture, bundle, risk reversal, real urgency/scarcity | `$offer-strategy` |
+| Pricing and monetization: base price, value metric, package/tier architecture, payment model, discount architecture, willingness-to-pay evidence, price-change testing and migration | `$pricing-monetization` |
 | Google Ads: Search, Shopping, Performance Max | `$google-ads` |
 | Meta Ads: structure, audiences, delivery, placements | `$meta-ads` |
 | Creative strategy: angles, hooks, concepts, briefs, tests | `$creative-strategy` |
@@ -42,7 +43,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Organic social: content strategy, cadence, algorithm-distribution fit, community management | `$organic-social` |
 | Programmatic: supply-path optimization, inventory verification, fraud screening | `$programmatic` |
 | Public relations: media relations, pitch strategy, crisis communications | `$public-relations` |
-| Cross-channel executive reporting, recurring reporting cadence, stakeholder scorecards | `$marketing-reporting` |
+| Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
 
@@ -76,11 +77,10 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 ## Unsupported
 
-All previously identified advertising and distribution channels are governed, but this registry can still contain non-channel capability gaps.
+All previously identified advertising and distribution channels are governed, and pricing/monetization is now governed. This registry can still contain future non-channel capability gaps.
 
 | Capability | Boundary |
 |---|---|
-| Pricing and monetization strategy | No governed owner yet for setting base price, value metric, tier/package architecture, willingness-to-pay research, or monetization model. `$offer-strategy` may consume supplied price/payment terms and test offer components, but it must not silently claim this pricing capability. |
 
 ## Handling an uncovered request
 
