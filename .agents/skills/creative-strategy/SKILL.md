@@ -11,7 +11,7 @@ Classify each deliverable with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXO
 
 ## Inputs
 
-Use product truth, target segment and situation, customer language, pains and desired outcomes, awareness stage, objections, differentiators, offer, proof, brand constraints, placements, and prior results. For a static asset, also require the emotional job, product assets, exact placement/crop, destination and CTA, brand codes, and supplied reference creative if reference analysis is requested. Mark missing research instead of fabricating voice-of-customer evidence.
+Use product truth, target segment and situation, customer language, pains and desired outcomes, awareness stage, objections, differentiators, offer, proof, brand constraints, placements, and prior results. For a static asset, also require the emotional job, product assets, exact placement/crop, destination and CTA, brand codes, required derivative aspect ratios, and supplied reference creative if reference analysis is requested. Mark missing research instead of fabricating voice-of-customer evidence.
 
 When reviews are a material research source, consume the `$customer-research` handoff rather than cherry-picking review language directly.
 
@@ -23,9 +23,9 @@ When reviews are a material research source, consume the `$customer-research` ha
 4. Select the concept architecture. Use [Creative mechanics](references/creative-mechanics.md) to define how the concept should cause the audience to understand, feel, compare, observe, or infer the angle. Keep angle, mechanic, concept, hook, format, and proof distinct.
 5. Execute the opening and vessel. Use [Hook execution](references/hook-execution.md) to develop evidence-compatible openings and [Visual format selection](references/visual-format-selection.md) to choose the production vessel. Treat awareness-stage and format-fit guidance as hypotheses unless account evidence supports them.
 6. For broader ideation work, use the owned [Creative ideation engine workflow](../../../workflows/creative-ideation-engine.md) and [Creative idea matrix](../../../templates/creative-idea-matrix.md).
-7. For static DTC assets, apply [Static DTC creative direction and reference analysis](references/static-dtc-creative-direction.md): turn the selected mechanic and concept into a message architecture, emotional job, visual thesis, reference-analysis record, reading hierarchy, specific typography direction, and render brief before generating imagery. A reference supplies observed patterns, not a proven formula or a layout to copy.
+7. For static DTC assets, apply [Static DTC creative direction and reference analysis](references/static-dtc-creative-direction.md): turn the selected mechanic and concept into a message architecture, emotional job, visual thesis, reference-analysis record, reading hierarchy, crop plan, specific typography direction, and render brief before generating imagery. When a master must survive a square derivative, define a centered 1:1 cross-crop core and keep critical meaning inside it; treat this as a reusable crop-resilience rule, not a universal platform safe-zone claim.
 8. Build a controlled matrix. Where practical, vary one major dimension per learning cell: angle, mechanic, opening, proof, format, offer framing, or CTA.
-9. Define the success signal, guardrail, and decision window before production. For static assets, preflight the intended placement-size render for hook legibility, product recognition, proof readability, crop safety, brand fit, claim compliance, and reference distinction. Read [Iterating from a winner](references/iterating-from-a-winner.md) once a cell wins, before scaling or producing the next round.
+9. Define the success signal, guardrail, and decision window before production. For static assets, preflight the master and every required derivative crop for hook legibility, product recognition, proof/qualifier readability, CTA visibility, subject meaning, crop safety, brand fit, claim compliance, and reference distinction. Read [Iterating from a winner](references/iterating-from-a-winner.md) once a cell wins, before scaling or producing the next round.
 
 ## Rules
 
@@ -36,9 +36,10 @@ When reviews are a material research source, consume the `$customer-research` ha
 - Treat review language as VOC only when traceable to a supplied or research source; model-created language is synthesis or copy.
 - Judge winners across business outcome, conversion quality, and spend, not CTR or thumb-stop rate alone.
 - Placement crops are adaptations, not distinct strategic tests.
-- Keep entities distinct: angle = strategic reason to care; mechanic = how the concept makes that reason land; creative concept = specific central idea or narrative; hook = opening expression; creative direction = message, visual, typography, and production specification; creative asset = produced component; ad = configured platform entity; format = delivery vessel; adaptation = placement-specific version.
+- Keep entities distinct: angle = strategic reason to care; mechanic = how the concept makes that reason land; creative concept = specific central idea or narrative; hook = opening expression; creative direction = message, visual, typography, crop, and production specification; creative asset = produced component; ad = configured platform entity; format = delivery vessel; adaptation = placement-specific version.
 - Do not present a hook tactic, mechanic family, format family, or native voice pattern as inherently high-performing.
-- For static paid creative, do not send a generic image prompt to production. The brief must specify the audience tension, mechanic, visual thesis, product role, reading hierarchy, exact copy and type-overlay direction, proof treatment, placement, and exclusions.
+- For static paid creative, do not send a generic image prompt to production. The brief must specify the audience tension, mechanic, visual thesis, product role, reading hierarchy, exact copy and type-overlay direction, proof treatment, master/derivative crop plan, placement, and exclusions.
+- When a 4:5 master must survive 1:1, critical meaning must survive the centered square crop. Decorative bleed may extend outside it when expendable. The square core does not replace current placement-specific edge safety or UI-overlay checks.
 - A reference is analysed for observable choices, not copied or called proven without relevant test evidence. Preserve intellectual-property and trade-dress boundaries.
 - A polished render is draft, not evidence of performance or a live ad. Exact typography should be overlaid separately when an image model cannot reliably render it.
 
@@ -48,7 +49,7 @@ Creative matrix: audience/situation; pain/desire/JTBD; awareness; current belief
 
 Creative brief: objective; single audience insight; promise; reason to believe; angle; mechanic; concept; opening; visual format; mandatory elements; variants; claims guardrail; measurement plan.
 
-Static DTC render brief: message architecture; emotional job; mechanic; reference-analysis record; visual thesis; composition/product direction; typography and exact overlay copy; proof and CTA treatment; placement/crop; exclusions; preflight criteria; draft/approved/published/live/verified status.
+Static DTC render brief: message architecture; emotional job; mechanic; reference-analysis record; visual thesis; composition/product direction; master aspect ratio/dimensions; required derivative crops; cross-crop core and crop-risk bands when applicable; typography and exact overlay copy; proof and CTA treatment; placement-specific safety dependency; exclusions; master/derivative preflight criteria; draft/approved/published/live/verified status.
 
 ## Library references
 
@@ -62,8 +63,8 @@ Owned root artifacts, read when their scope applies:
 - [creative-mechanics.md](references/creative-mechanics.md) — meaning-making structure between angle and execution.
 - [hook-execution.md](references/hook-execution.md) — opening strategy, frames, voice, modality, and proof boundaries.
 - [visual-format-selection.md](references/visual-format-selection.md) — cross-platform production-vessel selection and format hypotheses.
-- [static-dtc-creative-direction.md](references/static-dtc-creative-direction.md) — static paid-creative production direction, reference analysis, typography, and render validation.
+- [static-dtc-creative-direction.md](references/static-dtc-creative-direction.md) — static paid-creative production direction, reference analysis, typography, cross-crop safety, and render validation.
 
 ## QA
 
-Check claims against evidence, concepts are strategically distinct, the mechanic is not confused with the hook or format, the test can teach something, current platform constraints are routed correctly, CTA matches the destination, and copy remains draft until approved. For ideation, verify the source insight is grounded, belief shifts are supportable, review evidence is not cherry-picked, duplicate cells were consolidated, and each selected cell changes a meaningful strategic dimension. For static assets, verify the emotional job is tied to the audience situation; references were analysed without copying; reading order, product role, mechanic, and typography are explicit; proof is substantiated; and the placement-size render passes preflight.
+Check claims against evidence, concepts are strategically distinct, the mechanic is not confused with the hook or format, the test can teach something, current platform constraints are routed correctly, CTA matches the destination, and copy remains draft until approved. For ideation, verify the source insight is grounded, belief shifts are supportable, review evidence is not cherry-picked, duplicate cells were consolidated, and each selected cell changes a meaningful strategic dimension. For static assets, verify the emotional job is tied to the audience situation; references were analysed without copying; reading order, product role, mechanic, typography, and crop plan are explicit; proof is substantiated; critical meaning survives required derivative crops; current placement-specific safe-area requirements remain separately validated; and the placement-size render passes preflight.
