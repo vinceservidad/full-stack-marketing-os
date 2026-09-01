@@ -16,6 +16,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Capability | Owner |
 |---|---|
 | Request routing and owner appointment | `$marketing-router` |
+| Growth strategy and marketing planning: business-objective framing, growth-system/constraint mapping, opportunity portfolio, prioritization, sequencing, cross-skill planning, and review/rebalancing | `$growth-strategy` |
 | Marketing operations: recurring cross-skill loops, trigger/cadence governance, run state, idempotency, approval gates, execution handoffs, verification, escalation, and retirement | `$marketing-operations` |
 | Engagement intake: scope, evidence grading, metric definitions, access, authorization, reusable Marketing Context | `$marketing-intake` |
 | Offer strategy: commercial proposition, promised outcome, core deliverable, value architecture, bundle, risk reversal, real urgency/scarcity | `$offer-strategy` |
@@ -79,7 +80,7 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 ## Unsupported
 
-All previously identified advertising and distribution channels, pricing/monetization, activation, and retention strategy are governed. This registry can still contain future non-channel capability gaps.
+All previously identified advertising and distribution channels, pricing/monetization, activation, retention strategy, and growth strategy/marketing planning are governed. This registry can still contain future non-channel capability gaps.
 
 | Capability | Boundary |
 |---|---|
