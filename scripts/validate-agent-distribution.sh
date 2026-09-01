@@ -40,9 +40,23 @@ for runtime in codex claude; do
   fi
 done
 
+# Exercise the public Claude wrapper too. This catches wrapper-to-installer
+# permission/invocation regressions that the generic runtime loop cannot see.
+claude_home="$tmp_root/claude-wrapper-home"
+mkdir -p "$claude_home"
+HOME="$claude_home" bash "$repo_dir/scripts/install-claude-skills.sh" "$repo_dir" >/dev/null
+wrapper_root="$claude_home/.claude"
+wrapper_count=$(find "$wrapper_root/skills" -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
+if [[ "$wrapper_count" -ne "$canonical_count" ]]; then
+  printf 'Claude wrapper install count mismatch: canonical=%s installed=%s\n' "$canonical_count" "$wrapper_count" >&2
+  exit 1
+fi
+test -f "$wrapper_root/DATA-CONTRACTS.md" || { printf 'Claude wrapper missing DATA-CONTRACTS.md.\n' >&2; exit 1; }
+test -d "$wrapper_root/data-contracts" || { printf 'Claude wrapper missing data-contracts library.\n' >&2; exit 1; }
+
 if [[ ! -f "$repo_dir/CLAUDE.md" ]] || ! grep -Fxq '@AGENTS.md' "$repo_dir/CLAUDE.md"; then
   printf 'CLAUDE.md must import AGENTS.md exactly for the repository instruction bridge.\n' >&2
   exit 1
 fi
 
-printf 'Cross-agent distribution valid: %s canonical skills plus shared data contracts install cleanly into Codex- and Claude-style runtime roots.\n' "$canonical_count"
+printf 'Cross-agent distribution valid: %s canonical skills plus shared data contracts install cleanly into Codex- and Claude-style runtime roots, including the Claude wrapper.\n' "$canonical_count"
