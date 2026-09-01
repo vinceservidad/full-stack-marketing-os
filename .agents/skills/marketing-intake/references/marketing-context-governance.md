@@ -59,10 +59,10 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 Specialists own the underlying decisions:
 
 - `$customer-research`: research patterns and traceable VOC
-- `$icp-jtbd`: priority segments, buying situations, JTBD, roles
+- `$icp-jtbd`: priority segments, buying situations, JTBD, roles, competitive alternative maps, and positioning implications
 - `$offer-strategy`: offer diagnosis and approved offer design
 - `$retention-economics`: LTV, payback, cohort economics
-- `$tracking-measurement`: measurement integrity and causal evidence
+- `$tracking-measurement`: measurement integrity, causal evidence, and experiment-learning validity
 - channel skills: current channel/platform mechanics
 
 If specialist evidence and Marketing Context disagree, the source decision artifact governs until context is updated.
