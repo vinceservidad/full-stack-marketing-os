@@ -16,6 +16,7 @@
 12. Apply `PLATFORM-CURRENCY.md` before current Google or Meta AI, automation, control, reporting, rollout, or interface claims. Do not claim undocumented algorithm changes; distinguish official documentation, account visibility, experiments, inference, and unknowns.
 13. Classify substantial operating knowledge with `KNOWLEDGE-TAXONOMY.md`. Do not present a pattern as causality, a heuristic as a best practice, a tactic as a strategy, or a framework/model as proof of an outcome.
 14. Scaling requires the `optimization-scaling` readiness, economics, constraint, marginal-evidence, capacity, guardrail, and authorization gates. Never use a universal budget-increase rule or call a tactic proven outside its verified scope.
+15. When `.agents/marketing-context.md` exists in the active project, read only the decision-relevant sections before substantial downstream marketing work. Treat it as a versioned context summary, never as evidence promotion: underlying specialist artifacts and source systems still govern, contradictions and stale fields stay visible, and current platform behavior still requires `PLATFORM-CURRENCY.md`.
 
 ## Skill design
 
