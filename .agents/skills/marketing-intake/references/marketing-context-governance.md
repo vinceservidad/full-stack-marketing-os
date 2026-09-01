@@ -14,6 +14,7 @@ Include only information that can change downstream marketing decisions:
 - customer pain, desired progress, objections, selection criteria, and evidence-backed VOC themes
 - positioning, differentiators, alternatives, and competitor implications
 - current offer state
+- current pricing/monetization state when decision-relevant
 - proof inventory and allowed claim use
 - economics and capacity constraints
 - brand, compliance, channel, and funnel constraints
@@ -48,7 +49,7 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 - A summary inherits the weakest decision-relevant evidence state beneath it.
 - User assertions stay asserted until observed in a named source.
 - Customer-reported outcomes remain customer-reported outcomes unless business evidence verifies them.
-- A generated synthesis is never promoted to VOC, proof, product truth, or a verified buyer belief.
+- A generated synthesis is never promoted to VOC, proof, product truth, willingness-to-pay, or a verified buyer belief.
 - A specialist decision may update the context only after the decision artifact exists and its status is clear.
 - Context cannot authorize a live change.
 
@@ -61,6 +62,7 @@ Specialists own the underlying decisions:
 - `$customer-research`: research patterns and traceable VOC
 - `$icp-jtbd`: priority segments, buying situations, JTBD, roles, competitive alternative maps, and positioning implications
 - `$offer-strategy`: offer diagnosis and approved offer design
+- `$pricing-monetization`: base/realized price, value metric, package/tier commercial structure, payment model, discounts, pricing evidence, and price-change state
 - `$retention-economics`: LTV, payback, cohort economics
 - `$tracking-measurement`: measurement integrity, causal evidence, and experiment-learning validity
 - channel skills: current channel/platform mechanics
@@ -76,6 +78,7 @@ Before marking context `current`, confirm:
 3. Product claims have an allowed-use boundary.
 4. Customer language is traceable when treated as verbatim.
 5. Economics name the revenue basis and profit level where used.
-6. Current platform details are not fossilized as durable context.
-7. The change log explains material revisions.
-8. No unnecessary personal data was copied into the artifact.
+6. Pricing terms name their source and exact state rather than treating proposed/configured terms as live.
+7. Current platform details are not fossilized as durable context.
+8. The change log explains material revisions.
+9. No unnecessary personal data was copied into the artifact.
