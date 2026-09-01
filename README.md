@@ -169,6 +169,19 @@ $marketing-router Decide which Marketing OS skill should own this request when I
 
 More worked prompts and a skill-selection table are in [`GETTING_STARTED.md`](GETTING_STARTED.md).
 
+## Worked examples
+
+Want to see the OS make a decision end-to-end? Start in [`examples/`](examples/).
+
+Flagship walkthroughs:
+
+- [`Ecommerce Growth Diagnosis`](examples/ecommerce-growth/) — business objective → evidence → constraint set → specialist handoffs → non-priorities → measurement
+- [`Google Ads Audit`](examples/google-ads-audit/) — query/product/margin/marginal-efficiency diagnosis without blanket channel rules
+- [`DTC Creative Strategy`](examples/creative-strategy/) — synthetic VOC → JTBD → angle → mechanic → concept → 4:5 production direction → centered 1:1 cross-crop validation
+- [`Shopify CRO Audit`](examples/shopify-cro/) — funnel evidence → mobile checkout diagnosis → focused hypothesis instead of full-site redesign
+
+These are **worked examples**, not performance case studies. Synthetic/anonymized examples demonstrate how the system decides; verified public case studies require real publishable evidence. See [`examples/WORKED-EXAMPLE-STANDARD.md`](examples/WORKED-EXAMPLE-STANDARD.md).
+
 Scaling is not defined as spending more. The system requires source-of-truth business evidence, economics, marginal efficiency, readiness, constraints, capacity, guardrails, and explicit authorization before any live change. It rejects universal budget-increase percentages and does not treat platform attribution or recommendations as proof.
 
 ## Design principles
