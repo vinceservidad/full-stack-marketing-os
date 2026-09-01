@@ -22,13 +22,17 @@ for runtime in codex claude; do
     exit 1
   fi
 
-  for contract in GLOSSARY.md KNOWLEDGE-TAXONOMY.md PLATFORM-CURRENCY.md CAPABILITY-REGISTRY.md ARTIFACT-OWNERSHIP.md AGENTS.md; do
+  for contract in GLOSSARY.md KNOWLEDGE-TAXONOMY.md PLATFORM-CURRENCY.md CAPABILITY-REGISTRY.md ARTIFACT-OWNERSHIP.md DATA-CONTRACTS.md AGENTS.md; do
     test -f "$runtime_root/$contract" || { printf '%s missing contract: %s\n' "$runtime" "$contract" >&2; exit 1; }
   done
 
-  for library in frameworks playbooks templates workflows; do
+  for library in frameworks playbooks templates workflows data-contracts; do
     test -d "$runtime_root/$library" || { printf '%s missing library: %s\n' "$runtime" "$library" >&2; exit 1; }
   done
+
+  test -f "$runtime_root/data-contracts/google-ads.md" || { printf '%s missing Google Ads data contract.\n' "$runtime" >&2; exit 1; }
+  test -f "$runtime_root/data-contracts/meta-ads.md" || { printf '%s missing Meta Ads data contract.\n' "$runtime" >&2; exit 1; }
+  test -f "$runtime_root/templates/data-intake-manifest.md" || { printf '%s missing data intake manifest.\n' "$runtime" >&2; exit 1; }
 
   if find "$runtime_root" -name '*.bak' -type f | grep -q .; then
     printf '%s install left sed backup files behind.\n' "$runtime" >&2
@@ -41,4 +45,4 @@ if [[ ! -f "$repo_dir/CLAUDE.md" ]] || ! grep -Fxq '@AGENTS.md' "$repo_dir/CLAUD
   exit 1
 fi
 
-printf 'Cross-agent distribution valid: %s canonical skills install cleanly into Codex- and Claude-style runtime roots.\n' "$canonical_count"
+printf 'Cross-agent distribution valid: %s canonical skills plus shared data contracts install cleanly into Codex- and Claude-style runtime roots.\n' "$canonical_count"
