@@ -9,24 +9,30 @@ Classify architecture maps, models, methodologies, processes, checklists, experi
 
 Establish whether the available data can support the requested decision before optimizing against it. Keep three questions distinct: is the data collected correctly, do sources agree, and did the activity cause the result. A causal question inherits every collection defect beneath it.
 
+When structured platform, analytics, commerce, or economics datasets are supplied, apply [`DATA-CONTRACTS.md`](../../../DATA-CONTRACTS.md) and [`data-contracts/validation.md`](../../../data-contracts/validation.md). Preserve raw source data, grain, field lineage, source attribution/revenue semantics, and a validity state tied to the named decision.
+
 ## Scope
 
 Define the primary business outcome, platforms and properties, conversion journey, reporting timezone and currency, consent environment, attribution question, source of truth, and requested level of assurance. For a causal question, also define the decision at stake, its cost of being wrong, and the evidence level it requires. For an experiment-learning request, define the tested scope, pre-registered decision rule, domain owner, and whether the result is being used locally or considered for transfer. Reserve “Primary conversion action” for Google Ads' action-optimization status.
 
+For structured data, also define each dataset's source/scope, represented period, grain, stable key, conversion/event definition, attribution basis, revenue/profit basis, known limitations, and intended decision use before calling it reconciled or decision-valid.
+
 ## Method
 
-1. Map the event chain from user action to browser/server collection, platform receipt, deduplication, attribution, reporting, and business-system outcome.
-2. Inventory each event's name, trigger, parameters, identifiers, value/currency, counting rule, destination, and primary/secondary role.
-3. Test integrity across coverage, correctness, uniqueness, ordering, timeliness, identity continuity, consent behavior, and reconciliation.
-4. Separate collection failures from attribution differences and reporting lag.
-5. Reconcile using matched definitions and cohorts; explain expected gaps instead of forcing equality.
-6. For a causal question, grade the available evidence, select a method the constraints actually permit, and state the level the result can reach before running it.
-7. Rank fixes and tests by decision risk, affected volume/value, confidence, reversibility, validation cost, and learning value.
-8. When an experiment concludes, validate execution before reading direction, classify the result, separate observed effect from mechanism interpretation, and create a scoped learning record using [Experiment Learning System](references/experiment-learning-system.md) and [`templates/experiment-learning.md`](../../../templates/experiment-learning.md).
-9. Before a new experiment, inspect relevant prior learning for same decision, mechanism, segment, surface, offer state, guardrail failure, or contradiction. Use prior learning to change the new test or explain why it is not decision-relevant.
+1. When structured datasets are supplied, profile and map them before interpreting performance: confirm grain, keys, date/time, currency, event/conversion semantics, revenue basis, missingness, field lineage, and within-source reconciliation. Grade each dataset `validated-for-scope`, `degraded`, or `rejected` for the named decision.
+2. Map the event chain from user action to browser/server collection, platform receipt, deduplication, attribution, reporting, and business-system outcome.
+3. Inventory each event's name, trigger, parameters, identifiers, value/currency, counting rule, destination, and primary/secondary role.
+4. Test integrity across coverage, correctness, uniqueness, ordering, timeliness, identity continuity, consent behavior, and reconciliation.
+5. Separate collection failures from attribution differences and reporting lag.
+6. Reconcile using matched definitions and cohorts; explain expected gaps instead of forcing equality. Preserve platform-attributed, analytics-attributed, commerce/accounting, and experimentally estimated outcomes as separate evidence classes unless a declared method connects them.
+7. For a causal question, grade the available evidence, select a method the constraints actually permit, and state the level the result can reach before running it.
+8. Rank fixes and tests by decision risk, affected volume/value, confidence, reversibility, validation cost, and learning value.
+9. When an experiment concludes, validate execution before reading direction, classify the result, separate observed effect from mechanism interpretation, and create a scoped learning record using [Experiment Learning System](references/experiment-learning-system.md) and [`templates/experiment-learning.md`](../../../templates/experiment-learning.md).
+10. Before a new experiment, inspect relevant prior learning for same decision, mechanism, segment, surface, offer state, guardrail failure, or contradiction. Use prior learning to change the new test or explain why it is not decision-relevant.
 
 Read only the reference the question requires:
 
+- Structured dataset profiling/reconciliation: [`data-contracts/validation.md`](../../../data-contracts/validation.md).
 - Event-level QA: [event integrity](references/event-integrity.md).
 - Totals differ across platforms or business systems: [attribution reconciliation](references/attribution-reconciliation.md).
 - Grading how strongly evidence supports a causal claim: [causal evidence ladder](references/causal-evidence-ladder.md).
@@ -51,6 +57,9 @@ Read only the reference the question requires:
 - Power the test, fix the primary metric and stopping rule before launch, and include the full conversion lag. Do not stop early on a favorable read or switch the primary metric afterwards.
 - Report a null with its minimum detectable effect. Absence of evidence is not evidence of absence.
 - Do not sum attributed conversions across platforms, and do not average an experimental estimate with an attributed one.
+- Do not force cross-source equality when sources use different attribution, revenue, event, or time semantics. Reconcile definitions first, then explain residual differences.
+- Never join datasets at incompatible grains in a way that duplicates spend, revenue, conversions, orders, or customers. Missing rows are not automatically zeros.
+- A dataset can be `validated-for-scope` for descriptive diagnosis while still being insufficient for causal inference, profitability, or another higher-assurance use.
 - State the scope of every causal estimate — population, geography, period, spend range. A result proven in one scope is not proven outside it.
 - Count the holdback's forgone revenue as part of a test's cost.
 - Assess experiment validity before result direction. A favorable outcome does not repair instrumentation defects, contamination, treatment drift, early stopping, or missing conversion lag.
@@ -63,7 +72,7 @@ Read only the reference the question requires:
 
 ## Output
 
-Return: decision supported; architecture map; integrity status by event; reconciliation table; confirmed defects; expected discrepancies; risk-ranked actions; validation plan; exact implementation status.
+Return: decision supported; dataset validity where structured data is used; architecture map; integrity status by event; reconciliation table; confirmed defects; expected discrepancies; risk-ranked actions; validation plan; exact implementation status.
 
 Causal question: decision and required evidence level; achievable level and why; selected method with the constraints that chose it; primary metric and its definition; minimum detectable effect, duration, and stopping rule; contamination and confounding risks with direction; holdback cost; scope of the resulting estimate; what the result may and may not be used for.
 
@@ -73,6 +82,8 @@ Experiment learning: validity class; observed result and uncertainty; achieved e
 
 Owned root artifacts, read when their scope applies:
 
+- [`DATA-CONTRACTS.md`](../../../DATA-CONTRACTS.md) — canonical structured-data provenance, grain, semantics, privacy, and validity contract.
+- [`data-contracts/validation.md`](../../../data-contracts/validation.md) — profiling, mapping, reconciliation, missingness, and decision-validity method.
 - [measurement-and-evidence.md](../../../frameworks/measurement-and-evidence.md) — measurement and evidence framework.
 - [experimentation.md](../../../frameworks/experimentation.md) — general experimentation framework.
 - [experiment.md](../../../templates/experiment.md) — pre-test experiment brief format.
@@ -80,4 +91,4 @@ Owned root artifacts, read when their scope applies:
 
 ## QA
 
-Confirm event definitions and timezones match, test and production traffic are separated, duplicate paths are checked, values/currency are verified, attribution windows are visible, privacy boundaries are preserved, and “received” is not confused with “correct.” For a causal question, confirm the evidence level is stated, the method matches the constraints, the test was powered before launch, contamination and coincident events were assessed, the business outcome rather than a platform proxy was measured, and the estimate's scope is named. For experiment learning, confirm validity was assessed before direction, the pre-test decision rule was preserved, full relevant lag is included, nulls and guardrail harms are classified correctly, mechanism remains separate from observed effect, post-hoc slices are not promoted, transfer status does not exceed replication evidence, and contradictory prior results remain visible.
+Confirm event definitions and timezones match; structured datasets have explicit source, grain, key, currency, conversion/revenue semantics, field lineage, and scope-specific validity; raw provenance is preserved; incompatible grains do not duplicate money or outcomes; missingness is not silently converted to zero; test and production traffic are separated; duplicate paths are checked; values/currency are verified; attribution windows are visible; privacy boundaries are preserved; and “received” is not confused with “correct.” For a causal question, confirm the evidence level is stated, the method matches the constraints, the test was powered before launch, contamination and coincident events were assessed, the business outcome rather than a platform proxy was measured, and the estimate's scope is named. For experiment learning, confirm validity was assessed before direction, the pre-test decision rule was preserved, full relevant lag is included, nulls and guardrail harms are classified correctly, mechanism remains separate from observed effect, post-hoc slices are not promoted, transfer status does not exceed replication evidence, and contradictory prior results remain visible.

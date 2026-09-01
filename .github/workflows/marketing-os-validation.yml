@@ -11,6 +11,7 @@ on:
       - "ARTIFACT-OWNERSHIP.md"
       - "CAPABILITY-REGISTRY.md"
       - "CHANGELOG.md"
+      - "DATA-CONTRACTS.md"
       - "GLOSSARY.md"
       - "KNOWLEDGE-TAXONOMY.md"
       - "PLATFORM-CURRENCY.md"
@@ -18,6 +19,7 @@ on:
       - "ROADMAP.md"
       - ".agents/skills/**"
       - "skills/**"
+      - "data-contracts/**"
       - "workflows/**"
       - "frameworks/**"
       - "playbooks/**"
@@ -41,7 +43,11 @@ jobs:
         run: scripts/validate-platform-currency.sh .
       - name: Validate knowledge taxonomy
         run: scripts/validate-knowledge-taxonomy.sh .
+      - name: Validate data contracts
+        run: bash scripts/validate-data-contracts.sh .
       - name: Validate optimization and scaling
         run: scripts/validate-scaling-system.sh .
+      - name: Validate agent distribution
+        run: bash scripts/validate-agent-distribution.sh .
       - name: Check platform freshness
         run: python3 scripts/check-platform-freshness.py .

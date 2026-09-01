@@ -11,7 +11,7 @@ set -euo pipefail
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 repo_dir=$(cd "${1:-$script_dir/..}" && pwd)
 
-"$script_dir/install-skills.sh" "$repo_dir" "$HOME/.claude"
+bash "$script_dir/install-skills.sh" "$repo_dir" "$HOME/.claude"
 
 printf 'Claude Code personal skills installed from canonical Marketing OS source.\n'
 printf 'Root repository instructions remain governed by CLAUDE.md -> AGENTS.md when working inside this repository.\n'

@@ -69,6 +69,7 @@ Status definitions:
 | `creative-brief.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `creative-idea-matrix.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `marketing-context.md` | owned | `$marketing-intake` (linked from SKILL.md; copied into active projects as `.agents/marketing-context.md`) |
+| `data-intake-manifest.md` | owned | `$marketing-intake` (linked from SKILL.md) — structured dataset provenance, grain, lineage, validity, privacy, and handoff record |
 | `marketing-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — recurring loop contract with trigger, state, idempotency, authorization, verification, escalation, and retirement |
 | `pricing-decision.md` | owned | `$pricing-monetization` (linked from SKILL.md) — pricing, value metric, packaging, scenario, rollout, migration, and verification decision record |
 | `activation-plan.md` | owned | `$activation` (linked from SKILL.md) — first-value definition, path-to-value, diagnosis, intervention, measurement, handoffs, and learning record |

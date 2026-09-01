@@ -24,12 +24,12 @@ install_root=${2:-${MARKETING_OS_INSTALL_ROOT:-$HOME/.codex}}
 source_dir="$repo_dir/.agents/skills"
 target_dir="$install_root/skills"
 
-contracts=(GLOSSARY.md KNOWLEDGE-TAXONOMY.md PLATFORM-CURRENCY.md CAPABILITY-REGISTRY.md ARTIFACT-OWNERSHIP.md AGENTS.md)
+contracts=(GLOSSARY.md KNOWLEDGE-TAXONOMY.md PLATFORM-CURRENCY.md CAPABILITY-REGISTRY.md ARTIFACT-OWNERSHIP.md DATA-CONTRACTS.md AGENTS.md)
 
 # Root libraries linked from a skill's "Library references" section as
 # ../../../<dir>/FILE.md. Installed alongside the contracts, at the same
 # rewritten depth, so those links resolve too.
-libraries=(frameworks playbooks templates workflows)
+libraries=(frameworks playbooks templates workflows data-contracts)
 
 test -d "$source_dir" || { printf 'No canonical skill directory: %s\n' "$source_dir" >&2; exit 1; }
 

@@ -2,12 +2,14 @@
 
 ## Overview
 
-Full-Stack Marketing OS is organized as a governed knowledge, skill, and workflow system for AI-assisted marketing decisions and execution.
+Full-Stack Marketing OS is organized as a governed knowledge, skill, workflow, and data-contract system for AI-assisted marketing decisions and execution.
 
 ```text
 Business Goal
       ↓
 Marketing Router / Growth Strategy
+      ↓
+Evidence + Data Contracts
       ↓
 Specialist Skill
       ↓
@@ -20,6 +22,22 @@ Measurement + Evaluation
 Improved Decision + Scoped Learning
 ```
 
+Structured data follows a separate provenance path before a specialist decision:
+
+```text
+Raw source export / query
+      ↓
+DATA-CONTRACTS.md envelope
+      ↓
+Source-specific mapping + field lineage
+      ↓
+Scoped validation / reconciliation
+      ↓
+Owning skill decision
+```
+
+The normalized layer never replaces the raw source and never upgrades platform attribution into business truth.
+
 ## Distribution layers
 
 The system has one canonical skill source and several runtime/export layers. Runtime compatibility does not make those generated copies canonical.
@@ -31,6 +49,8 @@ The system has one canonical skill source and several runtime/export layers. Run
 | `~/.claude/skills/` | Local Claude Code personal-skill copy | Yes | Generated from canonical, never edited as source |
 | `CLAUDE.md` | Claude Code project-instruction bridge to `AGENTS.md` | Instructions, not a skill layer | Compatibility bridge |
 | `skills/` | Compatibility/index layer | No | Must contain no competing instructions |
+| `DATA-CONTRACTS.md` | Canonical structured-data provenance, semantics, and decision-validity contract | Loaded by governed skills | **Canonical data contract** |
+| `data-contracts/` | Source/domain-specific normalized data contracts | Loaded by governed skills | Governed contract library |
 | `frameworks/` | Shared decision artifacts | Loaded by governed skills | Governed knowledge library |
 | `playbooks/` | Scenario-specific workflows | Loaded by governed skills | Governed knowledge library |
 | `templates/` | Reusable deliverable structures | Loaded by governed skills | Governed artifact library |
@@ -59,6 +79,26 @@ The canonical structure is intentionally portable: Codex and Claude Code both su
 
 Capability status, governed, partially covered, planned, or unsupported, is declared in `CAPABILITY-REGISTRY.md`. The Marketing Router will not route to a capability absent from it.
 
+### Data contracts
+
+`DATA-CONTRACTS.md` governs structured evidence handed to the OS. `data-contracts/` contains stable normalized decision contracts for Google Ads, Meta Ads, commerce/orders, web analytics, business economics, and cross-source validation.
+
+The data-contract layer preserves:
+
+- source/provenance;
+- represented period and timezone;
+- currency and monetary basis;
+- row grain and stable keys;
+- conversion/event semantics;
+- attribution, revenue, and named profit basis;
+- field lineage from normalized fields to raw source fields/calculations;
+- missingness and known source limitations;
+- a validity state tied to the named decision.
+
+`$marketing-intake` owns the data-intake record and completeness. `$tracking-measurement` owns measurement/reconciliation validity when required. Specialist skills consume validated/degraded data only within its stated scope.
+
+Raw source data remains preserved. A normalized dataset does not make incompatible attribution systems equal, does not authorize a live mutation, and does not prove causality.
+
 ### Shared context
 
 Project-level `.agents/marketing-context.md`, when present, is a versioned shared context summary owned by `$marketing-intake`. It reduces repeated intake but never overrides stronger specialist evidence or becomes a second source of truth.
@@ -73,7 +113,7 @@ Repeatable processes for specific business cases. Playbooks retain the decision 
 
 ### Templates
 
-Reusable formats for reports, audits, briefs, strategies, tests, and decision records.
+Reusable formats for reports, audits, briefs, strategies, tests, data-intake records, and decision records.
 
 ### Workflows
 
@@ -81,17 +121,17 @@ Execution/coordination sequences. A documented workflow does not prove a runtime
 
 ### Evaluations
 
-Behavioral and quality checks that reduce unsupported assumptions, ownership drift, state confusion, unsafe automation, and false certainty.
+Behavioral and quality checks that reduce unsupported assumptions, ownership drift, state confusion, unsafe automation, data-semantic errors, and false certainty.
 
 ## Runtime installation
 
 ### Codex
 
-`scripts/install-skills.sh` defaults to `~/.codex` and installs generated skill copies plus the contracts/libraries their relative links require.
+`scripts/install-skills.sh` defaults to `~/.codex` and installs generated skill copies plus the contracts/libraries their relative links require, including `DATA-CONTRACTS.md` and `data-contracts/`.
 
 ### Claude Code
 
-`scripts/install-claude-skills.sh` delegates to the same canonical installer with `~/.claude` as the runtime root. Claude Code then discovers personal skills under `~/.claude/skills/`.
+`scripts/install-claude-skills.sh` delegates to the same canonical installer with `~/.claude` as the runtime root. Claude Code then discovers personal skills under `~/.claude/skills/` and receives the same shared data-contract library.
 
 Root `CLAUDE.md` imports `AGENTS.md` for repository-level contributor instructions. The runtime skill install and the project instruction bridge solve different problems and should not be conflated.
 
@@ -105,6 +145,8 @@ Every substantial active marketing artifact must have an identifiable owner, a d
 
 `ARTIFACT-OWNERSHIP.md` records ownership for root artifacts. `scripts/validate-skill-architecture.sh` enforces canonical packaging, unique skill names, folder/frontmatter agreement, reference reachability, the prohibition on cross-layer skill impersonation, and the ownership contract for new root artifacts.
 
+`DATA-CONTRACTS.md` and `data-contracts/` are system contracts rather than framework/playbook/template/workflow knowledge types; their own deterministic validator enforces required contract structure and loading paths.
+
 Generated runtime copies must never be edited into a competing owner layer. Change the canonical artifact, validate it, then reinstall/export.
 
 ## Design principles
@@ -112,6 +154,7 @@ Generated runtime copies must never be edited into a competing owner layer. Chan
 - Strategy before execution
 - Evidence before assumptions
 - Business outcomes before platform metrics
+- Preserve raw source before normalized data
 - One owner per decision
 - Canonical source before runtime copies
 - Human judgment before automation

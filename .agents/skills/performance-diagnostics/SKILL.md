@@ -20,12 +20,12 @@ For the anomaly being diagnosed, collect or explicitly mark missing:
 - the decision or business significance the diagnosis must support, including any urgent containment need
 - authorization boundary if the request extends from diagnosis into a live mutation
 
-Do not fill missing history, attribution settings, economics, or change events with invented assumptions. State which missing input could reverse the diagnosis.
+When structured datasets are supplied, apply [`DATA-CONTRACTS.md`](../../../DATA-CONTRACTS.md) and the relevant contract under [`data-contracts/`](../../../data-contracts/). Do not fill missing history, attribution settings, economics, join semantics, or change events with invented assumptions. State which missing input could reverse the diagnosis.
 
 ## Method
 
 1. Restate the anomaly with metric definition, absolute values, baseline, date range, scope, and business significance.
-2. Validate timezone, attribution, lag, currency, duplicate/missing events, freshness, and denominator changes.
+2. Validate dataset fitness for the comparison: source, grain, key, timezone, attribution, lag, currency, duplicate/missing events, freshness, denominator changes, revenue/profit basis, and join behavior. Route measurement/reconciliation uncertainty to `$tracking-measurement` when material.
 3. Decompose the relevant identity:
    - Ecommerce revenue = traffic × conversion rate × AOV.
    - From gross sales: contribution profit after media = gross sales − discounts − refunds − COGS − variable fulfillment − payment fees − media spend.
@@ -39,23 +39,27 @@ Do not fill missing history, attribution settings, economics, or change events w
 ## Rules
 
 - Correlation and timing are clues, not proof.
-- Do not compare periods with different promotions, weekday mix, attribution maturity, or inventory without adjustment.
+- Do not compare periods with different promotions, weekday mix, attribution maturity, inventory, dataset grain, or revenue basis without adjustment/disclosure.
 - Separate observed fact, inference, and recommended test.
 - Never use “profit” without naming the level and included costs. Never subtract discounts or refunds twice.
+- Do not aggregate platform-attributed values across channels and call the sum business revenue.
+- Never let one-to-many joins duplicate spend, revenue, conversions, orders, or customers. Missing rows are not automatically zeros.
 - When changes overlap, propose the cheapest reversible data cut or test that distinguishes them.
 - Escalate verified checkout, tracking, disapproval, stock, or destination failures while preserving an evidence trail.
 
 ## Output
 
-Return: anomaly; data-integrity status; decomposition; confirmed findings; ranked hypotheses with supporting and contradicting evidence; estimated impact where possible; next checks; safe containment; exact status and confidence.
+Return: anomaly; dataset/data-integrity status; decomposition; confirmed findings; ranked hypotheses with supporting and contradicting evidence; estimated impact where possible; next checks; safe containment; exact status and confidence.
 
 ## Library references
 
 Owned root artifacts, read when their scope applies:
 
+- [`DATA-CONTRACTS.md`](../../../DATA-CONTRACTS.md) — canonical structured-data provenance, grain, semantics, and decision-validity contract.
+- [`data-contracts/validation.md`](../../../data-contracts/validation.md) — profiling, reconciliation, missingness, and cross-source comparison method.
 - [cross-channel-diagnostic.md](../../../playbooks/cross-channel-diagnostic.md) — cross-channel diagnostic workflow.
 - [audit.md](../../../templates/audit.md) — evidence-graded audit format.
 
 ## QA
 
-Reconcile totals, keep definitions and windows consistent, account for lag and mix, show arithmetic, avoid double-counting, and do not call the issue resolved until the source of truth recovers or the root cause is verified.
+Reconcile totals where their definitions should match, keep grain/keys/definitions/windows/currencies consistent, preserve cross-source attribution differences, account for lag and mix, show arithmetic, avoid double-counting, keep missing distinct from zero, and do not call the issue resolved until the source of truth recovers or the root cause is verified.

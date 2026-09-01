@@ -6,7 +6,7 @@ Last reconciled: **2026-09-01**.
 
 ## Current state — Governed full-stack Marketing OS
 
-The repository currently has **30 governed skills** in [`.agents/skills/`](.agents/skills/) with one canonical ownership model, shared evidence/governance contracts, behavioral evaluations, and CI validation.
+The repository currently has **30 governed skills** in [`.agents/skills/`](.agents/skills/) with one canonical ownership model, shared evidence/governance/data contracts, behavioral evaluations, and CI validation.
 
 Completed capability areas include:
 
@@ -16,7 +16,8 @@ Completed capability areas include:
 - creative strategy, copywriting, CRO, static DTC creative direction, and governed 4:5 → centered 1:1 cross-crop safety
 - activation, retention strategy, retention economics, and lifecycle marketing
 - tracking/measurement, experiment learning, performance diagnostics, marketing reporting, marketing operations, and optimization/scaling
-- cross-agent distribution for Codex and Claude Code from one canonical skill source
+- standardized structured-data contracts for Google Ads, Meta Ads, commerce/orders, web analytics, business economics, and cross-source validation
+- cross-agent distribution for Codex and Claude Code from one canonical skill source, including shared data contracts
 - public GitHub onboarding and truth-governed worked-example standards
 
 The capability registry remains authoritative. Analytics is still only **partially covered** where work becomes BI engineering, warehouse/pipeline design, or dashboard implementation outside existing measurement/diagnostic/reporting owners.
@@ -50,9 +51,11 @@ The capability registry remains authoritative. Analytics is still only **partial
 - Retention Economics owns realized/predictive cohort economics, LTV, payback, and churn/retention measurement.
 - Lifecycle Marketing owns communication segmentation, trigger logic, cadence, suppression, and deliverability.
 
-### Measurement, operations, and scaling system
+### Measurement, data, operations, and scaling system
 
-- Tracking & Measurement owns event integrity, attribution reconciliation, causal evidence, and experiment learning.
+- Tracking & Measurement owns event integrity, attribution reconciliation, causal evidence, experiment learning, and structured-data reconciliation validity when required.
+- `DATA-CONTRACTS.md` plus `data-contracts/` preserve source provenance, grain, stable keys, timezone/currency, event/conversion meaning, attribution/revenue/profit basis, field lineage, missingness, and scope-specific validity.
+- Marketing Intake owns the reusable Data Intake Manifest and dataset completeness/provenance state.
 - Performance Diagnostics owns anomaly decomposition and competing-cause diagnosis.
 - Marketing Operations owns recurring cross-skill loops, state, idempotency, approvals, verification, escalation, and retirement.
 - Optimization & Scaling owns paid-media readiness, marginal economics, controlled expansion/de-scaling, pacing, and guardrails.
@@ -62,36 +65,40 @@ The capability registry remains authoritative. Analytics is still only **partial
 
 - `.agents/skills/` remains the canonical skill source.
 - Codex and Claude Code installers generate runtime copies without creating competing skill hierarchies.
+- The installer also ships `DATA-CONTRACTS.md`, `data-contracts/`, and the Data Intake Manifest so runtime skills do not depend on GitHub-only files.
 - `GETTING_STARTED.md`, `AGENT_GUIDE.md`, `DISTRIBUTION.md`, and root README provide public onboarding.
 - Worked examples distinguish synthetic, anonymized, and verified public case studies and prohibit fabricated achieved results.
 
 ## Current cleanup — System consistency
 
-- Normalize remaining legacy `SKILL.md` files to explicit `## Required inputs` contracts without changing ownership.
-- Keep README, roadmap, architecture, capability registry, examples, and distribution docs synchronized with the actual governed system.
-- Remove or replace stale compact examples when a stronger governed walkthrough exists.
+- Remaining legacy skill input contracts have been normalized.
+- README, roadmap, architecture, examples, and distribution behavior are being kept synchronized with the governed system.
+- Stale compact examples are replaced only when a stronger governed walkthrough exists.
+- Deterministic data-contract validation now checks required contracts, skill loading paths, template ownership, and runtime distribution.
 
 ## Next milestone — Real-world validation
 
 Priority is **validation, not adding skills for the sake of count**.
 
 - Validate high-value skills against anonymized real-world cases where permission and evidence allow.
+- Use the Data Intake Manifest and source contracts so each validation case preserves the exact data basis used.
 - Preserve the difference between a worked example and a verified case study.
 - Record contradictions, failed hypotheses, negative outcomes, and scope limits rather than publishing only wins.
 - Use experiment-learning records to promote only replicated scoped patterns, never one-off results as universal best practices.
 
-## Next milestone — Data contracts and integrations
+## Next milestone — Connector / MCP integration boundaries
 
-Add integration work only when it improves real workflows without moving marketing intelligence out of the skill layer.
+The standardized data-contract layer is now the prerequisite interface. Integration work should add access and action capability without moving marketing intelligence out of Skills.
 
-- Document supported data contracts for common platform/account exports.
-- Define connector/MCP boundaries for read access, live mutations, approval, rollback, and verification.
+- Define connector/MCP read contracts: identity/scope, freshness, pagination/completeness, rate/permission limits, and mapping into the relevant data contract.
+- Define live mutation contracts: exact entity/action, authorization scope/expiry, precondition check, idempotency, rollback/stop rule, submitted/live/verified state, and post-change verification.
 - Keep Skills as the decision system; treat MCP/connectors/APIs as optional data/action layers.
+- Start with read-only integrations before live mutation where possible.
 - Build an installable OpenAI or Claude plugin only when the target manifest, runtime behavior, permissions, resources, and actual install/publish state can be verified.
 
 ## Next milestone — Operational maintainability
 
-- Add automated checks that prevent stale capability counts, unsupported roadmap claims, and broken public-navigation links where practical.
+- Add automated checks that prevent stale capability counts, unsupported roadmap claims, data-contract drift, and broken public-navigation links where practical.
 - Automate scheduled platform-currency review issues only when a real runtime is configured and verified.
 - Establish maintainers, migration policy, and deprecation rules before broader external contribution creates compatibility obligations.
 - Continue expanding behavioral evaluations from observed failure modes rather than arbitrary coverage quotas.
