@@ -1,11 +1,11 @@
 ---
 name: activation
-description: Define and improve the post-conversion path to first meaningful customer value using evidence-backed activation criteria, time-to-value, friction diagnosis, and controlled interventions; not for inventing an “aha moment,” treating onboarding completion as value by default, or taking over CRO, lifecycle messaging, product implementation, or retention economics.
+description: Define and improve the post-conversion path to first meaningful customer value using evidence-backed activation criteria, time-to-value, friction diagnosis, and controlled interventions; not for inventing an “aha moment,” treating onboarding completion as value by default, or taking over CRO, lifecycle messaging, retention strategy, product implementation, or retention economics.
 ---
 
 # Activation
 
-Activation owns the decision between acquisition/conversion and ongoing retention: what behavior or outcome credibly represents first meaningful value, how customers reach it, where they fail to reach it, and which interventions should be tested.
+Activation owns the decision between acquisition/conversion and ongoing retention: what behavior or outcome credibly represents first meaningful value, how customers reach it, where they fail to reach it, and which interventions should be tested. Once the customer has reached first meaningful value, `$retention-strategy` owns why they later fail to continue, renew, repurchase, or return and which retention intervention should be tested.
 
 Activation is not automatically a stage every business needs. If the purchase or conversion itself substantially realizes the promised value and there is no meaningful post-conversion setup/use milestone, state that no separate activation layer is decision-relevant rather than forcing a SaaS funnel onto the business.
 
@@ -35,7 +35,7 @@ If the value event cannot be measured reliably, route instrumentation integrity 
 5. **Diagnose the first binding barrier.** Distinguish product/service availability, setup complexity, comprehension, motivation, trust, missing data/integration, operational delay, poor-fit acquisition, technical defect, and measurement failure.
 6. **Choose the smallest meaningful intervention.** Remove unnecessary friction, improve guidance, change sequencing, add assistance, clarify expectations, or redesign a handoff only where evidence supports the mechanism. Route owned-channel trigger/cadence design to `$lifecycle-marketing`, wording to `$copywriting`, and surface-level conversion UX to `$cro` where relevant.
 7. **Define the test and guardrails.** Use [Activation experiments and handoffs](references/activation-experiments-and-handoffs.md). Primary outcome should reflect meaningful value or a validated activation proxy; guardrails may include refund/cancellation, support burden, quality, safety/compliance, retention, and downstream revenue.
-8. **Record learning and exact state.** Proposed activation definitions remain hypotheses until evidence supports them. Implemented journey changes are not verified until the expected behavior and downstream guardrails are observed.
+8. **Record learning and exact state.** Proposed activation definitions remain hypotheses until evidence supports them. Implemented journey changes are not verified until the expected behavior and downstream guardrails are observed. If the remaining problem occurs after first meaningful value, hand the intervention question to `$retention-strategy` rather than extending Activation indefinitely.
 
 ## Rules
 
@@ -44,7 +44,7 @@ If the value event cannot be measured reliably, route instrumentation integrity 
 - Onboarding completion, tutorial completion, profile completion, email open/click, number of sessions, or feature clicks are supporting events unless evidence shows they represent or predict meaningful value in scope.
 - Faster time-to-value is not universally better. Necessary qualification, safety, setup, education, compliance, or service work must not be removed just to shorten the clock.
 - Do not optimize activation rate by shrinking the denominator, excluding hard customers after the fact, changing the activation window post hoc, or redefining the event after seeing results.
-- Do not confuse activation with retention. Activation concerns first meaningful value; `$retention-economics` owns repeat/renewal/churn economics after cohorts mature.
+- Do not confuse activation with retention strategy or retention economics. Activation concerns first meaningful value; `$retention-strategy` owns cause/intervention after first value; `$retention-economics` owns repeat/renewal/churn economics after cohorts mature.
 - Do not confuse activation with lifecycle messaging. `$lifecycle-marketing` owns communication triggers/cadence; activation owns the journey decision those communications support.
 - Do not diagnose poor activation as onboarding friction before checking poor-fit acquisition, product/service failure, technical defects, operational delay, and measurement integrity.
 - Product or service implementation changes remain outside this skill's execution authority unless an appropriate implementation owner and approval exist.
@@ -70,9 +70,10 @@ Owned root artifacts, read when their scope applies:
 - `$lifecycle-marketing`: owned-channel onboarding/activation triggers, segmentation, cadence
 - `$copywriting`: onboarding/help/message wording
 - `$tracking-measurement`: event integrity, causal test validity, experiment learning
-- `$retention-economics`: repeat-use, renewal, churn, LTV, payback after activation
+- `$retention-strategy`: post-first-value retention/lapse/cancellation reason diagnosis and intervention strategy
+- `$retention-economics`: repeat-use, renewal, churn, LTV, payback measurement after activation
 - `$marketing-operations`: recurring activation monitoring/decision loops when needed
 
 ## QA
 
-Confirm a distinct activation stage actually exists, the value event is not chosen for tracking convenience, denominator/window/segment are fixed before reading the result, instrumentation is decision-ready, downstream guardrails are included, plausible alternative causes are checked, lifecycle/CRO/product boundaries are preserved, and no activation definition or journey change is described as proven before evidence supports it.
+Confirm a distinct activation stage actually exists, the value event is not chosen for tracking convenience, denominator/window/segment are fixed before reading the result, instrumentation is decision-ready, downstream guardrails are included, plausible alternative causes are checked, lifecycle/CRO/product/retention boundaries are preserved, and no activation definition or journey change is described as proven before evidence supports it.
