@@ -7,7 +7,20 @@ description: Audit and improve landing pages, product pages, forms, and checkout
 
 Classify each deliverable with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). Heuristic observations are hypothesis inputs, not causal findings or universal best practices.
 
-Prefer analytics by segment, recordings, surveys, usability tests, support/sales objections, experiment results, page speed, and funnel errors. Heuristic observations generate hypotheses; they do not prove causes.
+## Required inputs
+
+Use the strongest available evidence for the scoped pre-conversion journey:
+
+- exact page, form, checkout, or funnel state being evaluated, including device/viewport when material
+- primary business outcome, conversion boundary, and any qualified/supporting conversion definitions
+- upstream traffic source, audience/intent, promise, ad/query/message, and destination where message scent matters
+- funnel and page metrics with date range, denominator, source, and useful segments such as device, source, new/returning, geography, product, or landing page
+- product, offer, price, shipping/fees, eligibility, claims, proof, and policy truth that materially affect the page decision
+- available recordings, surveys, usability evidence, support/sales objections, experiment results, technical errors, accessibility issues, and page-speed evidence
+- commercial/downstream guardrails such as contribution, AOV, refund/return rate, lead quality, support burden, accessibility, or compliance
+- implementation and test authority if the request includes a live change rather than analysis or a draft
+
+Mark missing inputs explicitly. Do not invent user behavior, customer objections, page defects, or causal explanations to complete an audit.
 
 ## Method
 
