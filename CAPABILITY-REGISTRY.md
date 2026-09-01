@@ -21,6 +21,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Offer strategy: commercial proposition, promised outcome, core deliverable, value architecture, bundle, risk reversal, real urgency/scarcity | `$offer-strategy` |
 | Pricing and monetization: base price, value metric, package/tier architecture, payment model, discount architecture, willingness-to-pay evidence, price-change testing and migration | `$pricing-monetization` |
 | Activation: first meaningful value definition, post-conversion path-to-value, time-to-value, activation friction diagnosis, interventions, and validation | `$activation` |
+| Retention strategy: churn/lapse reason diagnosis, cause-matched retention/save/recovery/repeat/renewal/win-back intervention design and validation | `$retention-strategy` |
 | Google Ads: Search, Shopping, Performance Max | `$google-ads` |
 | Meta Ads: structure, audiences, delivery, placements | `$meta-ads` |
 | Creative strategy: angles, hooks, concepts, briefs, tests | `$creative-strategy` |
@@ -78,7 +79,7 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 ## Unsupported
 
-All previously identified advertising and distribution channels, pricing/monetization, and activation are governed. This registry can still contain future non-channel capability gaps.
+All previously identified advertising and distribution channels, pricing/monetization, activation, and retention strategy are governed. This registry can still contain future non-channel capability gaps.
 
 | Capability | Boundary |
 |---|---|

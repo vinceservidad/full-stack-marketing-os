@@ -117,6 +117,23 @@ Record this section only when a distinct post-conversion activation stage is dec
 | Instrumentation state |  |  |  |
 | Current intervention / test state |  |  |  |
 
+## Retention Strategy State
+
+Record this section only when repeat, renewal, continuing use/service, lapse, recovery, or win-back is decision-relevant. `$retention-strategy` owns reason diagnosis and intervention strategy; `$retention-economics` owns realized retention/LTV/payback evidence.
+
+| Field | Current context | Source | Evidence state |
+|---|---|---|---|
+| Continuation behavior |  |  |  |
+| Relevant segment / cohort / window |  |  |  |
+| Observed state | active / at risk / voluntary cancel / involuntary loss / dormant-lapsed / recovered / won back |  |  |
+| Leading reason family |  |  |  |
+| Reason confidence |  |  |  |
+| Voluntary / involuntary / lapse classification |  |  |  |
+| Current intervention hypothesis |  |  |  |
+| Root-cause owner |  |  |  |
+| Current test / rollout state |  |  |  |
+| Durable-save / recovery verification state |  |  |  |
+
 ## Proof Inventory
 
 | Proof type | Available evidence | Source | Evidence state | Allowed use / limit |
@@ -168,9 +185,10 @@ Newest first. Preserve prior entries rather than rewriting history.
 - Downstream skills read only the sections relevant to their decision; this is not a requirement to load the whole file for every trivial task.
 - A context entry inherits the evidence state of its underlying source; summarizing it here never upgrades confidence.
 - Customer language is not verbatim VOC unless it remains traceable to the supplied source.
-- A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence, willingness-to-pay, or an activation fact.
+- A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence, willingness-to-pay, activation fact, or verified retention cause.
 - A proposed/configured price remains proposed/configured here until the source pricing artifact verifies a later state.
 - An activation event remains hypothesis/provisional here until the `$activation` artifact supports a stronger state; onboarding completion or email engagement is not silently promoted to first value.
+- A customer-stated cancellation reason remains customer-stated here; it is not silently promoted to verified retention causality. A save remains provisional until the decision-relevant continuation window is observed.
 - Do not silently overwrite a contradiction. Record the competing evidence and the segment, date, or source difference.
 - Do not place unnecessary personal data in this artifact.
 - When a decision materially changes the context, increment the context version and prepend a change-log entry.
