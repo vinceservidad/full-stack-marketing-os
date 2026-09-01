@@ -22,6 +22,7 @@
 18. Recurring marketing loops must preserve domain ownership, durable state, idempotency, source freshness, approval scope, verification, and stop/escalation rules. A written loop is `designed`, not scheduled, active, or monitoring; never imply background execution unless the actual runtime is configured and verified.
 19. Pricing decisions must separate observed purchase behavior, stated preference, competitor context, model inference, and realized economics. Never treat a competitor price, survey answer, conversion rate, arbitrary markup, price-ending heuristic, or framework default as proof of an optimal price; live commercial changes require explicit approval and source-of-truth verification.
 20. Activation must represent first meaningful customer value, not tracking convenience. Do not invent an “aha moment,” use onboarding/tutorial/email completion as value by default, game denominator/window definitions, or shorten necessary qualification/safety/setup just to improve activation rate or time-to-value. Check fit, product/service failure, operations, and measurement before blaming onboarding friction.
+21. Retention interventions must match a diagnosed reason. Separate voluntary loss, involuntary payment loss, lapse, and active risk; do not default to discounts, obstruct cancellation, override consent/suppression, or call delayed cancellation a durable save. Verify continuing value and economics over the decision-relevant window.
 
 ## Skill design
 
