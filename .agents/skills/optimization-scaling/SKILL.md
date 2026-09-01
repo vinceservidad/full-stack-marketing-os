@@ -1,6 +1,6 @@
 ---
 name: optimization-scaling
-description: Determine whether paid-media campaigns are ready to scale, choose a controlled scaling mode, model marginal economics, and define hold or rollback rules; not for automatic spend, bid, audience, or campaign changes.
+description: Determine whether paid-media campaigns are ready to scale, choose a controlled scaling mode, model marginal economics, and define hold or rollback rules; not for automatic spend, bid, audience, or campaign changes or cross-functional growth-plan prioritization.
 ---
 
 # Optimization and Scaling
@@ -11,7 +11,9 @@ Scaling means increasing a verified primary business outcome while keeping named
 
 ## Required context
 
-Collect the business model and outcome; account/channel scope; dates and comparison; source of truth; spend and conversion lag; revenue or lead-stage definitions; contribution inputs or qualified-outcome economics; campaign/entity evidence; demand opportunity; creative, funnel, inventory/sales, cash-flow, and operational capacity; current platform controls; and authorization scope.
+Collect the business model and outcome; account/channel scope; dates and comparison; source of truth; spend and conversion lag; revenue or lead-stage definitions; contribution inputs or qualified-outcome economics; campaign/entity evidence; demand opportunity; creative, funnel, inventory/sales, cash-flow, and operational capacity; current platform controls; strategic priority from `$growth-strategy` when a governed cross-functional plan exists; and authorization scope.
+
+A growth plan may establish that paid-media expansion deserves strategic review. It does not establish that a campaign/entity is ready to scale or pre-authorize the scaling change.
 
 ## Method
 
@@ -31,6 +33,8 @@ Read only the relevant conditional reference: [portfolio allocation](references/
 - Do not scale while measurement integrity, primary business outcome, or decision-critical economics are unknown.
 - Evaluate blended and marginal performance separately; platform attribution is not incrementality or realized revenue.
 - Increasing a budget is a tactic, not the scaling strategy. Address the binding constraint.
+- `$growth-strategy` owns whether paid-media expansion should outrank other cross-functional opportunities. This skill owns whether the selected paid-media opportunity is actually ready to expand and how to test that expansion safely.
+- A growth-plan priority, approved roadmap, or strategic budget intention does not satisfy readiness, proof, marginal-economics, or authorization gates.
 - Preserve valuable brand, query, product, audience, and market coverage unless evidence supports removal.
 - Prefer one reversible, interpretable change; account for conversion lag and relevant demand cycles.
 - Forecasts and platform recommendations are inputs, not guarantees or authorization.
@@ -41,8 +45,17 @@ Read only the relevant conditional reference: [portfolio allocation](references/
 
 ## Output
 
-Return: scaling objective; primary knowledge type; proof level; readiness verdict and failed gates; source-of-truth outcome; economics and sensitivity; binding constraint; chosen scaling mode; protected coverage; exact proposed step; primary metric; guardrails; decision window/lag; hold/rollback rules; owner and approval; unknowns; exact status.
+Return: scaling objective; strategic-priority context when relevant; primary knowledge type; proof level; readiness verdict and failed gates; source-of-truth outcome; economics and sensitivity; binding constraint; chosen scaling mode; protected coverage; exact proposed step; primary metric; guardrails; decision window/lag; hold/rollback rules; owner and approval; unknowns; exact status.
+
+## Related owners
+
+- `$growth-strategy`: cross-functional opportunity priority, sequencing, and portfolio tradeoffs
+- channel skills: account/entity mechanics and platform controls
+- `$performance-diagnostics`: anomaly/constraint localization when performance changed
+- `$tracking-measurement`: causal validity and experiment learning
+- `$retention-economics`: lifetime economics inputs
+- `$marketing-intake`: definitions, evidence state, and authorization
 
 ## QA
 
-Verify formulas and cost scope, sample and lag maturity, account/platform availability, marginal versus blended evidence, downstream quality, operational capacity, maximum downside, one interpretable variable, source-of-truth verification, and authorization. Do not call scaling successful until the business result is verified.
+Verify formulas and cost scope, sample and lag maturity, account/platform availability, marginal versus blended evidence, downstream quality, operational capacity, maximum downside, one interpretable variable, source-of-truth verification, and authorization. Confirm any growth-plan priority has not been mistaken for scaling proof or approval. Do not call scaling successful until the business result is verified.
