@@ -44,7 +44,7 @@ jobs:
       - name: Validate knowledge taxonomy
         run: scripts/validate-knowledge-taxonomy.sh .
       - name: Validate data contracts
-        run: scripts/validate-data-contracts.sh .
+        run: bash scripts/validate-data-contracts.sh .
       - name: Validate optimization and scaling
         run: scripts/validate-scaling-system.sh .
       - name: Validate agent distribution
