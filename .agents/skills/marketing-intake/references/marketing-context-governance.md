@@ -16,6 +16,7 @@ Include only information that can change downstream marketing decisions:
 - current offer state
 - current pricing/monetization state when decision-relevant
 - current activation definition/path state when a distinct post-conversion activation layer exists
+- current retention-strategy state when repeat/renewal/continuation, lapse, recovery, or win-back is decision-relevant
 - proof inventory and allowed claim use
 - economics and capacity constraints
 - brand, compliance, channel, and funnel constraints
@@ -50,7 +51,7 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 - A summary inherits the weakest decision-relevant evidence state beneath it.
 - User assertions stay asserted until observed in a named source.
 - Customer-reported outcomes remain customer-reported outcomes unless business evidence verifies them.
-- A generated synthesis is never promoted to VOC, proof, product truth, willingness-to-pay, activation, or a verified buyer belief.
+- A generated synthesis is never promoted to VOC, proof, product truth, willingness-to-pay, activation, retention causality, or a verified buyer belief.
 - A specialist decision may update the context only after the decision artifact exists and its status is clear.
 - Context cannot authorize a live change.
 
@@ -65,7 +66,8 @@ Specialists own the underlying decisions:
 - `$offer-strategy`: offer diagnosis and approved offer design
 - `$pricing-monetization`: base/realized price, value metric, package/tier commercial structure, payment model, discounts, pricing evidence, and price-change state
 - `$activation`: whether a distinct activation layer exists, first meaningful value definition, path-to-value, time-to-value, activation barrier, and intervention state
-- `$retention-economics`: LTV, payback, cohort economics
+- `$retention-strategy`: retention-state/reason diagnosis, voluntary/involuntary/lapse classification, cause-matched intervention, and durable save/recovery/win-back state
+- `$retention-economics`: LTV, payback, cohort retention/churn/repeat economics
 - `$tracking-measurement`: measurement integrity, causal evidence, and experiment-learning validity
 - channel skills: current channel/platform mechanics
 
@@ -82,6 +84,7 @@ Before marking context `current`, confirm:
 5. Economics name the revenue basis and profit level where used.
 6. Pricing terms name their source and exact state rather than treating proposed/configured terms as live.
 7. Activation is included only when a distinct layer is decision-relevant; the value event, denominator/window, and definition status come from `$activation`, not from a convenience metric.
-8. Current platform details are not fossilized as durable context.
-9. The change log explains material revisions.
-10. No unnecessary personal data was copied into the artifact.
+8. Retention strategy is included only when continuation behavior is decision-relevant; customer-stated reasons are not promoted to causal facts and short-term saves are not labeled durable before the required window.
+9. Current platform details are not fossilized as durable context.
+10. The change log explains material revisions.
+11. No unnecessary personal data was copied into the artifact.
