@@ -1,6 +1,6 @@
 ---
 name: optimization-scaling
-description: Determine whether paid-media campaigns are ready to scale, choose a controlled scaling mode, model marginal economics, and define hold or rollback rules; not for automatic spend, bid, audience, or campaign changes.
+description: Determine whether paid-media campaigns are ready to scale, choose a controlled scaling mode, model marginal economics, and define hold or rollback rules; not for choosing whether paid-media scaling should outrank other business growth opportunities or for automatic spend, bid, audience, or campaign changes.
 ---
 
 # Optimization and Scaling
@@ -8,6 +8,8 @@ description: Determine whether paid-media campaigns are ready to scale, choose a
 Primary knowledge type: methodology. Classify supporting models, strategies, tactics, techniques, templates, heuristics, and evidence with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md).
 
 Scaling means increasing a verified primary business outcome while keeping named economics, quality, capacity, measurement, and risk guardrails acceptable. More spend, attributed revenue, conversions, or ROAS alone does not prove scaling.
+
+`$growth-strategy` owns the broader business-level question of whether paid-media scaling is the highest-priority growth opportunity versus fixing offer, pricing, conversion, activation, retention, market, or capacity constraints. This skill owns the scaling decision once paid-media expansion itself is in scope.
 
 ## Required context
 
@@ -31,6 +33,7 @@ Read only the relevant conditional reference: [portfolio allocation](references/
 - Do not scale while measurement integrity, primary business outcome, or decision-critical economics are unknown.
 - Evaluate blended and marginal performance separately; platform attribution is not incrementality or realized revenue.
 - Increasing a budget is a tactic, not the scaling strategy. Address the binding constraint.
+- Do not use this skill to declare paid-media scaling the business's top growth priority when material cross-business alternatives remain unresolved; route that priority decision to `$growth-strategy`.
 - Preserve valuable brand, query, product, audience, and market coverage unless evidence supports removal.
 - Prefer one reversible, interpretable change; account for conversion lag and relevant demand cycles.
 - Forecasts and platform recommendations are inputs, not guarantees or authorization.
@@ -45,4 +48,4 @@ Return: scaling objective; primary knowledge type; proof level; readiness verdic
 
 ## QA
 
-Verify formulas and cost scope, sample and lag maturity, account/platform availability, marginal versus blended evidence, downstream quality, operational capacity, maximum downside, one interpretable variable, source-of-truth verification, and authorization. Do not call scaling successful until the business result is verified.
+Verify formulas and cost scope, sample and lag maturity, account/platform availability, marginal versus blended evidence, downstream quality, operational capacity, maximum downside, one interpretable variable, source-of-truth verification, the broader priority question is routed to `$growth-strategy` when relevant, and authorization. Do not call scaling successful until the business result is verified.
