@@ -5,7 +5,7 @@ Owner: `$growth-strategy`.
 These cases test routing, evidence discipline, constraint diagnosis, opportunity prioritization, specialist ownership, planning governance, and the Growth Strategy versus Scaling boundary.
 
 | # | Case | Expected behavior |
-|---|---|---|
+|---:|---|---|
 | 1 | “Make a full marketing plan” with no objective or economics | Route to intake first; do not fill a generic channel checklist. |
 | 2 | User asks “where should we focus?” with decision-ready context | `$growth-strategy` owns the integrated priority decision. |
 | 3 | Plan starts with Meta, Google, SEO, email because they are common | Reject channel-first construction; start from objective and constraint. |
@@ -21,7 +21,7 @@ These cases test routing, evidence discipline, constraint diagnosis, opportunity
 | 13 | Lead volume is strong but sales capacity is exhausted | Surface sales capacity; do not prescribe more lead generation by default. |
 | 14 | Activation failure is causing later churn | Treat activation as upstream cause candidate; preserve owner split. |
 | 15 | Retention economics make new acquisition uneconomic | Retention can block acquisition expansion; route retention dependencies. |
-| 16 | Two constraints have evidence | Name binding constraint for horizon and secondary dependency; do not collapse causality. |
+| 16 | Two constraints have evidence | Do not collapse causality; classify whether one is primary, they are co-limiting/interacting, or they are independent within scope. |
 | 17 | Constraint evidence is weak | Label plausible/unknown rather than “the problem is definitely X.” |
 | 18 | Verified checkout defect exists | Protect/fix verified blocker before speculative growth bets. |
 | 19 | Legal/compliance issue exists | Protect/fix takes priority over growth experiments. |
@@ -32,7 +32,7 @@ These cases test routing, evidence discipline, constraint diagnosis, opportunity
 | 24 | Opportunity uses precise composite score built from guesses | Reject false precision; use explicit trade-offs or qualitative tiers. |
 | 25 | User asks for 10 priorities | Do not force count; stop when capacity/focus becomes diluted. |
 | 26 | Only one verified blocker exists | One priority can be the correct strategy. |
-| 27 | Diversified business has independent constraints | Multiple bets allowed when scope/capacity support them. |
+| 27 | Diversified business has independent constraints | Multiple bets allowed when scope/capacity support them; do not force one shared bottleneck. |
 | 28 | Plan has tasks but no strategic choice | Reject task list as strategy; require thesis/mechanism/priorities. |
 | 29 | “Launch Meta campaign” is presented as the strategy | Treat as implementation task under a strategic bet. |
 | 30 | Plan omits non-priorities | Require important intentional exclusions/reconsideration triggers. |
@@ -63,7 +63,7 @@ These cases test routing, evidence discipline, constraint diagnosis, opportunity
 | 55 | Experiment success metric is CTR while profit can be measured | Use business outcome/validated leading indicator; CTR is diagnostic. |
 | 56 | Decision rule is invented after result is seen | Flag post-hoc rule; do not present as pre-specified validation. |
 | 57 | A strategy review is triggered by competitor launch | Review evidence; trigger does not itself require strategy change. |
-| 58 | New evidence changes the binding constraint | Revise strategy with change log; preserve prior decision/history. |
+| 58 | New evidence changes the constraint structure | Revise strategy with change log; preserve prior decision/history. |
 | 59 | Strategy history is rewritten to make old forecast look correct | Reject hindsight rewrite; preserve original assumptions. |
 | 60 | Approved strategy is described as implemented | Keep exact status; approval is not execution. |
 | 61 | Workstream is live but outcome window is immature | `in execution`/under review, not successful. |
@@ -86,3 +86,13 @@ These cases test routing, evidence discipline, constraint diagnosis, opportunity
 | 78 | Low-impact quick win distracts from verified revenue leak | Verified commercial blocker outranks cosmetic win. |
 | 79 | User asks for benchmark-based channel mix | Explain no universal mix; use evidence and capacity. |
 | 80 | User asks Growth Strategy to publish/change live assets | No plan authorizes mutation; hand off with approval boundary. |
+| 81 | Two operational constraints jointly limit growth and neither dominates | Classify `co-limiting/interacting`; do not manufacture one binding constraint. |
+| 82 | Two product lines have different verified constraints in the same business plan | Classify independent constraints by scope and prioritize across them rather than forcing a shared bottleneck. |
+| 83 | Evidence cannot distinguish demand, offer, and conversion as the main limit | Use `not yet identified`; preserve hypotheses and prioritize the smallest decision-changing evidence step. |
+| 84 | A framework says every company has one bottleneck | Treat the framework as a model/heuristic, not proof; let the business evidence determine singular versus plural constraint structure. |
+| 85 | Strategist invents a 30% growth target because the template needs a target | Reject invented target; record baseline and desired direction only if supplied. |
+| 86 | Business supplies an aggressive 30% target with no feasibility evidence | Preserve it as asserted, not forecast/proof; plan should expose assumptions and evidence needed. |
+| 87 | Existing priority is performing acceptably but a materially higher-value opportunity emerges | Trigger portfolio review from changed opportunity cost; original bet need not fail before reprioritization. |
+| 88 | Priority initiative consumes twice the expected engineering/capacity | Reassess opportunity cost and sequence; do not continue solely because the initiative is on the roadmap. |
+| 89 | Team completed 100% of roadmap tasks but business outcome and learning did not improve | Do not call strategy successful from task completion; judge focus, evidence, business outcome, and learning. |
+| 90 | Marketing Context says one binding constraint but the governing strategy now has two co-limiting constraints | Governing strategy artifact wins; update context to preserve the plural constraint structure without promoting either to singular fact. |

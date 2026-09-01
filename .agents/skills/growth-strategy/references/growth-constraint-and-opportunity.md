@@ -2,7 +2,7 @@
 
 Use this reference when the business asks where growth should come from, what is holding growth back, or which opportunity should be pursued first.
 
-A growth constraint is the currently binding limitation on the primary business outcome within the stated horizon. It is not automatically the worst-looking metric, the lowest-performing channel, or the most visible complaint.
+A growth constraint is a condition materially limiting the primary business outcome within the stated horizon. A single primary/binding constraint may exist, but do not assume one must exist. Multiple independent or interacting constraints can matter at the same time, and evidence may be insufficient to identify the limiting condition yet.
 
 ## Diagnose in layers
 
@@ -23,13 +23,20 @@ Do not mechanically inspect every layer when evidence already identifies a verif
 
 ## Constraint evidence states
 
-Classify the candidate constraint:
+Classify each candidate constraint:
 
-- **verified blocker** — direct source evidence shows it currently prevents the objective
+- **verified blocker** — direct source evidence shows it currently prevents or materially limits the objective
 - **supported constraint** — multiple decision-relevant signals point to it, but causal certainty is incomplete
 - **plausible constraint** — a reasonable hypothesis with important missing evidence
 - **contradicted** — current evidence weighs against it
 - **unknown** — insufficient evidence to judge
+
+Then classify the strategic structure:
+
+- **primary / binding** — one constraint is sufficiently supported as the dominant current limit within the stated horizon
+- **co-limiting / interacting** — two or more constraints jointly limit the outcome and treating one alone as binding would misrepresent the system
+- **independent constraints** — separate business units, segments, products, markets, or pathways have different meaningful limits within the same plan scope
+- **not yet identified** — evidence cannot yet distinguish among decision-changing candidates
 
 A low metric is not automatically a constraint. For example, a low email click rate may be irrelevant if the business is inventory-constrained; a high acquisition CPA may not be the first constraint if gross margin or lead quality makes the entire offer uneconomic.
 
@@ -54,7 +61,7 @@ For each symptom, ask what mechanism could produce it and what competing explana
 
 Generate an opportunity only when it connects:
 
-`constraint → mechanism hypothesis → proposed strategic change → expected business effect → required specialist validation → evidence needed`
+`constraint or uncertainty → mechanism hypothesis → proposed strategic change/evidence step → expected business or learning effect → required specialist validation → evidence needed`
 
 An opportunity can include:
 
@@ -67,6 +74,7 @@ An opportunity can include:
 - resolve a retention cause
 - fix measurement that blocks decisions
 - expand capacity that is suppressing otherwise-valid demand
+- run the smallest research/test that can distinguish between unresolved major constraints
 - scale a proven system through `$optimization-scaling`
 
 Do not create an opportunity merely because a tactic exists.
@@ -86,7 +94,7 @@ Competitor presence, platform popularity, or a generic benchmark is not enough.
 
 ## Cross-constraint interactions
 
-More than one constraint can coexist. Name which is binding for the current horizon and which are secondary dependencies.
+More than one constraint can coexist. Do not force a single binding constraint when the evidence supports a constraint set.
 
 Examples:
 
@@ -95,9 +103,22 @@ Examples:
 - a pricing change may improve contribution but reduce acquisition conversion
 - a strong offer may still fail if fulfillment capacity is exhausted
 - measurement failure may prevent choosing between otherwise-plausible constraints
+- two product lines may have different independent constraints inside one business-level plan
 
-Do not collapse these into one causal claim without evidence.
+When one primary constraint is supported, name it and distinguish secondary dependencies. When several are co-limiting or independent, preserve that structure and prioritize across them using commercial impact, dependency, evidence, capacity, and opportunity cost.
+
+## When the constraint is not yet identified
+
+`Not yet identified` is a valid decision state. Do not choose a bottleneck simply to complete the template.
+
+When uncertainty blocks a major allocation decision:
+
+1. protect current verified value and downside
+2. preserve competing constraint hypotheses
+3. choose the smallest evidence-gathering action that can materially change the strategic choice
+4. predefine what evidence would support or contradict each candidate
+5. review the portfolio when that evidence matures
 
 ## Minimum output
 
-Return: objective; observed baseline; candidate constraints; evidence state for each; binding constraint and confidence; competing explanations; opportunity hypotheses; specialist owners; missing evidence; stop/escalation condition.
+Return: objective and baseline; candidate constraints; evidence state for each; strategic constraint structure (`primary/binding`, `co-limiting/interacting`, `independent`, or `not yet identified`); confidence; competing explanations; opportunity or learning hypotheses; specialist owners; missing evidence; stop/escalation condition.

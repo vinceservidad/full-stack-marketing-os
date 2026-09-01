@@ -9,7 +9,7 @@ The reusable template lives in the Marketing OS. The active project context live
 Include only information that can change downstream marketing decisions:
 
 - business model, primary business outcome, market, and strategic constraints
-- current integrated growth-strategy state when business-level prioritization is decision-relevant
+- current integrated growth-strategy state when business-level prioritization is decision-relevant, including its constraint structure rather than forcing a singular bottleneck
 - verified product truth and claim boundaries
 - priority segments, buying situations, JTBD, buyer/user roles, and exclusions
 - customer pain, desired progress, objections, selection criteria, and evidence-backed VOC themes
@@ -23,7 +23,7 @@ Include only information that can change downstream marketing decisions:
 - brand, compliance, channel, and funnel constraints
 - open decisions and evidence gaps
 
-Do not turn this into a data dump, CRM export, research archive, or raw analytics repository.
+Do not turn this into a data dump, CRM export, research archive, raw analytics repository, or duplicate strategy roadmap.
 
 ## Context lifecycle
 
@@ -37,7 +37,7 @@ Downstream skills should read the smallest relevant portion. Context is a conven
 
 ### Update
 
-Update when a decision-relevant fact, verified hypothesis, constraint, or approved strategy materially changes. Preserve the source and evidence state, increment the version, and prepend the change log.
+Update when a decision-relevant fact, verified hypothesis, constraint structure, or approved strategy materially changes. Preserve the source and evidence state, increment the version, and prepend the change log.
 
 ### Stale
 
@@ -54,6 +54,7 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 - Customer-reported outcomes remain customer-reported outcomes unless business evidence verifies them.
 - A generated synthesis is never promoted to VOC, proof, product truth, willingness-to-pay, activation, retention causality, a verified growth constraint, or a verified buyer belief.
 - A strategy priority does not upgrade the specialist evidence beneath it. If the source decision becomes stale or contradicted, the strategy-context entry inherits that weakness.
+- A `primary/binding` growth constraint is not inferred merely because the strategy needs a summary. Preserve `co-limiting/interacting`, `independent`, or `not yet identified` when that is the governing strategy state.
 - A specialist decision may update the context only after the decision artifact exists and its status is clear.
 - Context cannot authorize a live change.
 
@@ -63,7 +64,7 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 
 Specialists own the underlying decisions:
 
-- `$growth-strategy`: business-level objective, binding constraint, opportunity portfolio, strategic priorities/non-priorities, sequence, learning agenda, and review state
+- `$growth-strategy`: business-level objective/baseline, current constraint structure, opportunity portfolio, strategic priorities/non-priorities, sequence, learning agenda, and review state
 - `$customer-research`: research patterns and traceable VOC
 - `$icp-jtbd`: priority segments, buying situations, JTBD, roles, competitive alternative maps, and positioning implications
 - `$offer-strategy`: offer diagnosis and approved offer design
@@ -82,7 +83,7 @@ Before marking context `current`, confirm:
 
 1. Decision-relevant statements have a source and evidence state.
 2. Unknowns and contradictions are visible.
-3. Growth-strategy state names its source strategy artifact, current binding-constraint confidence, priorities, non-priorities, and next review trigger; no strategy summary promotes a specialist hypothesis into fact.
+3. Growth-strategy state names its source strategy artifact, constraint structure/confidence, priorities, non-priorities, and next review trigger; it does not force one binding constraint or promote a specialist hypothesis into fact.
 4. Product claims have an allowed-use boundary.
 5. Customer language is traceable when treated as verbatim.
 6. Economics name the revenue basis and profit level where used.

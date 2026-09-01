@@ -28,13 +28,14 @@ This artifact reduces repeated intake across skills. It is a curated context lay
 
 ## Growth Strategy State
 
-Record this section when an integrated business-level growth strategy is decision-relevant. `$growth-strategy` owns the binding constraint, opportunity portfolio, strategic priorities, non-priorities, sequencing, and review state. Specialist source artifacts still govern the underlying decisions.
+Record this section when an integrated business-level growth strategy is decision-relevant. `$growth-strategy` owns the current constraint structure, opportunity portfolio, strategic priorities, non-priorities, sequencing, and review state. Specialist source artifacts still govern the underlying decisions.
 
 | Field | Current context | Source | Evidence state |
 |---|---|---|---|
 | Strategy version / status |  |  |  |
 | Planning horizon |  |  |  |
-| Current binding constraint |  |  |  |
+| Constraint structure | primary/binding / co-limiting-interacting / independent / not yet identified |  |  |
+| Current limiting constraint(s) |  |  |  |
 | Constraint confidence / evidence state |  |  |  |
 | Priority strategic bets |  |  |  |
 | Explicit non-priorities |  |  |  |
@@ -202,7 +203,8 @@ Newest first. Preserve prior entries rather than rewriting history.
 - A context entry inherits the evidence state of its underlying source; summarizing it here never upgrades confidence.
 - Customer language is not verbatim VOC unless it remains traceable to the supplied source.
 - A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence, willingness-to-pay, activation fact, verified retention cause, or a verified growth constraint.
-- A growth strategy summary cannot make a specialist hypothesis true; strategy priorities stay tied to the source evidence and may become stale when the constraint or economics change.
+- A growth strategy summary cannot make a specialist hypothesis true; strategy priorities stay tied to the source evidence and may become stale when constraints, economics, capacity, or opportunity cost change.
+- Do not force a single binding growth constraint in context. Preserve the current `primary/binding`, `co-limiting/interacting`, `independent`, or `not yet identified` strategy state from the governing strategy artifact.
 - A proposed/configured price remains proposed/configured here until the source pricing artifact verifies a later state.
 - An activation event remains hypothesis/provisional here until the `$activation` artifact supports a stronger state; onboarding completion or email engagement is not silently promoted to first value.
 - A customer-stated cancellation reason remains customer-stated here; it is not silently promoted to verified retention causality. A save remains provisional until the decision-relevant continuation window is observed.
