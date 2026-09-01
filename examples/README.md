@@ -20,6 +20,12 @@ Shows a multi-skill business diagnosis where spend increased while revenue flatt
 
 Shows account, query, product, margin, attribution, and marginal-efficiency reasoning without blanket broad-match rules, one universal ROAS threshold, or automatic platform-recommendation acceptance.
 
+### Meta Ads audit and creative testing
+
+[`meta-ads/`](meta-ads/)
+
+Shows how platform-attributed revenue, prospecting vs retargeting, CTR, landing-page quality, frequency, audience mix, creative IDs, and scaling readiness are separated instead of collapsed into one Meta ROAS verdict. It explicitly rejects undocumented “algorithm change” explanations and broad-vs-interest universal rules.
+
 ### DTC creative strategy
 
 [`creative-strategy/`](creative-strategy/)
@@ -60,7 +66,7 @@ Do not blur these categories.
 
 ## Compact / legacy examples
 
-Some older files remain as small demonstrations for areas not yet expanded into full walkthroughs, such as Meta creative testing or Custom GPT setup. These compact examples should not be mistaken for complete end-to-end case studies.
+Some older files may remain as small demonstrations for areas not yet expanded into full walkthroughs, such as Custom GPT setup. These compact examples should not be mistaken for complete end-to-end case studies.
 
 ## Privacy and truth rules
 
