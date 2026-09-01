@@ -1,8 +1,8 @@
 # Marketing Context Governance
 
-Use this reference when creating, updating, or relying on [`templates/marketing-context.md`](../../../../templates/marketing-context.md).
+Use this reference when creating, updating, or relying on a project-level `.agents/marketing-context.md` built from [`templates/marketing-context.md`](../../../../templates/marketing-context.md).
 
-The Marketing Context is a shared decision-context artifact owned by `$marketing-intake`. It reduces repeated discovery across the Marketing OS while preserving provenance. It does not replace specialist research, product truth, the evidence register, or source systems.
+The reusable template lives in the Marketing OS. The active project context lives at `.agents/marketing-context.md`. The Marketing Context is a shared decision-context artifact owned by `$marketing-intake`. It reduces repeated discovery across the Marketing OS while preserving provenance. It does not replace specialist research, product truth, the evidence register, or source systems.
 
 ## What belongs in context
 
@@ -25,7 +25,7 @@ Do not turn this into a data dump, CRM export, research archive, or raw analytic
 
 ### Create
 
-Create context after enough intake exists to support reusable downstream decisions. A partial artifact is allowed when important gaps remain, but it must be labeled `partial` and list the gaps.
+Create `.agents/marketing-context.md` after enough intake exists to support reusable downstream decisions. A partial artifact is allowed when important gaps remain, but it must be labeled `partial` and list the gaps.
 
 ### Read
 
