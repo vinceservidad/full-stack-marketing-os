@@ -11,7 +11,7 @@ Classify each offer artifact with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-T
 
 ## Context
 
-Use the relevant sections of [`templates/marketing-context.md`](../../../templates/marketing-context.md) when available. Before a decision-grade recommendation, confirm:
+When `.agents/marketing-context.md` exists in the active project, read the relevant sections before a decision-grade recommendation. Before deciding, confirm:
 
 - product truth and claim boundaries
 - priority segment, buying situation, JTBD, and desired outcome
@@ -21,7 +21,7 @@ Use the relevant sections of [`templates/marketing-context.md`](../../../templat
 - margin, refund, fulfillment, inventory, service, or delivery constraints
 - legal, compliance, brand, and authorization boundaries
 
-If these are materially unclear, route the missing evidence to `$marketing-intake`, `$customer-research`, or `$icp-jtbd` rather than inventing it.
+If these are materially unclear, route the missing evidence to `$marketing-intake`, `$customer-research`, or `$icp-jtbd` rather than inventing it. A Marketing Context summary never upgrades the underlying evidence state.
 
 ## Method
 
