@@ -69,6 +69,7 @@ Status definitions:
 | `creative-brief.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `creative-idea-matrix.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `marketing-context.md` | owned | `$marketing-intake` (linked from SKILL.md; copied into active projects as `.agents/marketing-context.md`) |
+| `marketing-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — recurring loop contract with trigger, state, idempotency, authorization, verification, escalation, and retirement |
 | `landing-page-review.md` | owned | `$cro` (linked from SKILL.md) |
 | `experiment-plan.md` | archived | Weaker duplicate of `experiment.md`; moved to `docs/archive/legacy-skill-stubs/experiment-plan.flat.md` |
 | `experiment.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
@@ -85,6 +86,7 @@ Status definitions:
 
 | Artifact | Status | Owner or consumer |
 |---|---|---|
+| `marketing-operations-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — canonical recurring operating sequence |
 | `google-ads-optimization.md` | owned | `$google-ads` (linked from SKILL.md) |
 | `meta-ads-optimization.md` | owned | `$meta-ads` (linked from SKILL.md) |
 | `creative-ideation-engine.md` | owned | `$creative-strategy` (linked from SKILL.md) |

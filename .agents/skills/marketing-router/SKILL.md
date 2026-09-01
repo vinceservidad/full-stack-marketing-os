@@ -1,6 +1,6 @@
 ---
 name: marketing-router
-description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills when a task spans channels, funnel stages, diagnosis, or deliverables.
+description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills when a task spans channels, funnel stages, diagnosis, operations, or deliverables.
 ---
 
 # Marketing Router
@@ -13,10 +13,10 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 
 1. Identify the business outcome, business model, funnel stage, timeframe, market, channel, and requested action.
    Keep funnel/journey stage, awareness level, audience temperature, and lifecycle stage distinct.
-2. Classify intent: `audit`, `diagnose`, `plan`, `create`, `optimize`, `report`, or `activate`.
+2. Classify intent: `audit`, `diagnose`, `plan`, `create`, `optimize`, `report`, `operate`, or `activate`.
 3. Classify risk: read-only analysis; reversible draft; external mutation; spend, tracking, offer, or revenue-critical mutation.
 4. Select one primary skill and only supporting skills that answer a distinct dependency.
-5. Before a substantial audit, diagnosis, offer decision, scaling decision, or any live implementation, confirm scope, evidence state, metric definitions, and authorization are recorded. Route to `$marketing-intake` when they are not; it owns the response until the evidence state is known.
+5. Before a substantial audit, diagnosis, offer decision, scaling decision, recurring mutating loop, or any live implementation, confirm scope, evidence state, metric definitions, and authorization are recorded. Route to `$marketing-intake` when they are not; it owns the response until the evidence state is known.
 6. When `.agents/marketing-context.md` exists in the active project, use only the decision-relevant sections as shared context. Do not let the summary upgrade evidence or override a newer specialist artifact.
 7. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
 8. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
@@ -24,6 +24,7 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 
 ## Skill map
 
+- Recurring cross-skill operating loops, condition watches, state/checkpoint design, idempotency, approval gates, execution handoffs, verification, escalation, or retirement: `$marketing-operations`.
 - Google campaign structure, queries, Shopping/PMax, bids, or budgets: `$google-ads`.
 - Meta structure, audiences, delivery, placements, or ads: `$meta-ads`.
 - Commercial offer, promised outcome, core deliverable, value architecture, bundle, risk reversal, real urgency/scarcity, or offer diagnosis: `$offer-strategy`.
@@ -51,6 +52,8 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 
 Common compositions:
 
+- Recurring weekly/monthly account operation: marketing operations owns trigger/cadence, run state, specialist handoffs, approval gates, verification, and run history; each channel/diagnostic/scaling skill keeps its substantive decision; marketing reporting owns the communication artifact when a report is also required.
+- Condition watch such as “alert when performance crosses X”: marketing operations owns the recurring check, condition state, dedupe/re-arm logic, and escalation; the domain skill defines whether X is decision-valid; a runtime/tool must actually be configured before the loop is described as scheduled or active.
 - Improve an offer that is not converting: offer strategy owns the commercial proposition; customer research and ICP/JTBD supply buying evidence; CRO joins only if page/journey friction is a distinct dependency; copywriting expresses an approved offer rather than inventing one.
 - Offer + paid creative: offer strategy owns the commercial proposition; creative strategy translates it into angle, hook, concept, proof treatment, and CTA; channel skill supplies platform constraints.
 - Offer change that alters price or pricing architecture: offer strategy may diagnose non-price value/risk components and consume supplied terms, but base price, value metric, tier/package architecture, willingness-to-pay, and monetization strategy remain unsupported until explicitly governed.
@@ -64,7 +67,7 @@ Common compositions:
 - Is this channel actually incremental: tracking and measurement owns method selection and evidence grading; the channel skill supplies account controls; optimization and scaling consumes the result and never substitutes attribution for it.
 - Is this customer base or channel worth scaling on a lifetime basis: retention economics owns the lifetime value and payback model; optimization and scaling owns the scaling decision and applies its own proof standard to the model's output.
 - Audit request with no economics, scope, or source of truth supplied: intake owns until the evidence state is recorded; the channel skill then owns the audit itself.
-- Cross-channel executive report requested: reporting owns combining findings already produced by other skills; it does not perform the underlying audit, diagnosis, or economics analysis itself.
+- Cross-channel executive report requested: reporting owns combining findings already produced by other skills; it does not perform the underlying audit, diagnosis, or economics analysis itself. If the recurring process also coordinates decisions/actions with persistent state, marketing operations owns that loop layer.
 - Email or lifecycle sequence needed end to end: lifecycle marketing owns segmentation, triggers, and cadence; copywriting owns the words for each piece; tracking and measurement owns any incrementality claim.
 - YouTube campaign requested: YouTube ads owns format, targeting, and measurement fit; Google Ads owns account and bidding mechanics since YouTube runs through the same platform; creative strategy owns concept and hook development if the video creative itself needs work.
 - TikTok campaign requested: TikTok ads owns native creative fit, format choice, and cadence; creative strategy owns concept and hook development; optimization and scaling's creative-capacity gate governs when refresh cadence becomes a scaling constraint.
@@ -82,7 +85,7 @@ Common compositions:
 Route only to a skill that exists. Check [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md) before answering a request outside the skill map. Boundaries are task-level, not discipline-level: a discipline can be partly governed and partly unsupported.
 
 - Analytics: tracking architecture, event integrity, and attribution differences belong to `$tracking-measurement`; performance analysis, segmentation, and anomaly diagnosis to `$performance-diagnostics`; allocation and marginal evidence to `$optimization-scaling`. Business-intelligence engineering, pipeline or warehouse design, and dashboard implementation have no governed specialist.
-- Reporting: a bounded single-channel or single-decision report is owned by the skill that owns the underlying decision — the Google Ads audit report by `$google-ads`, the measurement integrity report by `$tracking-measurement`, the scaling review by `$optimization-scaling`. Cross-channel executive reporting, recurring reporting cadence, and stakeholder scorecards are owned by `$marketing-reporting`, which combines those outputs rather than re-deriving them. Budget and outcome pacing remain owned by `$optimization-scaling`; forecasting outside a pacing reforecast has no governed specialist.
+- Reporting versus operations: a bounded single-channel or single-decision report is owned by the skill that owns the underlying decision. Cross-channel executive reporting, recurring reporting cadence, and stakeholder scorecards are owned by `$marketing-reporting`. Recurring operational coordination — trigger/cadence, state/checkpoints, condition watches, approval gates, execution handoffs, verification, duplicate prevention, escalation, and retirement — is owned by `$marketing-operations`. Budget and outcome pacing remain owned by `$optimization-scaling`; forecasting outside a pacing reforecast has no governed specialist.
 - Copywriting: paid-ad hooks, angles, concepts, and creative briefs belong to `$creative-strategy`; conversion-page copy evaluation to `$cro`; email, lifecycle, website, sales-page, long-form, and brand copywriting to `$copywriting`. Do not route general copywriting to `$creative-strategy` or `$cro` outside their stated scope now that `$copywriting` owns the rest.
 - Offer strategy versus pricing: `$offer-strategy` owns the commercial proposition, value architecture, bundle, risk reversal, and real urgency/scarcity. It does not set base price, value metric, pricing tiers/package architecture, willingness-to-pay, or monetization strategy; those remain explicitly unsupported in `CAPABILITY-REGISTRY.md` until governed.
 Every previously listed advertising and distribution channel is governed: Search Engine Optimization by `$seo`; email and lifecycle program strategy by `$lifecycle-marketing`; YouTube video advertising by `$youtube-ads`; TikTok advertising by `$tiktok-ads`; LinkedIn advertising by `$linkedin-ads`; influencer and creator partnerships by `$influencer-marketing`; affiliate and partner programs by `$affiliate-marketing`; organic social content by `$organic-social`; programmatic buying by `$programmatic`; media relations and crisis communications by `$public-relations`. Do not describe any of these as unsupported. If a genuinely new discipline arrives that is not in `CAPABILITY-REGISTRY.md`, declare it unsupported per the handling method there rather than substituting an adjacent skill.
@@ -99,6 +102,7 @@ When no governed specialist covers the primary discipline: do not silently subst
 - If measurement integrity is unknown, treat platform conversion changes as provisional.
 - For live changes, first state the exact change, expected effect, downside, rollback condition, and approval boundary.
 - Never describe a draft recommendation as implemented.
+- Never describe a designed recurring loop as scheduled, active, or monitoring unless its runtime state is actually verified.
 - Never convert an undocumented platform “algorithm change” into a fact. Label official documentation, account observation, experimental evidence, inference, and unknowns separately.
 - Do not present a pattern as causality, a heuristic as a guarantee, a tactic as a strategy, or a framework/model as proof of an outcome.
 - Do not treat more spend, conversions, attributed revenue, or blended ROAS as proof of scaling; require scoped readiness, marginal business evidence, capacity, and rollback rules.
@@ -117,4 +121,4 @@ Owned root artifacts, read when their scope applies:
 
 ## QA
 
-Confirm routing is minimal, an owner is named, every named skill exists in the capability registry, any capability gap is disclosed, unknowns are visible, commercial outcome is explicit, current-platform claims meet the freshness gate, shared context has not upgraded evidence, and no external action is implied without authorization.
+Confirm routing is minimal, an owner is named, every named skill exists in the capability registry, any capability gap is disclosed, unknowns are visible, commercial outcome is explicit, current-platform claims meet the freshness gate, shared context has not upgraded evidence, recurring-loop runtime state is not invented, and no external action is implied without authorization.

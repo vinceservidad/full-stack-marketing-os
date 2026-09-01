@@ -16,6 +16,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Capability | Owner |
 |---|---|
 | Request routing and owner appointment | `$marketing-router` |
+| Marketing operations: recurring cross-skill loops, trigger/cadence governance, run state, idempotency, approval gates, execution handoffs, verification, escalation, and retirement | `$marketing-operations` |
 | Engagement intake: scope, evidence grading, metric definitions, access, authorization, reusable Marketing Context | `$marketing-intake` |
 | Offer strategy: commercial proposition, promised outcome, core deliverable, value architecture, bundle, risk reversal, real urgency/scarcity | `$offer-strategy` |
 | Google Ads: Search, Shopping, Performance Max | `$google-ads` |
@@ -41,7 +42,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Organic social: content strategy, cadence, algorithm-distribution fit, community management | `$organic-social` |
 | Programmatic: supply-path optimization, inventory verification, fraud screening | `$programmatic` |
 | Public relations: media relations, pitch strategy, crisis communications | `$public-relations` |
-| Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
+| Cross-channel executive reporting, recurring reporting cadence, stakeholder scorecards | `$marketing-reporting` |
 
 ## Partially covered
 
@@ -66,7 +67,7 @@ Not covered: business-intelligence engineering, data-warehouse or pipeline desig
 | Scaling review and decision log | `$optimization-scaling` |
 | Cross-channel executive report, scorecard, recurring cadence, stakeholder translation | `$marketing-reporting` |
 
-A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. Not covered: report-production systems and data-warehouse/dashboard implementation.
+A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. A recurring process that coordinates specialist decisions, persistent state, approval gates, live-action handoffs, verification, or condition-triggered escalation is `$marketing-operations`, not reporting. Not covered: report-production systems and data-warehouse/dashboard implementation.
 
 ## Planned
 
