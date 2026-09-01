@@ -16,6 +16,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Capability | Owner |
 |---|---|
 | Request routing and owner appointment | `$marketing-router` |
+| Business-level growth strategy and integrated marketing planning: objective, binding constraint, opportunity portfolio, priorities, non-priorities, sequencing, specialist orchestration, learning roadmap, and review governance | `$growth-strategy` |
 | Marketing operations: recurring cross-skill loops, trigger/cadence governance, run state, idempotency, approval gates, execution handoffs, verification, escalation, and retirement | `$marketing-operations` |
 | Engagement intake: scope, evidence grading, metric definitions, access, authorization, reusable Marketing Context | `$marketing-intake` |
 | Offer strategy: commercial proposition, promised outcome, core deliverable, value architecture, bundle, risk reversal, real urgency/scarcity | `$offer-strategy` |
@@ -32,7 +33,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Experiment learning: test validity classification, scoped learning records, transfer status, contradiction preservation, decision-relevant experiment backlog | `$tracking-measurement` |
 | Customer research: interviews, reviews, surveys, evidence synthesis | `$customer-research` |
 | Ideal Customer Profile, Jobs-to-be-Done, and competitive intelligence for buyer/positioning decisions | `$icp-jtbd` |
-| Optimization and scaling: readiness, marginal economics, portfolio, de-scaling, budget/outcome pacing | `$optimization-scaling` |
+| Optimization and scaling: paid-media readiness, marginal economics, paid-media portfolio allocation, de-scaling, recovery, budget/outcome pacing | `$optimization-scaling` |
 | Retention economics: lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts | `$retention-economics` |
 | Search Engine Optimization: visibility audit, technical health, content and topic strategy, ranking-change diagnosis | `$seo` |
 | Copywriting: email, lifecycle, website, sales-page, long-form, brand — with paid-ad hooks staying under `$creative-strategy` and conversion-page copy under `$cro` | `$copywriting` |
@@ -55,7 +56,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 |---|---|
 | Tracking architecture, event integrity, attribution differences, source reconciliation | `$tracking-measurement` |
 | Performance analysis, segmentation, anomaly diagnosis, competing explanations | `$performance-diagnostics` |
-| Marginal business evidence and allocation analysis | `$optimization-scaling` |
+| Marginal business evidence and paid-media allocation analysis | `$optimization-scaling` |
 
 Not covered: business-intelligence engineering, data-warehouse or pipeline design, dashboard implementation, and analytics deliverables outside the three owners above.
 
@@ -70,7 +71,7 @@ Not covered: business-intelligence engineering, data-warehouse or pipeline desig
 | Scaling review and decision log | `$optimization-scaling` |
 | Cross-channel executive report, scorecard, recurring cadence, stakeholder translation | `$marketing-reporting` |
 
-A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. A recurring process that coordinates specialist decisions, persistent state, approval gates, live-action handoffs, verification, or condition-triggered escalation is `$marketing-operations`, not reporting. Not covered: report-production systems and data-warehouse/dashboard implementation.
+A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, growth-priority decision, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. A recurring process that coordinates specialist decisions, persistent state, approval gates, live-action handoffs, verification, or condition-triggered escalation is `$marketing-operations`, not reporting. Not covered: report-production systems and data-warehouse/dashboard implementation.
 
 ## Planned
 
@@ -79,7 +80,7 @@ A bounded single-channel or single-decision report stays owned by the skill that
 
 ## Unsupported
 
-All previously identified advertising and distribution channels, pricing/monetization, activation, and retention strategy are governed. This registry can still contain future non-channel capability gaps.
+All previously identified advertising and distribution channels, pricing/monetization, activation, retention strategy, and business-level growth strategy are governed. This registry can still contain future capability gaps.
 
 | Capability | Boundary |
 |---|---|
