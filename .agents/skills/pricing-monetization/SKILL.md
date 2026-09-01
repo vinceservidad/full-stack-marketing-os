@@ -54,6 +54,12 @@ If inputs are weak, return a pricing hypothesis and evidence plan rather than a 
 
 Pricing decision: decision type; audience/segment; current commercial structure; evidence base and strength; economic floor/constraints; value metric; package/tier logic; candidate price/payment scenarios; modeled business impact with assumptions; customer and retention risks; competitor context if relevant; test/rollout plan; grandfathering/migration rules; measurement and guardrails; approval needs; exact status.
 
+## Library references
+
+Owned root artifacts, read when their scope applies:
+
+- [pricing-decision.md](../../../templates/pricing-decision.md) — canonical pricing decision, scenario, rollout, migration, and verification record.
+
 ## Related owners
 
 - `$marketing-intake`: shared context, source/evidence state, cost definitions, authorization
