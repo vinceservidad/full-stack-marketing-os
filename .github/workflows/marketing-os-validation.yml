@@ -48,6 +48,6 @@ jobs:
       - name: Validate optimization and scaling
         run: scripts/validate-scaling-system.sh .
       - name: Validate agent distribution
-        run: scripts/validate-agent-distribution.sh .
+        run: bash scripts/validate-agent-distribution.sh .
       - name: Check platform freshness
         run: python3 scripts/check-platform-freshness.py .
