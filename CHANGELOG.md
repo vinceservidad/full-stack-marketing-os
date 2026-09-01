@@ -450,4 +450,5 @@ Core areas include:
 ### Added
 
 - Canonical `KNOWLEDGE-TAXONOMY.md` distinguishing principles, definitions, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
-- Reusable knowledge-artifact metadata template covering decision, scope, owner, inputs, evidence_status, confidence, freshness, dependencies, authorization, and rollback_or_stop.
+- Reusable knowledge-artifact metadata template covering decision, scope, owner, evidence, confidence, freshness, dependencies, authorization, and rollback/stop conditions.
+- Glossary definitions, operating rules, and regression coverage for knowledge-layer boundaries.
