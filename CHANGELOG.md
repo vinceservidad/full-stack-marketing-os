@@ -6,6 +6,11 @@ Notable changes follow semantic versioning.
 
 ### Added
 
+- `$marketing-intake` shared Marketing Context layer: adds [`templates/marketing-context.md`](templates/marketing-context.md) plus governance for creating a project-level `.agents/marketing-context.md`. The context carries product truth, ICP/JTBD, VOC themes, positioning, current offer, proof, economics, constraints, open decisions, provenance, evidence state, freshness, contradictions, and version history without becoming a competing source of truth or requiring every skill to load unrelated context.
+- `$offer-strategy`, twenty-fifth governed skill, owns the commercial proposition itself — desired progress, core deliverable, value architecture, bundle/support components, risk reversal, legitimate urgency/scarcity, proof requirements, capacity/economics checks, and controlled offer hypotheses. It explicitly rejects fake scarcity, resetting deadlines, invented guarantees, fictitious bonus values, hidden material conditions, and heuristic performance promises.
+- Offer strategy is kept distinct from copywriting, CRO, creative execution, and pricing/monetization. `CAPABILITY-REGISTRY.md` now truthfully lists base price, value metric, tier/package architecture, willingness-to-pay research, and monetization model as unsupported until a dedicated owner exists rather than silently assigning those decisions to the offer skill.
+- Twenty-five Marketing Context + Offer Strategy behavioral evaluations plus completed review covering stale/contradicted context, provenance, VOC traceability, privacy, authorization, offer/copy confusion, false urgency, guarantee and proof boundaries, discount defaults, bundle inflation, capacity/economics, pricing creep, controlled tests, and single-owner routing. The design was built natively from the OS's own evidence, taxonomy, ownership, and authorization rules rather than importing an external skill hierarchy.
+
 - `$creative-strategy` execution layer: adds [creative mechanics](.agents/skills/creative-strategy/references/creative-mechanics.md), [hook execution](.agents/skills/creative-strategy/references/hook-execution.md), and [visual format selection](.agents/skills/creative-strategy/references/visual-format-selection.md). The canonical creative flow now separates angle → creative mechanic → concept → hook → visual format, with each layer treated as a testable hypothesis rather than a proven performance formula. Current platform-native fit remains owned by the relevant channel skill.
 - `$customer-research` reference: [review mining for creative research](.agents/skills/customer-research/references/review-mining-for-creative.md). Review analysis now includes relevant positive, neutral, and negative evidence; preserves source provenance and contradictions; separates specificity from prevalence; and prevents customer-reported results or model-synthesized language from being promoted into verified proof or VOC.
 - Twenty-six creative execution-layer evaluations plus completed review covering positive-review bias, quote provenance, reported-outcome overclaiming, mechanic/hook/format conflation, fabricated social proof and urgency, fake native voice, universal funnel-format claims, generated visuals used as proof, platform-routing errors, production feasibility, and controlled mechanic testing.
@@ -50,7 +55,7 @@ Adds `$public-relations`, twenty-fourth governed skill. Third and final of the u
 ### Changed
 
 - Router routes media relations and crisis response to `$public-relations`; the "unsupported channels" line is removed entirely since every previously identified channel is now governed, replaced by a standing instruction for how a genuinely new discipline should be handled if one arrives later.
-- `$organic-social`'s escalation reference is firmed up: an escalating pattern of public engagement now names `$public-relations` directly rather than conditionally.
+- `$organic-social`'s escalation reference is firmed up: an escalating pattern of public engagement on organic social (a complaint pattern, a brewing reputational concern) now names `$public-relations` directly rather than conditionally.
 - Capability registry: public relations moves from unsupported to governed. The Unsupported section is retained as an empty contract rather than deleted, so a future genuinely new discipline has a defined home before it's built.
 
 ### Channel-expansion arc complete
@@ -346,7 +351,7 @@ Adds the intake and evidence layer. Built as a skill-owned reference set under t
 
 ### Known issue
 
-- Root contracts are linked as `../../../FILE.md`, which resolves to the repository root in the canonical layer but to the parent of the install root from `~/.codex/skills/<name>/`. `KNOWLEDGE-TAXONOMY.md` is present at the install root and unreachable by that depth; `CAPABILITY-REGISTRY.md` is not yet installed. Reported by the validator; a fix requires deciding between installing contracts at the resolved depth, inlining the rules, or rewriting paths at install time.
+- Root contracts were linked as `../../../FILE.md`, which resolves to the repository root in the canonical layer but to the parent of the install root from `~/.codex/skills/<name>/`. `KNOWLEDGE-TAXONOMY.md` is present at the install root and unreachable by that depth; `CAPABILITY-REGISTRY.md` is not yet installed. Reported by the validator; a fix requires deciding between installing contracts at the resolved depth, inlining the rules, or rewriting paths at install time.
 
 ## [1.2.0] - 2026-08-24
 
@@ -421,5 +426,5 @@ Core areas include:
 ### Added
 
 - Canonical `KNOWLEDGE-TAXONOMY.md` distinguishing principles, definitions, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
-- Reusable knowledge-artifact metadata template covering decision, scope, owner, evidence, confidence, freshness, dependencies, authorization, and rollback/stop conditions.
+- Reusable knowledge-artifact metadata template covering decision, scope, owner, inputs, evidence_status, confidence, freshness, dependencies, authorization, and rollback_or_stop conditions.
 - Glossary definitions, operating rules, and regression coverage for knowledge-layer boundaries.
