@@ -72,6 +72,7 @@ Status definitions:
 | `landing-page-review.md` | owned | `$cro` (linked from SKILL.md) |
 | `experiment-plan.md` | archived | Weaker duplicate of `experiment.md`; moved to `docs/archive/legacy-skill-stubs/experiment-plan.flat.md` |
 | `experiment.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
+| `experiment-learning.md` | owned | `$tracking-measurement` (linked from SKILL.md) — post-test validity, scoped learning, transfer, contradiction, and follow-up record |
 | `audit.md` | owned | `$performance-diagnostics` (linked from SKILL.md) — canonical audit format |
 | `audit-template.md` | archived | Weaker duplicate of `audit.md`; moved to `docs/archive/legacy-skill-stubs/audit-template.flat.md` |
 | `marketing-audit.md` | owned | `$icp-jtbd` (linked from SKILL.md) — distinct scope: business/market-level, not a channel audit |
