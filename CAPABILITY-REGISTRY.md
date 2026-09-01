@@ -25,8 +25,9 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Performance diagnosis: metric change, anomaly, causal triage | `$performance-diagnostics` |
 | Tracking and measurement: event integrity, attribution reconciliation | `$tracking-measurement` |
 | Measurement validity: causal evidence grading, incrementality method selection, holdouts, geo experiments, lift studies, Marketing Mix Modeling, triangulation | `$tracking-measurement` |
+| Experiment learning: test validity classification, scoped learning records, transfer status, contradiction preservation, decision-relevant experiment backlog | `$tracking-measurement` |
 | Customer research: interviews, reviews, surveys, evidence synthesis | `$customer-research` |
-| Ideal Customer Profile and Jobs-to-be-Done | `$icp-jtbd` |
+| Ideal Customer Profile, Jobs-to-be-Done, and competitive intelligence for buyer/positioning decisions | `$icp-jtbd` |
 | Optimization and scaling: readiness, marginal economics, portfolio, de-scaling, budget/outcome pacing | `$optimization-scaling` |
 | Retention economics: lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts | `$retention-economics` |
 | Search Engine Optimization: visibility audit, technical health, content and topic strategy, ranking-change diagnosis | `$seo` |
