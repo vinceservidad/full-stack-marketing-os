@@ -71,6 +71,7 @@ Status definitions:
 | `marketing-context.md` | owned | `$marketing-intake` (linked from SKILL.md; copied into active projects as `.agents/marketing-context.md`) |
 | `marketing-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — recurring loop contract with trigger, state, idempotency, authorization, verification, escalation, and retirement |
 | `pricing-decision.md` | owned | `$pricing-monetization` (linked from SKILL.md) — pricing, value metric, packaging, scenario, rollout, migration, and verification decision record |
+| `activation-plan.md` | owned | `$activation` (linked from SKILL.md) — first-value definition, path-to-value, diagnosis, intervention, measurement, handoffs, and learning record |
 | `landing-page-review.md` | owned | `$cro` (linked from SKILL.md) |
 | `experiment-plan.md` | archived | Weaker duplicate of `experiment.md`; moved to `docs/archive/legacy-skill-stubs/experiment-plan.flat.md` |
 | `experiment.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
