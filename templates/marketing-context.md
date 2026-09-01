@@ -26,6 +26,21 @@ This artifact reduces repeated intake across skills. It is a curated context lay
 | Time horizon |  |  |  |
 | Strategic constraints |  |  |  |
 
+## Current Growth Strategy
+
+Record only the current decision-relevant strategy state. `$growth-strategy` owns the underlying growth-system map, constraint/opportunity portfolio, prioritization, sequencing, explicit non-priorities, and review logic. Do not copy the entire plan into context.
+
+| Field | Current context | Source | Evidence state |
+|---|---|---|---|
+| Strategy / plan version |  |  |  |
+| Decision horizon |  |  |  |
+| Verified / likely priority constraint(s) |  |  |  |
+| Current strategic priorities |  |  |  |
+| Explicit non-priorities |  |  |  |
+| Key dependencies / blockers |  |  |  |
+| Review triggers |  |  |  |
+| Plan state | draft / proposed / approved / in progress / observing / revised / retired |  |  |
+
 ## Product Truth and Claim Boundaries
 
 | Field | Current context | Source | Evidence state |
@@ -185,10 +200,11 @@ Newest first. Preserve prior entries rather than rewriting history.
 - Downstream skills read only the sections relevant to their decision; this is not a requirement to load the whole file for every trivial task.
 - A context entry inherits the evidence state of its underlying source; summarizing it here never upgrades confidence.
 - Customer language is not verbatim VOC unless it remains traceable to the supplied source.
-- A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence, willingness-to-pay, activation fact, or verified retention cause.
+- A model-generated synthesis is labeled synthesis or hypothesis, not customer evidence, willingness-to-pay, activation fact, verified retention cause, or verified growth constraint.
 - A proposed/configured price remains proposed/configured here until the source pricing artifact verifies a later state.
 - An activation event remains hypothesis/provisional here until the `$activation` artifact supports a stronger state; onboarding completion or email engagement is not silently promoted to first value.
 - A customer-stated cancellation reason remains customer-stated here; it is not silently promoted to verified retention causality. A save remains provisional until the decision-relevant continuation window is observed.
+- A growth priority remains a planning decision with its recorded evidence state; plan approval does not make its mechanism proven, its initiative implemented, or its live mutations authorized.
 - Do not silently overwrite a contradiction. Record the competing evidence and the segment, date, or source difference.
 - Do not place unnecessary personal data in this artifact.
 - When a decision materially changes the context, increment the context version and prepend a change-log entry.
