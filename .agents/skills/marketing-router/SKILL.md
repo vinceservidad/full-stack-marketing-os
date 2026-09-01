@@ -141,12 +141,6 @@ When no governed specialist covers the primary discipline: do not silently subst
 
 Return: objective; primary knowledge type; routed skills and owner; capability status (governed, partially covered, or unsupported); evidence; missing inputs; approach; findings or deliverable; recommended next action; exact status.
 
-## Library references
-
-Owned root artifacts, read when their scope applies:
-
-- [decision-prioritization.md](../../../frameworks/decision-prioritization.md) — prioritization framework for routed work.
-
 ## QA
 
 Confirm routing is minimal, an owner is named, every named skill exists in the capability registry, broad business-level planning routes to `$growth-strategy`, specialist decisions remain with their owners, any capability gap is disclosed, unknowns are visible, commercial/customer value outcome is explicit, current-platform claims meet the freshness gate, shared context has not upgraded evidence, pricing/activation/retention/runtime states are not invented, cancellation/consent boundaries are preserved, and no external action is implied without authorization.
