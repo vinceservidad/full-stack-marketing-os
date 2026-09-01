@@ -28,7 +28,7 @@ Status definitions:
 | `shopify-cro.md` | owned | `$cro` (linked from SKILL.md) |
 | `measurement-and-evidence.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
 | `experimentation.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
-| `decision-prioritization.md` | owned | `$marketing-router` (linked from SKILL.md) |
+| `decision-prioritization.md` | archived | Weaker duplicate after `$growth-strategy` introduced `references/portfolio-prioritization-and-sequencing.md`; moved to `docs/archive/legacy-skill-stubs/decision-prioritization.flat.md` |
 | `copywriting-frameworks.md` | archived | Twenty-line structure list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/copywriting-frameworks.flat.md`, superseded by `$copywriting` |
 | `seo-framework.md` | archived | Ten-line phase list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/seo-framework.flat.md`, superseded by `$seo` |
 

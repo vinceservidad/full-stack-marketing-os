@@ -1,5 +1,9 @@
 # Decision Prioritization
 
+Archived after `$growth-strategy` became the governed owner for business-level opportunity prioritization. Superseded by `.agents/skills/growth-strategy/references/portfolio-prioritization-and-sequencing.md`.
+
+Original artifact retained for history:
+
 ## Knowledge metadata
 
 - Primary type: framework

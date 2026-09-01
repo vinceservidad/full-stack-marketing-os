@@ -58,7 +58,6 @@ Growth strategy: business objective and horizon; economic/quality guardrails; ev
 ## Library references
 
 - [strategy-template.md](../../../templates/strategy-template.md) — canonical integrated growth-strategy and marketing-plan record.
-- [decision-prioritization.md](../../../frameworks/decision-prioritization.md) — directional action-prioritization framework owned by `$marketing-router`, consumed here for cross-opportunity trade-offs.
 
 ## Related owners
 
