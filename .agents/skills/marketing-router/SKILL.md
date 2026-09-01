@@ -9,6 +9,19 @@ Turn the request into a bounded plan, select the minimum skills needed, and appo
 
 Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request asks for a strategy, framework, model, methodology, process, playbook, pattern, tactic, technique, template, best practice, or heuristic. Name the primary knowledge type in the response.
 
+## Required inputs
+
+Use the request itself plus the strongest available context needed to route it correctly:
+
+- desired business/marketing outcome and the decision or deliverable requested
+- business model, market/geography, timeframe, channel/surface, and funnel or customer-journey stage when material
+- available evidence and provenance, including relevant metric definitions, economics, customer/product/offer truth, and current platform state
+- existing Marketing Context or specialist artifacts when available, without upgrading their evidence status
+- risk/authorization state when the request could lead to spend, tracking, publishing, pricing, offer, customer-state, or another live mutation
+- current-platform freshness requirement when the request depends on a fast-changing interface, feature, algorithm, policy, or rollout
+
+If the missing context could change ownership or make the decision unsafe, route to `$marketing-intake` or state the missing dependency rather than activating many adjacent skills by default.
+
 ## Route
 
 1. Identify the business outcome, business model, funnel/journey stage, timeframe, market, channel, and requested action.
