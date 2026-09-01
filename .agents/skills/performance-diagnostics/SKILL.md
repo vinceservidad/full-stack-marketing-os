@@ -7,6 +7,21 @@ description: Diagnose why marketing revenue, profit, conversions, spend, or lead
 
 Classify each decomposition, pattern, hypothesis, model, tactic, or test plan with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). A pattern or correlation remains a hypothesis until evidence supports the mechanism.
 
+## Required inputs
+
+For the anomaly being diagnosed, collect or explicitly mark missing:
+
+- the changed business/marketing metric, its exact definition, absolute values, baseline/comparison, date range, timezone, and scope
+- source systems and freshness for spend, traffic, conversions, revenue, profit, lead quality, or other relevant outcomes
+- attribution/window/lag state and any known tracking, tagging, deduplication, currency, tax, refund, or denominator changes
+- useful breakdowns such as channel, campaign, product/service, geography, device, audience, creative, landing page, customer type, and time
+- economics needed to interpret the change, including the named profit level and included costs when profitability is in scope
+- material business/marketing changes during the period: budgets, bids, targeting, creative, offer, price, promotion, site, inventory, fulfillment, policy, seasonality, or external demand shifts
+- the decision or business significance the diagnosis must support, including any urgent containment need
+- authorization boundary if the request extends from diagnosis into a live mutation
+
+Do not fill missing history, attribution settings, economics, or change events with invented assumptions. State which missing input could reverse the diagnosis.
+
 ## Method
 
 1. Restate the anomaly with metric definition, absolute values, baseline, date range, scope, and business significance.
@@ -33,7 +48,6 @@ Classify each decomposition, pattern, hypothesis, model, tactic, or test plan wi
 ## Output
 
 Return: anomaly; data-integrity status; decomposition; confirmed findings; ranked hypotheses with supporting and contradicting evidence; estimated impact where possible; next checks; safe containment; exact status and confidence.
-
 
 ## Library references
 
