@@ -55,7 +55,7 @@ Adds `$public-relations`, twenty-fourth governed skill. Third and final of the u
 ### Changed
 
 - Router routes media relations and crisis response to `$public-relations`; the "unsupported channels" line is removed entirely since every previously identified channel is now governed, replaced by a standing instruction for how a genuinely new discipline should be handled if one arrives later.
-- `$organic-social`'s escalation reference is firmed up: an escalating pattern of public engagement on organic social (a complaint pattern, a brewing reputational concern) now names `$public-relations` directly rather than conditionally.
+- `$organic-social`'s escalation reference is firmed up: an escalating pattern of public engagement now names `$public-relations` directly rather than conditionally.
 - Capability registry: public relations moves from unsupported to governed. The Unsupported section is retained as an empty contract rather than deleted, so a future genuinely new discipline has a defined home before it's built.
 
 ### Channel-expansion arc complete
@@ -351,7 +351,7 @@ Adds the intake and evidence layer. Built as a skill-owned reference set under t
 
 ### Known issue
 
-- Root contracts were linked as `../../../FILE.md`, which resolves to the repository root in the canonical layer but to the parent of the install root from `~/.codex/skills/<name>/`. `KNOWLEDGE-TAXONOMY.md` is present at the install root and unreachable by that depth; `CAPABILITY-REGISTRY.md` is not yet installed. Reported by the validator; a fix requires deciding between installing contracts at the resolved depth, inlining the rules, or rewriting paths at install time.
+- Root contracts are linked as `../../../FILE.md`, which resolves to the repository root in the canonical layer but to the parent of the install root from `~/.codex/skills/<name>/`. `KNOWLEDGE-TAXONOMY.md` is present at the install root and unreachable by that depth; `CAPABILITY-REGISTRY.md` is not yet installed. Reported by the validator; a fix requires deciding between installing contracts at the resolved depth, inlining the rules, or rewriting paths at install time.
 
 ## [1.2.0] - 2026-08-24
 
@@ -426,5 +426,5 @@ Core areas include:
 ### Added
 
 - Canonical `KNOWLEDGE-TAXONOMY.md` distinguishing principles, definitions, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
-- Reusable knowledge-artifact metadata template covering decision, scope, owner, inputs, evidence_status, confidence, freshness, dependencies, authorization, and rollback_or_stop conditions.
+- Reusable knowledge-artifact metadata template covering decision, scope, owner, evidence, confidence, freshness, dependencies, authorization, and rollback/stop conditions.
 - Glossary definitions, operating rules, and regression coverage for knowledge-layer boundaries.
