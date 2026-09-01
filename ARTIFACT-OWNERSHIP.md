@@ -82,7 +82,7 @@ Status definitions:
 | `marketing-audit.md` | owned | `$icp-jtbd` (linked from SKILL.md) — distinct scope: business/market-level, not a channel audit |
 | `performance-report.md` | owned | `$marketing-reporting` (linked from SKILL.md) — canonical report format |
 | `reporting-template.md` | archived | Weaker duplicate of `performance-report.md`; moved to `docs/archive/legacy-skill-stubs/reporting-template.flat.md` |
-| `strategy-template.md` | owned | `$marketing-router` (linked from SKILL.md) |
+| `strategy-template.md` | owned | `$growth-strategy` (linked from SKILL.md) — integrated business-level growth strategy, opportunity portfolio, sequencing, learning, and review record |
 | `README.md` | consumed | Directory index |
 
 ## Workflows

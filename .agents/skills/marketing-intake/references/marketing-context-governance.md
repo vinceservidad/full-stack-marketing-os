@@ -9,6 +9,7 @@ The reusable template lives in the Marketing OS. The active project context live
 Include only information that can change downstream marketing decisions:
 
 - business model, primary business outcome, market, and strategic constraints
+- current integrated growth-strategy state when business-level prioritization is decision-relevant
 - verified product truth and claim boundaries
 - priority segments, buying situations, JTBD, buyer/user roles, and exclusions
 - customer pain, desired progress, objections, selection criteria, and evidence-backed VOC themes
@@ -51,7 +52,8 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 - A summary inherits the weakest decision-relevant evidence state beneath it.
 - User assertions stay asserted until observed in a named source.
 - Customer-reported outcomes remain customer-reported outcomes unless business evidence verifies them.
-- A generated synthesis is never promoted to VOC, proof, product truth, willingness-to-pay, activation, retention causality, or a verified buyer belief.
+- A generated synthesis is never promoted to VOC, proof, product truth, willingness-to-pay, activation, retention causality, a verified growth constraint, or a verified buyer belief.
+- A strategy priority does not upgrade the specialist evidence beneath it. If the source decision becomes stale or contradicted, the strategy-context entry inherits that weakness.
 - A specialist decision may update the context only after the decision artifact exists and its status is clear.
 - Context cannot authorize a live change.
 
@@ -61,6 +63,7 @@ Do not silently resolve conflicts. Preserve the competing sources and state what
 
 Specialists own the underlying decisions:
 
+- `$growth-strategy`: business-level objective, binding constraint, opportunity portfolio, strategic priorities/non-priorities, sequence, learning agenda, and review state
 - `$customer-research`: research patterns and traceable VOC
 - `$icp-jtbd`: priority segments, buying situations, JTBD, roles, competitive alternative maps, and positioning implications
 - `$offer-strategy`: offer diagnosis and approved offer design
@@ -79,12 +82,13 @@ Before marking context `current`, confirm:
 
 1. Decision-relevant statements have a source and evidence state.
 2. Unknowns and contradictions are visible.
-3. Product claims have an allowed-use boundary.
-4. Customer language is traceable when treated as verbatim.
-5. Economics name the revenue basis and profit level where used.
-6. Pricing terms name their source and exact state rather than treating proposed/configured terms as live.
-7. Activation is included only when a distinct layer is decision-relevant; the value event, denominator/window, and definition status come from `$activation`, not from a convenience metric.
-8. Retention strategy is included only when continuation behavior is decision-relevant; customer-stated reasons are not promoted to causal facts and short-term saves are not labeled durable before the required window.
-9. Current platform details are not fossilized as durable context.
-10. The change log explains material revisions.
-11. No unnecessary personal data was copied into the artifact.
+3. Growth-strategy state names its source strategy artifact, current binding-constraint confidence, priorities, non-priorities, and next review trigger; no strategy summary promotes a specialist hypothesis into fact.
+4. Product claims have an allowed-use boundary.
+5. Customer language is traceable when treated as verbatim.
+6. Economics name the revenue basis and profit level where used.
+7. Pricing terms name their source and exact state rather than treating proposed/configured terms as live.
+8. Activation is included only when a distinct layer is decision-relevant; the value event, denominator/window, and definition status come from `$activation`, not from a convenience metric.
+9. Retention strategy is included only when continuation behavior is decision-relevant; customer-stated reasons are not promoted to causal facts and short-term saves are not labeled durable before the required window.
+10. Current platform details are not fossilized as durable context.
+11. The change log explains material revisions.
+12. No unnecessary personal data was copied into the artifact.
