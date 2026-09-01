@@ -30,9 +30,9 @@ Use [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) when the request a
 - Angles, hooks, concepts, formats, briefs, or creative tests: `$creative-strategy`.
 - Landing page, product page, form, checkout, or persuasion friction: `$cro`.
 - Metric change, spend/sales anomaly, or causal triage: `$performance-diagnostics`.
-- Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, or causal evidence grading: `$tracking-measurement`.
+- Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, causal evidence grading, experiment validity, experiment learning, or experiment backlog governance: `$tracking-measurement`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
-- Priority segments, buying situations, buyer roles, or Jobs-to-be-Done: `$icp-jtbd`.
+- Priority segments, buying situations, buyer roles, Jobs-to-be-Done, competitor landscape, alternatives, or competitive intelligence for positioning decisions: `$icp-jtbd`.
 - Cross-channel executive report, recurring reporting cadence, or stakeholder scorecard combining findings already produced elsewhere: `$marketing-reporting`.
 - Organic search visibility, ranking, content strategy, or technical SEO health: `$seo`.
 - Email, lifecycle, website, sales-page, long-form, or brand copywriting: `$copywriting`.
@@ -54,6 +54,8 @@ Common compositions:
 - Improve an offer that is not converting: offer strategy owns the commercial proposition; customer research and ICP/JTBD supply buying evidence; CRO joins only if page/journey friction is a distinct dependency; copywriting expresses an approved offer rather than inventing one.
 - Offer + paid creative: offer strategy owns the commercial proposition; creative strategy translates it into angle, hook, concept, proof treatment, and CTA; channel skill supplies platform constraints.
 - Offer change that alters price or pricing architecture: offer strategy may diagnose non-price value/risk components and consume supplied terms, but base price, value metric, tier/package architecture, willingness-to-pay, and monetization strategy remain unsupported until explicitly governed.
+- Competitive landscape for positioning: ICP/JTBD owns the alternative set and strategic implications; customer research joins only when buyer/review evidence is needed; SEO joins only when current organic-search competition is decision-relevant. Visible competitor tactics remain hypothesis inputs, not proof.
+- Completed experiment or test archive: tracking and measurement owns validity classification, evidence level, scoped learning, and transfer status; the domain skill owns the resulting business action. A single valid result may support a local decision without becoming a universal best practice.
 - Spend rose and sales fell: performance diagnostics owns; channel skill supports; CRO joins only if landing evidence suggests a site issue.
 - Produce Meta concepts: creative strategy owns; Meta Ads supplies placement and delivery constraints.
 - Clicks without conversions: performance diagnostics owns; channel skill and CRO support; flag measurement integrity as an unresolved dependency when needed.
