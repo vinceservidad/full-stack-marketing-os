@@ -197,10 +197,12 @@ Scaling is not defined as spending more. The system requires source-of-truth bus
 
 ## Roadmap
 
-- Package governed skills as installable OpenAI and/or Claude plugins only when the manifest, runtime behavior, resources, permissions, and real install state can be verified
-- Normalize `cro`, `marketing-router`, and `performance-diagnostics` to a dedicated required-inputs heading
-- Expand evaluation coverage as real usage surfaces new decision-quality cases
-- Add more industry playbooks and worked examples
+The detailed, reconciled roadmap is in [`ROADMAP.md`](ROADMAP.md). Current priorities are:
+
+- validate high-value skills against anonymized real-world cases where permission and evidence allow
+- document data contracts and define MCP/connector approval, rollback, and verification boundaries before adding live integrations
+- add maintainability checks that prevent stale capability counts, roadmap claims, and public-navigation drift
+- expand behavioral evaluations and worked examples only when real usage exposes a decision-quality gap
 
 ## Creator
 
