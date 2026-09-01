@@ -4,7 +4,7 @@
 **Contract version:** `1.0`  
 **Primary owner:** `$tracking-measurement` for measurement/reconciliation validity; `$marketing-intake` for completeness/provenance
 
-Use this method before a structured dataset is treated as decision-valid.
+Apply the canonical [`DATA-CONTRACTS.md`](../DATA-CONTRACTS.md) envelope first. Use this method before a structured dataset is treated as decision-valid.
 
 ## Validation sequence
 
