@@ -10,6 +10,32 @@ Built to help AI agents and modern marketing teams work from governed marketing 
 
 GitHub is the versioned source of truth. The system combines governed skills, frameworks, playbooks, templates, workflows, shared context, and behavioral evaluations.
 
+## Start here
+
+New to the repository? Read **[`GETTING_STARTED.md`](GETTING_STARTED.md)** first.
+
+It covers the complete path:
+
+```text
+GitHub
+  ↓
+Clone / download
+  ↓
+Install to Codex or Claude Code
+  ↓
+Verify
+  ↓
+Choose a skill or use $marketing-router
+  ↓
+Provide evidence
+  ↓
+Run the governed workflow
+  ↓
+Update from GitHub when the OS changes
+```
+
+For AI-agent orchestration rules after installation, see [`AGENT_GUIDE.md`](AGENT_GUIDE.md). For runtime, plugin, MCP, connector, and Custom GPT distinctions, see [`DISTRIBUTION.md`](DISTRIBUTION.md).
+
 ## What this is
 
 Full-Stack Marketing OS is currently a **portable skill system**, not a packaged marketplace plugin.
@@ -104,6 +130,8 @@ bash scripts/install-claude-skills.sh
 
 This installs the same canonical skill set to `~/.claude/skills/`. Do not maintain a second Claude-specific skill hierarchy.
 
+For clone, verification, updating, troubleshooting, skill selection, and concrete usage examples, use [`GETTING_STARTED.md`](GETTING_STARTED.md).
+
 ## Repository structure
 
 `.agents/skills/` is the **canonical executable source**. Runtime copies and exports are derived.
@@ -130,20 +158,16 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md), [`ARTIFACT-OWNERSHIP.md`](ARTIFACT-OWN
 ## Example usage
 
 ```text
-Use Growth Strategy to decide where the business should focus next.
+$growth-strategy Decide where the business should focus next from the evidence I provide.
 
-Use the Google Ads skill to audit current campaign performance.
+$google-ads Audit current campaign performance and separate observations from assumptions.
 
-Use Creative Strategy to turn verified research into testable ad concepts and production-ready static directions.
+$creative-strategy Turn verified research into testable ad concepts and production-ready static directions.
 
-Use Offer Strategy and Pricing & Monetization as separate owners when the commercial proposition or exchange structure is the constraint.
-
-Use Activation and Retention Strategy to diagnose the post-conversion customer journey.
-
-Use Tracking & Measurement to judge experiment validity and retain scoped learning.
-
-Use Optimization & Scaling only when a proven paid-media system is being evaluated for controlled expansion.
+$marketing-router Decide which Marketing OS skill should own this request when I am not sure.
 ```
+
+More worked prompts and a skill-selection table are in [`GETTING_STARTED.md`](GETTING_STARTED.md).
 
 Scaling is not defined as spending more. The system requires source-of-truth business evidence, economics, marginal efficiency, readiness, constraints, capacity, guardrails, and explicit authorization before any live change. It rejects universal budget-increase percentages and does not treat platform attribution or recommendations as proof.
 
