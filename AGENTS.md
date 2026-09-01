@@ -20,6 +20,7 @@
 16. Competitor observations are evidence about competitors, not customer truth or proof that a visible tactic works. Preserve date, source, estimate/inference labels, the real alternative set including status quo where relevant, and do not copy a competitor pattern merely because it is visible.
 17. Experiment learning remains scoped to the valid test conditions. Assess validity before direction, preserve nulls and contradictions, separate observed effect from mechanism interpretation, and never turn one test or one external case into a universal best practice.
 18. Recurring marketing loops must preserve domain ownership, durable state, idempotency, source freshness, approval scope, verification, and stop/escalation rules. A written loop is `designed`, not scheduled, active, or monitoring; never imply background execution unless the actual runtime is configured and verified.
+19. Pricing decisions must separate observed purchase behavior, stated preference, competitor context, model inference, and realized economics. Never treat a competitor price, survey answer, conversion rate, arbitrary markup, price-ending heuristic, or framework default as proof of an optimal price; live commercial changes require explicit approval and source-of-truth verification.
 
 ## Skill design
 
