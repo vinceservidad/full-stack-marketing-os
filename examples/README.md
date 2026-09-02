@@ -1,38 +1,97 @@
 # Examples
 
-## Worked runs
+This folder shows how Full-Stack Marketing OS is applied to realistic marketing decisions.
 
-Three complete deliverables, each reproducible from a fixture in
-[`fixtures/`](fixtures/). These show the actual output shape and standard, not a list
-of headings.
+Examples are teaching artifacts. They demonstrate routing, evidence handling, diagnosis, prioritization, specialist handoffs, measurement, and final deliverables. They do **not** prove that the depicted strategy produced real-world results unless the example is explicitly labeled a verified public case study.
 
-| Example | Skill | What it demonstrates |
-|---|---|---|
-| [Google Ads audit](google-ads-audit.md) | `$google-ads` | Three measurement defects that invalidate a 5.07x blended ROAS; brand masking near-break-even acquisition; why only one of four zero-conversion queries earns a negative |
-| [Shopify product page review](cro-audit.md) | `$cro` | Localizing the loss before explaining it; the largest finding drawn from the store's own review language; one finding handed to a different owner because no page change fixes it |
-| [A budget increase the system will not authorize](scaling-request-refused.md) | `$optimization-scaling` | **Start here.** The guardrails firing: negative marginal return under a healthy blended average, a 12.6% platform overclaim, a promotion invalidating the baseline, and the "20% is safe" rule rejected |
+Read [`WORKED-EXAMPLE-STANDARD.md`](WORKED-EXAMPLE-STANDARD.md) before adding or materially changing a full walkthrough.
 
-Every fixture is synthetic. No client data appears in this repository, and no example
-contains a performance claim about a real account or a prediction of what a change
-would produce.
+## Full worked examples
 
-## Outlines
+### Ecommerce growth diagnosis
 
-The remaining files are structural outlines of a process, not worked deliverables:
-[meta-ads-audit](meta-ads-audit.md), [ecommerce-growth-review](ecommerce-growth-review.md),
-[creative-strategy-brief](creative-strategy-brief.md),
-[google-ads-audit-workflow](google-ads-audit-workflow.md),
-[meta-ads-creative-testing-workflow](meta-ads-creative-testing-workflow.md),
-[shopify-cro-audit-workflow](shopify-cro-audit-workflow.md),
-[custom-gpt-setup](custom-gpt-setup.md). They are labeled as such rather than
-presented as demonstrations of output.
+[`ecommerce-growth/`](ecommerce-growth/)
 
-## Contributing an example
+Shows a multi-skill business diagnosis where spend increased while revenue flattened. The walkthrough preserves co-limiting constraints, separates channel and CRO ownership, names non-priorities, and delays scaling until economics/capacity are ready.
 
-An example should demonstrate problem diagnosis, framework selection, strategy
-development, an execution plan, and a measurement approach — and should carry its
-input fixture so a reader can reproduce it.
+### Google Ads audit
 
-Do not include client confidential information, account access details, personal data,
-or unverified performance claims. `scripts/check-confidentiality.sh` enforces the
-first three in CI; the fourth is a review judgment.
+[`google-ads-audit/`](google-ads-audit/)
+
+Shows account, query, product, margin, attribution, and marginal-efficiency reasoning without blanket broad-match rules, one universal ROAS threshold, or automatic platform-recommendation acceptance.
+
+### Meta Ads audit and creative testing
+
+[`meta-ads/`](meta-ads/)
+
+Shows how platform-attributed revenue, prospecting vs retargeting, CTR, landing-page quality, frequency, audience mix, creative IDs, and scaling readiness are separated instead of collapsed into one Meta ROAS verdict. It explicitly rejects undocumented “algorithm change” explanations and broad-vs-interest universal rules.
+
+### DTC creative strategy
+
+[`creative-strategy/`](creative-strategy/)
+
+Shows synthetic customer evidence → JTBD → insight → angle → mechanic → concept → hook → visual direction → controlled test. Includes the governed 1080×1350 4:5 → centered 1080×1080 1:1 cross-crop production rule.
+
+### Refused budget increase
+
+[`scaling-refusal/`](scaling-refusal/)
+
+Shows `$optimization-scaling` declining a 20% budget increase that looks obviously correct: the marginal return on the most recent increment is negative while blended ROAS reads 4.2, the platforms claim 12.6% more revenue than the business took, a promotion inside the window invalidates the baseline, and the binding constraint is creative capacity rather than budget. The counterpart to the other walkthroughs — this one shows the system refusing to produce the requested deliverable, and why that is the product working.
+
+### Shopify CRO audit
+
+[`shopify-cro/`](shopify-cro/)
+
+Shows how stable add-to-cart behavior plus deteriorating mobile checkout completion leads to a focused checkout-friction investigation rather than a full-site redesign.
+
+## What a full walkthrough contains
+
+Each main walkthrough uses:
+
+```text
+README.md
+input-evidence.md
+decision-trace.md
+final-output.md
+```
+
+- `README.md` explains the request, fictional/anonymized business, owner chain, and learning objective.
+- `input-evidence.md` preserves what is observed, calculated, inferred, assumed, synthetic, or unknown.
+- `decision-trace.md` is an auditable professional decision record. It is not private chain-of-thought.
+- `final-output.md` shows the concise deliverable a user could actually receive.
+
+## Example status labels
+
+Every example must declare one of:
+
+- **Synthetic worked example** — fictional business/data built to demonstrate the method.
+- **Anonymized worked example** — real-work structure with identifying/confidential information removed.
+- **Verified public case study** — real publishable evidence with appropriate permission where required.
+
+Do not blur these categories.
+
+## Compact / legacy examples
+
+Some older files may remain as small demonstrations for areas not yet expanded into full walkthroughs, such as Custom GPT setup. These compact examples should not be mistaken for complete end-to-end case studies.
+
+## Privacy and truth rules
+
+Do not include:
+
+- client-confidential information
+- account access details or credentials
+- personal data
+- identifiable private customer data
+- unverified performance claims
+- invented testimonials presented as real
+- fake live-state claims
+
+Synthetic customer language must be labeled synthetic and must not be reused publicly as testimonial proof.
+
+## Case-study boundary
+
+**Worked example:** demonstrates how the system thinks and decides.
+
+**Case study:** demonstrates what actually happened in reality.
+
+A worked example can be synthetic. A case study requires evidence.

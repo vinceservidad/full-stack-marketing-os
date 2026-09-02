@@ -6,7 +6,7 @@ capability status is [`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).
 
 ## `pack/` — generated, do not edit
 
-[`pack/`](pack/) holds 18 knowledge files compiled from all 24 governed skills,
+[`pack/`](pack/) holds 18 knowledge files compiled from all 30 governed skills,
 their references, and the root contracts. It is built by
 [`scripts/build-gpt-knowledge.py`](../scripts/build-gpt-knowledge.py) and
 regenerated from canonical, never hand-edited.

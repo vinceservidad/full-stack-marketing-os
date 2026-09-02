@@ -15,6 +15,10 @@
 #   scripts/install-skills.sh --target /some/root  # arbitrary install root
 #   scripts/install-skills.sh --dry-run            # report without writing
 #   scripts/install-skills.sh [repo_dir] [root]    # legacy positional form
+#
+# MARKETING_OS_INSTALL_ROOT sets the default install root when no target is
+# given. scripts/install-claude-skills.sh wraps the positional form for Claude
+# Code.
 
 set -euo pipefail
 
@@ -56,11 +60,16 @@ source_dir="$repo_dir/.agents/skills"
 
 test -d "$source_dir" || { printf 'No canonical skill directory: %s\n' "$source_dir" >&2; exit 1; }
 
-# No explicit target: install into every agent runtime that already exists.
+# No explicit target: honor MARKETING_OS_INSTALL_ROOT, else install into every
+# agent runtime that already exists.
 if ((${#targets[@]} == 0)); then
-  for candidate in "$HOME/.claude" "$HOME/.codex"; do
-    [[ -d "$candidate" ]] && targets+=("$candidate")
-  done
+  if [[ -n "${MARKETING_OS_INSTALL_ROOT:-}" ]]; then
+    targets+=("$MARKETING_OS_INSTALL_ROOT")
+  else
+    for candidate in "$HOME/.claude" "$HOME/.codex"; do
+      [[ -d "$candidate" ]] && targets+=("$candidate")
+    done
+  fi
 fi
 
 if ((${#targets[@]} == 0)); then

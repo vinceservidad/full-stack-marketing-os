@@ -7,15 +7,15 @@
 
 ## Skill: $tracking-measurement
 
-**Use when:** Audit, design, or diagnose marketing conversion measurement, attribution reconciliation, event integrity, and business-source alignment; not for changing production tracking without approval.
+**Use when:** Audit, design, or diagnose marketing conversion measurement, attribution reconciliation, event integrity, experiment validity, and reusable experiment learning; not for changing production tracking without approval or turning one test into a universal best practice.
 
-Classify architecture maps, models, methodologies, processes, checklists, and recommendations with `KNOWLEDGE-TAXONOMY.md`. Keep a collection defect, attribution difference, and business-performance change as distinct evidence categories.
+Classify architecture maps, models, methodologies, processes, checklists, experiment results, and recommendations with `KNOWLEDGE-TAXONOMY.md`. Keep a collection defect, attribution difference, business-performance change, experimental estimate, and reusable learning as distinct evidence categories.
 
 Establish whether the available data can support the requested decision before optimizing against it. Keep three questions distinct: is the data collected correctly, do sources agree, and did the activity cause the result. A causal question inherits every collection defect beneath it.
 
 ### Scope
 
-Define the primary business outcome, platforms and properties, conversion journey, reporting timezone and currency, consent environment, attribution question, source of truth, and requested level of assurance. For a causal question, also define the decision at stake, its cost of being wrong, and the evidence level it requires. Reserve “Primary conversion action” for Google Ads' action-optimization status.
+Define the primary business outcome, platforms and properties, conversion journey, reporting timezone and currency, consent environment, attribution question, source of truth, and requested level of assurance. For a causal question, also define the decision at stake, its cost of being wrong, and the evidence level it requires. For an experiment-learning request, define the tested scope, pre-registered decision rule, domain owner, and whether the result is being used locally or considered for transfer. Reserve “Primary conversion action” for Google Ads' action-optimization status.
 
 ### Method
 
@@ -25,7 +25,9 @@ Define the primary business outcome, platforms and properties, conversion journe
 4. Separate collection failures from attribution differences and reporting lag.
 5. Reconcile using matched definitions and cohorts; explain expected gaps instead of forcing equality.
 6. For a causal question, grade the available evidence, select a method the constraints actually permit, and state the level the result can reach before running it.
-7. Rank fixes and tests by decision risk, affected volume/value, confidence, reversibility, and validation cost.
+7. Rank fixes and tests by decision risk, affected volume/value, confidence, reversibility, validation cost, and learning value.
+8. When an experiment concludes, validate execution before reading direction, classify the result, separate observed effect from mechanism interpretation, and create a scoped learning record using Experiment Learning System and `templates/experiment-learning.md`.
+9. Before a new experiment, inspect relevant prior learning for same decision, mechanism, segment, surface, offer state, guardrail failure, or contradiction. Use prior learning to change the new test or explain why it is not decision-relevant.
 
 Read only the reference the question requires:
 
@@ -38,6 +40,7 @@ Read only the reference the question requires:
 - Platform-native lift mechanisms: platform lift studies.
 - Long-horizon cross-channel allocation: Marketing Mix Modeling.
 - Several imperfect sources and no decisive test: triangulation.
+- Turning completed tests into durable scoped knowledge and a decision-relevant backlog: Experiment Learning System.
 
 ### Rules
 
@@ -54,6 +57,13 @@ Read only the reference the question requires:
 - Do not sum attributed conversions across platforms, and do not average an experimental estimate with an attributed one.
 - State the scope of every causal estimate — population, geography, period, spend range. A result proven in one scope is not proven outside it.
 - Count the holdback's forgone revenue as part of a test's cost.
+- Assess experiment validity before result direction. A favorable outcome does not repair instrumentation defects, contamination, treatment drift, early stopping, or missing conversion lag.
+- Do not call a null/inconclusive result a control winner by default, and do not call guardrail-harming treatment a winner because the primary metric improved.
+- Separate the observed treatment effect from the story used to explain it. A result can support an outcome claim without proving the proposed mechanism.
+- A single experiment remains a local result unless stronger replication supports a broader scoped pattern. Never promote one test, competitor example, external case study, or platform benchmark into a universal best practice.
+- Post-hoc segment cuts generate hypotheses unless independently validated. Do not promote the most favorable slice into durable learning.
+- Preserve contradictory tests and the conditions under which each occurred. Do not rewrite the learning archive to make the latest result look consistent.
+- An experiment backlog exists to resolve valuable uncertainty, not to hit an arbitrary test count, win-rate benchmark, or calendar cadence.
 
 ### Output
 
@@ -61,6 +71,7 @@ Return: decision supported; architecture map; integrity status by event; reconci
 
 Causal question: decision and required evidence level; achievable level and why; selected method with the constraints that chose it; primary metric and its definition; minimum detectable effect, duration, and stopping rule; contamination and confounding risks with direction; holdback cost; scope of the resulting estimate; what the result may and may not be used for.
 
+Experiment learning: validity class; observed result and uncertainty; achieved evidence level; guardrail status; observation versus mechanism interpretation; operational disposition; scoped learning statement; transfer status; contradictions/dependencies; next hypothesis or reason no follow-up is justified; backlog change; exact status.
 
 ### Library references
 
@@ -68,11 +79,12 @@ Owned root artifacts, read when their scope applies:
 
 - measurement-and-evidence.md — measurement and evidence framework.
 - experimentation.md — general experimentation framework.
-- experiment.md — experiment brief format.
+- experiment.md — pre-test experiment brief format.
+- experiment-learning.md — post-test validity, learning, transfer, and follow-up record.
 
 ### QA
 
-Confirm event definitions and timezones match, test and production traffic are separated, duplicate paths are checked, values/currency are verified, attribution windows are visible, privacy boundaries are preserved, and “received” is not confused with “correct.” For a causal question, confirm the evidence level is stated, the method matches the constraints, the test was powered before launch, contamination and coincident events were assessed, the business outcome rather than a platform proxy was measured, and the estimate's scope is named.
+Confirm event definitions and timezones match, test and production traffic are separated, duplicate paths are checked, values/currency are verified, attribution windows are visible, privacy boundaries are preserved, and “received” is not confused with “correct.” For a causal question, confirm the evidence level is stated, the method matches the constraints, the test was powered before launch, contamination and coincident events were assessed, the business outcome rather than a platform proxy was measured, and the estimate's scope is named. For experiment learning, confirm validity was assessed before direction, the pre-test decision rule was preserved, full relevant lag is included, nulls and guardrail harms are classified correctly, mechanism remains separate from observed effect, post-hoc slices are not promoted, transfer status does not exceed replication evidence, and contradictory prior results remain visible.
 
 ### Reference: attribution reconciliation ($tracking-measurement)
 
@@ -160,6 +172,215 @@ For each event record:
 Cover valid completion, duplicate submission, refresh/back navigation, payment failure, cancellation/refund where relevant, cross-domain transition, consent accepted/denied, ad blocker or network loss, mobile/desktop, and delayed server delivery.
 
 Grade each test as `verified`, `failed`, `not observed`, or `not applicable`. A debugger signal proves dispatch only; confirm receipt and reporting separately.
+
+### Reference: experiment learning system ($tracking-measurement)
+
+### Experiment Learning System
+
+Use this reference when experiments need to become durable, reusable knowledge rather than isolated result screenshots or "winner" labels.
+
+`$tracking-measurement` owns experiment validity and the evidence state of the resulting learning. The domain skill that owns the marketing decision still owns what to do with that learning.
+
+#### Core principle
+
+An experiment result is scoped evidence, not a universal best practice.
+
+Every learning must preserve:
+
+- the decision and hypothesis tested
+- population, surface, geography, period, and operating conditions
+- treatment/control definition and implementation fidelity
+- primary business metric and guardrails
+- measurement integrity and causal evidence level
+- estimate, uncertainty, and minimum detectable effect where applicable
+- result validity before result direction
+- what was observed versus the explanation proposed for it
+- what can and cannot be transferred to another context
+
+A test can be statistically clean and still have narrow external validity.
+
+#### Result classes
+
+Classify the test before promoting any learning:
+
+1. **Valid — supports hypothesis**: design and measurement were decision-ready and the result supports the pre-registered directional claim within scope.
+2. **Valid — contradicts hypothesis**: design was decision-ready and the result provides evidence against the pre-registered claim within scope.
+3. **Valid — inconclusive / null**: the result does not resolve the decision at the required effect threshold. Record the uncertainty and MDE; do not call the control a winner by default.
+4. **Valid — harmful on guardrail**: primary metric may improve, but a pre-specified business guardrail crosses the stop or rejection threshold.
+5. **Invalid / compromised**: instrumentation, allocation, contamination, implementation drift, early stopping, missing lag, or another defect prevents the intended inference.
+
+Do not collapse these into `win / lose`.
+
+#### Learning loop
+
+##### 1. Link to the pre-test decision
+
+Start from the approved experiment brief. Record:
+
+- evidence-backed problem
+- hypothesis and expected mechanism
+- control and variant
+- primary metric and business guardrails
+- pre-registered decision rule
+- required and achievable evidence level
+
+If no pre-test record exists, label the analysis post hoc and lower the strength of any mechanism claim accordingly.
+
+##### 2. Validate execution before reading direction
+
+Check:
+
+- allocation and exposure integrity
+- treatment/control fidelity
+- instrumentation health
+- conversion lag completeness
+- sample/duration requirements
+- contamination and coincident changes
+- stop-rule adherence
+- whether the primary metric was changed or redefined
+
+A favorable result does not repair a broken test.
+
+##### 3. Record the result with uncertainty
+
+Capture the business-outcome estimate, confidence/credible interval or other decision-appropriate uncertainty, sample/exposure, guardrail outcomes, and evidence level.
+
+Do not substitute CTR, engagement, platform-attributed revenue, or another proxy for the pre-specified business outcome merely because it moved more clearly.
+
+##### 4. Separate observation from explanation
+
+Write two statements:
+
+- **Observed result**: what changed within the measured scope.
+- **Mechanism interpretation**: why the change may have happened.
+
+The mechanism remains an inference unless the design separately isolates it.
+
+A significant outcome does not automatically prove the story used to explain it.
+
+##### 5. Decide the operational disposition
+
+Choose one:
+
+- `ship within tested scope`
+- `reject within tested scope`
+- `iterate and retest`
+- `replicate before wider use`
+- `collect more data`
+- `invalidate and rerun`
+- `stop because guardrail harm outweighs benefit`
+
+The domain owner makes the business action decision; `$tracking-measurement` states what the evidence supports.
+
+##### 6. Create a scoped learning record
+
+Use `templates/experiment-learning.md`.
+
+A useful learning statement follows this pattern:
+
+`In [population/surface/context], changing [controlled variable] from [control] to [variant] produced [observed effect and uncertainty] on [primary business outcome] during [period], at [evidence level]. This supports/contradicts/does not resolve [hypothesis]. It does not establish [unproven mechanism or transfer claim].`
+
+Avoid generic summaries such as "short copy wins" or "UGC converts better."
+
+##### 7. Assign transfer status
+
+Use the narrowest justified status:
+
+- **Local result** — one valid test in one defined context.
+- **Replication candidate** — worth testing in a comparable context; not yet a reusable pattern.
+- **Replicated scoped pattern** — independently repeated across at least two comparable tests with compatible results and no unresolved validity conflict.
+- **Segment-specific pattern** — results differ materially by segment/context and the difference is supported by pre-specified or replicated evidence.
+- **Contradicted / unstable** — comparable tests conflict; do not promote until the boundary or source of heterogeneity is understood.
+
+Replication count alone is not enough; tests must be sufficiently independent and comparable.
+
+##### 8. Generate the next hypothesis
+
+Use the result to reduce uncertainty rather than to maximize test count.
+
+Good next hypotheses come from:
+
+- unresolved mechanism
+- a boundary condition exposed by the result
+- guardrail tradeoff
+- segment heterogeneity that was pre-specified or deserves a new test
+- a failed implementation assumption
+- a promising local result that needs replication before broader use
+
+Do not manufacture a new hypothesis merely to keep an arbitrary experiment cadence.
+
+#### Experiment backlog
+
+Maintain a backlog only for decision-relevant tests. Each item should include:
+
+| Field | Purpose |
+|---|---|
+| Decision | What choice the experiment will inform |
+| Evidence-backed problem | Why the test exists |
+| Hypothesis | Falsifiable prediction |
+| Expected mechanism | Why the change might affect the outcome |
+| Scope | Population, surface, geography, channel, offer state |
+| Existing evidence | Research, diagnostics, prior tests, external evidence |
+| Required evidence level | Strength needed for the decision |
+| Primary business outcome | What will call the test |
+| Guardrails | What must not deteriorate |
+| Feasibility / dependencies | Traffic, instrumentation, production, legal, capacity |
+| Risk | Cost of being wrong or causing harm |
+| Learning value | What uncertainty the test resolves even if it does not win |
+| Status | proposed, approved, running, concluded, parked |
+
+##### Prioritization rule
+
+Prioritize from actual decision impact, evidence strength, uncertainty, reversibility, feasibility, risk, and learning value.
+
+A scoring model such as ICE or RICE may be used as a convenience only when its inputs are grounded and the resulting rank does not override a material risk, evidence gap, or strategic dependency. Do not invent numeric confidence to make a scoring table look precise.
+
+#### Knowledge promotion rules
+
+- A single test never becomes a universal "best practice."
+- A local result may be implemented locally when the decision rule supports it without being promoted into reusable doctrine.
+- Post-hoc segment cuts are hypothesis generators unless independently validated; do not promote the most favorable slice.
+- External case studies, competitor tests, platform benchmarks, and published examples are prior evidence, not local experimental proof.
+- A repeated result with materially different contexts may suggest a broader pattern, but only after the relevant differences are examined rather than ignored.
+- Conflicting evidence is retained. Do not delete a past loser after a later test wins.
+- A result that depends on a specific offer, price, creative, audience, market, or platform state keeps that dependency in the learning record.
+- Platform or interface changes can invalidate transfer assumptions; apply `PLATFORM-CURRENCY.md` when current mechanics matter.
+- A causal evidence level is never upgraded because a result was replicated using the same flawed design.
+
+#### Using prior learning
+
+Before launching a new experiment, search prior learning for:
+
+- same decision
+- same mechanism
+- same segment or buying situation
+- same surface/channel
+- same offer and commercial conditions
+- known guardrail failures
+- contradictory results
+
+Prior learning should change the new test's hypothesis, design, required evidence level, or priority. If it changes nothing, the archive is not functioning as an operating system.
+
+#### Output
+
+Return:
+
+- experiment validity class
+- observed result and uncertainty
+- causal/evidence level
+- guardrail status
+- observation versus mechanism interpretation
+- operational disposition
+- scoped learning statement
+- transfer status
+- contradictions or dependencies
+- next hypothesis or explicit reason no follow-up is justified
+- backlog change, if any
+- exact status
+
+#### QA
+
+Confirm the pre-test decision rule was preserved; validity was assessed before direction; the full conversion lag is included; a null is not mislabeled a loss; guardrail harm is visible; post-hoc slices are not promoted to proof; the mechanism is separated from the observed effect; scope is preserved; replication does not erase contradictions; external evidence is not mislabeled local proof; and no arbitrary experiment-velocity target overrides decision value.
 
 ### Reference: geo experiments ($tracking-measurement)
 

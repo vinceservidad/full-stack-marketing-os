@@ -28,7 +28,7 @@ Status definitions:
 | `shopify-cro.md` | owned | `$cro` (linked from SKILL.md) |
 | `measurement-and-evidence.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
 | `experimentation.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
-| `decision-prioritization.md` | owned | `$marketing-router` (linked from SKILL.md) |
+| `decision-prioritization.md` | archived | Weaker duplicate after `$growth-strategy` introduced `references/portfolio-prioritization-and-sequencing.md`; moved to `docs/archive/legacy-skill-stubs/decision-prioritization.flat.md` |
 | `copywriting-frameworks.md` | archived | Twenty-line structure list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/copywriting-frameworks.flat.md`, superseded by `$copywriting` |
 | `seo-framework.md` | archived | Ten-line phase list, no evidence discipline; moved to `docs/archive/legacy-skill-stubs/seo-framework.flat.md`, superseded by `$seo` |
 
@@ -67,23 +67,32 @@ Status definitions:
 | `knowledge-artifact.md` | consumed | `KNOWLEDGE-TAXONOMY.md` |
 | `campaign-brief.md` | owned | `$google-ads / $meta-ads` (linked from SKILL.md) |
 | `creative-brief.md` | owned | `$creative-strategy` (linked from SKILL.md) |
+| `creative-idea-matrix.md` | owned | `$creative-strategy` (linked from SKILL.md) |
+| `marketing-context.md` | owned | `$marketing-intake` (linked from SKILL.md; copied into active projects as `.agents/marketing-context.md`) |
+| `marketing-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — recurring loop contract with trigger, state, idempotency, authorization, verification, escalation, and retirement |
+| `pricing-decision.md` | owned | `$pricing-monetization` (linked from SKILL.md) — pricing, value metric, packaging, scenario, rollout, migration, and verification decision record |
+| `activation-plan.md` | owned | `$activation` (linked from SKILL.md) — first-value definition, path-to-value, diagnosis, intervention, measurement, handoffs, and learning record |
+| `retention-strategy-plan.md` | owned | `$retention-strategy` (linked from SKILL.md) — retention diagnosis, cause-matched intervention, save/recovery, repeat/renewal/win-back, measurement, and learning record |
 | `landing-page-review.md` | owned | `$cro` (linked from SKILL.md) |
 | `experiment-plan.md` | archived | Weaker duplicate of `experiment.md`; moved to `docs/archive/legacy-skill-stubs/experiment-plan.flat.md` |
 | `experiment.md` | owned | `$tracking-measurement` (linked from SKILL.md) |
+| `experiment-learning.md` | owned | `$tracking-measurement` (linked from SKILL.md) — post-test validity, scoped learning, transfer, contradiction, and follow-up record |
 | `audit.md` | owned | `$performance-diagnostics` (linked from SKILL.md) — canonical audit format |
 | `audit-template.md` | archived | Weaker duplicate of `audit.md`; moved to `docs/archive/legacy-skill-stubs/audit-template.flat.md` |
 | `marketing-audit.md` | owned | `$icp-jtbd` (linked from SKILL.md) — distinct scope: business/market-level, not a channel audit |
 | `performance-report.md` | owned | `$marketing-reporting` (linked from SKILL.md) — canonical report format |
 | `reporting-template.md` | archived | Weaker duplicate of `performance-report.md`; moved to `docs/archive/legacy-skill-stubs/reporting-template.flat.md` |
-| `strategy-template.md` | owned | `$marketing-router` (linked from SKILL.md) |
+| `strategy-template.md` | owned | `$growth-strategy` (linked from SKILL.md) — integrated business-level growth strategy, opportunity portfolio, sequencing, learning, and review record |
 | `README.md` | consumed | Directory index |
 
 ## Workflows
 
 | Artifact | Status | Owner or consumer |
 |---|---|---|
+| `marketing-operations-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — canonical recurring operating sequence |
 | `google-ads-optimization.md` | owned | `$google-ads` (linked from SKILL.md) |
 | `meta-ads-optimization.md` | owned | `$meta-ads` (linked from SKILL.md) |
+| `creative-ideation-engine.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `creative-testing.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `cro-improvement.md` | owned | `$cro` (linked from SKILL.md) |
 | `reporting-analysis.md` | owned | `$marketing-reporting` (linked from SKILL.md) — data-to-decision workflow sequence |

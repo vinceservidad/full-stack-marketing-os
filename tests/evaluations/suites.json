@@ -7,33 +7,13 @@
   ],
   "suites": [
     {
-      "id": "routing",
-      "cases": "evaluations/routing-tests.md",
-      "review": null,
+      "id": "activation",
+      "cases": "activation-cases.md",
+      "review": "activation-review.md",
       "owners": [
-        "marketing-router"
+        "activation"
       ],
-      "case_count": 16,
-      "prompt_template": "{scenario}"
-    },
-    {
-      "id": "v1.15-affiliate-marketing",
-      "cases": "v1.15-affiliate-marketing-cases.md",
-      "review": "v1.15-review.md",
-      "owners": [
-        "affiliate-marketing"
-      ],
-      "case_count": 15,
-      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
-    },
-    {
-      "id": "v1.9-copywriting",
-      "cases": "v1.9-copywriting-cases.md",
-      "review": "v1.9-review.md",
-      "owners": [
-        "copywriting"
-      ],
-      "case_count": 15,
+      "case_count": 50,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
@@ -47,6 +27,88 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
+      "id": "competitive-intelligence-experiment-learning",
+      "cases": "competitive-intelligence-experiment-learning-cases.md",
+      "review": "competitive-intelligence-experiment-learning-review.md",
+      "owners": [
+        "icp-jtbd",
+        "tracking-measurement"
+      ],
+      "case_count": 30,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "creative-execution-layer",
+      "cases": "creative-execution-layer-cases.md",
+      "review": "creative-execution-layer-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 26,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "creative-ideation-engine",
+      "cases": "creative-ideation-engine-cases.md",
+      "review": "creative-ideation-engine-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 15,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "cross-agent-distribution",
+      "cases": "cross-agent-distribution-cases.md",
+      "review": "cross-agent-distribution-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "growth-strategy",
+      "cases": "growth-strategy-cases.md",
+      "review": "growth-strategy-review.md",
+      "owners": [
+        "growth-strategy"
+      ],
+      "case_count": 90,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "marketing-context-offer-strategy",
+      "cases": "marketing-context-offer-strategy-cases.md",
+      "review": "marketing-context-offer-strategy-review.md",
+      "owners": [
+        "marketing-intake",
+        "offer-strategy"
+      ],
+      "case_count": 25,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "marketing-operations-loop",
+      "cases": "marketing-operations-loop-cases.md",
+      "review": "marketing-operations-loop-review.md",
+      "owners": [
+        "marketing-operations"
+      ],
+      "case_count": 38,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "meta-worked-example",
+      "cases": "meta-worked-example-cases.md",
+      "review": "meta-worked-example-review.md",
+      "owners": [
+        "meta-ads"
+      ],
+      "case_count": 18,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
       "id": "persuasion-principles",
       "cases": "persuasion-principles-cases.md",
       "review": "persuasion-principles-review.md",
@@ -57,13 +119,53 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
+      "id": "pricing-monetization",
+      "cases": "pricing-monetization-cases.md",
+      "review": "pricing-monetization-review.md",
+      "owners": [
+        "pricing-monetization"
+      ],
+      "case_count": 44,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "required-input-contract",
+      "cases": "required-input-contract-cases.md",
+      "review": "required-input-contract-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "retention-strategy",
+      "cases": "retention-strategy-cases.md",
+      "review": "retention-strategy-review.md",
+      "owners": [
+        "retention-strategy"
+      ],
+      "case_count": 60,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "routing",
+      "cases": "evaluations/routing-tests.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 16,
+      "prompt_template": "{scenario}"
+    },
+    {
       "id": "static-dtc-creative-direction",
       "cases": "static-dtc-creative-direction-cases.md",
       "review": "static-dtc-creative-direction-review.md",
       "owners": [
         "creative-strategy"
       ],
-      "case_count": 12,
+      "case_count": 24,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
@@ -77,6 +179,38 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
+      "id": "v0.1",
+      "cases": "v0.1-cases.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 5,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "v0.2",
+      "cases": "v0.2-cases.md",
+      "review": null,
+      "owners": [
+        "tracking-measurement",
+        "customer-research",
+        "icp-jtbd"
+      ],
+      "case_count": 8,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "v0.2.1-terminology",
+      "cases": "v0.2.1-terminology-cases.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 11,
+      "prompt_template": "{scenario}"
+    },
+    {
       "id": "v0.2.2-platform-currency",
       "cases": "v0.2.2-platform-currency-cases.md",
       "review": null,
@@ -88,13 +222,23 @@
       "prompt_template": "{scenario}"
     },
     {
-      "id": "v1.14-influencer-marketing",
-      "cases": "v1.14-influencer-marketing-cases.md",
-      "review": "v1.14-review.md",
+      "id": "v0.2.3-knowledge-taxonomy",
+      "cases": "v0.2.3-knowledge-taxonomy-cases.md",
+      "review": null,
       "owners": [
-        "influencer-marketing"
+        "marketing-router"
       ],
-      "case_count": 16,
+      "case_count": 6,
+      "prompt_template": "{scenario}"
+    },
+    {
+      "id": "v0.4-scaling",
+      "cases": "v0.4-scaling-cases.md",
+      "review": "v0.4-review.md",
+      "owners": [
+        "optimization-scaling"
+      ],
+      "case_count": 30,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
@@ -103,6 +247,26 @@
       "review": "v1.10-review.md",
       "owners": [
         "lifecycle-marketing"
+      ],
+      "case_count": 17,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "v1.11-youtube-ads",
+      "cases": "v1.11-youtube-ads-cases.md",
+      "review": "v1.11-review.md",
+      "owners": [
+        "youtube-ads"
+      ],
+      "case_count": 17,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "v1.12-tiktok-ads",
+      "cases": "v1.12-tiktok-ads-cases.md",
+      "review": "v1.12-review.md",
+      "owners": [
+        "tiktok-ads"
       ],
       "case_count": 17,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
@@ -118,83 +282,23 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
-      "id": "v1.3-intake",
-      "cases": "v1.3-intake-cases.md",
-      "review": "v1.3-review.md",
+      "id": "v1.14-influencer-marketing",
+      "cases": "v1.14-influencer-marketing-cases.md",
+      "review": "v1.14-review.md",
       "owners": [
-        "marketing-intake"
-      ],
-      "case_count": 28,
-      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
-    },
-    {
-      "id": "v1.7-marketing-reporting",
-      "cases": "v1.7-marketing-reporting-cases.md",
-      "review": "v1.7-review.md",
-      "owners": [
-        "marketing-reporting"
+        "influencer-marketing"
       ],
       "case_count": 16,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
-      "id": "v0.1",
-      "cases": "v0.1-cases.md",
-      "review": null,
+      "id": "v1.15-affiliate-marketing",
+      "cases": "v1.15-affiliate-marketing-cases.md",
+      "review": "v1.15-review.md",
       "owners": [
-        "marketing-router"
+        "affiliate-marketing"
       ],
-      "case_count": 5,
-      "prompt_template": "{scenario}"
-    },
-    {
-      "id": "v0.2.1-terminology",
-      "cases": "v0.2.1-terminology-cases.md",
-      "review": null,
-      "owners": [
-        "marketing-router"
-      ],
-      "case_count": 11,
-      "prompt_template": "{scenario}"
-    },
-    {
-      "id": "v0.2.3-knowledge-taxonomy",
-      "cases": "v0.2.3-knowledge-taxonomy-cases.md",
-      "review": null,
-      "owners": [
-        "marketing-router"
-      ],
-      "case_count": 6,
-      "prompt_template": "{scenario}"
-    },
-    {
-      "id": "v1.2-architecture",
-      "cases": "v1.2-architecture-cases.md",
-      "review": "v1.2-review.md",
-      "owners": [
-        "marketing-router"
-      ],
-      "case_count": 18,
-      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
-    },
-    {
-      "id": "v1.6-artifact-ownership",
-      "cases": "v1.6-artifact-ownership-cases.md",
-      "review": "v1.6-review.md",
-      "owners": [
-        "marketing-router"
-      ],
-      "case_count": 6,
-      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
-    },
-    {
-      "id": "v0.4-scaling",
-      "cases": "v0.4-scaling-cases.md",
-      "review": "v0.4-review.md",
-      "owners": [
-        "optimization-scaling"
-      ],
-      "case_count": 30,
+      "case_count": 15,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
@@ -228,6 +332,36 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
+      "id": "v1.2-architecture",
+      "cases": "v1.2-architecture-cases.md",
+      "review": "v1.2-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 18,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "v1.3-intake",
+      "cases": "v1.3-intake-cases.md",
+      "review": "v1.3-review.md",
+      "owners": [
+        "marketing-intake"
+      ],
+      "case_count": 28,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "v1.4-measurement-validity",
+      "cases": "v1.4-measurement-validity-cases.md",
+      "review": "v1.4-review.md",
+      "owners": [
+        "tracking-measurement"
+      ],
+      "case_count": 28,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
       "id": "v1.5-customer-economics",
       "cases": "v1.5-customer-economics-cases.md",
       "review": "v1.5-review.md",
@@ -235,6 +369,26 @@
         "retention-economics"
       ],
       "case_count": 20,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "v1.6-artifact-ownership",
+      "cases": "v1.6-artifact-ownership-cases.md",
+      "review": "v1.6-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 6,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
+    },
+    {
+      "id": "v1.7-marketing-reporting",
+      "cases": "v1.7-marketing-reporting-cases.md",
+      "review": "v1.7-review.md",
+      "owners": [
+        "marketing-reporting"
+      ],
+      "case_count": 16,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
@@ -248,45 +402,23 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
-      "id": "v1.12-tiktok-ads",
-      "cases": "v1.12-tiktok-ads-cases.md",
-      "review": "v1.12-review.md",
+      "id": "v1.9-copywriting",
+      "cases": "v1.9-copywriting-cases.md",
+      "review": "v1.9-review.md",
       "owners": [
-        "tiktok-ads"
+        "copywriting"
       ],
-      "case_count": 17,
+      "case_count": 15,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     },
     {
-      "id": "v0.2",
-      "cases": "v0.2-cases.md",
-      "review": null,
+      "id": "worked-example-governance",
+      "cases": "worked-example-governance-cases.md",
+      "review": "worked-example-governance-review.md",
       "owners": [
-        "tracking-measurement",
-        "customer-research",
-        "icp-jtbd"
+        "marketing-router"
       ],
-      "case_count": 8,
-      "prompt_template": "{scenario}"
-    },
-    {
-      "id": "v1.4-measurement-validity",
-      "cases": "v1.4-measurement-validity-cases.md",
-      "review": "v1.4-review.md",
-      "owners": [
-        "tracking-measurement"
-      ],
-      "case_count": 28,
-      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
-    },
-    {
-      "id": "v1.11-youtube-ads",
-      "cases": "v1.11-youtube-ads-cases.md",
-      "review": "v1.11-review.md",
-      "owners": [
-        "youtube-ads"
-      ],
-      "case_count": 17,
+      "case_count": 18,
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next."
     }
   ]

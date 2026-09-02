@@ -31,21 +31,21 @@ import tempfile
 BUNDLES = [
     ("00-operating-system", "Operating System and Routing", ["marketing-router"]),
     ("01-contracts", "Terminology and Governance Contracts", []),
-    ("02-intake-and-research", "Intake, Customer Research, and ICP", ["marketing-intake", "customer-research", "icp-jtbd"]),
-    ("03-google-ads", "Google Ads", ["google-ads"]),
-    ("04-meta-ads", "Meta Ads", ["meta-ads"]),
-    ("05-video-and-social-ads", "YouTube and TikTok Advertising", ["youtube-ads", "tiktok-ads"]),
-    ("06-b2b-and-programmatic", "LinkedIn and Programmatic", ["linkedin-ads", "programmatic"]),
-    ("07-partnerships", "Influencer and Affiliate Marketing", ["influencer-marketing", "affiliate-marketing"]),
-    ("08-organic-social-and-pr", "Organic Social and Public Relations", ["organic-social", "public-relations"]),
-    ("09-creative-strategy", "Creative Strategy", ["creative-strategy"]),
-    ("10-copywriting", "Copywriting", ["copywriting"]),
-    ("11-cro", "Conversion Rate Optimization", ["cro"]),
+    ("02-growth-strategy", "Business-Level Growth Strategy", ["growth-strategy"]),
+    ("03-intake-and-research", "Intake, Customer Research, and ICP", ["marketing-intake", "customer-research", "icp-jtbd"]),
+    ("04-google-ads", "Google Ads", ["google-ads"]),
+    ("05-meta-ads", "Meta Ads", ["meta-ads"]),
+    ("06-video-and-social-ads", "YouTube and TikTok Advertising", ["youtube-ads", "tiktok-ads"]),
+    ("07-b2b-and-programmatic", "LinkedIn and Programmatic", ["linkedin-ads", "programmatic"]),
+    ("08-partnerships", "Influencer and Affiliate Marketing", ["influencer-marketing", "affiliate-marketing"]),
+    ("09-organic-social-and-pr", "Organic Social and Public Relations", ["organic-social", "public-relations"]),
+    ("10-creative-and-copy", "Creative Strategy and Copywriting", ["creative-strategy", "copywriting"]),
+    ("11-conversion-offer-pricing", "Conversion, Offer, and Pricing", ["cro", "offer-strategy", "pricing-monetization"]),
     ("12-seo", "Search Engine Optimization", ["seo"]),
     ("13-lifecycle-marketing", "Lifecycle and Email Marketing", ["lifecycle-marketing"]),
     ("14-measurement", "Tracking, Attribution, and Incrementality", ["tracking-measurement"]),
-    ("15-diagnostics-and-reporting", "Performance Diagnostics and Reporting", ["performance-diagnostics", "marketing-reporting"]),
-    ("16-retention-economics", "Retention and Customer Economics", ["retention-economics"]),
+    ("15-diagnostics-reporting-operations", "Diagnostics, Reporting, and Operations", ["performance-diagnostics", "marketing-reporting", "marketing-operations"]),
+    ("16-activation-and-retention", "Activation, Retention, and Customer Economics", ["activation", "retention-strategy", "retention-economics"]),
     ("17-optimization-scaling", "Optimization and Scaling", ["optimization-scaling"]),
 ]
 
@@ -157,6 +157,16 @@ def build(repo, out_dir):
 
     write_instructions(repo, out_dir, governed)
     write_manifest(out_dir, manifest)
+
+    # Remove files from a previous bundle layout. Renumbering or regrouping
+    # bundles would otherwise leave stale duplicates in the pack, and a GPT
+    # would load both the old and the new copy of the same skill.
+    expected = {f"{bundle_id}.md" for bundle_id, *_ in manifest} | {"INSTRUCTIONS.md", "MANIFEST.md"}
+    for stale in sorted(out_dir.glob("*.md")):
+        if stale.name not in expected:
+            stale.unlink()
+            print(f"removed stale bundle: {stale.name}")
+
     return manifest
 
 

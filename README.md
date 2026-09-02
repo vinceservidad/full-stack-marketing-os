@@ -4,11 +4,48 @@
 ![Version](https://img.shields.io/badge/version-v1.18.0-blue)
 ![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
 
-An evidence-led full-stack marketing skills and operating system for planning, auditing, diagnosing, and improving full-funnel marketing.
+An evidence-led full-stack marketing skill and operating system for planning, auditing, diagnosing, creating, testing, and improving full-funnel marketing.
 
-Built to help AI agents and modern marketing teams work with structured marketing knowledge instead of isolated prompts.
+Built to help AI agents and modern marketing teams work from governed marketing knowledge instead of isolated prompts, copied playbooks, or unsupported “best practices.”
 
-GitHub is the versioned source of truth. The system brings together governed skills, frameworks, playbooks, templates, workflows, and evaluations for Google Ads, Meta Ads, creative strategy, CRO, SEO, lifecycle marketing, and measurement.
+GitHub is the versioned source of truth. The system combines governed skills, frameworks, playbooks, templates, workflows, shared context, and behavioral evaluations.
+
+## Start here
+
+New to the repository? Read **[`GETTING_STARTED.md`](GETTING_STARTED.md)** first.
+
+It covers the complete path:
+
+```text
+GitHub
+  ↓
+Clone / download
+  ↓
+Install to Codex or Claude Code
+  ↓
+Verify
+  ↓
+Choose a skill or use $marketing-router
+  ↓
+Provide evidence
+  ↓
+Run the governed workflow
+  ↓
+Update from GitHub when the OS changes
+```
+
+For AI-agent orchestration rules after installation, see [`AGENT_GUIDE.md`](AGENT_GUIDE.md). For runtime, plugin, MCP, connector, and Custom GPT distinctions, see [`DISTRIBUTION.md`](DISTRIBUTION.md).
+
+## What this is
+
+Full-Stack Marketing OS is currently a **portable skill system**, not a packaged marketplace plugin.
+
+- **OpenAI Codex:** supported as installable local skills.
+- **Claude Code:** supported as installable personal skills, with `CLAUDE.md` importing the repository-wide `AGENTS.md` rules.
+- **Custom GPT:** supported through the derived `gpt-knowledge/` knowledge-export layer.
+- **OpenAI plugin / Claude plugin:** not packaged yet. A future plugin can bundle the governed skills with tools/connectors while keeping `.agents/skills/` canonical.
+
+See [`DISTRIBUTION.md`](DISTRIBUTION.md) for exact install paths, terminology, current support state, and plugin boundaries.
 
 ## Quickstart
 
@@ -47,124 +84,170 @@ product working, not failing — see [`examples/`](examples/) for three worked r
 **Verify it yourself:**
 
 ```bash
-python3 scripts/eval.py --static   # 415 decision cases parse, register, and resolve
+python3 scripts/eval.py --static   # 873 decision cases parse, register, and resolve
 ```
 
 ## System Map
 
 ```text
-Marketing Request
+Business / Marketing Request
         ↓
 Marketing Router
         ↓
-Specialist Skill
+Growth Strategy or Specialist Owner
         ↓
-Framework
+Framework / Method
         ↓
-Playbook
+Playbook / Template / Workflow
         ↓
-Template
+Measurement + Evaluation
         ↓
-Workflow
-        ↓
-Evaluation
-        ↓
-Final Deliverable
+Decision / Deliverable / Learning
 ```
 
-## What it covers
+## Governed capabilities
 
-Twenty-four governed skills live in [`.agents/skills/`](.agents/skills/) — the canonical executable layer:
+Thirty governed skills currently live in [`.agents/skills/`](.agents/skills/), the canonical executable layer.
 
-- Request routing and owner appointment
-- Engagement intake: scope, evidence grading, metric definitions, access, authorization
-- Google Ads: Search, Shopping, Performance Max
-- Meta Ads: structure, audiences, delivery, placements
-- Creative strategy: angles, hooks, concepts, briefs, tests
-- Conversion Rate Optimization: pages, forms, checkout, friction
-- Performance diagnosis: metric change, anomaly, causal triage
-- Tracking and measurement: event integrity, attribution reconciliation
-- Customer research: interviews, reviews, surveys, evidence synthesis
-- Ideal Customer Profile and Jobs-to-be-Done
-- Retention economics: lifetime value, payback period, cohort retention, churn
-- Marketing reporting: cross-channel executive report, recurring cadence, stakeholder scorecard
-- Search Engine Optimization: visibility audit, technical health, content strategy, ranking-change diagnosis
-- Copywriting: email, lifecycle, website, sales-page, long-form, brand
-- Lifecycle marketing: email/lifecycle segmentation, trigger logic, cadence, deliverability
-- YouTube Ads: video format selection, targeting, view-through measurement fit
-- TikTok Ads: native creative fit, Spark Ads vs in-feed, creative-fatigue cadence
-- LinkedIn Ads: account/firmographic targeting, format selection, Lead Gen Forms, B2B economics
-- Influencer Marketing: creator vetting, compensation structure, usage rights, disclosure compliance
-- Affiliate Marketing: commission structure, attribution integrity, fraud/brand-bidding screening
-- Organic Social: content strategy, cadence, algorithm-distribution fit, community management
-- Programmatic: supply-path optimization, inventory verification, fraud screening
-- Public Relations: media relations, pitch strategy, crisis communications
-- Evidence-led optimization and scaling across channels, portfolios, creative, ecommerce, and lead generation
+### Strategy, context, commercial, and customer system
 
-Analytics is **partially covered** — specific tasks are owned, others are not. Every other capability originally listed as unsupported is now governed, including reporting (by `$marketing-reporting` for cross-channel/recurring work and by each channel's owning skill for bounded reports), Search Engine Optimization, copywriting, email and lifecycle marketing, YouTube, TikTok, LinkedIn, influencer and affiliate partnerships, organic social, programmatic buying, and public relations.
+- `$marketing-router` — request routing and owner appointment
+- `$marketing-intake` — scope, evidence state, metric definitions, access, authorization, shared Marketing Context
+- `$growth-strategy` — business-level growth priorities, constraint/constraint-set diagnosis, opportunity portfolio, sequencing, learning roadmap
+- `$customer-research` — interviews, reviews, surveys, evidence synthesis
+- `$icp-jtbd` — ICP, Jobs-to-be-Done, buying situations, alternatives, competitive intelligence
+- `$offer-strategy` — proposition, value architecture, bundle, proof requirements, risk reversal, legitimate urgency/scarcity
+- `$pricing-monetization` — price, value metric, packages/tiers, payment model, discount architecture, willingness-to-pay evidence
 
-[`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative on exactly which tasks are governed, partially covered, planned, or unsupported. The Marketing Router declares the gap rather than substituting an adjacent channel skill.
+### Acquisition, creative, and conversion
 
-## Repository Structure
+- `$google-ads` — Search, Shopping, Performance Max
+- `$meta-ads` — structure, audiences, delivery, placements
+- `$youtube-ads` — paid-video format, targeting, measurement fit
+- `$tiktok-ads` — native creative fit, Spark Ads vs in-feed, targeting/cadence
+- `$linkedin-ads` — firmographic/account targeting, Lead Gen Forms, B2B economics
+- `$programmatic` — supply-path optimization, inventory verification, fraud screening
+- `$influencer-marketing` — creator vetting, compensation, rights, disclosure
+- `$affiliate-marketing` — commission structure, attribution integrity, fraud/brand-bidding screening
+- `$organic-social` — content strategy, cadence, distribution fit, community management
+- `$public-relations` — media relations, pitch strategy, crisis communications
+- `$seo` — technical health, organic visibility, content/topic strategy, ranking diagnosis
+- `$creative-strategy` — angles, mechanics, hooks, concepts, visual formats, static creative direction, testing
+- `$copywriting` — lifecycle, website, sales-page, long-form, and brand copy
+- `$cro` — landing/product pages, forms, checkout, and pre-conversion friction
 
-`.agents/skills/` is the **canonical executable layer**. Everything else is knowledge, documentation, or export material — no other directory contains runnable skills.
+### Activation, retention, measurement, scaling, and operations
+
+- `$activation` — first meaningful value, path-to-value, time-to-value, activation friction
+- `$retention-strategy` — churn/lapse reason diagnosis, save/recovery/repeat/renewal/win-back strategy
+- `$retention-economics` — LTV, payback, cohort retention/churn, lead-to-revenue maturation
+- `$lifecycle-marketing` — segmentation, trigger logic, cadence, suppression, deliverability
+- `$tracking-measurement` — event integrity, attribution reconciliation, causal validity, experiment learning
+- `$performance-diagnostics` — metric change, anomaly, competing explanations, causal triage
+- `$optimization-scaling` — paid-media readiness, marginal economics, controlled scaling/de-scaling, pacing
+- `$marketing-operations` — recurring cross-skill loops, state, idempotency, approval, verification, escalation
+- `$marketing-reporting` — cross-channel executive reporting, recurring reporting cadence, stakeholder scorecards
+
+Analytics remains **partially covered** where work becomes business-intelligence engineering, warehouse/pipeline design, or dashboard implementation outside the governed analytics owners.
+
+[`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative. A file existing in the repository does not make a capability governed.
+
+## Cross-agent installation
+
+### Codex
+
+```bash
+bash scripts/install-skills.sh . "$HOME/.codex"
+```
+
+This installs generated runtime copies to `~/.codex/skills/` plus the contracts and libraries needed by those skills.
+
+### Claude Code
+
+```bash
+bash scripts/install-claude-skills.sh
+```
+
+This installs the same canonical skill set to `~/.claude/skills/`. Do not maintain a second Claude-specific skill hierarchy.
+
+For clone, verification, updating, troubleshooting, skill selection, and concrete usage examples, use [`GETTING_STARTED.md`](GETTING_STARTED.md).
+
+## Repository structure
+
+`.agents/skills/` is the **canonical executable source**. Runtime copies and exports are derived.
 
 ```text
-.agents/skills/        CANONICAL — governed, agent-loadable operating skills
-skills/                Index only — points to .agents/skills/, no instructions
-frameworks/            Decision models and methods (knowledge library)
-playbooks/             Scenario workflows (knowledge library)
-templates/             Reusable deliverable formats (artifact library)
-workflows/             Execution sequences (workflow library)
-agents/                Agent-role documentation (non-executable)
-gpt-knowledge/         Custom GPT export layer (derived, not a skill layer)
-evaluations/           Routing cases and reviewer checklists
-tests/evaluations/     Versioned decision-behavior cases (415, all executable)
-examples/              Worked runs with reproducible input fixtures
-scripts/               Installer and validation harnesses
+.agents/skills/        CANONICAL — governed portable operating skills
+~/.codex/skills/       GENERATED — local Codex runtime install
+~/.claude/skills/      GENERATED — local Claude Code personal-skill install
 .claude-plugin/        Claude Code plugin and marketplace manifests
-docs/                  Guides; docs/archive/ is excluded from active retrieval
+skills/                Index only — no competing instructions
+frameworks/            Governed decision models and methods
+playbooks/             Governed scenario workflows
+templates/             Governed reusable deliverable structures
+workflows/             Governed execution sequences
+agents/                Agent-role documentation, non-executable
+gpt-knowledge/         Derived Custom GPT export, generated from .agents/skills/
+evaluations/           Routing cases and reviewer checklists
+tests/evaluations/     Versioned decision-behavior cases, all executable
+examples/              Worked walkthroughs to WORKED-EXAMPLE-STANDARD.md
+scripts/               Installer, validation, and evaluation harnesses
+docs/                  Guides; docs/archive/ excluded from active retrieval
 ```
 
-See [`ARCHITECTURE.md`](ARCHITECTURE.md) for each layer's consumer and canonical status, and [`ARTIFACT-OWNERSHIP.md`](ARTIFACT-OWNERSHIP.md) for which artifacts have owners.
+See [`ARCHITECTURE.md`](ARCHITECTURE.md), [`ARTIFACT-OWNERSHIP.md`](ARTIFACT-OWNERSHIP.md), and [`DISTRIBUTION.md`](DISTRIBUTION.md).
 
-A file's presence in this repository does not make it part of the operating system. An artifact is operational when a skill owns it, its evidence state is declared, and validation covers it.
-
-## Creator
-
-Built by Vince Servidad, a Paid Acquisition Specialist focused on Google Ads, Meta Ads, Shopify growth, CRO, and AI marketing systems.
-
-The goal is to organize practical marketing knowledge into reusable systems that help marketers and AI agents make better decisions.
-
-## Example Usage
+## Example usage
 
 ```text
-Use the Google Ads skill to audit campaign performance.
+$growth-strategy Decide where the business should focus next from the evidence I provide.
 
-Use the Creative Strategy skill to build testing ideas.
+$google-ads Audit current campaign performance and separate observations from assumptions.
 
-Use the CRO skill to review a Shopify product page.
+$creative-strategy Turn verified research into testable ad concepts and production-ready static directions.
 
-Use the Performance Diagnostics skill to analyze a metric change and next actions.
-
-Use the Optimization and Scaling skill to decide whether, where, how, and by how much to scale while protecting commercial outcomes.
+$marketing-router Decide which Marketing OS skill should own this request when I am not sure.
 ```
 
-Scaling is not defined as spending more. The system requires a scoped proof level, source-of-truth business economics, marginal efficiency, a diagnosed binding constraint, an appropriate scaling mode, capacity, guardrails, and explicit approval before any live change. It rejects universal budget-increase percentages and does not treat platform attribution or recommendations as proof.
+More worked prompts and a skill-selection table are in [`GETTING_STARTED.md`](GETTING_STARTED.md).
 
-## Design Principles
+## Worked examples
+
+Want to see the OS make a decision end-to-end? Start in [`examples/`](examples/).
+
+Flagship walkthroughs:
+
+- [`Ecommerce Growth Diagnosis`](examples/ecommerce-growth/) — business objective → evidence → constraint set → specialist handoffs → non-priorities → measurement
+- [`Google Ads Audit`](examples/google-ads-audit/) — query/product/margin/marginal-efficiency diagnosis without blanket channel rules
+- [`Meta Ads Audit & Creative Testing`](examples/meta-ads/) — attribution reconciliation → prospecting/retargeting → creative quality → frequency/audience diagnosis → controlled testing → scaling gate
+- [`DTC Creative Strategy`](examples/creative-strategy/) — synthetic VOC → JTBD → angle → mechanic → concept → 4:5 production direction → centered 1:1 cross-crop validation
+- [`Shopify CRO Audit`](examples/shopify-cro/) — funnel evidence → mobile checkout diagnosis → focused hypothesis instead of full-site redesign
+
+These are **worked examples**, not performance case studies. Synthetic/anonymized examples demonstrate how the system decides; verified public case studies require real publishable evidence. See [`examples/WORKED-EXAMPLE-STANDARD.md`](examples/WORKED-EXAMPLE-STANDARD.md).
+
+Scaling is not defined as spending more. The system requires source-of-truth business evidence, economics, marginal efficiency, readiness, constraints, capacity, guardrails, and explicit authorization before any live change. It rejects universal budget-increase percentages and does not treat platform attribution or recommendations as proof.
+
+## Design principles
 
 - Evidence before assumptions
 - Strategy before tactics
-- Business goals before platform settings
-- Frameworks before random execution
+- Business outcomes before platform metrics
+- One owner per decision
+- Frameworks organize thinking; they do not prove outcomes
+- Reversible learning before large irreversible commitments
 - Human judgment before automation
+- Canonical source before runtime/export copies
 
 ## Roadmap
 
-- Publish a scored `tests/RESULTS.md` from a full live evaluation run. The harness is built and the corpus is registered; **no behavioral pass rate is claimed anywhere in this repository until that run is committed.**
-- Normalize `cro`, `marketing-router`, and `performance-diagnostics` to a dedicated required-inputs heading (currently satisfied in prose; tracked as skill-content debt, not a structural gap)
-- Validate against anonymized real-world cases, as distinct from the synthetic fixtures in `examples/`
-- More industry playbooks and worked examples
+The detailed, reconciled roadmap is in [`ROADMAP.md`](ROADMAP.md). Current priorities are:
 
-See [`ROADMAP.md`](ROADMAP.md) for the full history.
+- publish a scored `tests/RESULTS.md` from a full live evaluation run — the harness is built and the corpus registered, so **no behavioral pass rate is claimed anywhere in this repository until that run is committed**
+- validate high-value skills against anonymized real-world cases where permission and evidence allow
+- document data contracts and define MCP/connector approval, rollback, and verification boundaries before adding live integrations
+- add maintainability checks that prevent stale capability counts, roadmap claims, and public-navigation drift
+- expand behavioral evaluations and worked examples only when real usage exposes a decision-quality gap
+
+## Creator
+
+Built by Vince Servidad, a Paid Acquisition Specialist focused on Google Ads, Meta Ads, Shopify growth, CRO, creative strategy, and AI marketing systems.

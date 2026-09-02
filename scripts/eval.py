@@ -43,9 +43,15 @@ from datetime import datetime, timezone
 # scenario that the live tier frames as a request.
 
 NUMBERED = re.compile(r"^(\d+)\.\s+\*\*(.+?):?\*\*\s*(.+?)\s*$", re.MULTILINE)
-CRITERION = re.compile(r"\bPass (?:only )?if\b", re.IGNORECASE)
+CRITERION = re.compile(r"\bPass (?:only )?if\b|^\*{0,2}Expected\*{0,2}:", re.IGNORECASE | re.MULTILINE)
 SECTION = re.compile(r"^##\s+(?:\d+\.\s*)?(.+?)\s*$", re.MULTILINE)
-LABELLED = re.compile(r"^\*\*(Prompt|Pass|Fail):\*\*\s*(.+?)\s*$", re.MULTILINE)
+SUBSECTION = re.compile(r"^###\s+(?:\d+\.\s*)?(.+?)\s*$", re.MULTILINE)
+# `| # | Case | Expected behavior |` tables: one case per row.
+TABLE_HEADER = re.compile(r"^\|[^|]*\|[^|]*\|\s*Expected[^|]*\|", re.MULTILINE | re.IGNORECASE)
+TABLE_ROW = re.compile(r"^\|\s*(\d+)\s*\|(.+?)\|(.+?)\|\s*$", re.MULTILINE)
+LABELLED = re.compile(
+    r"^\*\*(Prompt|Pass|Fail|Expected|Input|Given):\*\*\s*(.+?)\s*$", re.MULTILINE
+)
 PLAIN_PROMPT = re.compile(r"^Prompt:\s*(.+?)\s*$", re.MULTILINE)
 QUOTES = "\u201c\u201d\"'"
 
@@ -103,7 +109,18 @@ def parse_cases(suite_id, path):
     if cases:
         return cases
 
-    sections = list(SECTION.finditer(text))
+    # Table shape: `| # | Case | Expected behavior |`, one case per row.
+    if TABLE_HEADER.search(text):
+        for number, scenario, criterion in TABLE_ROW.findall(text):
+            scenario, criterion = scenario.strip(), criterion.strip()
+            if scenario and criterion:
+                cases.append(Case(suite_id, number, scenario, scenario, criterion))
+        if cases:
+            return cases
+
+    # Prefer `###` cases when a file groups them under `##` headings; matching
+    # both would emit each case twice, once inside its group heading's block.
+    sections = list(SUBSECTION.finditer(text)) or list(SECTION.finditer(text))
     for index, section in enumerate(sections):
         start = section.end()
         end = sections[index + 1].start() if index + 1 < len(sections) else len(text)
@@ -112,15 +129,20 @@ def parse_cases(suite_id, path):
             continue
 
         labels = {key.lower(): value for key, value in LABELLED.findall(block)}
-        if "pass" in labels:
+        # "Pass:" and "Expected:" are the same field under two house styles;
+        # "Prompt:", "Input:" and "Given:" are the same for the scenario.
+        criterion = labels.get("pass") or labels.get("expected")
+        supplied = labels.get("prompt") or labels.get("input") or labels.get("given")
+        if criterion:
+            supplied = supplied.strip(QUOTES) if supplied else ""
             cases.append(
                 Case(
                     suite_id,
                     str(index + 1),
                     section.group(1).strip(),
-                    labels.get("prompt", "").strip(QUOTES),
-                    labels["pass"],
-                    prompt=labels.get("prompt", "").strip(QUOTES) or None,
+                    supplied,
+                    criterion,
+                    prompt=supplied or None,
                     counter=labels.get("fail", ""),
                 )
             )

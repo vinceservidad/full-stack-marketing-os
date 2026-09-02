@@ -1,6 +1,6 @@
 ---
 name: marketing-intake
-description: Capture and grade the evidence, metric definitions, access, and authorization behind a marketing engagement before substantial audit, diagnosis, planning, or scaling work; use when scope, data provenance, economics, or approval boundaries are unclear.
+description: Capture and grade the evidence, metric definitions, access, authorization, and reusable project context behind a marketing engagement before substantial audit, diagnosis, planning, or scaling work; use when scope, data provenance, economics, shared context, or approval boundaries are unclear.
 ---
 
 # Marketing Intake
@@ -27,6 +27,7 @@ Intake may proceed with gaps. It may not present a gap as satisfied.
 6. Request only the missing evidence that could change a decision, ranked by decision impact. See [Access and data request](references/access-and-data-request.md).
 7. Record the authorization boundary before proposing any change. See [Authorization register](references/authorization-register.md).
 8. State which decisions the current evidence can and cannot support, and name the gaps capable of reversing each one.
+9. When the project needs reusable cross-skill context, create or update `.agents/marketing-context.md` from [`templates/marketing-context.md`](../../../templates/marketing-context.md) using [Marketing Context governance](references/marketing-context-governance.md). Preserve provenance, evidence state, contradictions, freshness, and the change log; do not copy unnecessary raw data into it.
 
 ## Rules
 
@@ -38,13 +39,22 @@ Intake may proceed with gaps. It may not present a gap as satisfied.
 - Absence of a supplied cost structure blocks a profitability conclusion; it does not block analysis labeled as efficiency-only.
 - Intake authorizes nothing. Recording an approval is not receiving one, and no intake output may imply a live change.
 - Do not declare intake complete while a gap capable of reversing the primary decision is open. Declare it partial and name the gap.
+- Marketing Context is a reusable summary, not evidence promotion. A statement copied into `.agents/marketing-context.md` keeps the source evidence state and specialist owner.
+- Do not make every task load the entire Marketing Context. Downstream work should use only decision-relevant sections.
 
 ## Output
 
 Intake record: engagement context; primary business outcome; scope and period; source-of-truth system; evidence register with states; metric and conversion definitions; capacity constraints; authorization boundary; ranked outstanding requests; decisions currently supportable; decisions blocked and what would unblock them; exact status.
 
+Marketing Context when useful: versioned `.agents/marketing-context.md` containing only reusable decision context, source/evidence state, freshness, contradictions, open decisions, and change history.
+
 Access request: named source, specific artifact or export, date range, reason it is decision-changing, and what remains blocked without it.
+
+## Library references
+
+- [`templates/marketing-context.md`](../../../templates/marketing-context.md) — reusable structure for project-level shared Marketing Context.
+- [Marketing Context governance](references/marketing-context-governance.md) — creation, update, freshness, contradiction, and ownership rules.
 
 ## QA
 
-Confirm every decision-relevant claim carries a source and evidence state; no state was upgraded without a named source; no gap was filled by assumption; metric definitions precede comparisons; conversion goal and action language follows the glossary; personal data is minimal and provenance is traceable; the authorization boundary is explicit; and blocked decisions are listed rather than answered.
+Confirm every decision-relevant claim carries a source and evidence state; no state was upgraded without a named source; no gap was filled by assumption; metric definitions precede comparisons; conversion goal and action language follows the glossary; personal data is minimal and provenance is traceable; the authorization boundary is explicit; blocked decisions are listed rather than answered; and any Marketing Context update preserves source, evidence state, contradictions, freshness, and version history.

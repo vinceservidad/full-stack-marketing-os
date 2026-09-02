@@ -41,7 +41,7 @@ marginal return rather than the blended average, and requires explicit approval
 before any live change. If it just agrees, the instructions did not load.
 
 The same question, worked in full, is in
-[`scaling-request-refused.md`](scaling-request-refused.md).
+[`scaling-refusal/`](scaling-refusal/).
 
 ## Keeping it current
 

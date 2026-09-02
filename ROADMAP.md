@@ -1,59 +1,108 @@
 # Roadmap
 
-## v0.2 — Measurement and research — Complete
+This file describes the current maturity state and next system-level milestones. Historical implementation details live in [`CHANGELOG.md`](CHANGELOG.md); capability ownership lives in [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md).
 
-- Added tracking-measurement, customer-research, and ICP/JTBD skills.
-- Added attribution reconciliation and conversion-integrity evaluations.
-- Added Search, Shopping, PMax, prospecting, and retargeting references.
+Last reconciled: **2026-09-01**.
 
-## v0.2.1 — Terminology normalization — Complete
+## Current state — Governed full-stack Marketing OS
 
-- Added a canonical glossary and platform-to-strategy mappings.
-- Standardized commercial, measurement, research, CRO, creative, and lead-lifecycle terminology.
-- Added regression cases that detect ambiguous or misused terms.
+The repository currently has **30 governed skills** in [`.agents/skills/`](.agents/skills/) with one canonical ownership model, shared evidence/governance contracts, behavioral evaluations, and CI validation.
 
-## v0.2.2 — Platform currency governance — Complete
+Completed capability areas include:
 
-- Added dated Google Ads and Meta Ads registries backed by first-party sources.
-- Added freshness gates for AI, automation, controls, reporting, and interface terminology.
-- Added account-rollout checks and regression cases for unsupported algorithm claims.
+- marketing routing, intake, shared Marketing Context, and growth strategy
+- customer research, ICP/JTBD, competitive intelligence, offer strategy, and pricing/monetization
+- Google Ads, Meta Ads, YouTube Ads, TikTok Ads, LinkedIn Ads, programmatic, influencer, affiliate, organic social, PR, and SEO
+- creative strategy, copywriting, CRO, static DTC creative direction, and governed 4:5 → centered 1:1 cross-crop safety
+- activation, retention strategy, retention economics, and lifecycle marketing
+- tracking/measurement, experiment learning, performance diagnostics, marketing reporting, marketing operations, and optimization/scaling
+- cross-agent distribution for Codex and Claude Code from one canonical skill source
+- public GitHub onboarding and truth-governed worked-example standards
 
-## v0.2.3 — Knowledge taxonomy — Complete
+The capability registry remains authoritative. Analytics is still only **partially covered** where work becomes BI engineering, warehouse/pipeline design, or dashboard implementation outside existing measurement/diagnostic/reporting owners.
 
-- Added a canonical taxonomy for principles, definitions, strategies, frameworks, models, methodologies, processes, playbooks, patterns, hypotheses, tactics, techniques, templates, checklists, best practices, heuristics, and guardrails.
-- Added reusable artifact metadata and QA fields for evidence, confidence, freshness, dependencies, authorization, and rollback/stop conditions.
-- Added taxonomy regression cases and validation.
+## Completed maturity milestones
 
-## v0.3 — Strategy and production
+### Evidence and terminology governance
 
-- Add positioning, offer, funnel, copywriting, landing-page-audit, and experimentation skills.
-- Add creative brief and copy QA templates.
-- Add SaaS, local-service, and nonprofit playbooks.
+- Canonical glossary and knowledge taxonomy.
+- Observed / calculated / inferred / assumed / unknown evidence separation.
+- Platform-currency registry and freshness validation for fast-changing platform claims.
+- Exact implementation-state language for proposed, configured, live, observed, verified, and related states.
 
-## v0.4 — Optimization and scaling — Complete
+### Strategy and commercial system
 
-- Added optimization-scaling skill, seven governed frameworks, seven channel/business playbooks, and nine operational templates.
-- Added scoped proof, readiness, marginal-economics, constraint, mode, portfolio, creative-capacity, guardrail, de-scaling, and recovery methods.
-- Added 30 regression cases, an evaluation review, deterministic validation, and continuous-integration checks.
+- Growth Strategy with evidence-grounded constraint or constraint-set handling, opportunity portfolio, priorities, non-priorities, sequencing, and learning roadmap.
+- Offer Strategy separated from Pricing & Monetization.
+- Pricing decisions separated from competitor context, stated preference, modeled economics, and realized commercial evidence.
 
-## v0.5 — Retention and reporting
+### Acquisition, creative, and conversion system
 
-- Add retention and marketing-reporting skills.
-- Add contribution-margin and lead-quality scorecards.
-- Extend routing and unsafe-activation evaluations.
+- Governed channel owners for the active acquisition/distribution disciplines in the capability registry.
+- Creative ideation from research → insight → angle → mechanic → concept → hook → format → proof → test.
+- Static creative production direction with placement/crop preflight and cross-crop resilience rules.
+- CRO ownership limited to the pre-conversion boundary; Activation owns post-conversion first-value decisions.
 
-## v1.0 — Proven system — In progress
+### Activation and retention system
 
-Done:
+- Activation owns first meaningful value, path-to-value, time-to-value, and activation intervention strategy.
+- Retention Strategy owns reason diagnosis and cause-matched save/recovery/repeat/renewal/win-back interventions.
+- Retention Economics owns realized/predictive cohort economics, LTV, payback, and churn/retention measurement.
+- Lifecycle Marketing owns communication segmentation, trigger logic, cadence, suppression, and deliverability.
 
-- Made the evaluation corpus executable. `scripts/eval.py --static` runs in CI over all 415 cases in 28 registered suites; `--live` scores them against a model and writes a dated scorecard to `tests/RESULTS.md`.
-- Added routing evaluations covering the contestable ownership boundaries, so the system's entry point is tested rather than assumed.
-- Published three worked examples with committed input fixtures, each reproducible.
-- Made the installer work on Linux as well as macOS, and put it under CI on both.
+### Measurement, operations, and scaling system
 
-Open:
+- Tracking & Measurement owns event integrity, attribution reconciliation, causal evidence, and experiment learning.
+- Performance Diagnostics owns anomaly decomposition and competing-cause diagnosis.
+- Marketing Operations owns recurring cross-skill loops, state, idempotency, approvals, verification, escalation, and retirement.
+- Optimization & Scaling owns paid-media readiness, marginal economics, controlled expansion/de-scaling, pacing, and guardrails.
+- Marketing Reporting owns cross-channel executive reporting and recurring stakeholder communication.
 
-- Publish a `tests/RESULTS.md` from a full live run. The harness exists; no scored run has been committed yet, so no behavioral pass rate is claimed anywhere in this repository.
-- Validate skills against anonymized real-world cases, as distinct from the synthetic fixtures now in `examples/`.
-- Document supported data contracts and integrations.
-- Automate scheduled currency-review issues and establish maintainers and migration policy.
+### Distribution and usability
+
+- `.agents/skills/` remains the canonical skill source.
+- Codex and Claude Code installers generate runtime copies without creating competing skill hierarchies.
+- `GETTING_STARTED.md`, `AGENT_GUIDE.md`, `DISTRIBUTION.md`, and root README provide public onboarding.
+- Worked examples distinguish synthetic, anonymized, and verified public case studies and prohibit fabricated achieved results.
+
+## Current cleanup — System consistency
+
+- Normalize remaining legacy `SKILL.md` files to explicit `## Required inputs` contracts without changing ownership.
+- Keep README, roadmap, architecture, capability registry, examples, and distribution docs synchronized with the actual governed system.
+- Remove or replace stale compact examples when a stronger governed walkthrough exists.
+
+## Next milestone — Real-world validation
+
+Priority is **validation, not adding skills for the sake of count**.
+
+- Publish a scored `tests/RESULTS.md` from a full live evaluation run. `scripts/eval.py --live` exists and the corpus is registered, but no scored run has been committed, so **no behavioral pass rate is claimed anywhere in this repository**.
+- Validate high-value skills against anonymized real-world cases where permission and evidence allow.
+- Preserve the difference between a worked example and a verified case study.
+- Record contradictions, failed hypotheses, negative outcomes, and scope limits rather than publishing only wins.
+- Use experiment-learning records to promote only replicated scoped patterns, never one-off results as universal best practices.
+
+## Next milestone — Data contracts and integrations
+
+Add integration work only when it improves real workflows without moving marketing intelligence out of the skill layer.
+
+- Document supported data contracts for common platform/account exports.
+- Define connector/MCP boundaries for read access, live mutations, approval, rollback, and verification.
+- Keep Skills as the decision system; treat MCP/connectors/APIs as optional data/action layers.
+- Build an installable OpenAI or Claude plugin only when the target manifest, runtime behavior, permissions, resources, and actual install/publish state can be verified.
+
+## Next milestone — Operational maintainability
+
+- Add automated checks that prevent stale capability counts, unsupported roadmap claims, and broken public-navigation links where practical.
+- Automate scheduled platform-currency review issues only when a real runtime is configured and verified.
+- Establish maintainers, migration policy, and deprecation rules before broader external contribution creates compatibility obligations.
+- Continue expanding behavioral evaluations from observed failure modes rather than arbitrary coverage quotas.
+
+## Deliberate non-goals
+
+Do not add a new skill merely because another repository has one. External systems are idea sources only.
+
+Do not duplicate a capability that already has an owner. Improve the existing owner when the gap belongs there.
+
+Do not turn the Marketing OS into one giant MCP server or connector. The governed skill layer remains the marketing intelligence source of truth.
+
+Do not claim a plugin, integration, scheduled loop, live mutation, case-study result, or platform behavior exists until its real state is verified.
