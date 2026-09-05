@@ -4,6 +4,12 @@ Notable changes follow semantic versioning.
 
 ## [Unreleased]
 
+### Fixed
+
+- Replaces destructive runtime installation with an ownership-aware installer. Shared Marketing OS contracts and libraries now live in `<runtime>/.marketing-os/`; personal `AGENTS.md`, `CLAUDE.md`, runtime-root libraries, and unrelated skills remain untouched. Generated skills explicitly link to the task-scoped operating rules.
+- Adds managed-file hashes, collision and local-edit protection, staged validation, `--dry-run`, unchanged-install no-ops, update backups, and rollback on ordinary publication errors. Legacy installations have no ownership manifest: back up and move only conflicting Marketing OS skill directories before reinstalling. See [`INSTALLATION_SAFETY.md`](INSTALLATION_SAFETY.md) for migration and recovery limits; files overwritten by an older installer cannot be reconstructed without an earlier backup.
+- Preserves directory-link trailing slashes and fragments, updates architecture and cross-agent distribution validators for namespaced resources, and adds 24 installer regression tests plus Linux/macOS CI covering full installs, repeat installs, runtime integrity, both distribution layouts, and the Claude wrapper. These checks validate installation mechanics, not live agent behavior or marketing outcomes.
+
 ### Added
 
 - `$growth-strategy`, thirtieth governed skill, adds the native business-level marketing planning and orchestration layer. It owns the primary growth objective, evidence baseline, binding-constraint diagnosis, opportunity portfolio, strategic priorities and non-priorities, sequencing, specialist orchestration, learning agenda, review governance, and exact strategy state without taking over the underlying specialist decisions.
@@ -22,7 +28,7 @@ Notable changes follow semantic versioning.
 - Fifty Activation behavioral evaluations plus completed review cover forced activation stages, tutorial/email/profile proxies, invented “aha moments,” post-hoc event mining, denominator/window gaming, mixed cohorts, delayed/broken instrumentation, poor-fit acquisition, promise mismatch, technical and operational barriers, necessary compliance friction, time-to-value misuse, supporting-metric substitution, downstream guardrail harm, ownership boundaries, exact state, local learning, contradictions, and prompt injection in source evidence.
 
 - `$pricing-monetization`, twenty-seventh governed skill, closes the explicit pricing/monetization capability gap. It owns base and realized price, value metric, package/tier commercial architecture, payment model, discount architecture, willingness-to-pay evidence, price-change testing, grandfathering/migration, and exact commercial rollout state.
-- Adds three pricing references for architecture, willingness-to-pay evidence, and price-change testing/rollout plus [`templates/pricing-decision.md`](templates/pricing-decision.md). The system separates observed purchase behavior, controlled tests, stated-preference research, anecdotes, competitor context, and model inference rather than collapsing them into a numeric willingness-to-pay claim.
+- Adds three pricing references for architecture, willingness-to-pay evidence, and price-change testing/rollout plus [`templates/pricing-decision.md`](templates/pricing-decision.md). The system separates observed purchase behavior, controlled tests, stated-preference research, anecdotes, competitor context, model inference rather than collapsing them into a numeric willingness-to-pay claim.
 - `$offer-strategy` now routes exchange-structure decisions to `$pricing-monetization`; `$retention-economics` treats material price/package/payment changes as possible cohort boundaries; Marketing Context now stores offer state separately from pricing/monetization state. Pricing success cannot be declared from conversion rate, AOV, ARPU, list price, or competitor price alone.
 - Forty-four Pricing and Monetization behavioral evaluations plus completed review cover fabricated willingness-to-pay and elasticity, competitor copying, psychological-price and markup heuristics, fake tiers/anchors/savings/popularity, hidden fees and shrinkage, conversion/ARPU/AOV-only winners, undefined profit, uncontrolled tests, early stopping, migration/approval scope, exact rollout state, cohort contamination, and owner boundaries.
 
@@ -42,7 +48,7 @@ Notable changes follow semantic versioning.
 
 - `$creative-strategy` execution layer: adds [creative mechanics](.agents/skills/creative-strategy/references/creative-mechanics.md), [hook execution](.agents/skills/creative-strategy/references/hook-execution.md), and [visual format selection](.agents/skills/creative-strategy/references/visual-format-selection.md). The canonical creative flow now separates angle → creative mechanic → concept → hook → visual format, with each layer treated as a testable hypothesis rather than a proven performance formula. Current platform-native fit remains owned by the relevant channel skill.
 - `$customer-research` reference: [review mining for creative research](.agents/skills/customer-research/references/review-mining-for-creative.md). Review analysis now includes relevant positive, neutral, and negative evidence; preserves source provenance and contradictions; separates specificity from prevalence; and prevents customer-reported results or model-synthesized language from being promoted into verified proof or VOC.
-- Twenty-six creative execution-layer evaluations plus completed review covering positive-review bias, quote provenance, reported-outcome overclaiming, mechanic/hook/format conflation, fabricated social proof and urgency, fake native voice, universal funnel-format claims, generated visuals used as proof, platform-routing errors, production feasibility, and controlled mechanic testing.
+- Twenty-six creative execution-layer evaluations plus completed review covering positive-review bias, quote provenance, reported-outcome overclaiming, mechanic/hook/format conflation, fabricated social proof and urgency, fake native voice, universal funnel-format claims, generated visuals used as proof, platform-routing errors, production feasibility, and controlled learning.
 - These additions were informed by the public Motion Creative Strategy Skills repository at the concept level, then re-authored under this OS's taxonomy, evidence, ownership, and controlled-testing rules rather than importing Motion's separate skill hierarchy or universal performance claims.
 
 - `$creative-strategy` Creative Ideation Engine: adds the owned [creative ideation workflow](workflows/creative-ideation-engine.md), [creative idea matrix](templates/creative-idea-matrix.md), and two skill references for awareness/belief/desire mapping and controlled ideation expansion. The canonical reasoning flow now connects verified research → audience situation → pain/desire/JTBD → awareness → current belief → required belief shift → angle → hook → concept → format → proof → CTA → test hypothesis while preserving evidence states and allowing account learning to override default assumptions.
@@ -116,7 +122,7 @@ Adds `$organic-social`, twenty-second governed skill. First of three unordered c
 
 ### Added
 
-- `$organic-social` covers unpaid, algorithmically-distributed social content: platform-native format and cadence, community management, and distribution fit. Has no bid, no budget lever, and no platform-native attribution to a business outcome — the most platform-currency-sensitive discipline in the system, since the entire distribution mechanism is an undocumented algorithm the business does not control.
+- `$organic-social` covers unpaid, algorithmically-distributed social content: platform-native format and cadence, community management, and distribution fit. Has no bid, no budget lever, and no platform attribution to lean on — the most platform-currency-sensitive discipline in the system, since the entire distribution mechanism is an undocumented algorithm the business does not control.
 - Two references: algorithm distribution fit (four evidence categories — officially documented, account-observed, industry-inferred, unknown — required for any distribution claim; "the algorithm changed" is rejected as a default explanation before competing account-specific causes are checked) and cadence and community management (cadence set from actual sustainable production capacity, not a platform-suggested benchmark; community management scales with posting volume since public engagement carries reputational weight a private support ticket does not).
 - Fourteen evaluations and the required review record.
 
@@ -194,7 +200,7 @@ Adds `$tiktok-ads`, eighteenth governed skill — third channel-expansion releas
 
 ### Changed
 
-- Router routes TikTok creative fit, format, targeting, and cadence to `$tiktok-ads`; concept/hook work to `$creative-strategy`; a capacity shortfall bearing on scaling to `$optimization-scaling`'s existing creative-capacity gate.
+- Router routes TikTok creative fit, format, and cadence to `$tiktok-ads`; concept/hook work to `$creative-strategy`; a capacity shortfall bearing on scaling to `$optimization-scaling`'s existing creative-capacity gate.
 - `$creative-strategy` now states platform-specific creative fit is owned by the channel skill (`$tiktok-ads`, `$youtube-ads`), cross-linked.
 - Capability registry: TikTok advertising moves from unsupported to governed.
 
