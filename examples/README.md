@@ -38,6 +38,12 @@ Shows synthetic customer evidence → JTBD → insight → angle → mechanic �
 
 Shows how stable add-to-cart behavior plus deteriorating mobile checkout completion leads to a focused checkout-friction investigation rather than a full-site redesign.
 
+### Refused budget increase
+
+[`scaling-refusal/`](scaling-refusal/)
+
+Shows `$optimization-scaling` holding a requested 20% budget increase while economics, attribution reconciliation, comparison validity, and capacity remain unresolved. It distinguishes a raw period difference from marginal or causal evidence, treats creative fatigue as an untested hypothesis, and produces a read-only evidence plan without bypassing the scaling gates.
+
 ## What a full walkthrough contains
 
 Each main walkthrough uses:

@@ -55,6 +55,8 @@ When Claude Code works inside this repository, root [`CLAUDE.md`](CLAUDE.md) imp
 
 [`gpt-knowledge/`](gpt-knowledge/) is a derived knowledge-export layer. It can provide reference material to a Custom GPT, but it is **not** the canonical executable skill layer and does not replace [`.agents/skills/`](.agents/skills/).
 
+Follow the [`GPT export guide`](gpt-knowledge/README.md) and [`setup walkthrough`](examples/custom-gpt-setup.md) to use the generated pack. Rebuild from current source with `python3 scripts/build-gpt-knowledge.py` and verify it with `--check`.
+
 See [`DISTRIBUTION.md`](DISTRIBUTION.md) for the current support matrix and the distinction between skills, knowledge exports, connectors/MCP, and future plugin packages.
 
 ## 3. Verify the install
@@ -206,7 +208,7 @@ Read these before changing governed behavior:
 5. [`PLATFORM-CURRENCY.md`](PLATFORM-CURRENCY.md) — current platform-claim governance
 6. [`CONTRIBUTING.md`](CONTRIBUTING.md) — contribution workflow
 
-Before a behavior-changing PR, run the repository validators and add or update behavioral evaluations when required.
+Before a behavior-changing PR, run the repository validators and add or update behavioral evaluations when required. Also run `python3 scripts/eval.py --static`, `python3 scripts/build-gpt-knowledge.py --check`, `python3 scripts/check-markdown-links.py`, and the offline tests with `python3 -m unittest discover -s tests -p 'test_*.py' -v`. These checks verify repository and tool structure, not live agent decision quality; the [`evaluation guide`](evaluations/README.md) explains the distinction.
 
 ## Example workflows
 

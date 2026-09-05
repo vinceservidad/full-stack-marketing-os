@@ -1,0 +1,2 @@
+# Derived files retain canonical Markdown whitespace, including hard line breaks.
+gpt-knowledge/pack/*.md linguist-generated=true whitespace=-blank-at-eol

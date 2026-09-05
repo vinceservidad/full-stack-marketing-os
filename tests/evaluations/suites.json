@@ -1,0 +1,492 @@
+{
+  "_comment": [
+    "Registry of case specifications consumed by scripts/eval.py. Static checks are not behavioral evidence.",
+    "owners are context skills, not proof of runtime routing; canonical decisions remain in .agents/skills.",
+    "case_count and format are mandatory; every case source is registered exactly once.",
+    "review paths identify existing review records but their existence does not mark cases passed.",
+    "live_exclusions preserve historical criteria incompatible with current coverage; every exclusion has a reason."
+  ],
+  "suites": [
+    {
+      "id": "activation",
+      "cases": "tests/evaluations/activation-cases.md",
+      "review": "tests/evaluations/activation-review.md",
+      "owners": [
+        "activation"
+      ],
+      "case_count": 50,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "sections-h3"
+    },
+    {
+      "id": "angle-catalog-hook-iteration",
+      "cases": "tests/evaluations/angle-catalog-hook-iteration-cases.md",
+      "review": "tests/evaluations/angle-catalog-hook-iteration-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 12,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "competitive-intelligence-experiment-learning",
+      "cases": "tests/evaluations/competitive-intelligence-experiment-learning-cases.md",
+      "review": "tests/evaluations/competitive-intelligence-experiment-learning-review.md",
+      "owners": [
+        "icp-jtbd",
+        "tracking-measurement"
+      ],
+      "case_count": 30,
+      "prompt_template": "{scenario}",
+      "format": "sections-h3"
+    },
+    {
+      "id": "creative-execution-layer",
+      "cases": "tests/evaluations/creative-execution-layer-cases.md",
+      "review": "tests/evaluations/creative-execution-layer-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 26,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "creative-ideation-engine",
+      "cases": "tests/evaluations/creative-ideation-engine-cases.md",
+      "review": "tests/evaluations/creative-ideation-engine-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 15,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "cross-agent-distribution",
+      "cases": "tests/evaluations/cross-agent-distribution-cases.md",
+      "review": "tests/evaluations/cross-agent-distribution-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "table",
+      "live_exclusions": {
+        "3": "Requires actual installer execution or installed-file/link verification; text-only responses cannot demonstrate this. Retained for installer tests and manual/runtime review.",
+        "4": "Requires actual installer execution or installed-file/link verification; text-only responses cannot demonstrate this. Retained for installer tests and manual/runtime review.",
+        "13": "Requires actual installer execution or installed-file/link verification; text-only responses cannot demonstrate this. Retained for installer tests and manual/runtime review.",
+        "14": "Requires actual installer execution or installed-file/link verification; text-only responses cannot demonstrate this. Retained for installer tests and manual/runtime review."
+      }
+    },
+    {
+      "id": "growth-strategy",
+      "cases": "tests/evaluations/growth-strategy-cases.md",
+      "review": "tests/evaluations/growth-strategy-review.md",
+      "owners": [
+        "growth-strategy"
+      ],
+      "case_count": 90,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "table"
+    },
+    {
+      "id": "marketing-context-offer-strategy",
+      "cases": "tests/evaluations/marketing-context-offer-strategy-cases.md",
+      "review": "tests/evaluations/marketing-context-offer-strategy-review.md",
+      "owners": [
+        "marketing-intake",
+        "offer-strategy"
+      ],
+      "case_count": 25,
+      "prompt_template": "{scenario}",
+      "format": "sections-h3"
+    },
+    {
+      "id": "marketing-operations-loop",
+      "cases": "tests/evaluations/marketing-operations-loop-cases.md",
+      "review": "tests/evaluations/marketing-operations-loop-review.md",
+      "owners": [
+        "marketing-operations"
+      ],
+      "case_count": 38,
+      "prompt_template": "{scenario}",
+      "format": "sections-h3"
+    },
+    {
+      "id": "meta-worked-example",
+      "cases": "tests/evaluations/meta-worked-example-cases.md",
+      "review": "tests/evaluations/meta-worked-example-review.md",
+      "owners": [
+        "meta-ads"
+      ],
+      "case_count": 18,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "persuasion-principles",
+      "cases": "tests/evaluations/persuasion-principles-cases.md",
+      "review": "tests/evaluations/persuasion-principles-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 10,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "pricing-monetization",
+      "cases": "tests/evaluations/pricing-monetization-cases.md",
+      "review": "tests/evaluations/pricing-monetization-review.md",
+      "owners": [
+        "pricing-monetization"
+      ],
+      "case_count": 44,
+      "prompt_template": "{scenario}",
+      "format": "sections-h3"
+    },
+    {
+      "id": "required-input-contract",
+      "cases": "tests/evaluations/required-input-contract-cases.md",
+      "review": "tests/evaluations/required-input-contract-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "retention-strategy",
+      "cases": "tests/evaluations/retention-strategy-cases.md",
+      "review": "tests/evaluations/retention-strategy-review.md",
+      "owners": [
+        "retention-strategy"
+      ],
+      "case_count": 60,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "table"
+    },
+    {
+      "id": "routing",
+      "cases": "evaluations/routing-tests.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 17,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2",
+      "review_note": "No case-level behavioral review record is registered; static validation is not human review."
+    },
+    {
+      "id": "static-dtc-creative-direction",
+      "cases": "tests/evaluations/static-dtc-creative-direction-cases.md",
+      "review": "tests/evaluations/static-dtc-creative-direction-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 24,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "strategic-framing-archetypes",
+      "cases": "tests/evaluations/strategic-framing-archetypes-cases.md",
+      "review": "tests/evaluations/strategic-framing-archetypes-review.md",
+      "owners": [
+        "creative-strategy"
+      ],
+      "case_count": 10,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v0.1",
+      "cases": "tests/evaluations/v0.1-cases.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 5,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2",
+      "review_note": "No case-level behavioral review record is registered; static validation is not human review."
+    },
+    {
+      "id": "v0.2",
+      "cases": "tests/evaluations/v0.2-cases.md",
+      "review": null,
+      "owners": [
+        "tracking-measurement",
+        "customer-research",
+        "icp-jtbd"
+      ],
+      "case_count": 8,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2",
+      "review_note": "No case-level behavioral review record is registered; static validation is not human review."
+    },
+    {
+      "id": "v0.2.1-terminology",
+      "cases": "tests/evaluations/v0.2.1-terminology-cases.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 11,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2",
+      "review_note": "No case-level behavioral review record is registered; static validation is not human review."
+    },
+    {
+      "id": "v0.2.2-platform-currency",
+      "cases": "tests/evaluations/v0.2.2-platform-currency-cases.md",
+      "review": null,
+      "owners": [
+        "google-ads",
+        "meta-ads"
+      ],
+      "case_count": 6,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2",
+      "review_note": "No case-level behavioral review record is registered; static validation is not human review."
+    },
+    {
+      "id": "v0.2.3-knowledge-taxonomy",
+      "cases": "tests/evaluations/v0.2.3-knowledge-taxonomy-cases.md",
+      "review": null,
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 6,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2",
+      "review_note": "No case-level behavioral review record is registered; static validation is not human review."
+    },
+    {
+      "id": "v0.4-scaling",
+      "cases": "tests/evaluations/v0.4-scaling-cases.md",
+      "review": "tests/evaluations/v0.4-review.md",
+      "owners": [
+        "optimization-scaling"
+      ],
+      "case_count": 30,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.10-lifecycle-marketing",
+      "cases": "tests/evaluations/v1.10-lifecycle-marketing-cases.md",
+      "review": "tests/evaluations/v1.10-review.md",
+      "owners": [
+        "lifecycle-marketing"
+      ],
+      "case_count": 17,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.11-youtube-ads",
+      "cases": "tests/evaluations/v1.11-youtube-ads-cases.md",
+      "review": "tests/evaluations/v1.11-review.md",
+      "owners": [
+        "youtube-ads"
+      ],
+      "case_count": 17,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.12-tiktok-ads",
+      "cases": "tests/evaluations/v1.12-tiktok-ads-cases.md",
+      "review": "tests/evaluations/v1.12-review.md",
+      "owners": [
+        "tiktok-ads"
+      ],
+      "case_count": 17,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.13-linkedin-ads",
+      "cases": "tests/evaluations/v1.13-linkedin-ads-cases.md",
+      "review": "tests/evaluations/v1.13-review.md",
+      "owners": [
+        "linkedin-ads"
+      ],
+      "case_count": 15,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.14-influencer-marketing",
+      "cases": "tests/evaluations/v1.14-influencer-marketing-cases.md",
+      "review": "tests/evaluations/v1.14-review.md",
+      "owners": [
+        "influencer-marketing"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.15-affiliate-marketing",
+      "cases": "tests/evaluations/v1.15-affiliate-marketing-cases.md",
+      "review": "tests/evaluations/v1.15-review.md",
+      "owners": [
+        "affiliate-marketing"
+      ],
+      "case_count": 15,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.16-organic-social",
+      "cases": "tests/evaluations/v1.16-organic-social-cases.md",
+      "review": "tests/evaluations/v1.16-review.md",
+      "owners": [
+        "organic-social"
+      ],
+      "case_count": 14,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.17-programmatic",
+      "cases": "tests/evaluations/v1.17-programmatic-cases.md",
+      "review": "tests/evaluations/v1.17-review.md",
+      "owners": [
+        "programmatic"
+      ],
+      "case_count": 14,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.18-public-relations",
+      "cases": "tests/evaluations/v1.18-public-relations-cases.md",
+      "review": "tests/evaluations/v1.18-review.md",
+      "owners": [
+        "public-relations"
+      ],
+      "case_count": 17,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.2-architecture",
+      "cases": "tests/evaluations/v1.2-architecture-cases.md",
+      "review": "tests/evaluations/v1.2-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 18,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered",
+      "live_exclusions": {
+        "1": "Historical v1.2 absence of SEO is superseded by governed seo in current CAPABILITY-REGISTRY.md.",
+        "5": "Historical absence of reporting is superseded by governed marketing-reporting.",
+        "7": "Historical lifecycle coverage gap is superseded by lifecycle-marketing and copywriting."
+      },
+      "case_notes": {
+        "3": "The diagnostic-ownership expectation remains valid. Wording about reporting being nonexistent is historical; marketing-reporting now exists, and asserting its absence is not required for a present-day PASS. Preserve performance-diagnostics ownership and the original written criterion."
+      }
+    },
+    {
+      "id": "v1.3-intake",
+      "cases": "tests/evaluations/v1.3-intake-cases.md",
+      "review": "tests/evaluations/v1.3-review.md",
+      "owners": [
+        "marketing-intake"
+      ],
+      "case_count": 28,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.4-measurement-validity",
+      "cases": "tests/evaluations/v1.4-measurement-validity-cases.md",
+      "review": "tests/evaluations/v1.4-review.md",
+      "owners": [
+        "tracking-measurement"
+      ],
+      "case_count": 28,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.5-customer-economics",
+      "cases": "tests/evaluations/v1.5-customer-economics-cases.md",
+      "review": "tests/evaluations/v1.5-review.md",
+      "owners": [
+        "retention-economics"
+      ],
+      "case_count": 20,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.6-artifact-ownership",
+      "cases": "tests/evaluations/v1.6-artifact-ownership-cases.md",
+      "review": "tests/evaluations/v1.6-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 6,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered",
+      "live_exclusions": {
+        "4": "Historical flat SEO/copywriting references are archived and superseded by governed skills; see docs/archive/legacy-skill-stubs/README.md and ARTIFACT-OWNERSHIP.md.",
+        "3": "Requires evidence that the owning skill reaches the actual framework through its loading path; this text-only harness does not execute source traversal or runtime loading."
+      }
+    },
+    {
+      "id": "v1.7-marketing-reporting",
+      "cases": "tests/evaluations/v1.7-marketing-reporting-cases.md",
+      "review": "tests/evaluations/v1.7-review.md",
+      "owners": [
+        "marketing-reporting"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.8-seo",
+      "cases": "tests/evaluations/v1.8-seo-cases.md",
+      "review": "tests/evaluations/v1.8-review.md",
+      "owners": [
+        "seo"
+      ],
+      "case_count": 16,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "v1.9-copywriting",
+      "cases": "tests/evaluations/v1.9-copywriting-cases.md",
+      "review": "tests/evaluations/v1.9-review.md",
+      "owners": [
+        "copywriting"
+      ],
+      "case_count": 15,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    },
+    {
+      "id": "worked-example-governance",
+      "cases": "tests/evaluations/worked-example-governance-cases.md",
+      "review": "tests/evaluations/worked-example-governance-review.md",
+      "owners": [
+        "marketing-router"
+      ],
+      "case_count": 18,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "numbered"
+    }
+  ],
+  "version": 1
+}

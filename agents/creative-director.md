@@ -16,3 +16,11 @@ Research → Insight → Angle → Hook → Concept → Asset → Test → Learn
 
 ## Rules
 Creative decisions should be based on audience problems, desired outcomes, proof, and testing data.
+
+## Governed skills that own this role's work
+
+[`$creative-strategy`](../.agents/skills/creative-strategy/SKILL.md), [`$copywriting`](../.agents/skills/copywriting/SKILL.md)
+
+This file is role documentation, not an executable skill. The linked canonical
+skills and shared contracts govern decisions; this summary cannot override them. Coverage is declared in
+[`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).
