@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import pathlib
 import re
+import subprocess
 import sys
 from collections import Counter
 from urllib.parse import unquote, urlsplit
@@ -64,12 +65,38 @@ def reject_source_symlinks(root):
             raise ExportError(f"Symlink source is not supported: {candidate}")
 
 
+def checkout_files(repo):
+    """Use Git's source boundary, including reviewable new files, not scratch.
+
+    An archive without its own Git worktree fails closed: recreating ignore
+    semantics incompletely could publish private local notes in an export.
+    """
+    try:
+        top = subprocess.run(
+            ["git", "-C", str(repo), "rev-parse", "--show-toplevel"],
+            capture_output=True, check=True,
+        ).stdout.decode("utf-8").strip()
+        if pathlib.Path(top).resolve() != repo.resolve():
+            raise ExportError("Export requires the root of its own Git checkout; clone the repository first.")
+        paths = subprocess.run(
+            ["git", "-C", str(repo), "ls-files", "--cached", "--others",
+             "--exclude-standard", "-z"],
+            capture_output=True, check=True,
+        ).stdout.decode("utf-8").split("\0")
+    except (OSError, subprocess.CalledProcessError) as error:
+        raise ExportError("Export requires Git and a Git checkout; clone the repository first.") from error
+    return {repo / name for name in paths if name}
+
+
 def source_layout(repo):
     """Assign every skill exactly once and include all supporting Markdown."""
+    visible = checkout_files(repo)
+    markdown = {path for path in visible if path.suffix == ".md"}
     skills_dir = repo / ".agents" / "skills"
     for root in [skills_dir, *(repo / library for library in LIBRARIES)]:
         reject_source_symlinks(root)
-    governed = {p.parent.name for p in skills_dir.glob("*/SKILL.md") if p.is_file()}
+    governed = {p.parent.name for p in markdown
+                if p.name == "SKILL.md" and p.parent.parent == skills_dir}
     assigned = [name for _, _, names in BUNDLES for name in names]
     duplicates = sorted(name for name, count in Counter(assigned).items() if count > 1)
     if duplicates:
@@ -95,14 +122,16 @@ def source_layout(repo):
             sources.append(skill / "SKILL.md")
             # Include nested references and future Markdown support files, not
             # just references/*.md. Non-Markdown assets remain outside scope.
-            sources += sorted(p for p in skill.rglob("*.md") if p != skill / "SKILL.md")
+            sources += sorted(p for p in markdown if p.is_relative_to(skill) and p != skill / "SKILL.md")
         if bundle_id == "18-supporting-library":
             for library in LIBRARIES:
                 directory = repo / library
                 if not directory.is_dir():
                     raise ExportError(f"Missing supporting library: {library}")
-                sources += sorted(directory.rglob("*.md"))
+                sources += sorted(p for p in markdown if p.is_relative_to(directory))
         for source in sources:
+            if source not in visible:
+                raise ExportError(f"Required source is excluded by Git ignore rules: {source.relative_to(repo)}")
             if not source.is_file():
                 raise ExportError(f"Missing source: {source.relative_to(repo)}")
             # Source symlinks can import unversioned or out-of-repo content.
@@ -209,6 +238,8 @@ def render(repo):
              "Included: every governed SKILL.md and Markdown support file under its directory;",
              "AGENTS.md, CAPABILITY-REGISTRY.md, the four governance contracts; and every",
              "Markdown document in frameworks/, playbooks/, workflows/, and templates/.", "",
+             "Source selection uses tracked and non-ignored untracked files in this Git checkout.",
+             "Ignored local scratch is excluded from bundles, dependency lookup, and hashes.", "",
              "Not included: runtime tools or scripts, non-Markdown assets, local project",
              "context, client evidence, examples, evaluations, archive material, and optional",
              "voice files. Local Markdown links outside the export fail generation. Bare",

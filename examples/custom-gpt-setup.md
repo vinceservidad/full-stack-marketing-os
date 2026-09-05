@@ -2,7 +2,7 @@
 
 ## 1. Verify the generated pack
 
-From the repository root:
+From the root of a Git checkout, with Git and Python 3 available:
 
 ```bash
 python3 scripts/build-gpt-knowledge.py --check

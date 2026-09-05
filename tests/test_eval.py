@@ -22,7 +22,8 @@ class EvaluationTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
+        subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
         self.output = self.root / 'result.json'
         self.quiet = contextlib.redirect_stdout(io.StringIO())
         self.quiet.__enter__()
@@ -279,6 +280,105 @@ class EvaluationTests(unittest.TestCase):
         self.assertTrue(set(evaluation.CORE_CONTEXT) <= {source['path'] for source in sources})
         system, _ = evaluation.skill_context(self.root, ['example'], True)
         self.assertIn('reference details', system)
+
+    def context_fixture(self):
+        for name in evaluation.CORE_CONTEXT:
+            (self.root / name).write_text(name, encoding='utf-8')
+        skill = self.root / '.agents/skills/example'
+        (skill / 'references').mkdir(parents=True)
+        (skill / 'SKILL.md').write_text('owning skill', encoding='utf-8')
+        (self.root / '.gitignore').write_text('work/\nprivate*.md\n', encoding='utf-8')
+        (self.root / '.git/info/exclude').write_text('local-only.md\n', encoding='utf-8')
+        return skill / 'references'
+
+    def test_context_excludes_ignored_scratch_and_local_excludes_from_text_and_provenance(self):
+        references = self.context_fixture()
+        (references / 'work').mkdir()
+        (references / 'nested').mkdir()
+        for relative in ('work/notes.md', 'private-client.md', 'local-only.md'):
+            (references / relative).write_text('PRIVATE-CONTENT-DO-NOT-SEND', encoding='utf-8')
+        (references / 'nested/public.md').write_text('Public reference', encoding='utf-8')
+        system, sources = evaluation.skill_context(self.root, ['example'], True)
+        self.assertIn('Public reference', system)
+        self.assertNotIn('PRIVATE-CONTENT-DO-NOT-SEND', system)
+        provenance = json.dumps(sources)
+        self.assertNotIn('PRIVATE-CONTENT-DO-NOT-SEND', provenance)
+        for relative in ('work/notes.md', 'private-client.md', 'local-only.md'):
+            self.assertNotIn(relative, provenance)
+        self.assertIn('nested/public.md', provenance)
+
+    def test_deliberately_tracked_reference_remains_eligible_despite_ignore_pattern(self):
+        references = self.context_fixture()
+        public = references / 'private-but-reviewed.md'
+        public.write_text('Intentionally versioned reference', encoding='utf-8')
+        subprocess.run(['git', '-C', str(self.root), 'add', '-f', str(public.relative_to(self.root))], check=True)
+        system, sources = evaluation.skill_context(self.root, ['example'], True)
+        self.assertIn('Intentionally versioned reference', system)
+        self.assertIn(public.relative_to(self.root).as_posix(), {source['path'] for source in sources})
+
+    def test_explicit_ignored_core_source_is_rejected_instead_of_sent(self):
+        self.context_fixture()
+        with (self.root / '.gitignore').open('a', encoding='utf-8') as ignore:
+            ignore.write('AGENTS.md\n')
+        with self.assertRaisesRegex(evaluation.EvaluationError, 'ignored or undiscoverable'):
+            evaluation.skill_context(self.root, ['example'], True)
+
+    def test_context_rejects_in_repository_symlink_to_ignored_private_content(self):
+        references = self.context_fixture()
+        (references / 'work').mkdir()
+        secret = references / 'work/private.md'
+        secret.write_text('PRIVATE-CONTENT-DO-NOT-SEND', encoding='utf-8')
+        alias = references / 'public-alias.md'
+        alias.symlink_to(secret)
+        with self.assertRaisesRegex(evaluation.EvaluationError, 'symlink source'):
+            evaluation.skill_context(self.root, ['example'], True)
+        alias.unlink()
+        (references / 'public-directory').symlink_to(secret.parent, target_is_directory=True)
+        with self.assertRaisesRegex(evaluation.EvaluationError, 'symlink source'):
+            evaluation.skill_context(self.root, ['example'], True)
+
+    def test_source_archive_fails_closed_without_reading_private_references(self):
+        archive = self.root / 'archive'
+        archive.mkdir()
+        for operation in (
+            lambda: evaluation.skill_context(archive, ['example'], True),
+            lambda: evaluation.claim_lint(archive),
+        ):
+            with self.assertRaisesRegex(evaluation.EvaluationError, 'Git checkout root'):
+                operation()
+
+    def corpus_fixture(self):
+        self.context_fixture()
+        (self.root / 'tests/evaluations').mkdir(parents=True)
+        (self.root / 'evaluations').mkdir()
+        (self.root / 'agents/work').mkdir(parents=True)
+        case = self.root / 'evaluations/routing-tests.md'
+        case.write_text('## One\nPrompt: Assess this.\nPass if evidence remains uncertain.\n', encoding='utf-8')
+        suite = {'id': 'routing', 'cases': 'evaluations/routing-tests.md', 'review_note': 'Fixture only.', 'owners': ['example'], 'case_count': 1, 'prompt_template': '{scenario}', 'format': 'sections-h2'}
+        manifest = self.root / 'tests/evaluations/suites.json'
+        manifest.write_text(json.dumps({'version': 1, 'suites': [suite]}), encoding='utf-8')
+        return manifest, suite
+
+    def test_corpus_skips_ignored_case_and_role_scratch(self):
+        self.corpus_fixture()
+        (self.root / 'tests/evaluations/private-cases.md').write_text('PRIVATE-CASE-MUST-NOT-BE-PARSED', encoding='utf-8')
+        (self.root / 'agents/work/notes.md').write_text('$private-nonexistent-skill PRIVATE-NOTES', encoding='utf-8')
+        (self.root / 'evaluations/work').mkdir()
+        (self.root / 'evaluations/work/notes.md').write_text('$private-nonexistent-skill PRIVATE-NOTES', encoding='utf-8')
+        suites, parsed = evaluation.validate_corpus(self.root)
+        self.assertEqual(len(suites), 1)
+        self.assertEqual(list(parsed), ['routing'])
+
+    def test_registered_ignored_case_is_rejected_before_parsing(self):
+        manifest, suite = self.corpus_fixture()
+        private = self.root / 'tests/evaluations/private-cases.md'
+        private.write_text('PRIVATE-CASE-MUST-NOT-BE-PARSED', encoding='utf-8')
+        suite['cases'] = private.relative_to(self.root).as_posix()
+        manifest.write_text(json.dumps({'version': 1, 'suites': [suite]}), encoding='utf-8')
+        with mock.patch.object(evaluation, 'parse_cases') as parse:
+            with self.assertRaisesRegex(evaluation.EvaluationError, 'ignored or undiscoverable'):
+                evaluation.validate_corpus(self.root)
+        parse.assert_not_called()
 
     def test_claim_lint_ignores_scratch_and_does_not_share_negation_across_sentence(self):
         subprocess.run(['git', 'init', '-q', str(self.root)], check=True)

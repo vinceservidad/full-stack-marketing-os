@@ -15,7 +15,13 @@ python3 -m unittest discover -s tests -p 'test_eval.py' -v
 ```
 
 The static tier uses only Python's standard library and makes no network calls.
-It checks every `tests/evaluations/*-cases.md` file and the routing case file
+Run from a Git checkout root. The harness discovers tracked files and nonignored
+untracked files using Git's standard ignore rules, including local excludes.
+Deliberately tracked files remain sources even if an ignore pattern also matches.
+Source archives without Git metadata fail closed instead of scanning local files.
+Source symlinks and symlinked source ancestors are rejected.
+
+It checks every eligible `tests/evaluations/*-cases.md` file and the routing case file
 against `tests/evaluations/suites.json`: source paths, format, explicit case count,
 unique suite/case IDs, written input and criteria, owner skill names, and registered
 review paths. The parser supports numbered cases, three-column case tables, and
@@ -63,6 +69,13 @@ workflows, external sources, other supporting skills, and installed runtime tool
 are not automatically loaded. This is a **partial-context, text-only evaluation**;
 it cannot test installed-agent discovery/invocation, live account access, runtime
 mutations, or the complete operating system. Results must retain that scope.
+
+Reference discovery uses the same tracked/nonignored source boundary. Ignored
+scratch such as `references/work/`, ignored client notes, and locally excluded
+files are omitted from both model context and its saved source provenance.
+Explicitly registered cases, reviews, and required context files must also be
+eligible; an ignored required source fails validation instead of being read.
+An in-repository symlink cannot be used to bypass that boundary.
 
 A literal `Prompt:` is sent as written, apart from its surrounding quotation marks.
 An `Input:`/scenario summary uses the registered scenario wrapper where specified.

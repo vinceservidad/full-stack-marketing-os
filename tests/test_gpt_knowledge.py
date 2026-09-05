@@ -4,6 +4,7 @@ import hashlib
 import importlib.util
 import os
 from pathlib import Path
+import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -20,6 +21,7 @@ class ExportTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.repo = Path(self.temp.name).resolve()
+        subprocess.run(["git", "init", "-q", str(self.repo)], check=True)
         self.skill = self.repo / ".agents/skills/owner"
         self.skill.mkdir(parents=True)
         (self.skill / "SKILL.md").write_text("---\nname: owner\n---\n\n# Owner\n\nKeep this rule.\n")
@@ -55,6 +57,59 @@ class ExportTests(unittest.TestCase):
         (added / "SKILL.md").write_text("# New skill\n")
         with self.assertRaisesRegex(EXPORT.ExportError, "no export bundle: new-capability"):
             EXPORT.render(self.repo)
+
+    def test_ignored_scratch_is_absent_from_bundles_and_provenance(self):
+        (self.repo / ".gitignore").write_text("work/\nprivate-*.md\n")
+        for path in (self.skill / "work/private.md", self.skill / "references/private-notes.md",
+                     self.repo / "templates/work/private.md"):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("PRIVATE FIXTURE MUST NEVER BE EXPORTED\n")
+        for path in (self.skill / "references/public.md", self.repo / "templates/public.md"):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("Public unstaged support\n")
+        output = EXPORT.render(self.repo)
+        complete = "\n".join(output.values())
+        self.assertNotIn("PRIVATE FIXTURE", complete)
+        self.assertNotIn("private.md", output["MANIFEST.md"])
+        self.assertNotIn("private-notes.md", output["MANIFEST.md"])
+        self.assertIn("references/public.md", output["MANIFEST.md"])
+        self.assertIn("templates/public.md", output["MANIFEST.md"])
+        self.assertIn("Public unstaged support", complete)
+
+    def test_tracked_markdown_stays_canonical_when_ignore_rule_is_added(self):
+        path = self.skill / "work/reviewed.md"
+        path.parent.mkdir()
+        path.write_text("Tracked canonical support\n")
+        subprocess.run(["git", "add", str(path)], cwd=self.repo, check=True)
+        (self.repo / ".gitignore").write_text("work/\n")
+        output = EXPORT.render(self.repo)
+        self.assertIn("Tracked canonical support", output["00-operating-system.md"])
+
+    def test_ignored_skill_is_not_promoted_to_canonical(self):
+        (self.repo / ".gitignore").write_text(".agents/skills/private/\n")
+        private = self.repo / ".agents/skills/private/SKILL.md"
+        private.parent.mkdir()
+        private.write_text("Private skill note\n")
+        self.assertNotIn("Private skill note", "\n".join(EXPORT.render(self.repo).values()))
+
+    def test_link_to_ignored_scratch_fails_without_reading_or_exporting_it(self):
+        (self.repo / ".gitignore").write_text("work/\n")
+        private = self.skill / "work/private.md"
+        private.parent.mkdir()
+        private.write_text("Private note\n")
+        (self.skill / "SKILL.md").write_text("# Owner\n\n[Scratch](work/private.md)\n")
+        with self.assertRaisesRegex(EXPORT.ExportError, "Local link is not exported"):
+            EXPORT.render(self.repo)
+        self.assertFalse(self.out.exists())
+
+    def test_source_archive_cannot_inherit_an_enclosing_checkout(self):
+        archive = self.repo / "archive"
+        archive.mkdir()
+        with self.assertRaisesRegex(EXPORT.ExportError, "own Git checkout"):
+            EXPORT.checkout_files(archive)
+        with patch.object(EXPORT.subprocess, "run", side_effect=FileNotFoundError):
+            with self.assertRaisesRegex(EXPORT.ExportError, "requires Git"):
+                EXPORT.checkout_files(self.repo)
 
     def test_duplicate_unknown_and_duplicate_bundle_assignments_fail(self):
         for extra, message in [
@@ -194,12 +249,13 @@ class RepositoryCoverageTests(unittest.TestCase):
         layout = EXPORT.source_layout(REPO)
         sources = [path for *_, paths in layout for path in paths]
         self.assertEqual(len(sources), len(set(sources)))
-        expected = set((REPO / ".agents/skills").glob("*/SKILL.md"))
+        visible = EXPORT.checkout_files(REPO)
+        expected = {p for p in visible if p.name == "SKILL.md" and p.parent.parent == REPO / ".agents/skills"}
         for skill in (REPO / ".agents/skills").iterdir():
             if (skill / "SKILL.md").is_file():
-                expected.update(skill.rglob("*.md"))
+                expected.update(p for p in visible if p.suffix == ".md" and p.is_relative_to(skill))
         for directory in EXPORT.LIBRARIES:
-            expected.update((REPO / directory).rglob("*.md"))
+            expected.update(p for p in visible if p.suffix == ".md" and p.is_relative_to(REPO / directory))
         expected.update(REPO / name for name in ["AGENTS.md", "CAPABILITY-REGISTRY.md", *EXPORT.CONTRACTS])
         self.assertEqual(set(sources), expected)
         # Also resolve every current inline Markdown dependency during rendering.

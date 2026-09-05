@@ -13,6 +13,9 @@ Included: every governed SKILL.md and Markdown support file under its directory;
 AGENTS.md, CAPABILITY-REGISTRY.md, the four governance contracts; and every
 Markdown document in frameworks/, playbooks/, workflows/, and templates/.
 
+Source selection uses tracked and non-ignored untracked files in this Git checkout.
+Ignored local scratch is excluded from bundles, dependency lookup, and hashes.
+
 Not included: runtime tools or scripts, non-Markdown assets, local project
 context, client evidence, examples, evaluations, archive material, and optional
 voice files. Local Markdown links outside the export fail generation. Bare

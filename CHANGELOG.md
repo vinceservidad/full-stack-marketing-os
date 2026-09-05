@@ -6,7 +6,7 @@ Notable changes follow semantic versioning.
 
 ### Added — PR #27 reconciliation
 
-- Generates the Custom GPT pack from current canonical skills, references, contracts, and supporting libraries, with source provenance, full skill coverage, and deterministic drift checks. Archives only the superseded handwritten GPT summaries; preserves the existing voice references.
+- Generates the Custom GPT pack from current canonical skills, references, contracts, and supporting libraries, with source provenance, full skill coverage, and deterministic drift checks. Source selection respects Git ignore rules, so ignored local scratch is excluded from exported knowledge and model context; source archives without their own Git checkout fail closed. Archives only the superseded handwritten GPT summaries; preserves the existing voice references.
 - Adds an executable evaluation registry and harness, static case and owner validation, offline tooling regressions, and an explicitly opt-in live model-grading path. Static checks, written review records, synthetic examples, and model grades remain distinct evidence states; no live behavioral benchmark or improved business outcome is claimed.
 - Ports the synthetic scaling-refusal walkthrough after correcting attribution, before/after comparison, and authorization reasoning. The existing Google Ads and Shopify walkthroughs are retained.
 - Adds generated-export, evaluation, and relative Markdown file-link checks to CI plus local-output ignore rules and current setup documentation. PR #47's installer, regression tests, and Linux/macOS safety workflow remain intact; PR #27's old installer, runtime-validator changes, and unverified plugin packaging are excluded. Canonical marketing decision rules are unchanged.

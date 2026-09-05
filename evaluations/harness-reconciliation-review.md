@@ -41,6 +41,13 @@ contracts, installer behavior, and existing case criteria remain unchanged.
   source/context text and hashes, repository state, and sample limitations. It does
   not contain the API key. Existing evidence is never overwritten. Interrupted
   runs may have no artifact because output is written at sample completion.
+- Follow-up review found that recursive optional-reference discovery could include
+  ignored client notes in model context and saved provenance. Source discovery now
+  uses tracked plus nonignored Git paths for context, case/role scans, and claim
+  lint. Required ignored sources fail validation; ignored scratch is not read.
+  In-repository symlink aliases and source archives without a Git checkout also
+  fail closed. Git fixtures cover repository ignores, local excludes, deliberately
+  tracked references, ignored case registration, and private symlink targets.
 
 ## Offline validation
 
@@ -48,7 +55,7 @@ contracts, installer behavior, and existing case criteria remain unchanged.
 30 governed skills. Nine cases were explicitly excluded from current live scoring:
 four historical assumptions and five runtime/source-traversal requirements. This validates specification structure and narrow lint only.
 
-`python3 -m unittest discover -s tests -p 'test_eval.py' -v` completed 29 offline
+`python3 -m unittest discover -s tests -p 'test_eval.py' -v` completed 36 offline
 regression tests. They cover parser loss modes, registration drift, case/source
 identity, path boundaries, exact quote validation, malformed grading, incomplete
 API responses, no-key and no-network behavior, overwrite refusal, context/source

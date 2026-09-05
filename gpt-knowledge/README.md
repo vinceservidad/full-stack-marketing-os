@@ -13,6 +13,13 @@ skill and its Markdown support files, root governance contracts, and the complet
 Markdown libraries in `frameworks/`, `playbooks/`, `workflows/`, and `templates/`.
 See [the generated manifest](pack/MANIFEST.md) for current counts and exclusions.
 
+Run the builder from a Git checkout with Git available. It selects tracked and
+non-ignored untracked source files using Git's ignore rules, including local
+exclude rules. Ignored scratch such as nested `work/` notes is never bundled or
+hashed. A tracked file remains canonical even if a later ignore rule matches it;
+non-ignored new files remain visible for review before staging. Archives without
+their own Git checkout are refused; clone the repository before rebuilding.
+
 ```bash
 python3 scripts/build-gpt-knowledge.py
 python3 scripts/build-gpt-knowledge.py --check

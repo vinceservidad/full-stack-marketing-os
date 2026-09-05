@@ -162,14 +162,53 @@ def parse_cases(suite_id, path, case_format):
 
 def within_repo(repo, relative):
     require(isinstance(relative, str) and bool(relative), 'path must be a nonempty string')
-    path = (repo / relative).resolve()
+    candidate = repo / relative
+    path = candidate.resolve()
     require(path.is_relative_to(repo.resolve()), f'path escapes repository: {relative}')
+    # An in-repository alias can still expose ignored or unversioned private
+    # content. Inspect the named path, not only its resolved destination.
+    for ancestor in (candidate, *candidate.parents):
+        if ancestor == repo:
+            break
+        require(not ancestor.is_symlink(), f'symlink source is not supported: {relative}')
     require(path.is_file(), f'missing file: {relative}')
     return path
 
 
-def governed_skills(repo):
-    return {path.parent.name for path in (repo / '.agents/skills').glob('*/SKILL.md')}
+def source_inventory(repo, scopes):
+    """Return present tracked/nonignored sources, without crawling private files.
+
+    Git's index plus nonignored untracked paths is the source boundary. This
+    honors repository/global ignore rules and .git/info/exclude, while retaining
+    deliberately tracked files. Archives cannot establish the same boundary and
+    must be checked out with Git before this harness reads evaluation material.
+    """
+    root = subprocess.run(['git', '-C', str(repo), 'rev-parse', '--show-toplevel'], capture_output=True, text=True, check=False)
+    require(root.returncode == 0 and Path(root.stdout.strip()).resolve() == repo.resolve(), 'evaluation source inventory requires the repository Git checkout root; source archives are not scanned')
+    listing = subprocess.run(['git', '-C', str(repo), 'ls-files', '--cached', '--others', '--exclude-standard', '-z', '--', *scopes], capture_output=True, check=False)
+    require(listing.returncode == 0, 'cannot establish tracked/nonignored evaluation sources')
+    paths = set()
+    for relative in listing.stdout.decode('utf-8').split('\0'):
+        if not relative:
+            continue
+        candidate = repo / relative
+        # A deleted tracked file is no longer a source. A symlink, including a
+        # dangling one or a directory alias, must not be silently traversed.
+        if candidate.exists() or candidate.is_symlink():
+            paths.add(within_repo(repo, relative))
+    return paths
+
+
+def declared_source(repo, relative, eligible):
+    path = within_repo(repo, relative)
+    require(path in eligible, f'ignored or undiscoverable evaluation source: {relative}')
+    return path
+
+
+def governed_skills(repo, eligible=None):
+    if eligible is None:
+        eligible = source_inventory(repo, ('.agents/skills',))
+    return {path.parent.name for path in eligible if path.name == 'SKILL.md' and path.parent.parent == repo / '.agents/skills'}
 
 
 def unique_object(pairs):
@@ -181,7 +220,9 @@ def unique_object(pairs):
 
 
 def load_suites(repo):
-    data = json.loads((repo / 'tests/evaluations/suites.json').read_text(encoding='utf-8'), object_pairs_hook=unique_object)
+    relative = 'tests/evaluations/suites.json'
+    path = declared_source(repo, relative, source_inventory(repo, (relative,)))
+    data = json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_object)
     require(isinstance(data, dict) and data.get('version') == 1 and isinstance(data.get('suites'), list), 'invalid suite manifest schema/version')
     require(bool(data['suites']), 'suite registry is empty')
     return data['suites']
@@ -189,7 +230,9 @@ def load_suites(repo):
 
 def validate_corpus(repo):
     suites = load_suites(repo)
-    skills = governed_skills(repo)
+    declared_paths = [suite[field] for suite in suites if isinstance(suite, dict) for field in ('cases', 'review') if isinstance(suite.get(field), str)]
+    eligible = source_inventory(repo, ('.agents/skills', 'tests/evaluations', 'evaluations', 'agents', *declared_paths))
+    skills = governed_skills(repo, eligible)
     require(bool(skills), 'no governed skills found')
     ids, paths, parsed = set(), set(), {}
     for suite in suites:
@@ -198,7 +241,7 @@ def validate_corpus(repo):
         require(isinstance(suite_id, str) and re.fullmatch(r'[a-z0-9][a-z0-9.-]*', suite_id), 'invalid suite id')
         require(suite_id not in ids, f'duplicate suite id: {suite_id}')
         ids.add(suite_id)
-        path = within_repo(repo, suite.get('cases'))
+        path = declared_source(repo, suite.get('cases'), eligible)
         require(path not in paths, f'duplicate case source: {suite["cases"]}')
         paths.add(path)
         owners = suite.get('owners')
@@ -206,7 +249,7 @@ def validate_corpus(repo):
         require(len(set(owners)) == len(owners), f'{suite_id}: duplicate owners')
         require(suite.get('prompt_template') in ('{scenario}', 'Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.'), f'{suite_id}: unsupported prompt template')
         if suite.get('review'):
-            within_repo(repo, suite['review'])
+            declared_source(repo, suite['review'], eligible)
         else:
             require(bool(suite.get('review_note')), f'{suite_id}: absent review requires an explicit note')
         cases = parse_cases(suite_id, path, suite.get('format'))
@@ -220,11 +263,11 @@ def validate_corpus(repo):
         for identifier, note in notes.items():
             require(identifier in {case.identifier for case in cases} and isinstance(note, str) and bool(note.strip()), f'{suite_id}: invalid case note {identifier}')
         parsed[suite_id] = cases
-    expected = {path.resolve() for path in (repo / 'tests/evaluations').glob('*-cases.md')}
-    expected.add((repo / 'evaluations/routing-tests.md').resolve())
+    expected = {path for path in eligible if path.parent == repo / 'tests/evaluations' and path.name.endswith('-cases.md')}
+    expected.add(declared_source(repo, 'evaluations/routing-tests.md', eligible))
     require(paths == expected, f'case registration mismatch; unregistered: {sorted(str(p.relative_to(repo)) for p in expected - paths)}; unexpected: {sorted(str(p.relative_to(repo)) for p in paths - expected)}')
     for layer in ('agents', 'evaluations'):
-        for path in sorted((repo / layer).rglob('*.md')):
+        for path in sorted(path for path in eligible if path.suffix == '.md' and path.is_relative_to(repo / layer)):
             for name in set(SKILL_REFERENCE.findall(path.read_text(encoding='utf-8'))):
                 require(name in skills, f'{path.relative_to(repo)} names nonexistent skill ${name}')
     return suites, parsed
@@ -246,12 +289,7 @@ NEGATION = re.compile(r'\b(?:not|never|no|without|nor|avoid|refus\w*|reject\w*|p
 def claim_lint(repo):
     findings = []
     layers = ('.agents/skills', 'frameworks', 'playbooks', 'templates', 'workflows', 'gpt-knowledge', 'examples')
-    tracked = subprocess.run(['git', '-C', str(repo), 'ls-files', '--cached', '--others', '--exclude-standard', '-z', '--', *layers], capture_output=True, check=False)
-    if tracked.returncode == 0:
-        paths = {repo / name for name in tracked.stdout.decode('utf-8').split('\0') if name.endswith('.md')}
-    else:
-        # Source archives need no Git metadata; never descend into local scratch.
-        paths = {p for layer in layers for p in (repo / layer).rglob('*.md') if not {'work', 'node_modules', '.eval-cache'}.intersection(p.relative_to(repo).parts)}
+    paths = {path for path in source_inventory(repo, layers) if path.suffix == '.md'}
     for path in sorted(paths):
         if path.is_file():
             body = path.read_text(encoding='utf-8')
@@ -322,11 +360,15 @@ def sha256(text):
 
 def skill_context(repo, owners, with_references):
     paths = list(CORE_CONTEXT)
+    references = []
     for owner in owners:
         paths.append(f'.agents/skills/{owner}/SKILL.md')
         if with_references:
-            paths.extend(str(path.relative_to(repo)) for path in sorted((repo / '.agents/skills' / owner / 'references').rglob('*.md')))
-    sources = [{'path': relative, 'text': within_repo(repo, relative).read_text(encoding='utf-8')} for relative in dict.fromkeys(paths)]
+            references.append(f'.agents/skills/{owner}/references')
+    eligible = source_inventory(repo, (*paths, *references))
+    for directory in references:
+        paths.extend(path.relative_to(repo).as_posix() for path in sorted(eligible) if path.suffix == '.md' and path.is_relative_to(repo / directory))
+    sources = [{'path': relative, 'text': declared_source(repo, relative, eligible).read_text(encoding='utf-8')} for relative in dict.fromkeys(paths)]
     for source in sources:
         source['sha256'] = sha256(source['text'])
     system = '\n\n'.join(f'# Source: {source["path"]}\n\n{source["text"]}' for source in sources)
