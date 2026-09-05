@@ -2,7 +2,7 @@
 
 This file describes the current maturity state and next system-level milestones. Historical implementation details live in [`CHANGELOG.md`](CHANGELOG.md); capability ownership lives in [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md).
 
-Last reconciled: **2026-09-01**.
+Last reconciled: **2026-09-06**.
 
 ## Current state — Governed full-stack Marketing OS
 
@@ -61,7 +61,9 @@ The capability registry remains authoritative. Analytics is still only **partial
 ### Distribution and usability
 
 - `.agents/skills/` remains the canonical skill source.
-- Codex and Claude Code installers generate runtime copies without creating competing skill hierarchies.
+- Codex and Claude Code installers generate runtime copies without creating competing skill hierarchies, protect personal files, and keep shared resources in `.marketing-os/`.
+- The GPT reference pack is generated from current canonical sources and checked for drift.
+- Evaluation cases have executable static validation and an opt-in model-grading harness with offline regression tests. These do not establish a live behavioral pass rate.
 - `GETTING_STARTED.md`, `AGENT_GUIDE.md`, `DISTRIBUTION.md`, and root README provide public onboarding.
 - Worked examples distinguish synthetic, anonymized, and verified public case studies and prohibit fabricated achieved results.
 
@@ -75,6 +77,7 @@ The capability registry remains authoritative. Analytics is still only **partial
 
 Priority is **validation, not adding skills for the sake of count**.
 
+- Run and review a reproducible live-model benchmark using the evaluation harness. Preserve raw responses, source identity, exclusions, and grading limits; no live behavioral result is claimed by this tooling release.
 - Validate high-value skills against anonymized real-world cases where permission and evidence allow.
 - Preserve the difference between a worked example and a verified case study.
 - Record contradictions, failed hypotheses, negative outcomes, and scope limits rather than publishing only wins.

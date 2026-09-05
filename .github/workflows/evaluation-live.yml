@@ -1,0 +1,64 @@
+name: Live evaluation (manual)
+
+# This workflow makes paid model API calls only when explicitly dispatched.
+# Results are artifacts, never an automatic commit or a behavioral certification.
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: "Registered suite to score"
+        required: true
+        default: "routing"
+        type: string
+      model:
+        description: "Explicit Anthropic responder model ID available to your account"
+        required: true
+        type: string
+      judge_model:
+        description: "Optional judge model ID (blank uses the responder model)"
+        required: false
+        type: string
+      limit:
+        description: "Positive maximum cases in the selected suite"
+        required: true
+        default: "1"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate the corpus and export before API use
+        run: |
+          python3 scripts/eval.py --static
+          python3 scripts/build-gpt-knowledge.py --check
+      - name: Generate responses and grade against written criteria
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EVAL_SUITE: ${{ inputs.suite }}
+          EVAL_MODEL: ${{ inputs.model }}
+          EVAL_JUDGE_MODEL: ${{ inputs.judge_model }}
+          EVAL_LIMIT: ${{ inputs.limit }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--live --suite "$EVAL_SUITE" --model "$EVAL_MODEL" --limit "$EVAL_LIMIT" --out "$RUNNER_TEMP/evaluation-results.json")
+          if [[ -n "$EVAL_JUDGE_MODEL" ]]; then
+            args+=(--judge-model "$EVAL_JUDGE_MODEL")
+          fi
+          python3 scripts/eval.py "${args[@]}"
+      - name: Retain response and grading evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-results-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/evaluation-results.json
+          if-no-files-found: warn

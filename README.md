@@ -42,7 +42,7 @@ Full-Stack Marketing OS is currently a **portable skill system**, not a packaged
 
 - **OpenAI Codex:** supported as installable local skills.
 - **Claude Code:** supported as installable personal skills, with `CLAUDE.md` importing the repository-wide `AGENTS.md` rules.
-- **Custom GPT:** supported through the derived `gpt-knowledge/` knowledge-export layer.
+- **Custom GPT:** supported through the generated [`gpt-knowledge/pack/`](gpt-knowledge/pack/) reference export, with source coverage and drift checks.
 - **OpenAI plugin / Claude plugin:** not packaged yet. A future plugin can bundle the governed skills with tools/connectors while keeping `.agents/skills/` canonical.
 
 See [`DISTRIBUTION.md`](DISTRIBUTION.md) for exact install paths, terminology, current support state, and plugin boundaries.
@@ -146,10 +146,11 @@ playbooks/             Governed scenario workflows
 templates/             Governed reusable deliverable structures
 workflows/             Governed execution sequences
 agents/                Agent-role documentation, non-executable
-gpt-knowledge/         Derived Custom GPT knowledge export, non-canonical
-evaluations/           Quality checks
-tests/evaluations/     Versioned decision-behavior cases
-examples/              Practical demonstrations
+gpt-knowledge/pack/     Generated Custom GPT reference export, non-canonical
+evaluations/           Routing cases and reviewer checklists
+tests/evaluations/     Versioned decision cases and executable suite registry
+examples/              Synthetic worked demonstrations
+scripts/               Safe installers, validators, export builder, evaluation harness
 docs/archive/          Historical material excluded from active retrieval
 ```
 
@@ -179,11 +180,33 @@ Flagship walkthroughs:
 - [`Google Ads Audit`](examples/google-ads-audit/) — query/product/margin/marginal-efficiency diagnosis without blanket channel rules
 - [`Meta Ads Audit & Creative Testing`](examples/meta-ads/) — attribution reconciliation → prospecting/retargeting → creative quality → frequency/audience diagnosis → controlled testing → scaling gate
 - [`DTC Creative Strategy`](examples/creative-strategy/) — synthetic VOC → JTBD → angle → mechanic → concept → 4:5 production direction → centered 1:1 cross-crop validation
+- [`Scaling Refusal`](examples/scaling-refusal/) — hold a budget increase when blended ROAS masks unresolved economics and an invalid before/after comparison
 - [`Shopify CRO Audit`](examples/shopify-cro/) — funnel evidence → mobile checkout diagnosis → focused hypothesis instead of full-site redesign
 
 These are **worked examples**, not performance case studies. Synthetic/anonymized examples demonstrate how the system decides; verified public case studies require real publishable evidence. See [`examples/WORKED-EXAMPLE-STANDARD.md`](examples/WORKED-EXAMPLE-STANDARD.md).
 
 Scaling is not defined as spending more. The system requires source-of-truth business evidence, economics, marginal efficiency, readiness, constraints, capacity, guardrails, and explicit authorization before any live change. It rejects universal budget-increase percentages and does not treat platform attribution or recommendations as proof.
+
+## Verify the exports and evaluation tooling
+
+```bash
+python3 scripts/build-gpt-knowledge.py --check
+python3 scripts/eval.py --static
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+python3 scripts/check-markdown-links.py
+bash scripts/validate-agent-distribution.sh .
+```
+
+The GPT pack is generated from current canonical material. Rebuild it with
+`python3 scripts/build-gpt-knowledge.py` after changing exported sources; follow
+[`gpt-knowledge/README.md`](gpt-knowledge/README.md) for upload instructions.
+
+Static checks validate case structure, registration, references, and selected
+claim patterns. Offline regression tests validate the tooling. Neither is a
+behavioral pass rate or proof of better marketing outcomes. The opt-in live
+harness records model responses and grading evidence; see
+[`evaluations/README.md`](evaluations/README.md) for scope, costs, and review limits.
+No live model benchmark has been run as part of this reconciliation.
 
 ## Design principles
 
@@ -200,6 +223,7 @@ Scaling is not defined as spending more. The system requires source-of-truth bus
 
 The detailed, reconciled roadmap is in [`ROADMAP.md`](ROADMAP.md). Current priorities are:
 
+- run and review a reproducible live-model benchmark; distinguish grading output from human-reviewed behavior and business outcomes
 - validate high-value skills against anonymized real-world cases where permission and evidence allow
 - document data contracts and define MCP/connector approval, rollback, and verification boundaries before adding live integrations
 - add maintainability checks that prevent stale capability counts, roadmap claims, and public-navigation drift

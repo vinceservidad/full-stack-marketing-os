@@ -36,7 +36,7 @@ The system has one canonical skill source and several runtime/export layers. Run
 | `templates/` | Reusable deliverable structures | Loaded by governed skills | Governed artifact library |
 | `workflows/` | Execution sequences | Loaded by governed skills | Governed workflow library |
 | `agents/` | Agent-role documentation | No | Documentation, not a skill layer |
-| `gpt-knowledge/` | Custom GPT knowledge export | Retrieval/knowledge only | Derived, non-canonical export |
+| `gpt-knowledge/pack/` | Generated Custom GPT knowledge export | Retrieval/knowledge only | Derived from canonical skills, references, contracts, and supporting libraries; non-canonical |
 | future OpenAI/Claude plugin packages | Installable distribution bundles | Only after actually packaged/installed | Derived distribution, never canonical |
 | `evaluations/`, `tests/evaluations/` | Quality and decision-behavior checks | No | Governed |
 | `docs/archive/` | Historical material | No | Excluded from active retrieval |
@@ -97,13 +97,15 @@ Root `CLAUDE.md` imports `AGENTS.md` for repository-level contributor instructio
 
 ### Custom GPT / ChatGPT
 
-`gpt-knowledge/` is a derived reference export, not the executable source. An installable OpenAI plugin or uploaded ChatGPT skill package is a future distribution artifact and must be validated separately before the repository is described as plugin-enabled.
+`gpt-knowledge/pack/` is a generated reference export, not the executable source. `scripts/build-gpt-knowledge.py` rebuilds it from repository sources; `--check` detects drift and missing skill coverage. See [`gpt-knowledge/README.md`](gpt-knowledge/README.md) for included sources and limits. An installable OpenAI plugin or uploaded ChatGPT skill package is a future distribution artifact and must be validated separately before the repository is described as plugin-enabled.
 
 ## Ownership rule
 
 Every substantial active marketing artifact must have an identifiable owner, a discoverable loading path, a declared evidence state, and a validation rule. Existence in the repository alone does not make a file part of the operating system.
 
 `ARTIFACT-OWNERSHIP.md` records ownership for root artifacts. `scripts/validate-skill-architecture.sh` enforces canonical packaging, unique skill names, folder/frontmatter agreement, reference reachability, the prohibition on cross-layer skill impersonation, and the ownership contract for new root artifacts.
+
+`scripts/eval.py --static` validates evaluation-case parsing, suite registration, governed owner references, and selected claim patterns. Offline tests check the harness itself; live model grading is opt-in and must retain response and source evidence. Static checks and synthetic examples are not behavioral results. See [`evaluations/README.md`](evaluations/README.md).
 
 Generated runtime copies must never be edited into a competing owner layer. Change the canonical artifact, validate it, then reinstall/export.
 

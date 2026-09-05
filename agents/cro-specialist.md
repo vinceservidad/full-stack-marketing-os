@@ -22,3 +22,11 @@ Research → Diagnose → Hypothesis → Test → Measure → Iterate
 
 ## Output
 Provide prioritized CRO recommendations with reasoning and expected impact.
+
+## Governed skills that own this role's work
+
+[`$cro`](../.agents/skills/cro/SKILL.md)
+
+This file is role documentation, not an executable skill. The linked canonical
+skills and shared contracts govern decisions; this summary cannot override them. Coverage is declared in
+[`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).

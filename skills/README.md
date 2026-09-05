@@ -10,7 +10,7 @@ Executable, governed operating skills live in:
 .agents/skills/
 ```
 
-That is the only canonical skill layer. A local runtime copy is installed at `~/.codex/skills/` and is generated from the canonical source — never edited directly.
+That is the only canonical skill layer. Local runtime copies at `~/.codex/skills/` and `~/.claude/skills/` are generated from the canonical source, with shared resources in each runtime's `.marketing-os/` directory. Never edit those copies as source. See [`INSTALLATION_SAFETY.md`](../INSTALLATION_SAFETY.md).
 
 Capability status — governed, partially covered, planned, or unsupported — is declared in [`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).
 

@@ -16,3 +16,11 @@ Market Research → Keyword Strategy → Content Architecture → Optimization �
 
 ## Output
 Create SEO recommendations based on business goals and search demand.
+
+## Governed skills that own this role's work
+
+[`$seo`](../.agents/skills/seo/SKILL.md)
+
+This file is role documentation, not an executable skill. The linked canonical
+skills and shared contracts govern decisions; this summary cannot override them. Coverage is declared in
+[`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).

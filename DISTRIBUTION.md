@@ -13,7 +13,7 @@ Platform notes below were verified against current OpenAI and Anthropic document
 | OpenAI Codex | **Supported as skills** | `bash scripts/install-skills.sh . "$HOME/.codex"` → `~/.codex/skills/` | No, generated from `.agents/skills/` |
 | Claude Code | **Supported as skills** | `bash scripts/install-claude-skills.sh` → `~/.claude/skills/` | No, generated from `.agents/skills/` |
 | Claude Code repo instructions | **Supported** | Root `CLAUDE.md` imports `AGENTS.md` | Bridge only |
-| Custom GPT knowledge | **Supported as derived knowledge** | `gpt-knowledge/` | No, non-executable export |
+| Custom GPT knowledge | **Supported as derived knowledge** | Generated `gpt-knowledge/pack/` | No, non-executable export |
 | ChatGPT/OpenAI installable plugin | **Not packaged yet** | Future plugin package may bundle skills and optional connectors/MCP/UI | No |
 | Claude installable plugin | **Not packaged yet** | Future Claude plugin may bundle skills and optional agents/hooks/MCP | No |
 
@@ -59,7 +59,7 @@ Local personal skills are not the same as a Claude plugin or a cloud-distributed
 
 ## Custom GPT
 
-[`gpt-knowledge/`](gpt-knowledge/) is a derived knowledge-export layer for Custom GPT-style retrieval/use. It is useful for providing reference material but is not the canonical skill layer and does not prove runtime behavior.
+[`gpt-knowledge/pack/`](gpt-knowledge/pack/) is a generated knowledge-export layer for Custom GPT-style retrieval/use. Rebuild with `python3 scripts/build-gpt-knowledge.py`; `--check` detects source/export drift and missing skill coverage. The [`export guide`](gpt-knowledge/README.md) explains which files to upload. It is useful for providing reference material but is not the canonical skill layer and does not prove runtime behavior.
 
 Capability claims must come from [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md), not from whatever files happen to exist in `gpt-knowledge/`.
 

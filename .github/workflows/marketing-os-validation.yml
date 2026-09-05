@@ -6,6 +6,7 @@ on:
     branches: [main]
   pull_request:
     paths:
+      - "*.md"
       - "AGENTS.md"
       - "ARCHITECTURE.md"
       - "ARTIFACT-OWNERSHIP.md"
@@ -17,13 +18,20 @@ on:
       - "README.md"
       - "ROADMAP.md"
       - ".agents/skills/**"
+      - "agents/**"
+      - "evaluations/**"
+      - "examples/**"
+      - "gpt-knowledge/**"
+      - "docs/**"
       - "skills/**"
       - "workflows/**"
       - "frameworks/**"
       - "playbooks/**"
       - "templates/**"
-      - "tests/evaluations/**"
+      - "tests/**"
       - "scripts/**"
+      - ".github/workflows/**"
+      - ".gitignore"
 
 permissions:
   contents: read
@@ -33,6 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
       - name: Validate skill architecture
         run: scripts/validate-skill-architecture.sh .
       - name: Validate terminology
@@ -45,3 +56,11 @@ jobs:
         run: scripts/validate-scaling-system.sh .
       - name: Check platform freshness
         run: python3 scripts/check-platform-freshness.py .
+      - name: Validate evaluation corpus and routing references
+        run: python3 scripts/eval.py --static
+      - name: GPT export matches current canonical content
+        run: python3 scripts/build-gpt-knowledge.py --check
+      - name: Offline tooling regression tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Check relative Markdown file links
+        run: python3 scripts/check-markdown-links.py
