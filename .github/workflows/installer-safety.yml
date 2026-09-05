@@ -1,0 +1,76 @@
+name: Installer safety
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - '.agents/skills/**'
+      - 'scripts/install-skills.*'
+      - 'scripts/install-claude-skills.sh'
+      - 'tests/test_install_skills.py'
+      - 'frameworks/**'
+      - 'playbooks/**'
+      - 'templates/**'
+      - 'workflows/**'
+      - '*.md'
+      - '.github/workflows/installer-safety.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Installer regression tests
+        run: python3 -m unittest discover -s tests -p 'test_install_skills.py' -v
+      - name: Full repository install and repeat install
+        shell: bash
+        run: |
+          set -euo pipefail
+          runtime="$RUNNER_TEMP/marketing-os-smoke"
+          mkdir -p "$runtime/skills/unrelated" "$runtime/frameworks"
+          printf 'Personal instructions\n' > "$runtime/AGENTS.md"
+          printf 'Personal Claude instructions\n' > "$runtime/CLAUDE.md"
+          printf 'Personal framework\n' > "$runtime/frameworks/personal.md"
+          printf '[Unrelated](../missing.md)\n' > "$runtime/skills/unrelated/SKILL.md"
+          cp "$runtime/AGENTS.md" "$RUNNER_TEMP/personal-agents-before.md"
+          cp "$runtime/CLAUDE.md" "$RUNNER_TEMP/personal-claude-before.md"
+          bash scripts/install-skills.sh . "$runtime" --dry-run
+          bash scripts/install-skills.sh . "$runtime"
+          bash scripts/install-skills.sh . "$runtime"
+          cmp "$runtime/AGENTS.md" "$RUNNER_TEMP/personal-agents-before.md"
+          cmp "$runtime/CLAUDE.md" "$RUNNER_TEMP/personal-claude-before.md"
+          grep -Fxq 'Personal framework' "$runtime/frameworks/personal.md"
+          grep -Fxq '[Unrelated](../missing.md)' "$runtime/skills/unrelated/SKILL.md"
+          test ! -e "$runtime/.marketing-os-backups"
+          python3 - "$runtime" <<'PY'
+          import json
+          from pathlib import Path
+          import sys
+          root = Path(sys.argv[1])
+          manifest = json.loads((root / '.marketing-os/manifest.json').read_text())
+          expected = sorted(p.parent.name for p in Path('.agents/skills').glob('*/SKILL.md'))
+          assert manifest['skills'] == expected, (manifest['skills'], expected)
+          print(f'Full repository install verified: {len(expected)} skills.')
+          PY
+      - name: Claude wrapper in an isolated home
+        shell: bash
+        run: |
+          set -euo pipefail
+          isolated_home="$RUNNER_TEMP/marketing-os-claude-home"
+          mkdir -p "$isolated_home/.claude"
+          printf 'Personal Claude instructions\n' > "$isolated_home/.claude/CLAUDE.md"
+          HOME="$isolated_home" bash scripts/install-claude-skills.sh .
+          grep -Fxq 'Personal Claude instructions' "$isolated_home/.claude/CLAUDE.md"
+          test -f "$isolated_home/.claude/skills/marketing-router/SKILL.md"
