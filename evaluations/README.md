@@ -97,8 +97,8 @@ A new JSON artifact preserves run timestamps, repository commit and dirty-state
 listing, harness hash, requested and returned model identifiers, loaded source text
 and hashes, case definition and source hash, exact responder/judge prompts, full
 API response bodies, answer, judge output, quotes, and reasoning. It never includes
-request headers or the API key. Existing artifacts and symlink destinations are
-not overwritten. The file is written when the selected sample finishes, so an
+request headers or the API key. Existing artifacts are not overwritten. Symlinked output paths or ancestors are
+rejected before paid requests and checked again before writing the artifact. The file is written when the selected sample finishes, so an
 interrupted process may not produce an artifact. Keep samples bounded.
 
 Results distinguish:

@@ -388,8 +388,20 @@ def summary(results):
     return {**counts, 'pass_rate_among_scored': counts['PASS'] / scored if scored else None, 'complete_selected_sample': scored > 0 and not (counts['ERROR'] or counts['UNSCORED'])}
 
 
+def validate_result_destination(path):
+    # Keep the named path intact: resolving it first would conceal symlinks.
+    named = path.absolute()
+    for candidate in (named, *named.parents):
+        require(not candidate.is_symlink(), f'symlink result path is not supported: {candidate}')
+        if candidate != named:
+            require(not candidate.exists() or candidate.is_dir(), f'result parent is not a directory: {candidate}')
+    require(not path.exists(), f'refusing to overwrite results: {path}')
+
+
 def write_results(path, report):
-    # Never replace prior evidence. Exclusive creation also rejects symlinks.
+    # Recheck at publication as well as before any paid request. Exclusive
+    # creation protects existing evidence at the final pathname.
+    validate_result_destination(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('x', encoding='utf-8') as output:
         json.dump(report, output, indent=2, ensure_ascii=False)
@@ -402,7 +414,7 @@ def run_live(repo, suite_filter, model, judge_model, limit, with_references, out
     require(type(limit) is int and limit > 0, '--limit must be positive')
     require(bool(suite_filter), '--live requires at least one explicit --suite')
     require(set(suite_filter) <= {suite['id'] for suite in suites}, 'unknown suite requested')
-    require(not out_path.exists() and not out_path.is_symlink(), f'refusing to overwrite results: {out_path}')
+    validate_result_destination(out_path)
     key = os.environ.get('ANTHROPIC_API_KEY')
     require(bool(key and key.strip()), 'ANTHROPIC_API_KEY is absent; live evaluation did not run')
     judge_model = judge_model or model

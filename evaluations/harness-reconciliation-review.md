@@ -39,7 +39,7 @@ contracts, installer behavior, and existing case criteria remain unchanged.
   lacks the actual evidence; a claimed action is not evidence of execution.
 - The evidence artifact retains raw answers, grades, prompts, model identifiers,
   source/context text and hashes, repository state, and sample limitations. It does
-  not contain the API key. Existing evidence is never overwritten. Interrupted
+  not contain the API key. Existing evidence is never overwritten; output symlink ancestors are rejected before API calls and rechecked at publication. Interrupted
   runs may have no artifact because output is written at sample completion.
 - Follow-up review found that recursive optional-reference discovery could include
   ignored client notes in model context and saved provenance. Source discovery now
@@ -55,7 +55,7 @@ contracts, installer behavior, and existing case criteria remain unchanged.
 30 governed skills. Nine cases were explicitly excluded from current live scoring:
 four historical assumptions and five runtime/source-traversal requirements. This validates specification structure and narrow lint only.
 
-`python3 -m unittest discover -s tests -p 'test_eval.py' -v` completed 36 offline
+`python3 -m unittest discover -s tests -p 'test_eval.py' -v` completed 38 offline
 regression tests. They cover parser loss modes, registration drift, case/source
 identity, path boundaries, exact quote validation, malformed grading, incomplete
 API responses, no-key and no-network behavior, overwrite refusal, context/source

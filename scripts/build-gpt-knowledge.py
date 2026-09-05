@@ -56,13 +56,16 @@ def reject_symlink_ancestors(path):
             raise ExportError(f"Refusing symlink path: {candidate}")
 
 
-def reject_source_symlinks(root):
-    # rglob('*.md') does not visit a symlinked references directory. Inspect
-    # every entry first so an apparently complete export cannot omit it.
+def reject_source_symlinks(root, eligible):
+    # Git lists eligible symlink directories as entries without following them.
+    # Ignored scratch is outside this boundary and must not block generation.
     reject_symlink_ancestors(root)
-    for candidate in root.rglob("*"):
+    for candidate in eligible:
+        if not candidate.is_relative_to(root):
+            continue
         if candidate.is_symlink():
             raise ExportError(f"Symlink source is not supported: {candidate}")
+        reject_symlink_ancestors(candidate)
 
 
 def checkout_files(repo):
@@ -94,7 +97,7 @@ def source_layout(repo):
     markdown = {path for path in visible if path.suffix == ".md"}
     skills_dir = repo / ".agents" / "skills"
     for root in [skills_dir, *(repo / library for library in LIBRARIES)]:
-        reject_source_symlinks(root)
+        reject_source_symlinks(root, visible)
     governed = {p.parent.name for p in markdown
                 if p.name == "SKILL.md" and p.parent.parent == skills_dir}
     assigned = [name for _, _, names in BUNDLES for name in names]

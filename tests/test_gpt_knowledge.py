@@ -85,6 +85,19 @@ class ExportTests(unittest.TestCase):
         output = EXPORT.render(self.repo)
         self.assertIn("Tracked canonical support", output["00-operating-system.md"])
 
+    def test_ignored_scratch_symlinks_do_not_block_or_enter_exports(self):
+        (self.repo / ".gitignore").write_text("work/\n")
+        baseline = EXPORT.render(self.repo)
+        private = self.repo / "private-outside-sources"
+        private.mkdir()
+        (private / "notes.md").write_text("Private scratch marker\n")
+        for root in (self.skill, self.repo / "templates"):
+            scratch = root / "work"
+            scratch.mkdir()
+            (scratch / "linked").symlink_to(private, target_is_directory=True)
+            (scratch / "missing").symlink_to(private / "absent")
+        self.assertEqual(EXPORT.render(self.repo), baseline)
+
     def test_ignored_skill_is_not_promoted_to_canonical(self):
         (self.repo / ".gitignore").write_text(".agents/skills/private/\n")
         private = self.repo / ".agents/skills/private/SKILL.md"

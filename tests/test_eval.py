@@ -224,6 +224,43 @@ class EvaluationTests(unittest.TestCase):
         self.assertIn('governed test context', report['contexts']['smoke']['system'])
         self.assertNotIn('offline-test-only', self.output.read_text())
 
+    def test_result_symlink_parent_rejected_before_api_calls_or_writes(self):
+        self.live_fixture()
+        target = self.root / 'outside-results'
+        target.mkdir()
+        parent = self.root / 'results'
+        parent.symlink_to(target, target_is_directory=True)
+        self.output = parent / 'sample.json'
+        with mock.patch.object(evaluation, 'call_api') as api:
+            with self.assertRaisesRegex(evaluation.EvaluationError, 'symlink result'):
+                self.run_mock_live()
+            api.assert_not_called()
+        with self.assertRaisesRegex(evaluation.EvaluationError, 'symlink result'):
+            evaluation.write_results(self.output, {'private': 'fixture'})
+        self.assertEqual(list(target.iterdir()), [])
+
+    def test_result_parent_is_rechecked_after_model_calls(self):
+        self.live_fixture()
+        target = self.root / 'outside-results'
+        target.mkdir()
+        parent = self.root / 'results'
+        self.output = parent / 'sample.json'
+        answer = 'The data is unknown.'
+        grade = json.dumps({'verdict': 'PASS', 'evidence_quotes': [answer], 'reasoning': 'Preserves uncertainty.'})
+        calls = 0
+        def respond(*args, **kwargs):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                parent.symlink_to(target, target_is_directory=True)
+                return self.api_body(grade)
+            return self.api_body(answer)
+        with mock.patch.object(evaluation, 'call_api', side_effect=respond):
+            with self.assertRaisesRegex(evaluation.EvaluationError, 'symlink result'):
+                self.run_mock_live()
+        self.assertEqual(calls, 2)
+        self.assertEqual(list(target.iterdir()), [])
+
     def test_malformed_judge_is_unscored_and_nonzero(self):
         self.live_fixture()
         with mock.patch.object(evaluation, 'call_api', side_effect=[self.api_body('unknown'), self.api_body('VERDICT: PASS')]):
