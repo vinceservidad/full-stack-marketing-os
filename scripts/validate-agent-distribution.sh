@@ -15,6 +15,7 @@ fi
 for runtime in codex claude; do
   runtime_root="$tmp_root/$runtime"
   bash "$repo_dir/scripts/install-skills.sh" "$repo_dir" "$runtime_root" >/dev/null
+  resource_root="$runtime_root/.marketing-os"
 
   installed_count=$(find "$runtime_root/skills" -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
   if [[ "$installed_count" -ne "$canonical_count" ]]; then
@@ -22,16 +23,20 @@ for runtime in codex claude; do
     exit 1
   fi
 
+  test -f "$resource_root/manifest.json" || { printf '%s missing ownership manifest.\n' "$runtime" >&2; exit 1; }
+
   for contract in GLOSSARY.md KNOWLEDGE-TAXONOMY.md PLATFORM-CURRENCY.md CAPABILITY-REGISTRY.md ARTIFACT-OWNERSHIP.md AGENTS.md; do
-    test -f "$runtime_root/$contract" || { printf '%s missing contract: %s\n' "$runtime" "$contract" >&2; exit 1; }
+    test -f "$resource_root/$contract" || { printf '%s missing namespaced contract: %s\n' "$runtime" "$contract" >&2; exit 1; }
+    test ! -e "$runtime_root/$contract" || { printf '%s unexpectedly installed root contract: %s\n' "$runtime" "$contract" >&2; exit 1; }
   done
 
   for library in frameworks playbooks templates workflows; do
-    test -d "$runtime_root/$library" || { printf '%s missing library: %s\n' "$runtime" "$library" >&2; exit 1; }
+    test -d "$resource_root/$library" || { printf '%s missing namespaced library: %s\n' "$runtime" "$library" >&2; exit 1; }
+    test ! -e "$runtime_root/$library" || { printf '%s unexpectedly installed root library: %s\n' "$runtime" "$library" >&2; exit 1; }
   done
 
   if find "$runtime_root" -name '*.bak' -type f | grep -q .; then
-    printf '%s install left sed backup files behind.\n' "$runtime" >&2
+    printf '%s install left unexpected .bak files behind.\n' "$runtime" >&2
     exit 1
   fi
 done

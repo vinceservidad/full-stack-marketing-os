@@ -234,11 +234,16 @@ else:
 
 installed = pathlib.Path.home() / ".codex" / "skills"
 if installed.is_dir():
-    # scripts/install-skills.sh rewrites root-contract link depth one level
-    # shallower, so installed copies differ from canonical by design. Normalize
-    # relative-link depth before comparing content.
+    # Generated copies use namespaced dependencies and an explicit task-scoped
+    # governance link. Normalize only those deliberate installation changes.
     def normalized(text):
-        return re.sub(r"\((?:\.\./)+", "(REL/", text)
+        text = re.sub(
+            r"\nBefore using this Marketing OS skill, read "
+            r"\[Marketing OS operating rules\]\([^\n)]+\)\. "
+            r"Apply them to this task without replacing personal or project instructions\.\n",
+            "", text,
+        )
+        return re.sub(r"\((?:\.\./)+(?:\.marketing-os/)?", "(REL/", text)
 
     for name, skill_md in sorted(names.items()):
         target = installed / name / "SKILL.md"
@@ -247,26 +252,30 @@ if installed.is_dir():
         elif normalized(target.read_text(encoding="utf-8")) != normalized(skill_md.read_text(encoding="utf-8")):
             warnings.append(f"Installed runtime copy of '{name}' has drifted from canonical.")
 
-    # Root contracts must exist at the install root and resolve from the
-    # installed files' own rewritten links.
+    # Namespaced installs leave personal runtime-root contracts untouched.
+    # Continue recognizing legacy installs until they are explicitly migrated.
+    contract_root = installed.parent
+    if (contract_root / ".marketing-os" / "manifest.json").is_file():
+        contract_root = contract_root / ".marketing-os"
     contracts = set()
     for skill_md in names.values():
         for target in LINK.findall(skill_md.read_text(encoding="utf-8")):
             if target.startswith("../../../") and "/" not in target[9:]:
                 contracts.add(target[9:])
 
-    absent = sorted(c for c in contracts if not (installed.parent / c).is_file())
+    absent = sorted(c for c in contracts if not (contract_root / c).is_file())
     if absent:
         warnings.append(
-            "Root contracts not present at the install root: " + ", ".join(absent)
+            "Required installed contracts are missing: " + ", ".join(absent)
             + " (run scripts/install-skills.sh)"
         )
 
     unresolved = []
-    for md in sorted(installed.rglob("*.md")):
-        for target in LINK.findall(md.read_text(encoding="utf-8")):
-            if target.startswith("../") and not (md.parent / target).exists():
-                unresolved.append(f"{md.relative_to(installed)} -> {target}")
+    for name in sorted(names):
+        for md in sorted((installed / name).rglob("*.md")):
+            for target in LINK.findall(md.read_text(encoding="utf-8")):
+                if target.startswith("../") and not (md.parent / target).exists():
+                    unresolved.append(f"{md.relative_to(installed)} -> {target}")
     if unresolved:
         warnings.append(
             "Unresolved links in the installed runtime: "
