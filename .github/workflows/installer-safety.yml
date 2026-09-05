@@ -10,6 +10,7 @@ on:
       - 'scripts/install-skills.*'
       - 'scripts/install-claude-skills.sh'
       - 'scripts/validate-skill-architecture.sh'
+      - 'scripts/validate-agent-distribution.sh'
       - 'tests/test_install_*.py'
       - 'frameworks/**'
       - 'playbooks/**'
@@ -35,6 +36,8 @@ jobs:
           python-version: '3.11'
       - name: Installer regression tests
         run: python3 -m unittest discover -s tests -p 'test_install_*.py' -v
+      - name: Cross-agent distribution validator
+        run: bash scripts/validate-agent-distribution.sh .
       - name: Full repository install and repeat install
         shell: bash
         run: |
