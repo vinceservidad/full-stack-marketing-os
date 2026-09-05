@@ -70,6 +70,7 @@ Status definitions:
 | `creative-idea-matrix.md` | owned | `$creative-strategy` (linked from SKILL.md) |
 | `marketing-context.md` | owned | `$marketing-intake` (linked from SKILL.md; copied into active projects as `.agents/marketing-context.md`) |
 | `marketing-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — recurring loop contract with trigger, state, idempotency, authorization, verification, escalation, and retirement |
+| `marketing-decision-record.md` | consumed | `workflows/marketing-decision-lifecycle.md`; lifecycle state is orchestrated by `$marketing-router`, while specialist artifacts remain authoritative |
 | `pricing-decision.md` | owned | `$pricing-monetization` (linked from SKILL.md) — pricing, value metric, packaging, scenario, rollout, migration, and verification decision record |
 | `activation-plan.md` | owned | `$activation` (linked from SKILL.md) — first-value definition, path-to-value, diagnosis, intervention, measurement, handoffs, and learning record |
 | `retention-strategy-plan.md` | owned | `$retention-strategy` (linked from SKILL.md) — retention diagnosis, cause-matched intervention, save/recovery, repeat/renewal/win-back, measurement, and learning record |
@@ -90,6 +91,7 @@ Status definitions:
 | Artifact | Status | Owner or consumer |
 |---|---|---|
 | `marketing-operations-loop.md` | owned | `$marketing-operations` (linked from SKILL.md) — canonical recurring operating sequence |
+| `marketing-decision-lifecycle.md` | owned | `$marketing-router` (linked from SKILL.md) — canonical stateful context → goal → strategy → plan → execute → review → optimize lifecycle |
 | `google-ads-optimization.md` | owned | `$google-ads` (linked from SKILL.md) |
 | `meta-ads-optimization.md` | owned | `$meta-ads` (linked from SKILL.md) |
 | `creative-ideation-engine.md` | owned | `$creative-strategy` (linked from SKILL.md) |
