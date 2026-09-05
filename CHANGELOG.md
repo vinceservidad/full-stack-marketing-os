@@ -4,6 +4,13 @@ Notable changes follow semantic versioning.
 
 ## [Unreleased]
 
+### Added — Marketing decision lifecycle
+
+- Adds [`workflows/marketing-decision-lifecycle.md`](workflows/marketing-decision-lifecycle.md), the canonical stateful `CONTEXT → GOAL → STRATEGY → PLAN → EXECUTE → REVIEW → OPTIMIZE ↺` operating lifecycle. It starts at the earliest materially unresolved stage instead of forcing every request through all seven stages, and it can move backward when new evidence invalidates an earlier decision.
+- Adds [`templates/marketing-decision-record.md`](templates/marketing-decision-record.md) for initiatives that need continuity across stages, sessions, or agents while preserving specialist-owned source artifacts, evidence state, implementation state, authorization, and decision history.
+- `$marketing-router` now identifies lifecycle stage separately from intent, funnel stage, awareness, activation, retention, and lifecycle-marketing state. Stage labels do not create duplicate skills: business-level goal/strategy remains with `$growth-strategy`, multi-owner planning is coordinated by the router, execution remains with domain owners and authorized runtimes, review routes by decision type, and paid-media scaling remains with `$optimization-scaling`.
+- `AGENT_GUIDE.md` now treats `/context`, `/goal`, `/strategy`, `/plan`, `/execute`, `/review`, and `/optimize` as optional interface aliases rather than architecture. Routing evaluations add lifecycle boundaries for bounded strategy, review, scaling, unsupported execution, and already-satisfied context/goal states. No behavioral pass or commercial outcome is claimed by the documentation change itself.
+
 ### Added — PR #27 reconciliation
 
 - Generates the Custom GPT pack from current canonical skills, references, contracts, and supporting libraries, with source provenance, full skill coverage, and deterministic drift checks. Source selection respects Git ignore rules, so ignored local scratch is excluded from exported knowledge and model context; source archives without their own Git checkout fail closed. Archives only the superseded handwritten GPT summaries; preserves the existing voice references.
@@ -57,7 +64,6 @@ Notable changes follow semantic versioning.
 - `$customer-research` reference: [review mining for creative research](.agents/skills/customer-research/references/review-mining-for-creative.md). Review analysis now includes relevant positive, neutral, and negative evidence; preserves source provenance and contradictions; separates specificity from prevalence; and prevents customer-reported results or model-synthesized language from being promoted into verified proof or VOC.
 - Twenty-six creative execution-layer evaluations plus completed review covering positive-review bias, quote provenance, reported-outcome overclaiming, mechanic/hook/format conflation, fabricated social proof and urgency, fake native voice, universal funnel-format claims, generated visuals used as proof, platform-routing errors, production feasibility, and controlled mechanic testing.
 - These additions were informed by the public Motion Creative Strategy Skills repository at the concept level, then re-authored under this OS's taxonomy, evidence, ownership, and controlled-testing rules rather than importing Motion's separate skill hierarchy or universal performance claims.
-
 - `$creative-strategy` Creative Ideation Engine: adds the owned [creative ideation workflow](workflows/creative-ideation-engine.md), [creative idea matrix](templates/creative-idea-matrix.md), and two skill references for awareness/belief/desire mapping and controlled ideation expansion. The canonical reasoning flow now connects verified research → audience situation → pain/desire/JTBD → awareness → current belief → required belief shift → angle → hook → concept → format → proof → CTA → test hypothesis while preserving evidence states and allowing account learning to override default assumptions.
 - Fifteen Creative Ideation Engine evaluations plus a completed review covering fabricated customer psychology, unsupported belief shifts, false strategic diversity, cosmetic expansion, proof mismatch, uncontrolled test cells, state confusion, and quantity-over-evidence generation. Generated ideas remain hypotheses and are never treated as customer evidence.
 

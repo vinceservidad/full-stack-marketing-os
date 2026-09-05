@@ -150,12 +150,12 @@ All previously identified advertising and distribution channels, pricing/monetiz
 
 ---
 name: marketing-router
-description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills when a task spans business-level growth planning, channels, funnel stages, activation, retention, diagnosis, operations, commercial decisions, or deliverables.
+description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills, identify the current marketing decision-lifecycle stage, and preserve one owner when work spans business-level growth planning, channels, funnel stages, activation, retention, diagnosis, operations, commercial decisions, or deliverables.
 ---
 
 # Marketing Router
 
-Turn the request into a bounded plan, select the minimum skills needed, and appoint one owner for the final response.
+Turn the request into a bounded plan, identify the current decision-lifecycle stage when useful, select the minimum skills needed, and appoint one owner for the final response.
 
 Use `KNOWLEDGE-TAXONOMY.md` (source: `KNOWLEDGE-TAXONOMY.md`) when the request asks for a strategy, framework, model, methodology, process, playbook, pattern, tactic, technique, template, best practice, or heuristic. Name the primary knowledge type in the response.
 
@@ -167,23 +167,54 @@ Use the request itself plus the strongest available context needed to route it c
 - business model, market/geography, timeframe, channel/surface, and funnel or customer-journey stage when material
 - available evidence and provenance, including relevant metric definitions, economics, customer/product/offer truth, and current platform state
 - existing Marketing Context or specialist artifacts when available, without upgrading their evidence status
+- current implementation/decision state when the request continues prior work
 - risk/authorization state when the request could lead to spend, tracking, publishing, pricing, offer, customer-state, or another live mutation
 - current-platform freshness requirement when the request depends on a fast-changing interface, feature, algorithm, policy, or rollout
 
 If the missing context could change ownership or make the decision unsafe, route to `$marketing-intake` or state the missing dependency rather than activating many adjacent skills by default.
 
+## Marketing decision lifecycle
+
+Use `workflows/marketing-decision-lifecycle.md` (source: `workflows/marketing-decision-lifecycle.md`) as the orchestration contract:
+
+`CONTEXT → GOAL → STRATEGY → PLAN → EXECUTE → REVIEW → OPTIMIZE ↺`
+
+The lifecycle is a **state model, not a required checklist**. Determine the earliest unresolved stage that can materially reverse the requested decision. Skip stages already satisfied by the request, current Marketing Context, an approved specialist artifact, or verified implementation state.
+
+Do not create or imply separate lifecycle skills. Interface labels such as `/context`, `/goal`, `/strategy`, `/plan`, `/execute`, `/review`, and `/optimize` may exist as convenience aliases, but they route to governed owners rather than becoming a competing instruction layer.
+
+Default routing by lifecycle stage:
+
+- `context` → `$marketing-intake` when evidence, definitions, economics, scope, source of truth, or authorization are materially unclear
+- `goal` → `$growth-strategy` for business-level objective framing; preserve a supplied bounded specialist objective when it is already adequate
+- `strategy` → `$growth-strategy` for integrated business direction; the domain owner for bounded specialist strategy
+- `plan` → `$marketing-router` coordinates decomposition only when multiple owners are needed; specialists retain their workstream decisions
+- `execute` → the owning specialist plus the actually available authorized runtime/tool
+- `review` → the domain owner, `$performance-diagnostics`, `$tracking-measurement`, `$marketing-reporting`, or `$growth-strategy` according to the decision
+- `optimize` → the domain owner; `$optimization-scaling` owns paid-media scale/de-scale, marginal economics, and allocation/coverage expansion
+
+Examples of valid starting points:
+
+- simple bounded copy rewrite → `execute`
+- performance dropped after a change → `review`
+- approved creative concept ready for production → `execute`
+- integrated business priorities with context and objective already established → `strategy`
+- profitable campaign asking for more budget → `optimize`, with a step back to `context` if economics or source-of-truth evidence are missing
+
 ## Route
 
-1. Identify the business outcome, business model, funnel/journey stage, timeframe, market, channel, and requested action.
-   Keep business strategy, funnel/journey stage, awareness level, audience temperature, activation state, retention state, and lifecycle stage distinct.
-2. Classify intent: `audit`, `diagnose`, `plan`, `create`, `optimize`, `report`, `operate`, `activate`, or `retain`.
-3. Classify risk: read-only analysis; reversible draft; external mutation; spend, tracking, offer, pricing, activation-journey, retention/customer-state, or revenue-critical mutation.
-4. Select one primary skill and only supporting skills that answer a distinct dependency.
-5. Before a substantial audit, business-level growth strategy, diagnosis, offer/pricing/activation/retention decision, scaling decision, recurring mutating loop, or any live implementation, confirm scope, evidence state, metric definitions, and authorization are recorded. Route to `$marketing-intake` when they are not; it owns the response until the evidence state is known.
-6. When `.agents/marketing-context.md` exists in the active project, use only the decision-relevant sections as shared context. Do not let the summary upgrade evidence or override a newer specialist artifact.
-7. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
-8. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
-9. Classify the requested deliverable by its primary knowledge type; use secondary types only when they change how the artifact should be used or validated.
+1. Identify the business outcome, business model, funnel/journey stage, timeframe, market, channel, requested action, and current implementation/decision state when relevant.
+   Keep business strategy, decision-lifecycle stage, funnel/journey stage, awareness level, audience temperature, activation state, retention state, and lifecycle-marketing stage distinct.
+2. Determine the current marketing decision-lifecycle stage: `context`, `goal`, `strategy`, `plan`, `execute`, `review`, or `optimize`. Do not force all stages when earlier stages are already satisfied.
+3. Classify intent: `audit`, `diagnose`, `plan`, `create`, `optimize`, `report`, `operate`, `activate`, or `retain`. Intent and lifecycle stage are related but not identical: a `create` request may be at `execute`; a budget `optimize` request may be blocked back at `context`.
+4. Classify risk: read-only analysis; reversible draft; external mutation; spend, tracking, offer, pricing, activation-journey, retention/customer-state, or revenue-critical mutation.
+5. Select one primary skill and only supporting skills that answer a distinct dependency.
+6. Before a substantial audit, business-level growth strategy, diagnosis, offer/pricing/activation/retention decision, scaling decision, recurring mutating loop, or any live implementation, confirm scope, evidence state, metric definitions, and authorization are recorded. Route to `$marketing-intake` when they are not; it owns the response until the evidence state is known.
+7. When `.agents/marketing-context.md` exists in the active project, use only the decision-relevant sections as shared context. Do not let the summary upgrade evidence or override a newer specialist artifact.
+8. State missing inputs that could reverse the decision. Continue with labeled assumptions when safe.
+9. When the request says current, latest, new, AI, algorithm, rollout, or interface—or depends on a fast-changing platform control—route to the channel skill and enforce `PLATFORM-CURRENCY.md` before accepting the stored label or behavior.
+10. Classify the requested deliverable by its primary knowledge type; use secondary types only when they change how the artifact should be used or validated.
+11. Name the next lifecycle stage only when it helps continuation. A completed bounded task does not require a manufactured next stage.
 
 ## Skill map
 
@@ -282,6 +313,8 @@ When no governed specialist covers the primary discipline: do not silently subst
 ## Rules
 
 - Do not activate every plausible skill.
+- Do not force every request through all seven lifecycle stages; start at the earliest unresolved stage that can materially change the decision.
+- Do not confuse marketing decision-lifecycle stage with funnel stage, awareness level, activation state, retention state, or lifecycle-marketing stage.
 - Do not route a request to a skill absent from the capability registry, and do not present a partially covered discipline as fully governed.
 - Do not let a channel metric define the business outcome.
 - Use “primary business outcome” for the main commercial result. Reserve “Primary conversion action” for Google Ads' action-optimization setting.
@@ -302,8 +335,8 @@ When no governed specialist covers the primary discipline: do not silently subst
 
 ## Output
 
-Return: objective; primary knowledge type; routed skills and owner; capability status (governed, partially covered, or unsupported); evidence; missing inputs; approach; findings or deliverable; recommended next action; exact status.
+Return: objective; current decision-lifecycle stage when useful; primary knowledge type; routed skills and owner; capability status (governed, partially covered, or unsupported); evidence; missing inputs; approach; findings or deliverable; recommended next action; next lifecycle stage when useful; exact status.
 
 ## QA
 
-Confirm routing is minimal, an owner is named, every named skill exists in the capability registry, broad business-level planning routes to `$growth-strategy`, specialist decisions remain with their owners, any capability gap is disclosed, unknowns are visible, commercial/customer value outcome is explicit, current-platform claims meet the freshness gate, shared context has not upgraded evidence, pricing/activation/retention/runtime states are not invented, cancellation/consent boundaries are preserved, and no external action is implied without authorization.
+Confirm routing is minimal, an owner is named, the current lifecycle stage is not confused with funnel/customer lifecycle concepts, the lifecycle was not forced as bureaucracy, every named skill exists in the capability registry, broad business-level planning routes to `$growth-strategy`, specialist decisions remain with their owners, any capability gap is disclosed, unknowns are visible, commercial/customer value outcome is explicit, current-platform claims meet the freshness gate, shared context has not upgraded evidence, pricing/activation/retention/runtime states are not invented, cancellation/consent boundaries are preserved, paid-media scaling routes to `$optimization-scaling`, and no external action is implied without authorization.
