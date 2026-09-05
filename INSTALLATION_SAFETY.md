@@ -22,6 +22,7 @@ bash scripts/install-claude-skills.sh
 - An existing skill with the same name is refused unless a valid Marketing OS ownership manifest records it. The installer does not guess that a familiar name grants overwrite permission.
 - Managed files are hashed. Locally modified files, added files, missing dependencies, invalid manifests, symlink destinations, and source/destination overlap stop the install rather than silently discard work.
 - Sources and skill links are validated in temporary staging before publication. A repeated install of identical content is a no-op. Changed installations back up the previous managed trees before replacing them. Retired skills leave the active skill directory but remain in the backup.
+- Link rewriting preserves directory-link trailing slashes and fragments. Installed-runtime integrity checks remain enabled rather than ignoring unexpected generated-content differences.
 
 ## Migrate an older installation
 
@@ -41,12 +42,12 @@ A process kill, machine crash, disk failure, or failure during rollback itself i
 
 ## Verification and scope
 
-Run the isolated regression suite:
+Run the isolated regression suites:
 
 ```bash
-python3 -m unittest discover -s tests -p 'test_install_skills.py' -v
+python3 -m unittest discover -s tests -p 'test_install_*.py' -v
 ```
 
-The `Installer safety` workflow runs the suite, a full-repository installation, a repeat-install check, and the Claude wrapper using temporary runtimes on Ubuntu and macOS. The skill-link check covers this package's generated skill files and their references, not every link in all repository documentation. These tests validate installation mechanics, not model decision quality or live agent discovery.
+The `Installer safety` workflow runs the safety and link-rewriting suites, a full-repository installation, a repeat-install check, installed-runtime integrity validation, and the Claude wrapper using temporary runtimes on Ubuntu and macOS. The skill-link check covers this package's generated skill files and their references, not every link in all repository documentation. These tests validate installation mechanics, not model decision quality or live agent discovery.
 
 This is a focused reliability change. It does not add skills, generate GPT exports, merge PR #27, or claim a measured improvement in marketing outcomes. PR #27 must preserve this installation-safety contract when its broader distribution work is reconciled.
