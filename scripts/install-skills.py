@@ -141,6 +141,10 @@ def stage_install(repo: Path, stage: Path) -> list[str]:
             if mapped is None:
                 return match.group(0)
             link = Path(os.path.relpath(mapped, output.parent)).as_posix()
+            # Path normalization removes a directory link's trailing slash.
+            # Keep the source spelling so installation does not introduce drift.
+            if target.endswith("/"):
+                link += "/"
             return f"]({link}{sep}{anchor})"
 
         text = LINK.sub(rewrite, text)
