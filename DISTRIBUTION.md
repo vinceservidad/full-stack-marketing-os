@@ -35,7 +35,9 @@ This repository currently supports the **skill** path for local Codex:
 bash scripts/install-skills.sh . "$HOME/.codex"
 ```
 
-The installer copies the canonical skills plus the root contracts and governed libraries they reference, rewrites installed relative links, and verifies those links resolve.
+The installer copies canonical skills into the runtime's `skills/` directory and shared contracts and libraries into the dedicated `.marketing-os/` directory. It rewrites generated links and validates required skill links before publishing the installation. Each generated skill explicitly links to `.marketing-os/AGENTS.md`; personal runtime-root `AGENTS.md` and `CLAUDE.md` files are never replaced.
+
+Same-name unmanaged skills and locally modified managed files stop the install. Identical reinstalls are a no-op; changed managed installations are backed up. Python 3 is required, and `--dry-run` validates without changing the runtime. See [`INSTALLATION_SAFETY.md`](INSTALLATION_SAFETY.md) for ownership, legacy migration, backups, and recovery limits.
 
 The repository is **not yet an OpenAI plugin package**. Do not describe it as published, installed, marketplace-listed, or plugin-enabled unless a real package has been created and verified in the target OpenAI environment.
 
@@ -49,7 +51,7 @@ Install the canonical Marketing OS skills as personal Claude Code skills with:
 bash scripts/install-claude-skills.sh
 ```
 
-This delegates to the same canonical installer and writes generated copies to `~/.claude/skills/`. Do not edit those installed copies as source material; change `.agents/skills/` in the repository and reinstall.
+This delegates to the same canonical installer and writes generated skills to `~/.claude/skills/` with shared contracts and libraries in `~/.claude/.marketing-os/`. Existing personal instructions remain untouched. Do not edit installed copies as source material; change `.agents/skills/` in the repository and reinstall. Legacy installation conflicts are explained in [`INSTALLATION_SAFETY.md`](INSTALLATION_SAFETY.md).
 
 When Claude Code works inside this repository, root [`CLAUDE.md`](CLAUDE.md) imports [`AGENTS.md`](AGENTS.md), so contributor and evidence rules remain shared rather than duplicated.
 
@@ -69,8 +71,8 @@ Capability claims must come from [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.
 Canonical governed skills
       ↓
 Install/export/package
-      ├─ ~/.codex/skills/
-      ├─ ~/.claude/skills/
+      ├─ ~/.codex/skills/ + ~/.codex/.marketing-os/
+      ├─ ~/.claude/skills/ + ~/.claude/.marketing-os/
       ├─ gpt-knowledge/
       └─ future plugin packages
 ```
