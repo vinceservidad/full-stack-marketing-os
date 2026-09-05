@@ -9,6 +9,7 @@ on:
       - '.agents/skills/**'
       - 'scripts/install-skills.*'
       - 'scripts/install-claude-skills.sh'
+      - 'scripts/validate-skill-architecture.sh'
       - 'tests/test_install_skills.py'
       - 'frameworks/**'
       - 'playbooks/**'
@@ -38,7 +39,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          runtime="$RUNNER_TEMP/marketing-os-smoke"
+          runtime="$RUNNER_TEMP/marketing-os-smoke-home/.codex"
           mkdir -p "$runtime/skills/unrelated" "$runtime/frameworks"
           printf 'Personal instructions\n' > "$runtime/AGENTS.md"
           printf 'Personal Claude instructions\n' > "$runtime/CLAUDE.md"
@@ -54,6 +55,11 @@ jobs:
           grep -Fxq 'Personal framework' "$runtime/frameworks/personal.md"
           grep -Fxq '[Unrelated](../missing.md)' "$runtime/skills/unrelated/SKILL.md"
           test ! -e "$runtime/.marketing-os-backups"
+          HOME="$(dirname "$runtime")" bash scripts/validate-skill-architecture.sh . | tee "$RUNNER_TEMP/installed-integrity.txt"
+          if grep -Eq 'drifted|not installed in the local runtime|Required installed contracts are missing|Unresolved links in the installed runtime' "$RUNNER_TEMP/installed-integrity.txt"; then
+            printf 'Installed-runtime integrity reported an unexpected warning.\n' >&2
+            exit 1
+          fi
           python3 - "$runtime" <<'PY'
           import json
           from pathlib import Path
