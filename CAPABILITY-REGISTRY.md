@@ -15,7 +15,7 @@ Existence of a document is not coverage. A capability is governed only when a sk
 
 | Capability | Owner |
 |---|---|
-| Request routing and owner appointment | `$marketing-router` |
+| Request routing, owner appointment, and marketing decision-lifecycle stage identification — lifecycle coordination only; specialist decisions, execution authority, and live-mutation authorization remain with their governing owners | `$marketing-router` |
 | Business-level growth strategy and integrated marketing planning: objective, binding constraint, opportunity portfolio, priorities, non-priorities, sequencing, specialist orchestration, learning roadmap, and review governance | `$growth-strategy` |
 | Marketing operations: recurring cross-skill loops, trigger/cadence governance, run state, idempotency, approval gates, execution handoffs, verification, escalation, and retirement | `$marketing-operations` |
 | Engagement intake: scope, evidence grading, metric definitions, access, authorization, reusable Marketing Context | `$marketing-intake` |

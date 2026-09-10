@@ -26,8 +26,8 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 
 | File | Covers | Skills | Words |
 |---|---|---|---:|
-| `00-operating-system.md` | Operating System and Routing | `$marketing-router` | 5,763 |
-| `01-contracts.md` | Terminology and Governance Contracts | supporting documents | 4,129 |
+| `00-operating-system.md` | Operating System and Routing | `$marketing-router` | 5,783 |
+| `01-contracts.md` | Terminology and Governance Contracts | supporting documents | 4,274 |
 | `02-growth-strategy.md` | Business-Level Growth Strategy | `$growth-strategy` | 3,558 |
 | `03-intake-and-research.md` | Intake, Customer Research, and ICP | `$marketing-intake`, `$customer-research`, `$icp-jtbd` | 6,788 |
 | `04-google-ads.md` | Google Ads | `$google-ads` | 1,336 |
@@ -46,7 +46,7 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 | `17-optimization-scaling.md` | Optimization and Scaling | `$optimization-scaling` | 3,230 |
 | `18-supporting-library.md` | Frameworks, Playbooks, Workflows, and Templates | supporting documents | 15,833 |
 
-**Total: 93,804 words.**
+**Total: 93,969 words.**
 
 ## Source inventory
 
@@ -113,7 +113,7 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/marketing-reporting/references/cadence-and-governance.md` | `15-diagnostics-reporting-operations.md` | `b5ee534e262dc4f531555c360741af1d89d8bf90a5609687d7b2574be26ae33b` |
 | `.agents/skills/marketing-reporting/references/scorecard-construction.md` | `15-diagnostics-reporting-operations.md` | `cf85c3f26631f6414ad8bb94dc12f5b0b960c0ee2550571b00ad77d05ad1fde2` |
 | `.agents/skills/marketing-reporting/references/stakeholder-communication.md` | `15-diagnostics-reporting-operations.md` | `305095f70fbce7b86393a3ef1dfe386f5beef74d4f7c9ef4b2655967fd8d8463` |
-| `.agents/skills/marketing-router/SKILL.md` | `00-operating-system.md` | `2a8b55d240c751f73eb01cb43da2cea13f47ea43ec76c15266deb4428f7d4905` |
+| `.agents/skills/marketing-router/SKILL.md` | `00-operating-system.md` | `91cbaa97745d6687f32aab3a17ba3f6ea2dc54ec6987309aa6dd82ae046baf83` |
 | `.agents/skills/meta-ads/SKILL.md` | `05-meta-ads.md` | `43f2ee60ed4cfe3ffec1f4cdbc4f15e04aa921ef1b02a7fd6e89859975429086` |
 | `.agents/skills/meta-ads/references/platform-current.md` | `05-meta-ads.md` | `f1b7f52a7d062c9f56465067ec8d3ae8b02321061cc6687b6a35aa666b5d886e` |
 | `.agents/skills/meta-ads/references/prospecting.md` | `05-meta-ads.md` | `3793d8297832c097457d86e5d54da85941617f94f9c32abaffd695762e01c7e4` |
@@ -181,8 +181,8 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/youtube-ads/references/measurement-fit.md` | `06-video-and-social-ads.md` | `c04d4d3453999b3fff9c611b9018979986f3f90c00b3028cfe8d835e0633843b` |
 | `AGENTS.md` | `00-operating-system.md` | `f65699e2e5df481aaa04a9700118c0715bacd8c25f7600d2596a43c19a0e358a` |
 | `ARTIFACT-OWNERSHIP.md` | `01-contracts.md` | `06875d343c1b3f969f0b7e5b232f5798356b614bc57038ee55fc35c97191c3ca` |
-| `CAPABILITY-REGISTRY.md` | `00-operating-system.md` | `f554a7437bb9563159df09847f2530c0bf93b5fbddc9368b94ba7032d9d7aa19` |
-| `GLOSSARY.md` | `01-contracts.md` | `ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e` |
+| `CAPABILITY-REGISTRY.md` | `00-operating-system.md` | `090c83c4e12e13aa2b15f3b8687ff421bd0bdeefb791dca4d492a3142ff2c530` |
+| `GLOSSARY.md` | `01-contracts.md` | `5d63edb5cce98b790f0862ccc24b7d3a37355a8950dbb34dd9998efcba47aca6` |
 | `KNOWLEDGE-TAXONOMY.md` | `01-contracts.md` | `421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9` |
 | `PLATFORM-CURRENCY.md` | `01-contracts.md` | `487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc` |
 | `frameworks/constraint-identification.md` | `18-supporting-library.md` | `6db8f850ba1b5d76e51db8e38717c909724ad79b71c10deac179f9c755ab7a94` |
@@ -225,7 +225,7 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `templates/landing-page-review.md` | `18-supporting-library.md` | `558e4ae2732f57cee9ae275a255b4e9ea9acc603dc3e570f4ddb6f1708307e04` |
 | `templates/marketing-audit.md` | `18-supporting-library.md` | `6206945a2c02b46801423ceaf2aa7b9cd0475dc95864af57ede9868c34a9c636` |
 | `templates/marketing-context.md` | `18-supporting-library.md` | `79cf4214453e500e0320c5d1e1b919109f050b14ce27c97f915de43ce5d3d284` |
-| `templates/marketing-decision-record.md` | `18-supporting-library.md` | `a6e6518e2cdcbcced2fea838112d8ddfcadf8d7bcb4c3988bb5b662b3122b578` |
+| `templates/marketing-decision-record.md` | `18-supporting-library.md` | `251fed9f17910455cd471d20439d7193120a0892f84ffe0af9b8ab4f9b45e38b` |
 | `templates/marketing-loop.md` | `18-supporting-library.md` | `a45f4d04575baeef30b966249b9839f2cb5ea9dc5c57276fd3fd7f2719729a80` |
 | `templates/performance-report.md` | `18-supporting-library.md` | `7dfa9a9ed0ccea423d88e2e896d6f51f6a464bdc3f34339c4466a5951dd06450` |
 | `templates/pricing-decision.md` | `18-supporting-library.md` | `3c21d4cdbf48983c00e7be248a221dd06d5d70be64eebdeba34927796120b42e` |
@@ -244,7 +244,7 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `workflows/creative-testing.md` | `18-supporting-library.md` | `e91a9d340ab19e990bf216838c837c146f4e05ee53cf954c66b61944ac05b608` |
 | `workflows/cro-improvement.md` | `18-supporting-library.md` | `77bcfb5e546c1ea14400c311454580153a47a669ad55a882b368ca5df4124a76` |
 | `workflows/google-ads-optimization.md` | `18-supporting-library.md` | `c84df0cea3a2f42d28d9eb33ff3556e4c32807b72319d831f9f0606180be6dcb` |
-| `workflows/marketing-decision-lifecycle.md` | `18-supporting-library.md` | `c5894d318dac82eef2d827e9654fd84ff4ce3b6f7d5b4b387604ff1ec652d0d8` |
+| `workflows/marketing-decision-lifecycle.md` | `18-supporting-library.md` | `0384e54e1ecce90deaa686a17fe38c3b7b20f0a41f500d4ee472213b5ed6d9bf` |
 | `workflows/marketing-operations-loop.md` | `18-supporting-library.md` | `7a8f2e47104fee2e415f8e4b72bd40923dfb2889157b2c037ac95d88b0f22048` |
 | `workflows/meta-ads-optimization.md` | `18-supporting-library.md` | `f98f4c6a064671e6bf46cc8184ff7296b67dcebbf24a98ae6fcc4601858f2c41` |
 | `workflows/reporting-analysis.md` | `18-supporting-library.md` | `b8dc3e94a4b9764fbb13a94cfae9a7bcbfa067c50330441f191171d6d2025e6b` |
