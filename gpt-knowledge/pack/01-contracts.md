@@ -91,6 +91,13 @@ Use the client's actual CRM stages, then map them where applicable:
 
 Define qualification, stage-entry rules, date basis, and value basis before comparing CPL, cost per qualified lead, pipeline, close rate, or CAC.
 
+## Marketing decision lifecycle
+
+- **Marketing decision lifecycle:** The stateful operating sequence `CONTEXT → GOAL → STRATEGY → PLAN → EXECUTE → REVIEW → OPTIMIZE ↺` that tracks where a marketing decision or initiative currently is. It is not a mandatory checklist; work starts at the earliest materially unresolved stage. See `workflows/marketing-decision-lifecycle.md` (source: `workflows/marketing-decision-lifecycle.md`).
+- **Decision-lifecycle stage:** One of the seven named stages above, describing the current state of a decision. Not interchangeable with funnel stage, awareness level, audience temperature, activation state, retention state, lead lifecycle stage, or lifecycle-marketing program stage.
+- **Lead lifecycle:** CRM stage progression from inquiry through realized revenue (defined in the section above). Describes where a contact is in the sales process, not where a marketing decision is.
+- **Lifecycle marketing:** Email, trigger, and retention program strategy owned by `$lifecycle-marketing`. Describes recurring customer communications, not the state of a marketing decision.
+
 ## Optimization and scaling
 
 - **Scaling:** Increasing a verified primary business outcome while keeping named economics, quality, capacity, measurement, and risk guardrails acceptable.
