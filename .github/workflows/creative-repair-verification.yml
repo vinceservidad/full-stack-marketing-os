@@ -24,20 +24,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Apply hash-verified source repair
+        run: python3 .creative-repair.py
       - name: Rebuild generated knowledge
         run: python3 scripts/build-gpt-knowledge.py
-      - name: Save only generated exports to the repair branch
-        run: |
-          set -euo pipefail
-          git add -- gpt-knowledge/pack
-          if ! git diff --cached --quiet; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Regenerate knowledge exports from creative repair sources'
-            git push origin HEAD:refs/heads/fix/creative-sales-argument-20260913
-          fi
-          git rev-parse HEAD
-      - name: Verify source and tooling
+      - name: Verify source and tooling before commit
         run: |
           set -euo pipefail
           scripts/validate-skill-architecture.sh .
@@ -51,6 +42,17 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_*.py' -v
           python3 scripts/check-markdown-links.py
           bash scripts/validate-agent-distribution.sh .
+          git diff --check
+      - name: Commit only validated sources and exports to repair branch
+        run: |
+          set -euo pipefail
+          git rm -- .creative-repair.py
+          git add -- .agents/skills/creative-strategy/SKILL.md .agents/skills/copywriting/SKILL.md .agents/skills/cro/SKILL.md .agents/skills/creative-strategy/references/sales-argument-and-finished-review.md .agents/skills/creative-strategy/references/static-dtc-creative-direction.md AGENTS.md CHANGELOG.md tests/evaluations/creative-sales-argument-cases.md tests/evaluations/creative-sales-argument-review.md tests/evaluations/suites.json tests/test_eval.py gpt-knowledge/pack
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Improve buyer-first creative decisions and finished-work review'
+          git push origin HEAD:refs/heads/fix/creative-sales-argument-20260913
+          git rev-parse HEAD
       - name: Package tracked source for offline inspection
         if: always()
         run: |
