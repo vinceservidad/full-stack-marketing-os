@@ -2,7 +2,7 @@
 
 # Pack manifest
 
-19 knowledge files; 30 governed skills; 194 source documents.
+19 knowledge files; 30 governed skills; 195 source documents.
 
 Upload the numbered Markdown files as Knowledge. Paste the instruction body
 from INSTRUCTIONS.md into Instructions. Keep this manifest for provenance.
@@ -26,7 +26,7 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 
 | File | Covers | Skills | Words |
 |---|---|---|---:|
-| `00-operating-system.md` | Operating System and Routing | `$marketing-router` | 5,763 |
+| `00-operating-system.md` | Operating System and Routing | `$marketing-router` | 5,881 |
 | `01-contracts.md` | Terminology and Governance Contracts | supporting documents | 4,129 |
 | `02-growth-strategy.md` | Business-Level Growth Strategy | `$growth-strategy` | 3,558 |
 | `03-intake-and-research.md` | Intake, Customer Research, and ICP | `$marketing-intake`, `$customer-research`, `$icp-jtbd` | 6,788 |
@@ -36,8 +36,8 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 | `07-b2b-and-programmatic.md` | LinkedIn and Programmatic | `$linkedin-ads`, `$programmatic` | 3,194 |
 | `08-partnerships.md` | Influencer and Affiliate Marketing | `$influencer-marketing`, `$affiliate-marketing` | 3,577 |
 | `09-organic-social-and-pr.md` | Organic Social and Public Relations | `$organic-social`, `$public-relations` | 3,344 |
-| `10-creative-and-copy.md` | Creative Strategy and Copywriting | `$creative-strategy`, `$copywriting` | 10,519 |
-| `11-conversion-offer-pricing.md` | Conversion, Offer, and Pricing | `$cro`, `$offer-strategy`, `$pricing-monetization` | 5,975 |
+| `10-creative-and-copy.md` | Creative Strategy and Copywriting | `$creative-strategy`, `$copywriting` | 10,703 |
+| `11-conversion-offer-pricing.md` | Conversion, Offer, and Pricing | `$cro`, `$offer-strategy`, `$pricing-monetization` | 6,003 |
 | `12-seo.md` | Search Engine Optimization | `$seo` | 1,993 |
 | `13-lifecycle-marketing.md` | Lifecycle and Email Marketing | `$lifecycle-marketing` | 1,571 |
 | `14-measurement.md` | Tracking, Attribution, and Incrementality | `$tracking-measurement` | 5,627 |
@@ -46,7 +46,7 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 | `17-optimization-scaling.md` | Optimization and Scaling | `$optimization-scaling` | 3,230 |
 | `18-supporting-library.md` | Frameworks, Playbooks, Workflows, and Templates | supporting documents | 15,833 |
 
-**Total: 93,804 words.**
+**Total: 94,134 words.**
 
 ## Source inventory
 
@@ -61,9 +61,9 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/affiliate-marketing/SKILL.md` | `08-partnerships.md` | `2feb39baa7d31a5ca1731f4c49d8d67f89fb0dc5f15d60c2b547232d9e225347` |
 | `.agents/skills/affiliate-marketing/references/attribution-integrity.md` | `08-partnerships.md` | `d92d83d71ca5c9c4a57f1f7cf8f8acb4f0f8e7c9ef8521d36324a6200a834dc8` |
 | `.agents/skills/affiliate-marketing/references/fraud-and-brand-bidding-detection.md` | `08-partnerships.md` | `85487ff1b9abaa0f9bffca61b57f702e0ece3e83abfe5d6e57a2a7c15c19b36f` |
-| `.agents/skills/copywriting/SKILL.md` | `10-creative-and-copy.md` | `2af7d0bf356c11387c9296012a9dabcdeb226df8452c2a3db4594805cd09322a` |
+| `.agents/skills/copywriting/SKILL.md` | `10-creative-and-copy.md` | `8d60824e3756afc6291706c49791aa24627b9d0e480b1fca73305c2770bbdd23` |
 | `.agents/skills/copywriting/references/structure-selection.md` | `10-creative-and-copy.md` | `2f9577f2c84f97ca23a53a4b578f1a15693a7d406228773fa574628e393f81ba` |
-| `.agents/skills/creative-strategy/SKILL.md` | `10-creative-and-copy.md` | `a381c6c7b3b88b46927d3bcd3e84d793fc80984844885571a45eaa218d3537f7` |
+| `.agents/skills/creative-strategy/SKILL.md` | `10-creative-and-copy.md` | `394bfbbb021e90dec22a080f858ef6eaeb8b4bf07e535212f7132256166f4aba` |
 | `.agents/skills/creative-strategy/references/angle-catalog-and-hook-types.md` | `10-creative-and-copy.md` | `ac54ed91eebab63ad66a960ead51a0ce151909bd5da592a0c925a4fca0962932` |
 | `.agents/skills/creative-strategy/references/awareness-belief-desire-map.md` | `10-creative-and-copy.md` | `ad403b8ac94a37183fda5b16c790d98f0d23dfac0b15d4f5b03c97b2c55d6240` |
 | `.agents/skills/creative-strategy/references/creative-mechanics.md` | `10-creative-and-copy.md` | `6c9fde25c0467ba0995b286f53fedd14603f305a5bf8c48b950f51779f30ac85` |
@@ -71,10 +71,11 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/creative-strategy/references/ideation-expansion-method.md` | `10-creative-and-copy.md` | `0ea7ddfca94e4fe3d329a45d5f52681be7597fc4ace741891d7bd4b1cbabf652` |
 | `.agents/skills/creative-strategy/references/iterating-from-a-winner.md` | `10-creative-and-copy.md` | `f4a55127f50b93c8279e052a5c6f4b0ccbc08899acde7d007dd15642b2e4b487` |
 | `.agents/skills/creative-strategy/references/persuasion-and-behavioral-principles.md` | `10-creative-and-copy.md` | `4a8079f4363902d36e60c46394e44b354b356bdd6d10e2aef6fbc1bc14b66f2e` |
-| `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md` | `10-creative-and-copy.md` | `3776d9c8f4e9a69bdd24522db068d43a94e13aeb3a1a6200ec386255cf78375a` |
+| `.agents/skills/creative-strategy/references/sales-argument-and-finished-review.md` | `10-creative-and-copy.md` | `fb164a9fc2d227c12c071bbc5982786eb5d8eb90ffaff5ae2bb140f4f30bdd6f` |
+| `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md` | `10-creative-and-copy.md` | `1e78d347d3afaded567db526fbaebec7ef6d22a99090b053b5c93505ec5c06c1` |
 | `.agents/skills/creative-strategy/references/strategic-framing-and-angle-archetypes.md` | `10-creative-and-copy.md` | `d5c7e2e0bdd852bcd0e2d6e54dcd5501b7532e2f89eb30119b96b7738d90851b` |
 | `.agents/skills/creative-strategy/references/visual-format-selection.md` | `10-creative-and-copy.md` | `dbc8e4507f4355f7241d0731e0188cc3338bfaa2758bee244f2d73395d55973d` |
-| `.agents/skills/cro/SKILL.md` | `11-conversion-offer-pricing.md` | `2d8132ffd0b3b3308b615a42b1860be8470b1e56c5b848ab1c41756817eff53b` |
+| `.agents/skills/cro/SKILL.md` | `11-conversion-offer-pricing.md` | `8b76777159b10274a190b4794efe68ed172199656b041211392c78d5bc2d2bf7` |
 | `.agents/skills/customer-research/SKILL.md` | `03-intake-and-research.md` | `a6b67ae936d69a3ee79b770f6adafe3b399eb8af5861197ba6ee9baf9c9e3e7f` |
 | `.agents/skills/customer-research/references/interview-synthesis.md` | `03-intake-and-research.md` | `b783fe8a401aa1e47f716276982ad6e73e083473303ca5ae531d00dad4792caf` |
 | `.agents/skills/customer-research/references/review-mining-for-creative.md` | `03-intake-and-research.md` | `1fe9876115f770af5f4a6798cf736a089f81e29c00218a91d74acdcfa3e9f4cc` |
@@ -179,7 +180,7 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/youtube-ads/SKILL.md` | `06-video-and-social-ads.md` | `d078837a34d1ac549b6d6da3695022b482fcaf0824a6035f685f7be0095a3928` |
 | `.agents/skills/youtube-ads/references/format-selection.md` | `06-video-and-social-ads.md` | `7ecc871557b4eb87038122eb7b37c4666ec82c0307f2aacbb400afc84433de83` |
 | `.agents/skills/youtube-ads/references/measurement-fit.md` | `06-video-and-social-ads.md` | `c04d4d3453999b3fff9c611b9018979986f3f90c00b3028cfe8d835e0633843b` |
-| `AGENTS.md` | `00-operating-system.md` | `f65699e2e5df481aaa04a9700118c0715bacd8c25f7600d2596a43c19a0e358a` |
+| `AGENTS.md` | `00-operating-system.md` | `08703ae97a30b4b2e2925a2fa14731105240104636c6eb52fc0cc951c2b450a8` |
 | `ARTIFACT-OWNERSHIP.md` | `01-contracts.md` | `06875d343c1b3f969f0b7e5b232f5798356b614bc57038ee55fc35c97191c3ca` |
 | `CAPABILITY-REGISTRY.md` | `00-operating-system.md` | `f554a7437bb9563159df09847f2530c0bf93b5fbddc9368b94ba7032d9d7aa19` |
 | `GLOSSARY.md` | `01-contracts.md` | `ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e` |

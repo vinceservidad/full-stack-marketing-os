@@ -25,7 +25,7 @@ Mark missing inputs explicitly. Do not invent user behavior, customer objections
 ## Method
 
 1. Define the primary business outcome and any qualified or supporting conversion. Reserve “Primary conversion action” for the Google Ads setting.
-2. Map message scent from ad or query through page and conversion boundary.
+2. Map message scent from ad or query through page and conversion boundary. For copy or visual revisions, carry forward the supported [sales argument](../creative-strategy/references/sales-argument-and-finished-review.md); preserve strong approved wording and relevant high-intent terms rather than replacing them with generic copy.
 3. Inspect motivation, relevance, clarity, trust, and friction/anxiety before conversion.
 4. Segment by source, device, intent, landing page, and new/returning user when data permits.
 5. Identify the first meaningful pre-conversion leak and distinguish technical failure from persuasion weakness.

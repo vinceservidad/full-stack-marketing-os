@@ -4,6 +4,14 @@ Notable changes follow semantic versioning.
 
 ## [Unreleased]
 
+### Changed: Buyer argument and finished creative
+
+- Refactors `$creative-strategy` and `$copywriting` into focused, task-scoped entry points with conditional reference loading. Human buying motives, product truth, and the supported sales argument come before a chosen hook, copy structure, or layout; no framework or algorithm theory is treated as proof of response.
+- Adds one shared sales-argument and finished-work review reference, consumed by paid creative, copywriting, and CRO. Preserves specialist ownership, approved wording, high-intent terms, evidence requirements, product accuracy, and live-action boundaries. Production notes remain separate from exact customer-facing copy.
+- Removes mandatory visual-contrast framing and unsupported one-second/model-typography assumptions from static direction. Requires inspection of the actual available output and accurate reporting when rendering or verification was not performed.
+- Clarifies scoped implementation completion in `AGENTS.md`; adds ten registered evaluation specifications and labeled illustrative failure/revision examples. Offline checks and specification review are not a live-model before/after benchmark or evidence of conversion lift.
+- Prompt-architecture reference: [OpenAI, Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra), reviewed 2026-09-13. This informs instruction design, not the truth of marketing or psychology claims.
+
 ### Added — Marketing decision lifecycle
 
 - Adds [`workflows/marketing-decision-lifecycle.md`](workflows/marketing-decision-lifecycle.md), the canonical stateful `CONTEXT → GOAL → STRATEGY → PLAN → EXECUTE → REVIEW → OPTIMIZE ↺` operating lifecycle. It starts at the earliest materially unresolved stage instead of forcing every request through all seven stages, and it can move backward when new evidence invalidates an earlier decision.

@@ -1,43 +1,39 @@
 ---
 name: copywriting
-description: Write or evaluate email, lifecycle, website, sales-page, long-form, or brand copy using evidence-backed customer language and a structure matched to funnel stage; not for paid-ad hooks or landing-page conversion copy, which are owned elsewhere.
+description: Write or revise email, lifecycle, website, sales-page, and brand copy; paid ads and conversion pages have separate owners.
 ---
 
 # Copywriting
 
-Classify each framework, structure, or heuristic with [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md). A copywriting structure (AIDA, PAS, FAB, BAB) is a pattern that organizes an argument — it is not evidence that the argument is true, and applying it correctly does not make an unsupported claim supportable.
-
-Per [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md), paid-ad hooks, angles, concepts, and static paid-creative text hierarchy stay owned by `$creative-strategy`; landing-page and product-page conversion copy stays owned by `$cro`. This skill owns what those do not: email and lifecycle sequences, website and sales-page copy, long-form content, and brand voice — the copywriting work with no other current owner.
+Own email/lifecycle text, website and sales-page copy, long-form copy, and brand voice under [`CAPABILITY-REGISTRY.md`](../../../CAPABILITY-REGISTRY.md). `$creative-strategy` owns paid-ad copy and visual hierarchy; `$cro` owns landing/product-page conversion copy. Coordinate internally with the correct owner and return one coherent deliverable, not a routing explanation in place of the work.
 
 ## Context
 
-Primary business outcome and funnel stage the copy serves; audience — priority segment, buying situation, or Jobs-to-be-Done per `$icp-jtbd` where available; evidence-backed customer language available from `$customer-research`, with its provenance; brand voice guidelines if they exist; the specific claim or offer being communicated and what supports it; and the channel and format constraints (subject line length, email client rendering, page length).
+Use the requested output, business outcome, buyer situation, source-backed customer language, product/offer truth, proof, objections, brand voice, channel constraints, and approved existing wording. Reuse the research and sales argument already established by the owning specialist. Mark gaps without inventing customer evidence or demanding a full intake for a bounded edit.
 
 ## Method
 
-1. State the single audience, single problem, and single promise the copy must serve — per the Rule of One. A piece of copy trying to serve two audiences or two promises weakens both.
-2. Verify every factual or quantitative claim against a source before writing it in; do not write a number, result, or comparison the source evidence does not support.
-3. Use customer language only when it is traceable to a supplied source — an interview, review, survey response — via `$customer-research`. Do not invent or paraphrase a quotation from memory and present it as customer language.
-4. Select a structure matched to the communication goal, not by default. See [Structure selection](references/structure-selection.md).
-5. Draft, then apply the humanizing pass: remove unnecessary words, mechanical transitions, and any phrasing that reads as templated rather than written for this specific audience and claim.
-6. For a sequence (email, lifecycle), sequence the individual pieces against the funnel stage and lifecycle definitions `$marketing-intake` recorded, and against the segmentation, trigger, and cadence design `$lifecycle-marketing` owns; a single piece is evaluated on its own persuasive logic, a sequence on its cumulative arc. This skill writes the words for a sequence; it does not design the sequence, platform, or triggers — route that to `$lifecycle-marketing`.
-7. State what would need to be true for the copy to work, and flag any claim in it that is unverified or aspirational rather than evidenced.
+Determine what the reader should understand, believe, and do, and why the offer deserves consideration. For sales copy, use the shared [sales-argument and finished-work review](../creative-strategy/references/sales-argument-and-finished-review.md) rather than starting from a template. Functional and emotional motives are research inputs or labeled hypotheses, not universal buyer facts.
+
+Select a structure that fits the message and available proof using [Structure selection](references/structure-selection.md). AIDA, PAS, FAB, and BAB organize an argument; they do not supply its truth or guarantee a result. Apply [`KNOWLEDGE-TAXONOMY.md`](../../../KNOWLEDGE-TAXONOMY.md) accurately. Keep one clear communication purpose without forcing every piece into a problem-agitation narrative.
+
+Write the requested copy, then inspect the actual draft. Check the reason to care, relevance, differentiation, credibility, and next action. Use natural, specific language, normally Grade 6-8 unless the audience requires otherwise. Remove unnecessary repetition and mechanical phrasing without stripping meaning, approved positioning, or useful high-intent search terms. For a revision, preserve what works and change only what the brief or evidence warrants.
+
+For sequences, `$lifecycle-marketing` owns segmentation, triggers, cadence, and suppression. Write the individual messages and cumulative argument against that handoff; do not invent a sequence strategy or change a live send.
 
 ## Rules
 
-- Never fabricate a benchmark, result, testimonial, or customer quotation. A number or claim with no traceable source is not written into the copy; it is flagged as missing.
-- Do not present a copywriting structure as a guarantee of performance; a structure organizes an argument, and whether the argument converts is an empirical question for `$cro` or `$creative-strategy` to test, not something this skill can assert.
-- Do not write paid-ad hooks, angles, or static-ad type-overlay hierarchy; route those to `$creative-strategy`, including its static DTC creative-direction method. Do not write landing-page or product-page conversion copy; route those to `$cro`.
-- Do not claim brand voice consistency without the brand guidelines actually supplied; write a best-effort draft and label the voice as unverified against guidelines if none exist.
-- A claim of scarcity, urgency, authority, or social proof must be true and evidenced; do not manufacture false urgency or an unsupported authority claim.
-- For regulated or compliance-sensitive claims (health, financial, legal outcome claims), do not write a claim beyond what the supplied evidence supports, and flag the claim for review rather than softening it silently.
+- Never invent results, customer quotations, credentials, scarcity, or product advantages. Keep factual substantiation and source notes outside customer-facing copy unless disclosure is required.
+- A payment method, discount, ingredient, or feature is not automatically the main sales argument. Choose its role from the buyer situation and evidence.
+- Preserve claim limits, privacy, required disclosures, and safety. Do not manufacture insecurity or false urgency. Explain a material limitation instead of silently substituting an information card for requested sales copy.
+- Use `$customer-research` for source-backed customer language. Model-written phrasing is copy or synthesis, not a testimonial or observed customer statement.
+- Keep brand voice unverified when guidelines are unavailable. Do not claim a draft was approved, published, tested, or effective without evidence.
+- Do not replace the specialist owners for paid-ad or conversion-page decisions. Carry the same supported sales argument across handoffs.
 
 ## Output
 
-Draft: audience, problem, and promise stated; structure used and why; every factual claim with its source; customer language with its provenance; humanized draft; flagged unverified or aspirational claims; exact status (draft, approved, published).
-
-Evaluation: what structure is present; claims verified against source versus unverified; customer-language provenance checked; single-audience/single-promise discipline assessed; recommended revision.
+Return usable copy or the actual revision first. Separate exact customer-facing text from a short rationale, supporting sources, unresolved claims, and status. When asked for a framework, identify the structure and show how the words implement it; a framework label alone is not completion. Match output length to the task rather than displaying every internal analysis field.
 
 ## QA
 
-Confirm audience, problem, and promise are singular and stated; every factual claim traces to a source; every customer-language use traces to a supplied source via `$customer-research`; the structure fits the communication goal rather than being applied by default; no paid-ad hook or landing-page conversion copy was written here instead of routed; and no claim exceeds what the evidence supports.
+Check purpose, buyer relevance, supported promise, proof, natural wording, preserved approved language, and the appropriate next step. For copy with a visual or page layout, review their combined meaning with the owning specialist. Fix identified issues before concluding. Report any rendering or behavioral evaluation not performed; review is not proof of conversion lift.

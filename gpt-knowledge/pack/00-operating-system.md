@@ -36,16 +36,16 @@ rendered as source labels; external URLs and fenced examples are preserved.
 
 ## Skill design
 
-- Keep `SKILL.md` concise and decision-changing.
-- Put conditional detail in linked references.
-- Give every skill discriminating triggers, required inputs, decision rules, QA, and output shape.
-- When several skills apply, appoint one owner for the final response.
-- Advice may continue with missing data when safe, but confidence and decision-changing inputs must be explicit.
+- Keep skill descriptions short and specific to their actual triggers. Keep `SKILL.md` focused on decisions; load linked references only when they change the current task.
+- Preserve required inputs, decision rules, QA, and output contracts without turning every task into a full-document checklist or a fixed recipe.
+- When several skills apply, appoint one owner and coordinate internally. Return the requested deliverable, not routing instructions or a prompt for the user to repeat the same work.
+- Advice and drafts may continue with missing data when safe; label hypotheses and identify decision-changing gaps. Do not silently replace the requested task with a different deliverable.
+- For authorized implementation or repair, make the scoped changes, inspect the actual result, and fix issues introduced by the change. Report limits and exact completion state; do not stop at the first draft or claim tests, rendered inspection, or live changes that did not occur.
 
 ## Changes
 
 - Update `CHANGELOG.md` for meaningful behavior changes.
-- Add or revise evaluations for material decision-rule changes.
+- Add or revise evaluations for material decision-rule changes. Use relevant local, offline checks without seeking approval for each run; live provider calls, deployment, and production mutations retain their separate authorization boundaries.
 - Do not mark an evaluation passed without reviewing the decision, evidence handling, and authorization boundary.
 
 ## Source: `CAPABILITY-REGISTRY.md`

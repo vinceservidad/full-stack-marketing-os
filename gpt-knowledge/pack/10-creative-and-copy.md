@@ -9,74 +9,54 @@ rendered as source labels; external URLs and fenced examples are preserved.
 
 ---
 name: creative-strategy
-description: Turn verified customer, product, offer, and performance evidence into testable paid-media angles, concepts, matrices, and briefs; not for inventing claims or publishing ads.
+description: Develop or repair paid-ad sales arguments, concepts, copy, and visual briefs from customer and product evidence.
 ---
 
 # Creative Strategy
 
-Platform-specific creative *fit* — TikTok's native-feel standard, YouTube's format constraints, and other current channel-specific execution rules — is owned by the relevant channel skill. This skill develops the underlying angle, mechanic, concept, hook, and cross-platform format hypothesis; route current platform-fit assessment to the channel owner.
-
-Classify each deliverable with `KNOWLEDGE-TAXONOMY.md` (source: `KNOWLEDGE-TAXONOMY.md`): strategy, framework/model, methodology/process, pattern/hypothesis, tactic/technique, template, best practice, or heuristic. Name the primary type and do not present a pattern as causality.
+Own paid-ad angles, concepts, hooks, copy, and visual direction. Current placement, delivery, and policy assessment belongs to the channel owner; landing-page conversion copy belongs to `$cro`. Use `KNOWLEDGE-TAXONOMY.md` (source: `KNOWLEDGE-TAXONOMY.md`) to distinguish a strategy, framework, hypothesis, and execution. A framework does not prove effectiveness.
 
 ## Inputs
 
-Use product truth, target segment and situation, customer language, pains and desired outcomes, awareness stage, objections, differentiators, offer, proof, brand constraints, placements, and prior results. For a static asset, also require the emotional job, product assets, exact placement/crop, destination and CTA, brand codes, required derivative aspect ratios, and supplied reference creative if reference analysis is requested. Mark missing research instead of fabricating voice-of-customer evidence.
-
-When reviews are a material research source, consume the `$customer-research` handoff rather than cherry-picking review language directly.
+Use the requested deliverable, business outcome, buyer situation, customer research, product and offer truth, proof, objections, brand constraints, destination, and relevant prior results. For production, use supplied assets and required placements/crops. Reuse decision-relevant context; ask only for missing information that changes the decision. Without customer evidence, label buyer motives and belief states as hypotheses. Reviews used as research require the `$customer-research` handoff, not cherry-picked quotations.
 
 ## Method
 
-1. Extract the audience situation, tension, desired progress, mechanism, proof, objections, and constraints. When belief state materially affects message fit, use Awareness, belief, and desire map (source: `.agents/skills/creative-strategy/references/awareness-belief-desire-map.md`) to separate current belief, blocking belief, required belief shift, available proof, and evidence gaps.
-2. Form distinct angle hypotheses. An angle is a reason to care, not merely a new hook. Read Persuasion and behavioral principles (source: `.agents/skills/creative-strategy/references/persuasion-and-behavioral-principles.md`) for documented research to inform hypothesis generation, Strategic framing and angle archetypes (source: `.agents/skills/creative-strategy/references/strategic-framing-and-angle-archetypes.md`) for methods to reach and structure the angle itself, and Angle catalog and hook types (source: `.agents/skills/creative-strategy/references/angle-catalog-and-hook-types.md`) to check coverage against common categories. A principle, framework, or category informs the hypothesis; it does not predict this audience's response.
-3. Expand only evidence-compatible directions. Use Ideation expansion method (source: `.agents/skills/creative-strategy/references/ideation-expansion-method.md`) to generate strategically distinct mechanics, concepts, hooks, format candidates, proof treatments, and CTAs without turning quotas or cosmetic variation into false strategic breadth.
-4. Select the concept architecture. Use Creative mechanics (source: `.agents/skills/creative-strategy/references/creative-mechanics.md`) to define how the concept should cause the audience to understand, feel, compare, observe, or infer the angle. Keep angle, mechanic, concept, hook, format, and proof distinct.
-5. Execute the opening and vessel. Use Hook execution (source: `.agents/skills/creative-strategy/references/hook-execution.md`) to develop evidence-compatible openings and Visual format selection (source: `.agents/skills/creative-strategy/references/visual-format-selection.md`) to choose the production vessel. Treat awareness-stage and format-fit guidance as hypotheses unless account evidence supports them.
-6. For broader ideation work, use the owned Creative ideation engine workflow (source: `workflows/creative-ideation-engine.md`) and Creative idea matrix (source: `templates/creative-idea-matrix.md`).
-7. For static DTC assets, apply Static DTC creative direction and reference analysis (source: `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md`): turn the selected mechanic and concept into a message architecture, emotional job, visual thesis, reference-analysis record, reading hierarchy, crop plan, specific typography direction, and render brief before generating imagery. When a master must survive a square derivative, define a centered 1:1 cross-crop core and keep critical meaning inside it; treat this as a reusable crop-resilience rule, not a universal platform safe-zone claim.
-8. Build a controlled matrix. Where practical, vary one major dimension per learning cell: angle, mechanic, opening, proof, format, offer framing, or CTA.
-9. Define the success signal, guardrail, and decision window before production. For static assets, preflight the master and every required derivative crop for hook legibility, product recognition, proof/qualifier readability, CTA visibility, subject meaning, crop safety, brand fit, claim compliance, and reference distinction. Read Iterating from a winner (source: `.agents/skills/creative-strategy/references/iterating-from-a-winner.md`) once a cell wins, before scaling or producing the next round.
+Establish the sales argument before committing to a headline or layout: who should care, what they want, why this product or offer is relevant, and what makes the argument credible. Use Sales argument and finished-creative review (source: `.agents/skills/creative-strategy/references/sales-argument-and-finished-review.md`) when producing or repairing creative. Human motivation and product truth drive the idea; platform theories do not supply a reason to buy.
+
+Choose a concept that makes the argument understandable through copy and imagery together. A demonstration, story, comparison, direct offer, or other mechanic must earn its place in this brief. Select a copy structure when useful, not a mandatory AIDA/PAS recipe or psychological-principle quota. A payment option may answer a supported purchase barrier; do not assume it creates product demand.
+
+Deliver the requested work. One ad prompt needs exact customer-facing copy and a usable visual direction, not an exhaustive strategy matrix. Batch ideation and testing need meaningful differences and a learning plan. A repair needs the revised deliverable, not only advice to rewrite it. Explain material safety, evidence, access, or production limits rather than silently substituting a different task.
 
 ## Rules
 
-- Prioritize message-market learning over cosmetic variation.
-- Match proof strength to claim strength. Do not imply guaranteed, clinical, financial, or comparative outcomes without substantiation.
-- Match the opening and proof to the best-supported awareness and belief state.
-- Treat awareness, current belief, and required belief shift as evidence-backed inputs or clearly labeled hypotheses, never invented customer psychology.
-- Treat review language as VOC only when traceable to a supplied or research source; model-created language is synthesis or copy.
-- Judge winners across business outcome, conversion quality, and spend, not CTR or thumb-stop rate alone.
-- Placement crops are adaptations, not distinct strategic tests.
-- Keep entities distinct: angle = strategic reason to care; mechanic = how the concept makes that reason land; creative concept = specific central idea or narrative; hook = opening expression; creative direction = message, visual, typography, crop, and production specification; creative asset = produced component; ad = configured platform entity; format = delivery vessel; adaptation = placement-specific version.
-- Do not present a hook tactic, mechanic family, format family, or native voice pattern as inherently high-performing.
-- For static paid creative, do not send a generic image prompt to production. The brief must specify the audience tension, mechanic, visual thesis, product role, reading hierarchy, exact copy and type-overlay direction, proof treatment, master/derivative crop plan, placement, and exclusions.
-- When a 4:5 master must survive 1:1, critical meaning must survive the centered square crop. Decorative bleed may extend outside it when expendable. The square core does not replace current placement-specific edge safety or UI-overlay checks.
-- A reference is analysed for observable choices, not copied or called proven without relevant test evidence. Preserve intellectual-property and trade-dress boundaries.
-- A polished render is draft, not evidence of performance or a live ad. Exact typography should be overlaid separately when an image model cannot reliably render it.
+- Keep entities distinct: angle = strategic reason to care; mechanic = how the idea communicates; concept = specific idea; hook = opening; format = vessel; asset = produced component; ad = configured entity; adaptation = crop or placement version.
+- Claims, quotations, comparisons, testimonials, credentials, scarcity, and product details need traceable support. Buyer desire or ingredient presence does not establish a product outcome. Preserve evidence gaps and safety requirements.
+- Keep internal strategy notes and evidence labels separate from exact customer-facing copy. Preserve required public disclosures, product identity, and approved wording. Do not replace strong supplied copy merely to fit a framework.
+- Do not call cosmetic variants distinct angles or claim a format, hook, or psychological principle inherently performs well. Preserve null and contradictory learning.
+- Judge tests using business outcomes, conversion quality, spend, guardrails, and adequate evidence. Low delivery alone does not establish creative failure. Whole-concept tests do not identify the effect of one changed element.
+- A generated render is a draft, not an approved, published, live, or verified ad. Do not claim inspection, deployment, or improved performance that did not occur.
 
 ## Output
 
-Creative matrix: audience/situation; pain/desire/JTBD; awareness; current belief; required belief shift; angle; hypothesis; mechanic; concept; hook; visual format; proof; CTA; variable; success signal; guardrail.
+Provide the requested draft, revision, concept set, or production prompt first, followed by the decision-relevant rationale and evidence gaps. Keep internal analysis outside customer-facing copy.
 
-Creative brief: objective; single audience insight; promise; reason to believe; angle; mechanic; concept; opening; visual format; mandatory elements; variants; claims guardrail; measurement plan.
+For production: exact copy; the buyer argument; visual concept and product role; hierarchy and typography; proof treatment; destination/CTA; required canvas/crops; constraints; status. For a test: hypothesis, control/comparison, changed dimensions, business outcome, guardrails, review window, and next decision. Do not invent budget, sample size, results, or certainty.
 
-Static DTC render brief: message architecture; emotional job; mechanic; reference-analysis record; visual thesis; composition/product direction; master aspect ratio/dimensions; required derivative crops; cross-crop core and crop-risk bands when applicable; typography and exact overlay copy; proof and CTA treatment; placement-specific safety dependency; exclusions; master/derivative preflight criteria; draft/approved/published/live/verified status.
+## References
 
-## Library references
+Load only the references needed for this task:
 
-Owned root artifacts, read when their scope applies:
-
-- creative-strategy.md (source: `frameworks/creative-strategy.md`) — research-to-angle-to-test decision map.
-- creative-ideation-engine.md (source: `workflows/creative-ideation-engine.md`) — evidence-to-idea expansion and prioritization workflow.
-- creative-idea-matrix.md (source: `templates/creative-idea-matrix.md`) — controlled ideation matrix template.
-- creative-brief.md (source: `templates/creative-brief.md`) — creative brief format.
-- creative-testing.md (source: `workflows/creative-testing.md`) — test cadence and evaluation workflow.
-- creative-mechanics.md (source: `.agents/skills/creative-strategy/references/creative-mechanics.md`) — meaning-making structure between angle and execution.
-- hook-execution.md (source: `.agents/skills/creative-strategy/references/hook-execution.md`) — opening strategy, frames, voice, modality, and proof boundaries.
-- visual-format-selection.md (source: `.agents/skills/creative-strategy/references/visual-format-selection.md`) — cross-platform production-vessel selection and format hypotheses.
-- static-dtc-creative-direction.md (source: `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md`) — static paid-creative production direction, reference analysis, typography, cross-crop safety, and render validation.
+- Buyer interpretation: awareness, belief, and desire (source: `.agents/skills/creative-strategy/references/awareness-belief-desire-map.md`); persuasion lenses (source: `.agents/skills/creative-strategy/references/persuasion-and-behavioral-principles.md`). Verify research support before presenting a behavioral claim as established.
+- Angle development: strategic framing (source: `.agents/skills/creative-strategy/references/strategic-framing-and-angle-archetypes.md`); angle and hook catalog (source: `.agents/skills/creative-strategy/references/angle-catalog-and-hook-types.md`).
+- Concept development: ideation expansion (source: `.agents/skills/creative-strategy/references/ideation-expansion-method.md`); creative mechanics (source: `.agents/skills/creative-strategy/references/creative-mechanics.md`); hook execution (source: `.agents/skills/creative-strategy/references/hook-execution.md`); format selection (source: `.agents/skills/creative-strategy/references/visual-format-selection.md`).
+- Static production or supplied-image repair: static DTC direction (source: `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md`), including product accuracy, reference distinction, typography, and actual crop inspection. A centered square core applies only when square survival is required; it is not a universal platform safe zone.
+- Broader planning: creative strategy (source: `frameworks/creative-strategy.md`); ideation workflow (source: `workflows/creative-ideation-engine.md`); idea matrix (source: `templates/creative-idea-matrix.md`); creative brief (source: `templates/creative-brief.md`).
+- Testing and next actions: creative testing (source: `workflows/creative-testing.md`); iterating from a winner (source: `.agents/skills/creative-strategy/references/iterating-from-a-winner.md`).
 
 ## QA
 
-Check claims against evidence, concepts are strategically distinct, the mechanic is not confused with the hook or format, the test can teach something, current platform constraints are routed correctly, CTA matches the destination, and copy remains draft until approved. For ideation, verify the source insight is grounded, belief shifts are supportable, review evidence is not cherry-picked, duplicate cells were consolidated, and each selected cell changes a meaningful strategic dimension. For static assets, verify the emotional job is tied to the audience situation; references were analysed without copying; reading order, product role, mechanic, typography, and crop plan are explicit; proof is substantiated; critical meaning survives required derivative crops; current placement-specific safe-area requirements remain separately validated; and the placement-size render passes preflight.
+Review the actual deliverable against its sales argument and requested purpose. Does the buyer have a credible reason to care and choose? Do the copy and image express the same idea without unsupported implications? Remove repetition, production-note leakage, and generic language. Inspect rendered work and required derivatives when available, fix identified defects within scope, and state any inspection not performed. Route current platform requirements correctly and retain approval boundaries. A checked draft is not proof of sales performance.
 
 ## Source: `.agents/skills/creative-strategy/references/angle-catalog-and-hook-types.md`
 
@@ -556,6 +536,51 @@ Every claim generated from a principle still passes through this skill's existin
 - Where a principle-driven tactic risks reading as manipulative or as a dark pattern regardless of factual accuracy (an artificially inflated countdown timer, a fabricated "X people are viewing this" claim, a fake scarcity signal), do not use it; factual accuracy is necessary but not sufficient, and a technically true but manipulative framing is still a trust and brand-risk decision requiring human judgment, not an automatic creative choice.
 - Do not present this reference's principles as this business's proven patterns; a principle informs hypothesis generation at method step 2, and the resulting angle still needs the success signal, guardrail, and decision window this skill's method already requires before it is treated as evidence.
 
+## Source: `.agents/skills/creative-strategy/references/sales-argument-and-finished-review.md`
+
+---
+title: Sales Argument and Finished-Creative Review
+owner: creative-strategy
+type: methodology/process
+status: active
+---
+
+# Sales Argument and Finished-Creative Review
+
+A shared practitioner workflow for `$creative-strategy`, `$copywriting`, and `$cro`. Use it to connect buyer understanding to finished sales copy and design, or to repair a weak execution. It is not a validated psychological model, a compulsory sequence, or evidence of performance. Keep established specialist ownership.
+
+## Establish the argument
+
+Start from the decision the buyer faces, not from the format or an algorithm theory. Use the relevant awareness, belief, and desire map (source: `.agents/skills/creative-strategy/references/awareness-belief-desire-map.md`) to understand the situation, desired progress, present belief, alternatives, objection, and available proof. Functional, emotional, and social motives can inform hypotheses; they must not be invented and labeled customer research.
+
+Decide what supported product or offer advantage connects to that situation. Explain why it matters, what makes it credible, and why the buyer might choose it over a relevant alternative or doing nothing. A credible reason to choose need not be an exclusive feature; do not fabricate uniqueness in a commodity or reseller market.
+
+Keep desire creation, product explanation, differentiation, proof, and transaction reassurance distinct. A payment option or delivery term can lead when the brief and evidence make that barrier central. Otherwise it may support the close. Conversely, an explicit product-information request should remain informational. Do not force persuasion where it was not requested.
+
+When research is limited, give a usable, clearly labeled hypothesis based on verified product truth. State the missing evidence that could change it. Do not invent an outcome, inflate an ingredient into a benefit, or treat a customer's wish as substantiation. If the requested persuasive angle cannot be supported safely, explain the limit and label any alternative accurately.
+
+## Choose the expression
+
+Select a concept and persuasive structure because they serve this argument. Use structure selection (source: `.agents/skills/copywriting/references/structure-selection.md`) when helpful; a hook is not a framework, and AIDA or PAS does not replace a sales argument. Do not force every piece to include every stage, invoke multiple psychological principles, or use the same opening.
+
+Make the visual carry evidence or meaning, not merely decorate the headline. A demonstration should show the supported feature; a process claim should show the real process; a comparison needs a fair basis. Choose hierarchy around the important buyer message, not automatically the product name, pack count, payment method, or largest available number. Required qualifications must remain readable.
+
+Preserve strong approved copy, authentic customer phrasing, and relevant high-intent terms during revision. Do not replace a specific argument with a generic service description for stylistic consistency. Buyer language can guide relevance without implying that particular words unlock an advertising algorithm.
+
+## Separate the deliverable from the brief
+
+Put only intended customer-facing words in an exact-copy block. Put rationale, source notes, evidence labels, framework mapping, and production directions elsewhere. Do not print headings such as 'emotional job' or 'featured front-label ingredients' merely because they appear in the working brief. This is a purpose distinction, not a banned-phrase list: preserve real informational headings when requested and legally required disclosures when applicable.
+
+An image prompt should connect the exact copy to a concrete visual idea, product asset, composition, and required output. The static direction reference (source: `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md`) supplies conditional production and crop details. Do not demand every reference, a full campaign matrix, or unnecessary derivative formats for a single bounded creative.
+
+## Finish and review
+
+Review the words and visual as the buyer will encounter them. Check the reason to care, reason to believe, reason to choose, clarity of action, and any unsupported implication. Remove redundant copy and confusing visual emphasis. This is a review aid, not a promise that these checks predict response.
+
+For a repair, change the actual supplied artifact or return the requested revised copy/prompt. Do not stop at an apology or instructions for the user to do the same work. Use available tools within authorization. Never invent an unavailable asset or claim the rendered output was inspected when only the prompt was reviewed.
+
+Inspect actual rendered work and required crops when available; correct identified defects before marking the scoped work complete. Keep drafted, produced, inspected, approved, published, and tested states separate. Name what remains unverified and propose the next business-outcome test without fabricated budgets, thresholds, conversion forecasts, or algorithm guarantees.
+
 ## Source: `.agents/skills/creative-strategy/references/static-dtc-creative-direction.md`
 
 ---
@@ -571,22 +596,24 @@ status: active
 
 Translate an evidence-grounded angle into a production-ready static-ad direction that gives a designer or image model a clear, testable visual execution. This is a methodology, not evidence that a particular visual treatment will outperform. A reference analysis identifies observable choices; it does not establish causality or authorize copying another brand's work.
 
+For sales-argument selection and finished-work review, use Sales argument and finished-creative review (source: `.agents/skills/creative-strategy/references/sales-argument-and-finished-review.md`). Keep strategy notes separate from exact overlay copy. If the request is to repair an asset, inspect and revise that asset rather than treating a new prompt as an already-corrected render.
+
 ## Required inputs
 
 The verified angle, audience situation and awareness stage, product truth, claim and proof source, placement and crop, destination/CTA, brand codes, product assets, and any supplied reference creative. State what is missing. “Premium” is a positioning constraint only until the brand supplies or approves the visual codes that make it specific.
 
 ## Method
 
-1. **Define the emotional job.** State the intended felt shift in the first second: for example, anxiety to relief, skepticism to trust, status uncertainty to self-assurance, or overwhelm to clarity. Tie it to the actual audience situation and product truth; do not label a generic mood as an insight.
-2. **Write one visual thesis.** Specify the single contrast that carries the angle: ordinary versus considered, clutter versus calm, doubt versus proof, compromise versus craftsmanship. The visual thesis must support—not merely decorate—the message.
+1. **Define the emotional job.** State the intended response: for example, anxiety to relief, skepticism to trust, status uncertainty to self-assurance, or overwhelm to clarity. Tie it to the actual audience situation and product truth; do not label a generic mood as an insight or claim a measured one-second response without testing.
+2. **Write one visual thesis.** Specify the visual idea that carries the angle. A contrast may help, for example: ordinary versus considered, clutter versus calm, doubt versus proof, compromise versus craftsmanship. The visual thesis must support the message; contrast is an option, not a requirement for every ad.
 3. **Reverse engineer supplied references as observable patterns.** For each reference, record: attention device; reading order; image/product role; copy hierarchy; typography traits; colour/contrast; whitespace/density; proof treatment; CTA treatment; and brand codes. Separate observed pattern from inference. Do not reproduce a distinctive layout, copy, trade dress, logo, or proprietary visual asset.
 4. **Choose the information hierarchy before generation.** Define the required first, second, and third reads. For a direct-response static asset, this normally means: (1) hook or visual tension, (2) product and reason to believe, (3) CTA or offer condition. It is not a rule that every asset needs every element or that the same order fits every awareness stage.
 5. **Define master canvas and cross-crop core.** When one master asset is expected to survive a square derivative or square crop, define both the master aspect ratio and a centered 1:1 cross-crop core before composition. This is an internal resilience method, not a universal platform safe-zone claim. For a 1080×1350 4:5 master, the centered 1:1 core is 1080×1080, leaving 135 px crop bands at the top and bottom. Keep critical meaning inside the core: hook/headline, essential product identity, primary proof, offer terms needed for comprehension, CTA, and critical faces/gestures. Decorative background, atmosphere, texture, nonessential props, and expendable product/background bleed may extend outside the core. If no square derivative or crop risk exists, do not force a square-core rule merely from habit.
 6. **Add placement-specific edge safety.** The 1:1 core does not replace current placement-specific margins, interface overlays, or channel requirements. Keep critical content away from edges according to the actual placement specification, supplied brand template, or current channel guidance. Route current platform-specific safe-area claims to the relevant channel skill and `PLATFORM-CURRENCY.md` rather than fossilizing UI dimensions here.
 7. **Direct typography deliberately.** Specify the exact hook copy, line breaks, relative scale, font category, weight, casing, contrast, alignment, and safe area. A bold hook is earned when the creative needs an interruption; “large white sans-serif text” is not a type direction. Use a supplied type system when available. Otherwise define a restrained provisional category and mark brand fit unverified.
 8. **Direct the image deliberately.** Specify subject, product visibility, crop, perspective, setting, light, texture, palette, negative space reserved for copy, and what must not appear. Preserve product truth: the asset must not invent product features, outcomes, packaging details, endorsement, or proof.
-9. **Produce a render brief, not a vague image prompt.** Separate: message/copy; master canvas; cross-crop core; composition; art direction; type-overlay specification; proof/CTA; brand constraints; placement; exclusions; and validation criteria. For image-model workflows, generate the visual base separately from the text overlay where legibility or exact copy matters; image models are unreliable at rendering exact typography.
-10. **Preflight every required crop.** Check the master asset at intended placement size, then render or preview every required derivative crop rather than assuming the safe zone worked. Validate one-second comprehension, hook legibility, product recognition, hierarchy, proof readability, CTA visibility, crop safety, brand fit, claim substantiation, and distinction from the reference. For a 4:5 → 1:1 workflow, inspect the actual centered square crop. A generated image is draft until a human approves it.
+9. **Produce a render brief, not a vague image prompt.** Separate: message/copy; master canvas; cross-crop core; composition; art direction; type-overlay specification; proof/CTA; brand constraints; placement; exclusions; and validation criteria. For image-model workflows, inspect the actual typography and packaging. Use a separate text overlay or original-asset composite when the available model cannot preserve them accurately; do not assume either failure or accuracy before inspection.
+10. **Preflight every required crop.** Check the master asset at intended placement size, then render or preview every required derivative crop rather than assuming the safe zone worked. Review immediate message clarity without claiming measured comprehension speed, hook legibility, product recognition, hierarchy, proof readability, CTA visibility, crop safety, brand fit, claim substantiation, and distinction from the reference. For a 4:5 → 1:1 workflow, inspect the actual centered square crop. A generated image is draft until a human approves it.
 
 ## Cross-crop safe-zone rules
 
@@ -741,47 +768,43 @@ Format selection should make the strategic idea clearer, not replace it.
 
 ---
 name: copywriting
-description: Write or evaluate email, lifecycle, website, sales-page, long-form, or brand copy using evidence-backed customer language and a structure matched to funnel stage; not for paid-ad hooks or landing-page conversion copy, which are owned elsewhere.
+description: Write or revise email, lifecycle, website, sales-page, and brand copy; paid ads and conversion pages have separate owners.
 ---
 
 # Copywriting
 
-Classify each framework, structure, or heuristic with `KNOWLEDGE-TAXONOMY.md` (source: `KNOWLEDGE-TAXONOMY.md`). A copywriting structure (AIDA, PAS, FAB, BAB) is a pattern that organizes an argument — it is not evidence that the argument is true, and applying it correctly does not make an unsupported claim supportable.
-
-Per `CAPABILITY-REGISTRY.md` (source: `CAPABILITY-REGISTRY.md`), paid-ad hooks, angles, concepts, and static paid-creative text hierarchy stay owned by `$creative-strategy`; landing-page and product-page conversion copy stays owned by `$cro`. This skill owns what those do not: email and lifecycle sequences, website and sales-page copy, long-form content, and brand voice — the copywriting work with no other current owner.
+Own email/lifecycle text, website and sales-page copy, long-form copy, and brand voice under `CAPABILITY-REGISTRY.md` (source: `CAPABILITY-REGISTRY.md`). `$creative-strategy` owns paid-ad copy and visual hierarchy; `$cro` owns landing/product-page conversion copy. Coordinate internally with the correct owner and return one coherent deliverable, not a routing explanation in place of the work.
 
 ## Context
 
-Primary business outcome and funnel stage the copy serves; audience — priority segment, buying situation, or Jobs-to-be-Done per `$icp-jtbd` where available; evidence-backed customer language available from `$customer-research`, with its provenance; brand voice guidelines if they exist; the specific claim or offer being communicated and what supports it; and the channel and format constraints (subject line length, email client rendering, page length).
+Use the requested output, business outcome, buyer situation, source-backed customer language, product/offer truth, proof, objections, brand voice, channel constraints, and approved existing wording. Reuse the research and sales argument already established by the owning specialist. Mark gaps without inventing customer evidence or demanding a full intake for a bounded edit.
 
 ## Method
 
-1. State the single audience, single problem, and single promise the copy must serve — per the Rule of One. A piece of copy trying to serve two audiences or two promises weakens both.
-2. Verify every factual or quantitative claim against a source before writing it in; do not write a number, result, or comparison the source evidence does not support.
-3. Use customer language only when it is traceable to a supplied source — an interview, review, survey response — via `$customer-research`. Do not invent or paraphrase a quotation from memory and present it as customer language.
-4. Select a structure matched to the communication goal, not by default. See Structure selection (source: `.agents/skills/copywriting/references/structure-selection.md`).
-5. Draft, then apply the humanizing pass: remove unnecessary words, mechanical transitions, and any phrasing that reads as templated rather than written for this specific audience and claim.
-6. For a sequence (email, lifecycle), sequence the individual pieces against the funnel stage and lifecycle definitions `$marketing-intake` recorded, and against the segmentation, trigger, and cadence design `$lifecycle-marketing` owns; a single piece is evaluated on its own persuasive logic, a sequence on its cumulative arc. This skill writes the words for a sequence; it does not design the sequence, platform, or triggers — route that to `$lifecycle-marketing`.
-7. State what would need to be true for the copy to work, and flag any claim in it that is unverified or aspirational rather than evidenced.
+Determine what the reader should understand, believe, and do, and why the offer deserves consideration. For sales copy, use the shared sales-argument and finished-work review (source: `.agents/skills/creative-strategy/references/sales-argument-and-finished-review.md`) rather than starting from a template. Functional and emotional motives are research inputs or labeled hypotheses, not universal buyer facts.
+
+Select a structure that fits the message and available proof using Structure selection (source: `.agents/skills/copywriting/references/structure-selection.md`). AIDA, PAS, FAB, and BAB organize an argument; they do not supply its truth or guarantee a result. Apply `KNOWLEDGE-TAXONOMY.md` (source: `KNOWLEDGE-TAXONOMY.md`) accurately. Keep one clear communication purpose without forcing every piece into a problem-agitation narrative.
+
+Write the requested copy, then inspect the actual draft. Check the reason to care, relevance, differentiation, credibility, and next action. Use natural, specific language, normally Grade 6-8 unless the audience requires otherwise. Remove unnecessary repetition and mechanical phrasing without stripping meaning, approved positioning, or useful high-intent search terms. For a revision, preserve what works and change only what the brief or evidence warrants.
+
+For sequences, `$lifecycle-marketing` owns segmentation, triggers, cadence, and suppression. Write the individual messages and cumulative argument against that handoff; do not invent a sequence strategy or change a live send.
 
 ## Rules
 
-- Never fabricate a benchmark, result, testimonial, or customer quotation. A number or claim with no traceable source is not written into the copy; it is flagged as missing.
-- Do not present a copywriting structure as a guarantee of performance; a structure organizes an argument, and whether the argument converts is an empirical question for `$cro` or `$creative-strategy` to test, not something this skill can assert.
-- Do not write paid-ad hooks, angles, or static-ad type-overlay hierarchy; route those to `$creative-strategy`, including its static DTC creative-direction method. Do not write landing-page or product-page conversion copy; route those to `$cro`.
-- Do not claim brand voice consistency without the brand guidelines actually supplied; write a best-effort draft and label the voice as unverified against guidelines if none exist.
-- A claim of scarcity, urgency, authority, or social proof must be true and evidenced; do not manufacture false urgency or an unsupported authority claim.
-- For regulated or compliance-sensitive claims (health, financial, legal outcome claims), do not write a claim beyond what the supplied evidence supports, and flag the claim for review rather than softening it silently.
+- Never invent results, customer quotations, credentials, scarcity, or product advantages. Keep factual substantiation and source notes outside customer-facing copy unless disclosure is required.
+- A payment method, discount, ingredient, or feature is not automatically the main sales argument. Choose its role from the buyer situation and evidence.
+- Preserve claim limits, privacy, required disclosures, and safety. Do not manufacture insecurity or false urgency. Explain a material limitation instead of silently substituting an information card for requested sales copy.
+- Use `$customer-research` for source-backed customer language. Model-written phrasing is copy or synthesis, not a testimonial or observed customer statement.
+- Keep brand voice unverified when guidelines are unavailable. Do not claim a draft was approved, published, tested, or effective without evidence.
+- Do not replace the specialist owners for paid-ad or conversion-page decisions. Carry the same supported sales argument across handoffs.
 
 ## Output
 
-Draft: audience, problem, and promise stated; structure used and why; every factual claim with its source; customer language with its provenance; humanized draft; flagged unverified or aspirational claims; exact status (draft, approved, published).
-
-Evaluation: what structure is present; claims verified against source versus unverified; customer-language provenance checked; single-audience/single-promise discipline assessed; recommended revision.
+Return usable copy or the actual revision first. Separate exact customer-facing text from a short rationale, supporting sources, unresolved claims, and status. When asked for a framework, identify the structure and show how the words implement it; a framework label alone is not completion. Match output length to the task rather than displaying every internal analysis field.
 
 ## QA
 
-Confirm audience, problem, and promise are singular and stated; every factual claim traces to a source; every customer-language use traces to a supplied source via `$customer-research`; the structure fits the communication goal rather than being applied by default; no paid-ad hook or landing-page conversion copy was written here instead of routed; and no claim exceeds what the evidence supports.
+Check purpose, buyer relevance, supported promise, proof, natural wording, preserved approved language, and the appropriate next step. For copy with a visual or page layout, review their combined meaning with the owning specialist. Fix identified issues before concluding. Report any rendering or behavioral evaluation not performed; review is not proof of conversion lift.
 
 ## Source: `.agents/skills/copywriting/references/structure-selection.md`
 
