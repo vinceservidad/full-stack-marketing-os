@@ -112,8 +112,8 @@ class EvaluationTests(unittest.TestCase):
 
     def test_current_corpus_is_registered_with_explicit_historical_exclusions(self):
         suites, parsed = evaluation.validate_corpus(REPO)
-        self.assertEqual(len(suites), 41)
-        self.assertEqual(sum(map(len, parsed.values())), 874)
+        self.assertEqual(len(suites), 42)
+        self.assertEqual(sum(map(len, parsed.values())), 884)
         self.assertEqual(sum(len(s.get('live_exclusions', {})) for s in suites), 9)
         for suite in suites:
             self.assertEqual(suite['case_count'], len(parsed[suite['id']]))
@@ -121,6 +121,23 @@ class EvaluationTests(unittest.TestCase):
         self.assertNotIn('3', architecture['live_exclusions'])
         self.assertIn('historical', architecture['case_notes']['3'])
         self.assertIn('nonexistent analytics or reporting skill', parsed['v1.2-architecture'][2].criterion)
+
+    def test_sales_argument_suite_keeps_criteria_out_of_responder_context(self):
+        suites, parsed = evaluation.validate_corpus(REPO)
+        suite = next(s for s in suites if s['id'] == 'creative-sales-argument')
+        self.assertEqual(suite['owners'], ['creative-strategy', 'copywriting', 'cro'])
+        cases = parsed[suite['id']]
+        self.assertEqual(len(cases), 10)
+        self.assertTrue(all(case.literal_prompt for case in cases))
+        system, sources = evaluation.skill_context(REPO, suite['owners'], True)
+        paths = [source['path'] for source in sources]
+        shared = '.agents/skills/creative-strategy/references/sales-argument-and-finished-review.md'
+        self.assertEqual(paths.count(shared), 1)
+        self.assertFalse(any(path.startswith('tests/evaluations/') for path in paths))
+        for case in cases:
+            prompt = suite['prompt_template'].format(scenario=case.scenario)
+            self.assertNotIn(case.criterion, prompt)
+            self.assertNotIn(case.criterion, system)
 
     def test_count_drift_and_unknown_skill_fail(self):
         suites = evaluation.load_suites(REPO)

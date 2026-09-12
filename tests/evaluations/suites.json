@@ -64,6 +64,19 @@
       "format": "numbered"
     },
     {
+      "id": "creative-sales-argument",
+      "cases": "tests/evaluations/creative-sales-argument-cases.md",
+      "review": "tests/evaluations/creative-sales-argument-review.md",
+      "owners": [
+        "creative-strategy",
+        "copywriting",
+        "cro"
+      ],
+      "case_count": 10,
+      "prompt_template": "{scenario}",
+      "format": "sections-h2"
+    },
+    {
       "id": "cross-agent-distribution",
       "cases": "tests/evaluations/cross-agent-distribution-cases.md",
       "review": "tests/evaluations/cross-agent-distribution-review.md",
